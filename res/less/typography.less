@@ -1,0 +1,357 @@
+/* Variables
+-------------------------------------------------------------- */
+@import "variables.less";
+
+/* Typography 
+----------------------------------------------------------------*/
+
+html {
+	height: 100%;
+	-webkit-text-size-adjust: 100%; 
+}
+
+body {
+	margin: 0;
+	min-height: 100%;
+	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body, button, input, select, textarea {
+	color: @black;
+	font-family: @copy;
+	line-height: 1;
+}
+
+
+hr {
+	background-color: @grey;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+	font-family: @heading;
+}
+
+h1 { 
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4 {
+
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 1.5rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted @black;
+	cursor: help;
+}
+
+mark, ins {
+	text-decoration: none;
+}
+
+sup, sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+/* Links */
+a {
+	text-decoration: none;
+	color: @primary;
+}
+
+a:visited {
+	color: @primary;
+}
+
+a:hover, a:focus, a:active {
+	color: lighten(@primary, 10%);
+}
+
+/* Lists */
+
+ul, ol {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Buttons & Forms */
+button, input, select, textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+button, input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid @grey;
+	border-color: @grey darken(@grey, 5%) darken(@grey, 15%) darken(@grey, 5%);
+	.rounded(3px);
+	background: lighten(@grey, 10%);
+	color: @black;
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	padding: 6px 8px;
+	text-shadow: 0 1px 0 rgba(255,255,255,.8);
+}
+
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background: @grey;
+}
+
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background: darken(@grey, 10%);
+}
+
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box; 
+	padding: 0; 
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration { 
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner { 
+	border: 0;
+	padding: 0;
+}
+
+input[type=text], input[type=email], textarea {
+	color: @black;
+	border: 1px solid @grey;
+	border-radius: 3px;
+}
+
+input[type=text]:focus, input[type=email]:focus, textarea:focus {
+	color: @black;
+}
+
+input[type=text], input[type=email] {
+	padding: 3px;
+}
+
+textarea {
+	overflow: auto; 
+	padding-left: 3px;
+	vertical-align: top; 
+	width: 98%;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/* WP Captions */
+.wp-caption {
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 0;
+    font-size: .875em;
+    text-align: center;
+}
+ 
+.wp-caption.alignnone {
+    margin:  0 0 20px;
+}
+ 
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+ 
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    padding:0;
+    max-width: 100%;
+    height: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 1em;
+    line-height: 24px;
+    margin: 0;
+    padding: 5px 4px 4px;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* Fluid Images */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Pretty Ampersands */
+span.amp {
+	font-family:Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
+	font-style:italic;
+	font-size:110%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline
+}
+
+/* Misc. */
+input::-moz-focus-inner { 
+	border: 0;
+}
+	
+::selection {
+	background: @black;
+	color: @white;
+}
+
+::-moz-selection {
+	background: @black;
+	color: @white;
+}

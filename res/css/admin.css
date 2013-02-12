@@ -1,0 +1,10 @@
+/* =Login Logo
+-------------------------------------------------------------- */
+.login h1 a { background-image: url(../img/logo_login.jpg); height: 65px; }
+
+/* =Header Logo
+-------------------------------------------------------------- */
+#header-logo { 
+	background-image: none; 
+	width: 0;
+}

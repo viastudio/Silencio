@@ -1,0 +1,87 @@
+/* Colors */
+@black: #444;
+@white: #fff;
+@grey: #cfcfcf;
+@primary: #0c79a6;
+@secondary: #0ca637;
+
+/* Fonts */
+@heading: Georgia, serif;
+@copy: Helvetica, Arial, sans-serif;
+
+/* Weights */
+@extralight: 200;
+@light: 300;
+@regular: 400;
+@bold: 700;
+@extrabold: 800;
+
+/* Mix-Ins */
+.rounded( @radius: 3px ) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.border-radius(
+	@topleft: 0,
+	@topright: 0,
+	@bottomright: 0,
+	@bottomleft: 0
+) {
+	-webkit-border-top-right-radius: @topright;
+	-webkit-border-bottom-right-radius: @bottomright;
+	-webkit-border-bottom-left-radius: @bottomleft;
+	-webkit-border-top-left-radius: @topleft;
+	-moz-border-radius-topright: @topright;
+	-moz-border-radius-bottomright: @bottomright;
+	-moz-border-radius-bottomleft: @bottomleft;
+	-moz-border-radius-topleft: @topleft;
+	border-top-right-radius: @topright;
+	border-bottom-right-radius: @bottomright;
+	border-bottom-left-radius: @bottomleft;
+	border-top-left-radius: @topleft;
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
+}
+
+.transition(
+	@what : all,
+	@length : 1s,
+	@easing : ease-in-out
+) {
+	-webkit-transition: @what @length @easing;
+	-moz-transition: @what @length @easing;
+	-o-transition: @what @length @easing;
+	transition: @what @length @easing;
+}
+
+.transform(
+	@params 
+) {
+	-webkit-transform: @params;
+  	-moz-transform: @params;
+  	transform: @params;
+}
+
+.box-shadow(
+	@x : 0,
+	@y : 4px,
+	@blur : 8px,
+	@spread : 2px,
+	@color : rgba(0,0,0,.3)
+) {
+	-webkit-box-shadow: @x @y @blur @spread @color;
+	-moz-box-shadow: @x @y @blur @spread @color;	box-shadow: @x @y @blur @spread @color;
+}
+
+.linear-gradient( 
+	@begin: #7e8893, 
+	@end: @white,
+	@switch : 100%
+) {
+	background:  @begin;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(@begin), color-stop(@switch, @end));
+	background: -moz-linear-gradient(top, @begin, @end @switch);
+	background: -o-linear-gradient(top, @begin, @end @switch);
+	background: linear-gradient(top, @begin, @end @switch);
+}
