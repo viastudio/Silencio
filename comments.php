@@ -49,4 +49,4 @@
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments .comments-area -->™
+</div><!-- #comments .comments-area -->

@@ -54,6 +54,6 @@
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'via' ), __( '1 Comment', 'via' ), __( '% Comments', 'via' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'via' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'via' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
