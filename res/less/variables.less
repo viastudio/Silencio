@@ -89,7 +89,7 @@
 // From retina.less
 // A helper mixin for applying high-resolution background images (http://www.retinajs.com)
 // Append @2x to the end of your retina version. ex: /images/my_image@2x.png
-.at2x(@path, @w: auto, @h: auto) {
+.at2x(@path, @w, @h) {
 	@highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
 	background-image: url(@path);
 	@at2x_path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
@@ -101,7 +101,7 @@
 }
 
 // Retina image helper mixing that allows you to specify different images for different device widths
-.at2x(@path, @w: auto, @h: auto, @device-width) {
+.at2x(@path, @w, @h, @device-width) {
 	@highdpi: ~"(max-width:@{device-width}px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width:@{device-width}px) and (min--moz-device-pixel-ratio: 1.5), (max-width:@{device-width}px) and (-o-min-device-pixel-ratio: 3/2), (max-width:@{device-width}px) and (min-resolution: 1.5dppx)";
 	@media (max-width:@device-width) {
 		background-image: url(@path);
