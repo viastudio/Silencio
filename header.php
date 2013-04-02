@@ -48,14 +48,12 @@ if($viatheme_option["viatheme_typekit_txt_input"] != '') {
 <div id="page" class="hfeed site">
 	
 	<header id="masthead" class="site-header container" role="banner">
-		<hgroup>
-			<h1 class="site-title">
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-					<!-- For Sites With a LOGO <img src="<?php echo get_template_directory_uri(); ?>/res/img/logo.png" /> -->
-				</a>
-			</h1>
-		</hgroup>
+		<h1 class="site-title">
+			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+				<?php bloginfo( 'name' ); ?>
+				<!-- For Sites With a LOGO <img src="<?php echo get_template_directory_uri(); ?>/res/img/logo.png" /> -->
+			</a>
+		</h1>
 	</header><!-- #masthead .site-header -->
 	
 	<nav id="access" role="navigation">
