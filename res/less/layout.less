@@ -365,6 +365,166 @@ h1.site-title {
 	}
 }
 
+/* Comments
+----------------------------------------------- */
+#content ol.commentlist {
+	list-style: none;
+	margin: 0 0 30px 0;
+	padding: 0;
+
+	li {
+		border-bottom: 1px solid @grey;
+		clear:both;
+		margin: 0 0 24px 0;
+		padding: 0 0 16px;
+
+		footer {
+			clear: both;
+		}
+
+		.avatar {
+			border: 1px solid @white;
+			float: left;
+			margin: 0 8px 8px 0;
+		}
+
+		cite {
+			font-size: 1em;
+			font-style: normal;
+			font-weight: @bold;
+		}
+
+		.comment-meta a {
+			color: @black;
+			display: block;
+			font-size: .75em;
+			margin: 0 0 10px 0;
+		}
+
+		.children {
+			list-style: none;
+			margin-top: 10px;
+		}
+	}
+}
+
+#respond {
+	background: @white;
+	border: 1px solid @grey;
+	margin: 0 auto 20px;
+	padding: 4%;
+	position: relative;
+	width: 92%;
+
+	input[type="text"], textarea {
+		border: 1px solid @grey;
+		.block-shadow;
+		padding: 10px;
+		.rounded(0);
+	}
+
+	.comment-form-author, .comment-form-email, .comment-form-url, .comment-form-comment {
+		position: relative;
+	}
+
+	.comment-form-author label,.comment-form-email label, .comment-form-url label, .comment-form-comment label {
+		color: @black;
+		display: block;
+	}
+
+	input[type="text"]:focus, textarea:focus {
+
+	}
+
+	textarea {
+	}
+
+	.comment-form-author .required, .comment-form-email .required {
+		color: @primary;
+		font-weight: bold;
+	}
+
+	.comment-notes, .logged-in-as {
+	}
+
+	p {
+		margin: 10px 0;
+	}
+
+	.form-submit {
+	}
+
+	input#submit {
+		background: @secondary;
+		border: none;
+		.block-shadow;
+		color: @white;
+		cursor: pointer;
+		font-size: 1.2em;
+		margin: 20px 0 0;
+		padding: 10px 14px;
+		.rounded(0);
+	}
+
+	input#submit:hover {
+		background: lighten(@secondary, 5%);
+	}
+
+	input#submit:active {
+		background: lighten(@secondary, 10%);
+	}
+
+	#cancel-comment-reply-link {
+		color: @primary;
+		text-decoration: none;
+	}
+
+	.logged-in-as a:hover, #cancel-comment-reply-link:hover {
+		text-decoration: underline;
+	}
+
+	label {
+		line-height: 2.2em;
+	}
+
+	input[type=text] {
+		display: block;
+		height: 24px;
+		width: 75%;
+	}
+
+	p {
+		font-size: 12px;
+	}
+}
+
+.commentlist #respond {
+	margin: 1.625em 0 0;
+	width: auto;
+}
+
+#reply-title {
+	color: @secondary;
+	font-weight: bold;
+}
+
+#cancel-comment-reply-link {
+	color: @primary;
+	display: block;
+}
+
+#cancel-comment-reply-link:focus, #cancel-comment-reply-link:active, #cancel-comment-reply-link:hover {
+	color: @primary;
+}
+
+p.comment-form-comment {
+	margin: 0;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
 /* Media  */
 
 .site-header img, .entry-content img, .comment-content img, .widget img {
