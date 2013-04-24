@@ -9,7 +9,7 @@ add_filter( 'excerpt_length', 'via_excerpt_length' );
 
 // Continue Reading" link for excerpts
 function via_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'via' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '" class="continue-reading">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'via' ) . '</a>';
 }
 
 // Replaces "[…]"

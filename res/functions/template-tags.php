@@ -2,18 +2,19 @@
 /**
  * Custom template tags for this theme.
  *
- * Eventually, some of the functionality here could be replaced by core features
- *
  * @package via
  * @since via 1.0
  */
 
-if ( ! function_exists( 'via_content_nav' ) ):
+
+
 /**
  * Display navigation to next/previous pages when applicable
  *
  * @since via 1.0
  */
+if ( ! function_exists( 'via_content_nav' ) ):
+
 function via_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
@@ -60,7 +61,8 @@ function via_content_nav( $nav_id ) {
 }
 endif; // via_content_nav
 
-if ( ! function_exists( 'via_comment' ) ) :
+
+
 /**
  * Template for comments and pingbacks.
  *
@@ -68,6 +70,8 @@ if ( ! function_exists( 'via_comment' ) ) :
  *
  * @since via 1.0
  */
+
+if ( ! function_exists( 'via_comment' ) ) :
 function via_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
@@ -116,12 +120,15 @@ function via_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for via_comment()
 
-if ( ! function_exists( 'via_posted_on' ) ) :
+
+
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @since via 1.0
  */
+if ( ! function_exists( 'via_posted_on' ) ) :
+
 function via_posted_on() {
 	printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'via' ),
 		esc_url( get_permalink() ),
@@ -134,6 +141,7 @@ function via_posted_on() {
 	);
 }
 endif;
+
 
 /**
  * Returns true if a blog has more than 1 category
