@@ -406,7 +406,8 @@ h1.site-title {
 
 	a { 
 		padding-left: 28px;
-		background: url(../img/logo_via.png) no-repeat left 50%;
+		background: no-repeat left 50%;
+		.at2x('../img/logo_via.png', 23px, 10px);
 	}
 }
 
@@ -940,12 +941,3 @@ embed, iframe, object {
 		}
 	}
 }
-
-/* =Retina Ready
------------------------------------------------ */
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-	.via_tag a { 
-		background: url(../img/logo_via@2x.png) no-repeat left 50%;
-		background-size: 23px 10px;
-	}
-}	
