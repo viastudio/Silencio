@@ -25,7 +25,7 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
 	function custom_footer_text($default_text) {
 		return '<span id="footer-thankyou">Site managed by <a href="http://www.viastudio.com">VIA Studio</a> | Powered by <a href="http://www.wordpress.org">WordPress</a></span>';
 	}
-	
+
 	/**
 	 * cleaning up and customizing the dashboard
 	 */
@@ -50,9 +50,11 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
 
 	function custom_dashboard_help() {
 		echo '
-					<p>Need help? That "help" tab up top provides contextual help throughout the administrative panel. If you need additional support, you can contact your web team at <a href="http://www.viastudio.com">VIA Studio</a>:</p>
-					<p><strong>phone:</strong> 502-498-8477</p>
-					<p><strong>email:</strong> <a href="mailto:support@viastudio.com">support@viastudio.com</a></p>
+					<p style="text-align:center;"><img src="' . get_template_directory_uri() . '/res/img/logo_via_dashboard.png">
+					<h2>Need help?</h2>
+					<p>That "help" tab up top provides contextual help throughout the administrative panel. If you need additional support, you can contact your web team at <a href="http://www.viastudio.com">VIA Studio</a>:</p>
+					<p><strong>Phone:</strong> 502-498-8477</p>
+					<p><strong>Email:</strong> <a href="mailto:support@viastudio.com">support@viastudio.com</a></p>
 				';
 	}
 
@@ -69,7 +71,7 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
 				';
 		return $help;
 	}
-	
+
 } //wrapper for admin functions
 // End Custom Admin functions
 ?>
