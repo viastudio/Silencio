@@ -194,6 +194,14 @@ function add_grav_forms(){
 }
 add_action('admin_init','add_grav_forms');
 
+/**
+ * Fix Uncaught Reference Error from Gravity Forms - Puts js call in the footer, where it should be.
+ */
+add_filter("gform_init_scripts_footer", "init_scripts");
+	function init_scripts() {
+	return true;
+}
+
 /*
  * Custom Meta Box Functions
  */
