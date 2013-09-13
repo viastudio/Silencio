@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div id="primary" class="content-area span8">
+	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
 		<?php if ( have_posts() ) :
@@ -15,7 +15,7 @@
 					<?php echo $curauth->user_description; ?></dd>
 				</div><!-- .author-bio -->
 			</header><!-- .page-header -->
-			
+
 			<h4>Posts by <?php echo $curauth->display_name; ?></h4>
 			<hr>
 
@@ -34,7 +34,7 @@
 		<?php endif; ?>
 
 		</div><!-- #content .site-content -->
-	</div><!-- #primary .content-area .span8 -->
+	</div><!-- #primary .content-area -->
 
 <?php get_sidebar('post'); ?>
 <?php get_footer(); ?>

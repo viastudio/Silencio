@@ -4,10 +4,14 @@
 /* Fonts */
 /* Weights */
 /* Mix-Ins */
+/* From retina.less
+ * A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+ * Append @2x to the end of your retina version. ex: /images/my_image@2x.png
+ */
+/* Retina image helper mixing that allows you to specify different images for different device widths */
 /* Layout
 ----------------------------------------------- */
 body {
-  background: #444444;
   padding: 0;
 }
 #page {
@@ -17,22 +21,69 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-.container {
+/* Container Rewrite for Bootstrap */
+#masthead {
   max-width: 1170px;
-  width: 98%;
+  width: 94%;
   margin: 0 auto;
 }
-/* Clear Floats */
-#page:after,
-#masthead:after,
-#main:after,
-#primary:after,
-#colophon:after {
+#access {
+  max-width: 1170px;
+  width: 94%;
+  margin: 0 auto;
+}
+#main {
+  margin-left: -15px;
+  margin-right: -15px;
+  max-width: 1170px;
+  width: 94%;
+  margin: 0 auto;
+}
+#main:before,
+#main:after {
+  content: " ";
+  /* 1 */
+
+  display: table;
+  /* 2 */
+
+}
+#main:after {
   clear: both;
-  content: ".";
-  display: block;
-  height: 0;
-  visibility: hidden;
+}
+#primary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  #primary {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
+#secondary {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  #secondary {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  #secondary {
+    margin-left: 8.333333333333332%;
+  }
+}
+#colophon {
+  max-width: 1170px;
+  width: 94%;
+  margin: 0 auto;
 }
 /* Header
 ----------------------------------------------- */
@@ -113,22 +164,28 @@ body {
 #content ul {
   list-style: disc;
 }
+#content .gform_wrapper ul {
+  margin: 0;
+}
 /* Post
 ----------------------------------------------- */
-/* Content  */
-.entry-meta {
-  clear: both;
-}
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-.page-links {
-  clear: both;
-}
 /* Post Formats  */
 /* Archive
 ----------------------------------------------- */
+.author-bio {
+  background: #ffffff;
+  padding: 16px 0;
+  border-bottom: 1px solid #0c79a6;
+  margin: 0 0 20px 0;
+}
+.author-bio .avatar {
+  float: right;
+  margin: 0 0 14px 14px;
+}
+.continue-reading {
+  display: inline-block;
+}
+/* Navigation  */
 #nav-below {
   margin: 10px 0;
   padding: 10px 0;
@@ -145,23 +202,24 @@ body {
 }
 .nav-previous {
   float: left;
+  width: inherit;
 }
 .nav-next {
   float: right;
+  width: inherit;
 }
-/* Navigation  */
 .site-content .site-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
 }
 .site-content .nav-previous {
   float: left;
-  width: 50%;
+  width: inherit;
 }
 .site-content .nav-next {
   float: right;
   text-align: right;
-  width: 50%;
+  width: inherit;
 }
 /* Sidebar & Widgets
 ----------------------------------------------- */
@@ -171,34 +229,6 @@ body {
 .widget-last {
   margin-bottom: 0;
 }
-.widget_via_category_posts ul.post-list li {
-  display: block;
-  margin: 0 0 8px;
-  overflow: hidden;
-  clear: both;
-}
-.widget_via_category_posts ul.post-list li a {
-  display: block;
-  font-size: .875em;
-}
-.widget_via_category_posts ul.post-list li a .post-date {
-  float: left;
-  width: 10%;
-  color: #444;
-}
-.widget_via_category_posts ul.post-list li a .post-title {
-  float: right;
-  width: 85%;
-}
-.widget_via_category_posts p.post-more {
-  clear: both;
-  font-size: .875em;
-  margin: 6px 0;
-}
-/* Search widget */
-#searchsubmit {
-  display: none;
-}
 /* Footer
 ----------------------------------------------- */
 .via_tag {
@@ -206,484 +236,28 @@ body {
 }
 .via_tag a {
   padding-left: 28px;
-  background: url(../img/logo_via.png) no-repeat left 50%;
+  background: no-repeat left 50%;
+  background-image: url('../img/logo_via.png');
 }
-/* Media  */
-.site-header img,
-.entry-content img,
-.comment-content img,
-.widget img {
-  max-width: 100%;
-  /* Fluid images for posts, comments, and widgets */
-
-}
-.site-header img,
-.entry-content img,
-img[class*="align"],
-img[class*="wp-image-"] {
-  height: auto;
-  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-
-}
-.site-header img,
-.entry-content img,
-img.size-full {
-  max-width: 100%;
-  width: auto;
-  /* Prevent stretching of full-size images with height and width attributes in IE8 */
-
-}
-.entry-content img.wp-smiley,
-.comment-content img.wp-smiley {
-  border: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 0;
-}
-.wp-caption {
-  border: 1px solid #cfcfcf;
-  max-width: 100%;
-}
-.wp-caption.aligncenter,
-.wp-caption.alignleft,
-.wp-caption.alignright {
-  margin-bottom: 1.5em;
-}
-.wp-caption img {
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%;
-}
-.wp-caption-text {
-  text-align: center;
-}
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-.site-content .gallery {
-  margin-bottom: 1.5em;
-}
-.site-content .gallery a img {
-  border: none;
-  height: auto;
-  max-width: 90%;
-}
-.site-content .gallery dd {
-  margin: 0;
-}
-/* Embed Containers */
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-/* Comments */
-#respond {
-  background: #ddd;
-  border: 1px solid #d3d3d3;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  margin: 0 auto 1.625em;
-  padding: 1.625em;
-  position: relative;
-  width: 68.9%;
-}
-#respond input[type="text"],
-#respond textarea {
-  background: #fff;
-  border: 4px solid #eee;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: inset 0 1px 3px rgba(204, 204, 204, 0.95);
-  -moz-box-shadow: inset 0 1px 3px rgba(204, 204, 204, 0.95);
-  box-shadow: inset 0 1px 3px rgba(204, 204, 204, 0.95);
-  position: relative;
-  padding: 10px;
-  text-indent: 80px;
-}
-#respond .comment-form-author,
-#respond .comment-form-email,
-#respond .comment-form-url,
-#respond .comment-form-comment {
-  position: relative;
-}
-#respond .comment-form-author label,
-#respond .comment-form-email label,
-#respond .comment-form-url label,
-#respond .comment-form-comment label {
-  background: #eee;
-  -webkit-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  -moz-box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  box-shadow: 1px 2px 2px rgba(204, 204, 204, 0.8);
-  color: #555;
-  display: inline-block;
-  font-size: 13px;
-  left: 4px;
-  min-width: 60px;
-  padding: 4px 10px;
-  position: relative;
-  top: 40px;
-  z-index: 1;
-}
-#respond input[type="text"]:focus,
-#respond textarea:focus {
-  text-indent: 0;
-  z-index: 1;
-}
-#respond textarea {
-  resize: vertical;
-  width: 95%;
-}
-#respond .comment-form-author .required,
-#respond .comment-form-email .required {
-  color: #bd3500;
-  font-size: 22px;
-  font-weight: bold;
-  left: 75%;
-  position: absolute;
-  top: 45px;
-  z-index: 1;
-}
-#respond .comment-notes,
-#respond .logged-in-as {
-  font-size: 13px;
-}
-#respond p {
-  margin: 10px 0;
-}
-#respond .form-submit {
-  float: right;
-  margin: -20px 0 10px;
-}
-#respond input#submit {
-  background: #222;
-  border: none;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
-  color: #eee;
-  cursor: pointer;
-  font-size: 15px;
-  margin: 20px 0;
-  padding: 5px 42px 5px 22px;
-  position: relative;
-  left: 30px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
-}
-#respond input#submit:active {
-  background: #1982d1;
-  color: #bfddf3;
-}
-#respond #cancel-comment-reply-link {
-  color: #666;
-  margin-left: 10px;
-  text-decoration: none;
-}
-#respond .logged-in-as a:hover,
-#respond #cancel-comment-reply-link:hover {
-  text-decoration: underline;
-}
-#respond label {
-  line-height: 2.2em;
-}
-#respond input[type=text] {
-  display: block;
-  height: 24px;
-  width: 75%;
-}
-#respond p {
-  font-size: 12px;
-}
-.commentlist #respond {
-  margin: 1.625em 0 0;
-  width: auto;
-}
-#reply-title {
-  color: #373737;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 30px;
-}
-#cancel-comment-reply-link {
-  color: #888;
-  display: block;
-  font-size: 10px;
-  font-weight: normal;
-  line-height: 2.2em;
-  letter-spacing: 0.05em;
-  position: absolute;
-  right: 1.625em;
-  text-decoration: none;
-  text-transform: uppercase;
-  top: 1.1em;
-}
-#cancel-comment-reply-link:focus,
-#cancel-comment-reply-link:active,
-#cancel-comment-reply-link:hover {
-  color: #ff4b33;
-}
-p.comment-form-comment {
-  margin: 0;
-}
-.form-allowed-tags {
-  display: none;
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
+  .via_tag a {
+    background-image: url("../img/logo_via@2x.png");
+    background-size: 23px 10px;
+  }
 }
 /*  IE Specific
 ================================================== */
-.ie7 #access ul li {
-  display: inline !important;
-  zoom: 1;
-}
 /*  Media Queries
 ================================================== */
-/* Tables & Landscape phones and down */
-@media (max-width: 767px) {
-  #page {
-    position: relative;
-    background: #ffffff;
-    left: 0;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-  }
-  #page.active {
-    left: 60%;
-  }
-  .container {
-    max-width: 98%;
-  }
-  .menu-nav {
-    padding: 6px 12px;
-    background: #444444;
-    display: block;
-  }
-  .menu-nav a.menu-button {
-    display: inline-block;
-    line-height: 1;
-    color: #ffffff !important;
-    background: #444444;
-    border: 1px solid #ffffff;
-    padding: 6px 8px 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-  }
-  .menu-nav a.menu-button:hover {
-    color: #444444 !important;
-    background: #ffffff;
-  }
-  /* Menu
-  	----------------------------------------------- */
-  #access {
-    position: absolute;
-    left: -60%;
-    top: 0;
-    width: 54%;
-    padding: 3%;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    background: #444444;
-  }
-  #access ul {
-    display: block;
-    list-style: none;
-    margin: 8px 0;
-  }
-  #access ul li {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  #access ul li a {
-    display: block;
-    margin: 0;
-    padding: 5px 12px 4px;
-    color: #ffffff;
-  }
-  #access ul li a:hover {
-    color: #ffffff;
-  }
-  #access ul li.current_page_item a,
-  #access ul li.current-menu-item a {
-    font-weight: 700;
-  }
-  #access ul li ul.sub-menu {
-    display: block;
-    background: none;
-    margin: 0 0 4px 8px;
-    min-width: inherit;
-    border-bottom: none;
-  }
-  #access ul li ul.sub-menu li {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  #access ul li ul.sub-menu li a {
-    display: block;
-    margin: 0;
-    padding: 5px 12px 4px;
-    color: #ffffff;
-  }
-  #access ul li ul.sub-menu li a:hover {
-    color: #ffffff;
-  }
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
 }
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 1199px) {
-  /* Menu
-  	----------------------------------------------- */
-  #access {
-    position: relative;
-    z-index: 2;
-    font-size: .875em;
-  }
-  #access ul {
-    display: inline-block;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-  }
-  #access ul li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-  #access ul li a {
-    color: #fff;
-    display: block;
-    margin: 0;
-    padding: 12px 12px 10px;
-  }
-  #access ul li a:hover {
-    background: #ffffff;
-    color: #444444 !important;
-  }
-  #access ul li:first-child {
-    border-left: 0 none;
-  }
-  #access ul li ul.sub-menu {
-    display: none;
-    background: #ffffff;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    min-width: 220px;
-    left: 0;
-    text-align: left;
-  }
-  #access ul li ul.sub-menu li {
-    border-left: 0 none !important;
-    display: block;
-  }
-  #access ul li ul.sub-menu li a {
-    color: #444444;
-    padding: 8px 16px;
-    display: block;
-  }
-  #access ul li ul.sub-menu li a:hover {
-    background: #444444;
-    color: #ffffff !important;
-  }
-  #access ul li:hover ul.sub-menu {
-    display: block;
-  }
-  #access ul li:hover a {
-    background: #ffffff;
-    color: #444444;
-  }
-  /* Form Styles */
-  .input-append input,
-  .input-append textarea {
-    width: 100px;
-  }
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
 }
-/* Large desktop */
+/* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  /* Menu
-  	----------------------------------------------- */
-  #access {
-    position: relative;
-    z-index: 2;
-    font-size: 1em;
-    background: #444444;
-  }
-  #access ul {
-    display: inline-block;
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-  }
-  #access ul li {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    position: relative;
-  }
-  #access ul li a {
-    color: #fff;
-    display: block;
-    margin: 0;
-    padding: 12px 16px 10px;
-  }
-  #access ul li a:hover {
-    background: #ffffff;
-    color: #444444 !important;
-  }
-  #access ul li:first-child {
-    border-left: 0 none;
-  }
-  #access ul li ul.sub-menu {
-    display: none;
-    background: #ffffff;
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    min-width: 220px;
-    left: 0;
-    text-align: left;
-    border-bottom: 3px solid #444444;
-    -webkit-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.3);
-  }
-  #access ul li ul.sub-menu li {
-    border-left: 0 none !important;
-    display: block;
-  }
-  #access ul li ul.sub-menu li a {
-    color: #444444;
-    padding: 8px 16px;
-    display: block;
-  }
-  #access ul li ul.sub-menu li a:hover {
-    background: #444444;
-    color: #ffffff !important;
-  }
-  #access ul li:hover ul.sub-menu {
-    display: block;
-  }
-  #access ul li:hover a {
-    background: #ffffff;
-    color: #444444;
-  }
-  /* Form Styles */
-  .input-append input,
-  .input-append textarea {
-    width: 180px;
-  }
-}
-/* =Retina Ready
------------------------------------------------ */
-@media all and (-webkit-min-device-pixel-ratio: 1.5) {
-  .via_tag a {
-    background: url(../img/logo_via@2x.png) no-repeat left 50%;
-    background-size: 23px 10px;
-  }
+  
 }

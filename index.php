@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-		<div id="primary" class="content-area span8">
+		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -29,5 +29,5 @@
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
-<?php get_sidebar('post'); ?>	
+<?php get_sidebar('post'); ?>
 <?php get_footer(); ?>

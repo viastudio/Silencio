@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-		<section id="primary" class="content-area span8">
+		<section id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -36,7 +36,7 @@
 								printf( __( 'Yearly Archives: %s', 'via_demo' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
 							} elseif ( is_tax( 'post_format' ) ) {
-								print via_post_format_label();	
+								print via_post_format_label();
 
 							} else {
 								_e( 'Archives', 'via_demo' );
@@ -75,7 +75,7 @@
 			<?php endif; ?>
 
 			</div><!-- #content .site-content -->
-		</section><!-- #primary .content-area .span8 -->
+		</section><!-- #primary .content-area -->
 
-<?php get_sidebar('post'); ?>	
+<?php get_sidebar('post'); ?>
 <?php get_footer(); ?>

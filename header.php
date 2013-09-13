@@ -25,10 +25,10 @@
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.6.2.min.js"></script>
 
 <!-- Typekit -->
-<?php 
+<?php
 $viatheme_option = viatheme_get_global_options();
-if($viatheme_option["viatheme_typekit_txt_input"] != '') { 
-?>	
+if($viatheme_option["viatheme_typekit_txt_input"] != '') {
+?>
 <script type="text/javascript" src="//use.typekit.net/<?php echo $viatheme_option['viatheme_typekit_txt_input']; ?>.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <?php
@@ -41,12 +41,8 @@ if($viatheme_option["viatheme_typekit_txt_input"] != '') {
 
 <body <?php body_class(); ?>>
 
-<nav class="menu-nav">		
-	<a class='menu-button' href="#sidebar"><i class="icon-reorder"></i></a>
-</nav>
-
 <div id="page" class="hfeed site">
-	
+
 	<header id="masthead" class="site-header container" role="banner">
 		<h1 class="site-title">
 			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -55,9 +51,9 @@ if($viatheme_option["viatheme_typekit_txt_input"] != '') {
 			</a>
 		</h1>
 	</header><!-- #masthead .site-header -->
-	
+
 	<nav id="access" role="navigation">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav><!-- .site-navigation .main-navigation -->
 
-	<div id="main" class="container row-fluid site-main" role="main">
+	<div id="main" class="site-main" role="main">

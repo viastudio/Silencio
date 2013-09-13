@@ -4,10 +4,16 @@
 /* Fonts */
 /* Weights */
 /* Mix-Ins */
-/* Typography 
+/* From retina.less
+ * A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+ * Append @2x to the end of your retina version. ex: /images/my_image@2x.png
+ */
+/* Retina image helper mixing that allows you to specify different images for different device widths */
+/* Typography
 ----------------------------------------------------------------*/
 html {
   height: 100%;
+  font-size: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -45,6 +51,7 @@ h6 {
 }
 p {
   margin-bottom: 1.5em;
+  margin-top: 0;
 }
 b,
 strong {
@@ -132,6 +139,7 @@ a:active {
 ul,
 ol {
   margin: 0;
+  padding: 0;
 }
 ul {
   list-style: none;
@@ -197,7 +205,6 @@ input[type="submit"] {
   /* Corrects inability to style clickable 'input' types in iOS */
 
   padding: 6px 8px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 button:hover,
 html input[type="button"]:hover,
@@ -256,53 +263,82 @@ textarea {
   vertical-align: top;
   width: 98%;
 }
-/* Alignment */
+/* Media
+----------------------------------------------- */
 .alignleft {
   display: inline;
   float: left;
   margin-right: 1.5em;
+  margin-bottom: 1.5em;
 }
 .alignright {
   display: inline;
   float: right;
   margin-left: 1.5em;
+  margin-bottom: 1.5em;
 }
 .aligncenter {
   clear: both;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 1.5em;
 }
-/* WP Captions */
-.wp-caption {
-  max-width: 96%;
-  /* Image does not overflow the content area */
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+  max-width: 100%;
+  /* Fluid images for posts, comments, and widgets */
 
-  padding: 0;
-  font-size: .875em;
-  text-align: center;
 }
-.wp-caption.alignnone {
-  margin: 0 0 20px;
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+  height: auto;
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+
 }
-.wp-caption.alignleft {
-  margin: 5px 20px 20px 0;
+.site-header img,
+.entry-content img,
+img.size-full {
+  max-width: 100%;
+  width: auto;
+  /* Prevent stretching of full-size images with height and width attributes in IE8 */
+
 }
-.wp-caption.alignright {
-  margin: 5px 0 20px 20px;
+img.wp-smiley {
+  display: none;
+}
+.wp-caption {
+  border: 1px solid #cfcfcf;
+  max-width: 100%;
 }
 .wp-caption img {
-  border: 0 none;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  height: auto;
+  display: block;
+  margin: 1.2% auto 0;
+  max-width: 98%;
 }
-.wp-caption p.wp-caption-text {
-  font-size: 1em;
-  line-height: 24px;
+.wp-caption-text {
+  text-align: center;
+}
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+.site-content .gallery {
+  margin-bottom: 1.5em;
+}
+.site-content .gallery a img {
+  border: none;
+  height: auto;
+  max-width: 90%;
+}
+.site-content .gallery dd {
   margin: 0;
-  padding: 5px 4px 4px;
+}
+embed,
+iframe,
+object {
+  max-width: 100%;
 }
 /* Text meant only for screen readers */
 .assistive-text {

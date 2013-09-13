@@ -17,6 +17,16 @@
 @extrabold: 800;
 
 /* Mix-Ins */
+.container (
+	@max-width: 1170px,
+	@width: 94%,
+	@margin: 0 auto,
+) {
+	max-width: @max-width;
+	width: @width;
+	margin: @margin;
+}
+
 .rounded( @radius: 3px ) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;
@@ -89,7 +99,7 @@
 /* From retina.less
  * A helper mixin for applying high-resolution background images (http://www.retinajs.com)
  * Append @2x to the end of your retina version. ex: /images/my_image@2x.png
- */ 
+ */
 .at2x(@path, @w, @h) {
 	@highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
 	background-image: url(@path);

@@ -151,7 +151,7 @@
 	public function getField(array $attr)
 	{
 		$groupname = isset($attr['groupname']) ? $attr['groupname'] : $this->groupname ;
-		
+
 		$attr_default = array
 		(
 			'type' => 'text',
@@ -200,7 +200,7 @@
 		$tab = ! empty($tab) ? $tab : $this->tab ;
 
 		$tab = ! empty($tab) ? $tab : 'library' ;
-		
+
 		return 'media-upload.php?post_id=' . $post_ID . '&tab=' . $tab . '&TB_iframe=1';
 	}
 
@@ -218,7 +218,7 @@
 	public function getButtonClass($groupname = null)
 	{
 		$groupname = isset($groupname) ? $groupname : $this->groupname ;
-		
+
 		return $this->button_class_name . '-' . $groupname . ' thickbox';
 	}
 
@@ -254,7 +254,7 @@
 		$groupname = isset($attr['groupname']) ? $attr['groupname'] : $this->groupname ;
 
 		$tab = isset($attr['tab']) ? $attr['tab'] : $this->tab ;
-		
+
 		$attr_default = array
 		(
 			'label' => 'Add Media',
@@ -365,7 +365,7 @@
 							$('#TB_iframeContent').contents().find('.media-item .savesend input[type=submit], #insertonlybutton').val(label);
 						}
 
-						$('[class*=<?php echo $this->button_class_name; ?>]').live('click', function()
+						$('[class*="<?php echo $this->button_class_name; ?>"]').on('click', function()
 						{
 							var name = $(this).attr('class').match(/<?php echo $this->button_class_name; ?>-([a-zA-Z0-9_-]*)/i);
 							name = (name && name[1]) ? name[1] : '' ;

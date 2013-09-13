@@ -6,69 +6,69 @@
  */
 
 function via_row( $atts, $content = null ) {
-   return '<div class="row-fluid">' . do_shortcode($content) . '</div>';
+   return '<div class="row">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('row', 'via_row');
 
-function via_span1( $atts, $content = null ) {
-   return '<div class="span1">' . do_shortcode($content) . '</div>';
+function via_col1( $atts, $content = null ) {
+   return '<div class="col-md-1">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span1', 'via_span1');
+add_shortcode('span1', 'via_col1');
 
-function via_span2( $atts, $content = null ) {
-   return '<div class="span2">' . do_shortcode($content) . '</div>';
+function via_col2( $atts, $content = null ) {
+   return '<div class="col-md-2">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span2', 'via_span2');
+add_shortcode('span2', 'via_col2');
 
-function via_span3( $atts, $content = null ) {
-   return '<div class="span3">' . do_shortcode($content) . '</div>';
+function via_col3( $atts, $content = null ) {
+   return '<div class="col-md-3">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span3', 'via_span3');
+add_shortcode('span3', 'via_col3');
 
-function via_span4( $atts, $content = null ) {
-   return '<div class="span4">' . do_shortcode($content) . '</div>';
+function via_col4( $atts, $content = null ) {
+   return '<div class="col-md-4">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span4', 'via_span4');
+add_shortcode('span4', 'via_col4');
 
-function via_span5( $atts, $content = null ) {
-   return '<div class="span5">' . do_shortcode($content) . '</div>';
+function via_col5( $atts, $content = null ) {
+   return '<div class="col-md-5">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span5', 'via_span5');
+add_shortcode('span5', 'via_col5');
 
-function via_span6( $atts, $content = null ) {
-   return '<div class="span6">' . do_shortcode($content) . '</div>';
+function via_col6( $atts, $content = null ) {
+   return '<div class="col-md-6">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span6', 'via_span6');
+add_shortcode('span6', 'via_col6');
 
-function via_span7( $atts, $content = null ) {
-   return '<div class="span7">' . do_shortcode($content) . '</div>';
+function via_col7( $atts, $content = null ) {
+   return '<div class="col-md-7">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span7', 'via_span7');
+add_shortcode('span7', 'via_col7');
 
-function via_span8( $atts, $content = null ) {
-   return '<div class="span8">' . do_shortcode($content) . '</div>';
+function via_col8( $atts, $content = null ) {
+   return '<div class="col-md-8">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span8', 'via_span8');
+add_shortcode('span8', 'via_col8');
 
-function via_span9( $atts, $content = null ) {
-   return '<div class="span9">' . do_shortcode($content) . '</div>';
+function via_col9( $atts, $content = null ) {
+   return '<div class="col-md-9">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span9', 'via_span9');
+add_shortcode('span9', 'via_col9');
 
-function via_span10( $atts, $content = null ) {
-   return '<div class="span10">' . do_shortcode($content) . '</div>';
+function via_col10( $atts, $content = null ) {
+   return '<div class="col-md-10">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span10', 'via_span10');
+add_shortcode('span10', 'via_col10');
 
-function via_span11( $atts, $content = null ) {
-   return '<div class="span11">' . do_shortcode($content) . '</div>';
+function via_col11( $atts, $content = null ) {
+   return '<div class="col-md-11">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span11', 'via_span11');
+add_shortcode('span11', 'via_col11');
 
-function via_span12( $atts, $content = null ) {
-   return '<div class="span12">' . do_shortcode($content) . '</div>';
+function via_col12( $atts, $content = null ) {
+   return '<div class="col-md-12">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span12', 'via_span12');
+add_shortcode('span12', 'via_col12');
 
 /*
  * Custom Shortcodes Part 2
