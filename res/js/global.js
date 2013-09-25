@@ -13,12 +13,12 @@ function prepare_fitvid() {
 function prepare_menu(body, page, menu_active_class) {
 	$('.menu-button').on('fastClick', function (e) {
 	    e.preventDefault();
-	    body.toggleClass('menu-active');
+	    body.toggleClass(menu_active_class);
 
 	    // if the menu is displayed, hook up an event to hide the menu when #page is tapped but not scrolled
-	    if(body.hasClass('menu-active')) {
+	    if(body.hasClass(menu_active_class)) {
 	        page.on('fastClick', function () {
-	            body.toggleClass('menu-active');
+	            body.toggleClass(menu_active_class);
 	            page.off('fastClick'); // don't need to listen to this until the menu is opened
 	        });
 	    }
