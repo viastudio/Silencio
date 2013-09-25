@@ -86,7 +86,7 @@ add_action( 'widgets_init', 'via_widgets_init' );
 function via_scripts() {
 	if(!is_admin() && VIA_ENVIRONMENT == 'dev'){
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://code.jquery.com/jquery-1.8.2.js"), false, '1.8.2', true);
+		wp_register_script('jquery', ("http://code.jquery.com/jquery-1.10.2.js"), false, '1.8.2', true);
 		wp_enqueue_script('jquery');
 
 		// Enqueue 3rd party libs
@@ -96,7 +96,7 @@ function via_scripts() {
 	}
 	else if(!is_admin()) {
 		wp_deregister_script('jquery');
-		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"), false, '1.8.2', true);
+		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"), false, '1.8.2', true);
 		wp_enqueue_script('jquery');
 	}
 
