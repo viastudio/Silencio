@@ -65,6 +65,18 @@
 	transition: @what @length @easing;
 }
 
+// For transitioning prefixed properties
+.transition-prefixed(
+   @what : all,
+   @length : 1s,
+   @easing : ease-in-out
+) {
+    -webkit-transition: ~"-webkit-@{what}" @length @easing;
+    -moz-transition: ~"-moz-@{what}" @length @easing;
+    -o-transition: ~"-o-@{what}" @length @easing;
+    transition: @what @length @easing;
+}
+
 .transform(
 	@params
 ) {
@@ -94,6 +106,30 @@
 	background: -moz-linear-gradient(top, @begin, @end @switch);
 	background: -o-linear-gradient(top, @begin, @end @switch);
 	background: linear-gradient(top, @begin, @end @switch);
+}
+
+.backface-visibility(@value) {
+    -webkit-backface-visibility: @value;
+    -moz-backface-visibility: @value;
+    -ms-backface-visibility: @value;
+    -o-backface-visibility: @value;
+    backface-visibility: @value;
+}
+
+.animation(...) {
+	-webkit-animation: @arguments;
+	   -moz-animation: @arguments;
+		-ms-animation: @arguments;
+	     -o-animation: @arguments;
+	        animation: @arguments;
+}
+
+.animation-delay(@delay) {
+	-webkit-animation-delay: @delay;
+	   -moz-animation-delay: @delay;
+	    -ms-animation-delay: @delay;
+	     -o-animation-delay: @delay;
+	        animation-delay: @delay;
 }
 
 /* From retina.less

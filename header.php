@@ -10,7 +10,7 @@
 
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <title><?php wp_title(''); ?></title>
 
@@ -40,20 +40,23 @@ if($viatheme_option["viatheme_typekit_txt_input"] != '') {
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="wrap">
+		<div id="page" class="hfeed site">
+			<nav class="menu-nav">
+				<a class="menu-button" href="#"><i class="icon-reorder icon-large"></i></a>
+			</nav>
 
-<div id="page" class="hfeed site">
+			<header id="masthead" class="site-header container" role="banner">
+				<h1 class="site-title">
+					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+						<!-- For Sites With a LOGO <img src="<?php echo get_template_directory_uri(); ?>/res/img/logo.png" /> -->
+					</a>
+				</h1>
+			</header><!-- #masthead .site-header -->
 
-	<header id="masthead" class="site-header container" role="banner">
-		<h1 class="site-title">
-			<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?>
-				<!-- For Sites With a LOGO <img src="<?php echo get_template_directory_uri(); ?>/res/img/logo.png" /> -->
-			</a>
-		</h1>
-	</header><!-- #masthead .site-header -->
+			<nav id="access" role="navigation">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- .site-navigation .main-navigation -->
 
-	<nav id="access" role="navigation">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav><!-- .site-navigation .main-navigation -->
-
-	<div id="main" class="site-main" role="main">
+			<div id="main" class="site-main" role="main">

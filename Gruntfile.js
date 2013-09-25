@@ -9,7 +9,8 @@ module.exports = function(grunt) {
 			build: {
 				src: [
 					'res/js/global.js',
-					'res/js/fitvids.min.js'
+					'res/js/fitvids.min.js',
+					'res/js/fastclick.js'
 				],
 				dest: 'res/build/global.min.js'
 			}

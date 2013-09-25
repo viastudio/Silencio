@@ -91,6 +91,8 @@ function via_scripts() {
 
 		// Enqueue 3rd party libs
 		wp_enqueue_script('fitvids', get_template_directory_uri() . '/res/js/fitvids.min.js', array('jquery'), false, true);
+		wp_enqueue_script('google.fastbutton', get_template_directory_uri() . '/res/js/google.fastbutton.js', array('jquery'), false, true);
+		wp_enqueue_script('jquery.google.fastbutton', get_template_directory_uri() . '/res/js/jquery.google.fastbutton.js', array('jquery'), false, true);
 	}
 	else if(!is_admin()) {
 		wp_deregister_script('jquery');
