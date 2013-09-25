@@ -100,6 +100,7 @@ function via_scripts() {
 		wp_enqueue_script('jquery');
 	}
 
+	// Disable this environment check & load min.css if you want to test in IE8 with respond.js
     if (VIA_ENVIRONMENT == 'dev') {
         $global = 'js/global.js';
         $style = 'css/global.css';
