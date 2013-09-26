@@ -35,7 +35,9 @@ if($viatheme_option["viatheme_typekit_txt_input"] != '') {
 }
 ?>
 
-<?php wp_head(); ?>
+<?php wp_head();
+	// the below has to load after wp_head() to make sure it loads after all CSS
+ ?>
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/respond.min.js"></script>
 <![endif]-->
