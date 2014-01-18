@@ -16,51 +16,43 @@
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link type="text/plain" rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
 
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
 <!-- Modernizr -->
-<script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.6.2.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.7.1.min.js"></script>
 
 <!-- Typekit -->
-<?php
-$viatheme_option = viatheme_get_global_options();
-if($viatheme_option["viatheme_typekit_txt_input"] != '') {
-?>
-<script type="text/javascript" src="//use.typekit.net/<?php echo $viatheme_option['viatheme_typekit_txt_input']; ?>.js"></script>
+<script type="text/javascript" src="//use.typekit.net/#########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-<?php
-}
-?>
 
-<?php wp_head();
-	// the below has to load after wp_head() to make sure it loads after all CSS
- ?>
+
+<?php wp_head(); ?>
+
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/respond.min.js"></script>
 <![endif]-->
+
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="wrap">
-		<div id="page" class="hfeed site">
-			<nav class="menu-nav">
-				<a class="menu-button" href="#"><i class="icon-reorder icon-large"></i></a>
-			</nav>
 
-			<header id="masthead" class="site-header container" role="banner">
-				<h1 class="site-title">
-					<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-						<?php bloginfo( 'name' ); ?>
-						<!-- For Sites With a LOGO <img src="<?php echo get_template_directory_uri(); ?>/res/img/logo.png" /> -->
-					</a>
-				</h1>
-			</header><!-- #masthead .site-header -->
+	<div id="page" class="hfeed site">
 
-			<nav id="access" role="navigation">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<h1 class="menu-toggle"><?php _e( 'Menu', 'silencio' ); ?></h1>
+				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'silencio' ); ?></a>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</nav><!-- .site-navigation .main-navigation -->
+			</nav><!-- #site-navigation -->
+		</header><!-- #masthead .site-header -->
 
-			<div id="main" class="site-main" role="main">
+		<div id="content" class="site-content">

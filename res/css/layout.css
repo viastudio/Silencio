@@ -42,11 +42,7 @@ body {
 #main:before,
 #main:after {
   content: " ";
-  /* 1 */
-
   display: table;
-  /* 2 */
-
 }
 #main:after {
   clear: both;
