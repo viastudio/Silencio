@@ -1,6 +1,6 @@
 <?php
 	$silencio_option = silencio_get_global_options();
-	$directions = via_build_directions_url(
+	$directions = silencio_build_directions_url(
 		$silencio_option["silencio_street_txt_input"],
 		$silencio_option["silencio_city_txt_input"],
 		$silencio_option["silencio_state_txt_input"],

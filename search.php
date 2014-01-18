@@ -26,5 +26,5 @@
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('post'); ?>
 <?php get_footer(); ?>

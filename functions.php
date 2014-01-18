@@ -9,7 +9,8 @@ function silencio_setup() {
 	require( get_template_directory() . '/res/functions/shortcodes.php' );
 	require( get_template_directory() . '/res/functions/widgets.php' );
 	require( get_template_directory() . '/res/functions/excerpts.php' );
-	//require( get_template_directory() . '/inc/jetpack.php');
+	//require( get_template_directory() . '/res/customizer.php' );
+	//require( get_template_directory() . '/res/jetpack.php' );
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );

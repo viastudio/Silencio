@@ -26,8 +26,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.7.1.min.js"></script>
 
 <!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/#########.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- <script type="text/javascript" src="//use.typekit.net/#########.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
 
 <?php wp_head(); ?>
@@ -49,8 +49,6 @@
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<h1 class="menu-toggle"><?php _e( 'Menu', 'silencio' ); ?></h1>
-				<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'silencio' ); ?></a>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead .site-header -->
