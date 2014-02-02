@@ -2,36 +2,36 @@
 /**
  * Define Constants
  */
-define('viatheme_SHORTNAME', 'viatheme'); // used to prefix the individual setting field id see viatheme_options_page_fields()
-define('viatheme_PAGE_BASENAME', 'viatheme-settings'); // the settings page slug
+define('silencio_SHORTNAME', 'silencio'); // used to prefix the individual setting field id see silencio_options_page_fields()
+define('silencio_PAGE_BASENAME', 'silencio-settings'); // the settings page slug
 
 /**
  * Specify Hooks/Filters
  */
-add_action( 'admin_menu', 'viatheme_add_menu' );
-add_action( 'admin_init', 'viatheme_register_settings' );
+add_action( 'admin_menu', 'silencio_add_menu' );
+add_action( 'admin_init', 'silencio_register_settings' );
 
 /**
  * Include the required files
  */
 // page settings sections & fields as well as the contextual help text.
-require_once('viatheme-theme-options.php');
+require_once('silencio-theme-options.php');
 
 /**
  * Helper function for defining variables for the current page
  *
  * @return array
  */
-function viatheme_get_settings() {
+function silencio_get_settings() {
 
 	$output = array();
 
 	// put together the output array
-	$output['viatheme_option_name'] 		= 'viatheme_options'; // the option name as used in the get_option() call.
-	$output['viatheme_page_title'] 		= __( 'Theme Settings','via'); // the settings page title
-	$output['viatheme_page_sections'] 	= viatheme_options_page_sections(); // the setting section
-	$output['viatheme_page_fields'] 		= viatheme_options_page_fields(); // the setting fields
-	$output['viatheme_contextual_help'] 	= viatheme_options_page_contextual_help(); // the contextual help
+	$output['silencio_option_name'] 		= 'silencio_options'; // the option name as used in the get_option() call.
+	$output['silencio_page_title'] 		= __( 'Theme Settings','via'); // the settings page title
+	$output['silencio_page_sections'] 	= silencio_options_page_sections(); // the setting section
+	$output['silencio_page_fields'] 		= silencio_options_page_fields(); // the setting fields
+	$output['silencio_contextual_help'] 	= silencio_options_page_contextual_help(); // the contextual help
 
 return $output;
 }
@@ -43,7 +43,7 @@ return $output;
  * @param (array) $args The array of arguments to be used in creating the field
  * @return function call
  */
-function viatheme_create_settings_field( $args = array() ) {
+function silencio_create_settings_field( $args = array() ) {
 	// default array to overwrite when calling the function
 	$defaults = array(
 		'id'      => 'default_field', 					// the ID of the setting in our options array, and the ID of the HTML form element
@@ -51,7 +51,7 @@ function viatheme_create_settings_field( $args = array() ) {
 		'desc'    => 'This is a default description.', 	// the description displayed under the HTML form element
 		'std'     => '', 								// the default value for this setting
 		'type'    => 'text', 							// the HTML form element to use
-		'section' => 'main_section', 					// the section this setting belongs to — must match the array key of a section in viatheme_options_page_sections()
+		'section' => 'main_section', 					// the section this setting belongs to — must match the array key of a section in silencio_options_page_sections()
 		'choices' => array(), 							// (optional): the values in radio buttons or a drop-down menu
 		'class'   => '' 								// the HTML form element class. Is used for validation purposes and may be also use for styling if needed.
 	);
@@ -59,7 +59,7 @@ function viatheme_create_settings_field( $args = array() ) {
 	// "extract" to be able to use the array keys as variables in our function output below
 	extract( wp_parse_args( $args, $defaults ) );
 
-	// additional arguments for use in form field output in the function viatheme_form_field_fn!
+	// additional arguments for use in form field output in the function silencio_form_field_fn!
 	$field_args = array(
 		'type'      => $type,
 		'id'        => $id,
@@ -70,35 +70,35 @@ function viatheme_create_settings_field( $args = array() ) {
 		'class'     => $class
 	);
 
-	add_settings_field( $id, $title, 'viatheme_form_field_fn', __FILE__, $section, $field_args );
+	add_settings_field( $id, $title, 'silencio_form_field_fn', __FILE__, $section, $field_args );
 
 }
 
 /**
  * Register our setting, settings sections and settings fields
  */
-function viatheme_register_settings(){
+function silencio_register_settings(){
 
 	// get the settings sections array
-	$settings_output 	= viatheme_get_settings();
-	$viatheme_option_name = $settings_output['viatheme_option_name'];
+	$settings_output 	= silencio_get_settings();
+	$silencio_option_name = $settings_output['silencio_option_name'];
 
 	//setting
-	register_setting($viatheme_option_name, $viatheme_option_name, 'viatheme_validate_options' );
+	register_setting($silencio_option_name, $silencio_option_name, 'silencio_validate_options' );
 
 	//sections
-	if(!empty($settings_output['viatheme_page_sections'])){
+	if(!empty($settings_output['silencio_page_sections'])){
 		// call the "add_settings_section" for each!
-		foreach ( $settings_output['viatheme_page_sections'] as $id => $title ) {
-			add_settings_section( $id, $title, 'viatheme_section_fn', __FILE__);
+		foreach ( $settings_output['silencio_page_sections'] as $id => $title ) {
+			add_settings_section( $id, $title, 'silencio_section_fn', __FILE__);
 		}
 	}
 
 	//fields
-	if(!empty($settings_output['viatheme_page_fields'])){
+	if(!empty($settings_output['silencio_page_fields'])){
 		// call the "add_settings_field" for each!
-		foreach ($settings_output['viatheme_page_fields'] as $option) {
-			viatheme_create_settings_field($option);
+		foreach ($settings_output['silencio_page_fields'] as $option) {
+			silencio_create_settings_field($option);
 		}
 	}
 }
@@ -106,21 +106,21 @@ function viatheme_register_settings(){
 /**
  * The Admin menu page
  */
-function viatheme_add_menu(){
+function silencio_add_menu(){
 
-	$settings_output 		= viatheme_get_settings();
+	$settings_output 		= silencio_get_settings();
 	// collect our contextual help text
-	$viatheme_contextual_help = $settings_output['viatheme_contextual_help'];
+	$silencio_contextual_help = $settings_output['silencio_contextual_help'];
 
 	// Display Settings Page link under the "Appearance" Admin Menu
 	// add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function);
-	$viatheme_settings_page = add_theme_page(__('Theme Options', 'via'), __('Theme Options','via'), 'manage_options', viatheme_PAGE_BASENAME, 'viatheme_settings_page_fn');
+	$silencio_settings_page = add_theme_page(__('Theme Options', 'via'), __('Theme Options','via'), 'manage_options', silencio_PAGE_BASENAME, 'silencio_settings_page_fn');
 		// contextual help
-		if ($viatheme_settings_page) {
-			add_contextual_help( $viatheme_settings_page, $viatheme_contextual_help );
+		if ($silencio_settings_page) {
+			add_contextual_help( $silencio_settings_page, $silencio_contextual_help );
 		}
 		// css & js
-		add_action( 'load-'. $viatheme_settings_page, 'viatheme_settings_scripts' );
+		add_action( 'load-'. $silencio_settings_page, 'silencio_settings_scripts' );
 }
 
 // ************************************************************************************************************
@@ -131,7 +131,7 @@ function viatheme_add_menu(){
  * Section HTML, displayed before the first option
  * @return echoes output
  */
-function  viatheme_section_fn($desc) {
+function  silencio_section_fn($desc) {
 	echo "<p>" . __('These options appear in your theme.','via') . "</p>";
 }
 
@@ -140,15 +140,15 @@ function  viatheme_section_fn($desc) {
  * All form field types share the same function!!
  * @return echoes output
  */
-function viatheme_form_field_fn($args = array()) {
+function silencio_form_field_fn($args = array()) {
 
 	extract( $args );
 
 	// get the settings sections array
-	$settings_output 	= viatheme_get_settings();
+	$settings_output 	= silencio_get_settings();
 
-	$viatheme_option_name = $settings_output['viatheme_option_name'];
-	$options 			= get_option($viatheme_option_name);
+	$silencio_option_name = $settings_output['silencio_option_name'];
+	$options 			= get_option($silencio_option_name);
 
 	// pass the standard value if the option is not yet set in the database
 	if ( !isset( $options[$id] ) && 'type' != 'checkbox' ) {
@@ -163,7 +163,7 @@ function viatheme_form_field_fn($args = array()) {
 		case 'text':
 			$options[$id] = stripslashes($options[$id]);
 			$options[$id] = esc_attr( $options[$id]);
-			echo "<input class='regular-text$field_class' type='text' id='$id' name='" . $viatheme_option_name . "[$id]' value='$options[$id]' />";
+			echo "<input class='regular-text$field_class' type='text' id='$id' name='" . $silencio_option_name . "[$id]' value='$options[$id]' />";
 			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
 		break;
 
@@ -179,7 +179,7 @@ function viatheme_form_field_fn($args = array()) {
 				} else {
 					$value = '';
 				}
-				echo "<span>$item[0]:</span> <input class='$field_class' type='text' id='$id|$item[1]' name='" . $viatheme_option_name . "[$id|$item[1]]' value='$value' /><br/>";
+				echo "<span>$item[0]:</span> <input class='$field_class' type='text' id='$id|$item[1]' name='" . $silencio_option_name . "[$id|$item[1]]' value='$value' /><br/>";
 			}
 			echo ($desc != '') ? "<span class='description'>$desc</span>" : "";
 		break;
@@ -187,12 +187,12 @@ function viatheme_form_field_fn($args = array()) {
 		case 'textarea':
 			$options[$id] = stripslashes($options[$id]);
 			$options[$id] = esc_html( $options[$id]);
-			echo "<textarea class='textarea$field_class' type='text' id='$id' name='" . $viatheme_option_name . "[$id]' rows='5' cols='30'>$options[$id]</textarea>";
+			echo "<textarea class='textarea$field_class' type='text' id='$id' name='" . $silencio_option_name . "[$id]' rows='5' cols='30'>$options[$id]</textarea>";
 			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
 		break;
 
 		case 'select':
-			echo "<select id='$id' class='select$field_class' name='" . $viatheme_option_name . "[$id]'>";
+			echo "<select id='$id' class='select$field_class' name='" . $silencio_option_name . "[$id]'>";
 				foreach($choices as $key => $item) {
 					$value 	= esc_attr($key, 'via');
 					$item 	= esc_html($item, 'via');
@@ -205,7 +205,7 @@ function viatheme_form_field_fn($args = array()) {
 		break;
 
 		case 'select2':
-			echo "<select id='$id' class='select$field_class' name='" . $viatheme_option_name . "[$id]'>";
+			echo "<select id='$id' class='select$field_class' name='" . $silencio_option_name . "[$id]'>";
 			foreach($choices as $item) {
 
 				$item = explode("|",$item);
@@ -219,7 +219,7 @@ function viatheme_form_field_fn($args = array()) {
 		break;
 
 		case 'checkbox':
-			echo "<input class='checkbox$field_class' type='checkbox' id='$id' name='" . $viatheme_option_name . "[$id]' value='1' " . checked( $options[$id], 1, false ) . " />";
+			echo "<input class='checkbox$field_class' type='checkbox' id='$id' name='" . $silencio_option_name . "[$id]' value='1' " . checked( $options[$id], 1, false ) . " />";
 			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
 		break;
 
@@ -237,7 +237,7 @@ function viatheme_form_field_fn($args = array()) {
 					}
 				}
 
-				echo "<input class='checkbox$field_class' type='checkbox' id='$id|$item[1]' name='" . $viatheme_option_name . "[$id|$item[1]]' value='1' $checked /> $item[0] <br/>";
+				echo "<input class='checkbox$field_class' type='checkbox' id='$id|$item[1]' name='" . $silencio_option_name . "[$id|$item[1]]' value='1' $checked /> $item[0] <br/>";
 			}
 			echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
 		break;
@@ -249,18 +249,18 @@ function viatheme_form_field_fn($args = array()) {
  *
  * @return echoes output
  */
-function viatheme_settings_page_fn() {
+function silencio_settings_page_fn() {
 	// get the settings sections array
-	$settings_output = viatheme_get_settings();
+	$settings_output = silencio_get_settings();
 ?>
 	<div class="wrap">
 		<div class="icon32" id="icon-options-general"></div>
-		<h2><?php echo $settings_output['viatheme_page_title']; ?></h2>
+		<h2><?php echo $settings_output['silencio_page_title']; ?></h2>
 
 		<form action="options.php" method="post">
 			<?php
 			// http://codex.wordpress.org/Function_Reference/settings_fields
-			settings_fields($settings_output['viatheme_option_name']);
+			settings_fields($settings_output['silencio_option_name']);
 			// http://codex.wordpress.org/Function_Reference/do_settings_sections
 			do_settings_sections(__FILE__);
 			?>
@@ -278,7 +278,7 @@ function viatheme_settings_page_fn() {
  *
  * @return array
  */
-function viatheme_validate_options($input) {
+function silencio_validate_options($input) {
 
 	// for enhanced security, create a new empty array
 	$valid_input = array();
@@ -286,9 +286,9 @@ function viatheme_validate_options($input) {
 	// collect only the values we expect and fill the new $valid_input array i.e. whitelist our option IDs
 
 		// get the settings sections array
-		$settings_output = viatheme_get_settings();
+		$settings_output = silencio_get_settings();
 
-		$options = $settings_output['viatheme_page_fields'];
+		$options = $settings_output['silencio_page_fields'];
 
 		// run a foreach and switch on option type
 		foreach ($options as $option) {
@@ -307,7 +307,7 @@ function viatheme_validate_options($input) {
 							if(is_numeric($input[$option['id']]) == FALSE) {
 								add_settings_error(
 									$option['id'], // setting title
-									viatheme_SHORTNAME . '_txt_numeric_error', // error ID
+									silencio_SHORTNAME . '_txt_numeric_error', // error ID
 									__('Expecting a Numeric value! Please fix.','via'), // error message
 									'error' // type of message
 								);
@@ -330,7 +330,7 @@ function viatheme_validate_options($input) {
 							if($input[$option['id']] !='' && preg_match('/^-?\d+(?:,\s?-?\d+)*$/', $input[$option['id']]) != 1) {
 								add_settings_error(
 									$option['id'], // setting title
-									viatheme_SHORTNAME . '_txt_multinumeric_error', // error ID
+									silencio_SHORTNAME . '_txt_multinumeric_error', // error ID
 									__('Expecting comma separated numeric values! Please fix.','via'), // error message
 									'error' // type of message
 								);
@@ -365,7 +365,7 @@ function viatheme_validate_options($input) {
 							if(is_email($input[$option['id']])== FALSE || $input[$option['id']] == '') {
 								add_settings_error(
 									$option['id'], // setting title
-									viatheme_SHORTNAME . '_txt_email_error', // error ID
+									silencio_SHORTNAME . '_txt_email_error', // error ID
 									__('Please enter a valid email address.','via'), // error message
 									'error' // type of message
 								);
@@ -567,40 +567,40 @@ return $valid_input; // return validated input
  * @param (string) $msgclass The message class
  * @return echoes the message
  */
-function viatheme_show_msg($message, $msgclass = 'info') {
+function silencio_show_msg($message, $msgclass = 'info') {
 	echo "<div id='message' class='$msgclass'>$message</div>";
 }
 
 /**
  * Callback function for displaying admin messages
  *
- * @return calls viatheme_show_msg()
+ * @return calls silencio_show_msg()
  */
-function viatheme_admin_msgs() {
+function silencio_admin_msgs() {
 
 	// check for our settings page - need this in conditional further down
-	$viatheme_settings_pg = strpos($_GET['page'], viatheme_PAGE_BASENAME);
+	$silencio_settings_pg = strpos($_GET['page'], silencio_PAGE_BASENAME);
 	// collect setting errors/notices: //http://codex.wordpress.org/Function_Reference/get_settings_errors
 	$set_errors = get_settings_errors();
 
 	//display admin message only for the admin to see, only on our settings page and only when setting errors/notices are returned!
-	if(current_user_can ('manage_options') && $viatheme_settings_pg !== FALSE && !empty($set_errors)){
+	if(current_user_can ('manage_options') && $silencio_settings_pg !== FALSE && !empty($set_errors)){
 
 		// have our settings succesfully been updated?
 		if($set_errors[0]['code'] == 'settings_updated' && isset($_GET['settings-updated'])){
-			viatheme_show_msg("<p>" . $set_errors[0]['message'] . "</p>", 'updated');
+			silencio_show_msg("<p>" . $set_errors[0]['message'] . "</p>", 'updated');
 
 		// have errors been found?
 		}else{
 			// there maybe more than one so run a foreach loop.
 			foreach($set_errors as $set_error){
 				// set the title attribute to match the error "setting title" - need this in js file
-				viatheme_show_msg("<p class='setting-error-message' title='" . $set_error['setting'] . "'>" . $set_error['message'] . "</p>", 'error');
+				silencio_show_msg("<p class='setting-error-message' title='" . $set_error['setting'] . "'>" . $set_error['message'] . "</p>", 'error');
 			}
 		}
 	}
 }
 
 // admin messages hook!
-add_action('admin_notices', 'viatheme_admin_msgs');
+add_action('admin_notices', 'silencio_admin_msgs');
 ?>

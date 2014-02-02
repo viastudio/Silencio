@@ -174,16 +174,15 @@ ol {
 }
 
 ul ul, ol ol, ul ol, ol ul {
-	margin-bottom: 0;
-	margin-left: 1.5em;
+
 }
 
 dt {
-	font-weight: bold;
+
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+
 }
 
 /* Buttons & Forms */
@@ -203,21 +202,14 @@ button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid @grey;
-	border-color: @grey darken(@grey, 5%) darken(@grey, 15%) darken(@grey, 5%);
-	.rounded(3px);
-	background: lighten(@grey, 10%);
-	color: @black;
-	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	padding: 6px 8px;
+
 }
 
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background: @grey;
+
 }
 
 button:focus,
@@ -253,24 +245,19 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 input[type=text], input[type=email], textarea {
-	color: @black;
-	border: 1px solid @grey;
-	border-radius: 3px;
+
 }
 
 input[type=text]:focus, input[type=email]:focus, textarea:focus {
-	color: @black;
+
 }
 
 input[type=text], input[type=email] {
-	padding: 3px;
+
 }
 
 textarea {
 	overflow: auto;
-	padding-left: 3px;
-	vertical-align: top;
-	width: 98%;
 }
 
 /* Media
@@ -293,19 +280,6 @@ textarea {
 	clear: both;
 	display: block;
 	margin: 0 auto 1.5em;
-}
-
-.site-header img, .entry-content img, .comment-content img, .widget img {
-	max-width: 100%; /* Fluid images for posts, comments, and widgets */
-}
-
-.site-header img, .entry-content img, img[class*="align"], img[class*="wp-image-"] {
-	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
-}
-
-.site-header img, .entry-content img, img.size-full {
-	max-width: 100%;
-	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
 }
 
 img.wp-smiley {

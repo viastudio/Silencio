@@ -1,7 +1,7 @@
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-		<div class="controls">
-			<div class="input-append">
-				<input class="input-fixed" id="appendedInputButton" size="16" type="text" name="s"><button class="btn" type="submit" name="submit" id="searchsubmit">Search</button>
-			</div><!--/.input-append-->
-		</div><!--/.controls-->
-	</form>
+<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label>
+		<span class="screen-reader-text"><?php _ex( 'Search for:', 'label', 'silencio' ); ?></span>
+		<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'silencio' ); ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
+	</label>
+	<input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'silencio' ); ?>">
+</form>

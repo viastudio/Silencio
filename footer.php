@@ -1,66 +1,66 @@
 <?php
-	$viatheme_option = viatheme_get_global_options();
-	$directions = via_build_directions_url($viatheme_option["viatheme_street_txt_input"],
-  										   $viatheme_option["viatheme_city_txt_input"],
-  										   $viatheme_option["viatheme_state_txt_input"],
-  										   $viatheme_option["viatheme_zip_txt_input"]);
+	$silencio_option = silencio_get_global_options();
+	$directions = silencio_build_directions_url(
+		$silencio_option["silencio_street_txt_input"],
+		$silencio_option["silencio_city_txt_input"],
+		$silencio_option["silencio_state_txt_input"],
+		$silencio_option["silencio_zip_txt_input"]
+   );
 ?>
 
-	</div><!-- #main .row-fluid .site-main -->
+		</div><!-- #content .site-content -->
 
-	<footer id="colophon" class="container site-footer" role="contentinfo">
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<nav id="footer-nav" role="navigation">
+				<?php wp_nav_menu(array('theme_location' => 'footer-menu' )); ?>
+			</nav><!-- #footer-nav -->
 
-		<nav id="footer-nav" role="navigation">
-			<?php wp_nav_menu(array('theme_location' => 'footer-menu' )); ?>
-		</nav><!-- #footer-nav -->
+			<aside id="footer-widget" role="complementary">
+				<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {} ?>
+			</aside><!-- #footer-widget -->
 
-		<!-- Footer Sidebar Example -->
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {} ?>
-		</div><!-- #secondary .widget-area -->
+			<aside class="site-info">
+				<ul class="address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+					<li><span itemprop="name"><?php bloginfo( 'name' ); ?></span></li>
+					<?php if($silencio_option["silencio_street_txt_input"] != '') { ?>
+				    <li><span itemprop="street-address"><?php echo $silencio_option['silencio_street_txt_input']; ?></span></li>
+				    <?php } if($silencio_option["silencio_city_txt_input"] != '') { ?>
+				    <li><span itemprop="locality"><?php echo $silencio_option['silencio_city_txt_input']; ?></span>,
+				    	<?php } if($silencio_option["silencio_state_txt_input"] != '') { ?>
+				    	<span itemprop="region"><?php echo $silencio_option['silencio_state_txt_input']; ?></span>
+				    	<?php } if($silencio_option["silencio_zip_txt_input"] != '') { ?>
+				    	<span itemprop="postal-code"><?php echo $silencio_option['silencio_zip_txt_input']; ?></span></li>
+				    <?php } if($silencio_option["silencio_phone_txt_input"] != '') { ?>
+				    <li><span itemprop="tel"><?php echo $silencio_option['silencio_phone_txt_input']; ?></span></li>
+				    <?php } if($silencio_option["silencio_email_txt_input"] != '') { ?>
+				    <li><span itemprop="email"><a href="<?php echo $silencio_option['silencio_email_txt_input']; ?>">Email</a></span></li>
+				    <?php } ?>
+			  	</ul><!-- .address -->
 
-		<div class="site-info">
-			<ul class="address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-				<li><span itemprop="name"><?php bloginfo( 'name' ); ?></span></li>
-				<?php if($viatheme_option["viatheme_street_txt_input"] != '') { ?>
-			    <li><span itemprop="street-address"><?php echo $viatheme_option['viatheme_street_txt_input']; ?></span></li>
-			    <?php } if($viatheme_option["viatheme_city_txt_input"] != '') { ?>
-			    <li><span itemprop="locality"><?php echo $viatheme_option['viatheme_city_txt_input']; ?></span>,
-			    	<?php } if($viatheme_option["viatheme_state_txt_input"] != '') { ?>
-			    	<span itemprop="region"><?php echo $viatheme_option['viatheme_state_txt_input']; ?></span>
-			    	<?php } if($viatheme_option["viatheme_zip_txt_input"] != '') { ?>
-			    	<span itemprop="postal-code"><?php echo $viatheme_option['viatheme_zip_txt_input']; ?></span></li>
-			    <?php } if($viatheme_option["viatheme_phone_txt_input"] != '') { ?>
-			    <li><span itemprop="tel"><?php echo $viatheme_option['viatheme_phone_txt_input']; ?></span></li>
-			    <?php } if($viatheme_option["viatheme_email_txt_input"] != '') { ?>
-			    <li><span itemprop="email"><a href="<?php echo $viatheme_option['viatheme_email_txt_input']; ?>">Email</a></span></li>
-			    <?php } ?>
-		  	</ul>
-		  	<div class="directions">
-		  		<a href="<?php echo $directions ?>">
-					<i class="icon-map-marker"></i> View on a map
-				</a>
-		  	</div>
-		  	<ul class="social-media">
-				<?php if($viatheme_option["viatheme_facebook_txt_input"] != '') { ?>
-				<li><a href="<?php echo $viatheme_option['viatheme_facebook_txt_input']; ?>" class="icon_facebook">Facebook</a></li>
-				<?php } if($viatheme_option["viatheme_twitter_txt_input"] != '') { ?>
-				<li><a href="<?php echo $viatheme_option['viatheme_twitter_txt_input']; ?>" class="icon_twitter">Twitter</a></li>
-				<?php } if($viatheme_option["viatheme_youtube_txt_input"] != '') { ?>
-				<li><a href="<?php echo $viatheme_option['viatheme_youtube_txt_input']; ?>" class="icon_youtube">YouTube</a></li>
-				<?php } if($viatheme_option["viatheme_googleplus_txt_input"] != '') { ?>
-				<li><a href="<?php echo $viatheme_option['viatheme_googleplus_txt_input']; ?>" class="icon_google-plus">Google Plus</a></li>
-				<?php } ?>
-			</ul><!-- .social-media -->
-		</div><!-- .site-info -->
+			  	<div class="directions">
+			  		<a href="<?php echo $directions ?>"><i class="icon-map-marker"></i> View on a map</a>
+			  	</div><!-- .directions -->
 
-		<div class="via_tag ">
-			<p><a href="http://viastudio.com" rel="external" title="Designed by VIA Studio">Designed by VIA Studio</a></p>
-		</div><!--/.via_tag-->
+			  	<ul class="social-media">
+					<?php if($silencio_option["silencio_facebook_txt_input"] != '') { ?>
+					<li><a href="<?php echo $silencio_option['silencio_facebook_txt_input']; ?>"><i class="fa fa-facebook"></i></a></li>
+					<?php } if($silencio_option["silencio_twitter_txt_input"] != '') { ?>
+					<li><a href="<?php echo $silencio_option['silencio_twitter_txt_input']; ?>"><i class="fa fa-twitter"></i></a></li>
+					<?php } if($silencio_option["silencio_youtube_txt_input"] != '') { ?>
+					<li><a href="<?php echo $silencio_option['silencio_youtube_txt_input']; ?>"><i class="fa fa-youtube-play"></i></a></li>
+					<?php } if($silencio_option["silencio_googleplus_txt_input"] != '') { ?>
+					<li><a href="<?php echo $silencio_option['silencio_googleplus_txt_input']; ?>"><i class="fa fa-google-plus"></i></a></li>
+					<?php } ?>
+				</ul><!-- .social-media -->
+			</aside><!-- .site-info -->
 
-	</footer><!-- #colophon .site-footer -->
+			<aside class="via_tag">
+				<p><a href="http://viastudio.com" rel="external" title="Built by VIA Studio">Built by VIA Studio</a></p>
+			</aside><!-- .via_tag -->
 
-</div><!-- #page .hfeed .site -->
+		</footer><!-- #colophon .site-footer -->
+
+	</div><!-- #page -->
 
 <?php wp_footer(); ?>
 
