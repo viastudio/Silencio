@@ -8,6 +8,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				src: [
+					// 'res/js/boostrap.js',
 					'res/js/global.js',
 					'res/js/fitvids.js',
 					'res/js/fastclick.js'
