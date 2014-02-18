@@ -13,62 +13,62 @@ add_shortcode('row', 'via_row');
 function via_col1( $atts, $content = null ) {
    return '<div class="col-md-1">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span1', 'via_col1');
+add_shortcode('col1', 'via_col1');
 
 function via_col2( $atts, $content = null ) {
    return '<div class="col-md-2">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span2', 'via_col2');
+add_shortcode('col2', 'via_col2');
 
 function via_col3( $atts, $content = null ) {
    return '<div class="col-md-3">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span3', 'via_col3');
+add_shortcode('col3', 'via_col3');
 
 function via_col4( $atts, $content = null ) {
    return '<div class="col-md-4">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span4', 'via_col4');
+add_shortcode('col4', 'via_col4');
 
 function via_col5( $atts, $content = null ) {
    return '<div class="col-md-5">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span5', 'via_col5');
+add_shortcode('col5', 'via_col5');
 
 function via_col6( $atts, $content = null ) {
    return '<div class="col-md-6">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span6', 'via_col6');
+add_shortcode('col6', 'via_col6');
 
 function via_col7( $atts, $content = null ) {
    return '<div class="col-md-7">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span7', 'via_col7');
+add_shortcode('col7', 'via_col7');
 
 function via_col8( $atts, $content = null ) {
    return '<div class="col-md-8">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span8', 'via_col8');
+add_shortcode('col8', 'via_col8');
 
 function via_col9( $atts, $content = null ) {
    return '<div class="col-md-9">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span9', 'via_col9');
+add_shortcode('col9', 'via_col9');
 
 function via_col10( $atts, $content = null ) {
    return '<div class="col-md-10">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span10', 'via_col10');
+add_shortcode('col10', 'via_col10');
 
 function via_col11( $atts, $content = null ) {
    return '<div class="col-md-11">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span11', 'via_col11');
+add_shortcode('col11', 'via_col11');
 
 function via_col12( $atts, $content = null ) {
    return '<div class="col-md-12">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('span12', 'via_col12');
+add_shortcode('col12', 'via_col12');
 
 /*
  * Custom Shortcodes Part 2
