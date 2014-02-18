@@ -24,6 +24,62 @@ body {
   margin-left: -15px;
   margin-right: -15px;
 }
+#masthead .site-branding,
+#colophon .site-branding {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #masthead .site-branding,
+  #colophon .site-branding {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  #masthead .site-branding,
+  #colophon .site-branding {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #masthead .site-branding,
+  #colophon .site-branding {
+    float: left;
+    width: 100%;
+  }
+}
+#masthead #site-navigation,
+#colophon #site-navigation {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #masthead #site-navigation,
+  #colophon #site-navigation {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  #masthead #site-navigation,
+  #colophon #site-navigation {
+    float: left;
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  #masthead #site-navigation,
+  #colophon #site-navigation {
+    float: left;
+    width: 100%;
+  }
+}
 #content {
   margin-left: -15px;
   margin-right: -15px;
