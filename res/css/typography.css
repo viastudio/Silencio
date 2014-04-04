@@ -1,5 +1,7 @@
 /* Variables
 -------------------------------------------------------------- */
+/* Variables
+-------------------------------------------------------------- */
 /* Colors */
 /* Fonts */
 /* Weights */
@@ -333,6 +335,9 @@ input::-moz-focus-inner {
   background: #444444;
   color: #ffffff;
 }
+#masthead .site-branding .site-title {
+  font-size: 1em;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   h1 {
@@ -365,6 +370,9 @@ input::-moz-focus-inner {
     line-height: 1.45833333;
     /* 35px / 24px */
   
+  }
+  #masthead .site-branding .site-title {
+    font-size: 3em;
   }
 }
 /* Medium devices (desktops, 992px and up) */

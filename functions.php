@@ -27,6 +27,7 @@ function silencio_setup() {
 	// add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'video', 'gallery' ) );
 
 	register_nav_menu( 'primary', __( 'Primary Menu', 'silencio' ) );
+    register_nav_menu( 'ancillary', __( 'Ancillary Menu', 'silencio' ) );
 	register_nav_menu( 'footer-menu', __( 'Footer Menu', 'silencio' ) );
 }
 
