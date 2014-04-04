@@ -3,6 +3,7 @@
 /* Variables
 -------------------------------------------------------------- */
 /* Colors */
+/* Custom Prototyping Font */
 /* Fonts */
 /* Weights */
 /* Mix-Ins */
@@ -31,12 +32,12 @@ button,
 input,
 select,
 textarea {
-  color: #444444;
-  font-family: Helvetica, Arial, sans-serif;
+  color: #2a2f36;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.25;
 }
 hr {
-  background-color: #cfcfcf;
+  background-color: #6f7982;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -48,7 +49,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 h1 {
   font-size: 2em;
@@ -118,7 +119,7 @@ var {
 }
 abbr,
 acronym {
-  border-bottom: 1px dotted #444444;
+  border-bottom: 1px dotted #2a2f36;
   cursor: help;
 }
 mark,
@@ -158,15 +159,15 @@ th {
 /* Links */
 a {
   text-decoration: none;
-  color: #0c79a6;
+  color: #383f47;
 }
 a:visited {
-  color: #0c79a6;
+  color: #383f47;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #0f9cd6;
+  color: #4e5864;
 }
 /* Lists */
 ul,
@@ -209,7 +210,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  background: #b6b6b6;
+  background: #585f66;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -256,7 +257,7 @@ img.wp-smiley {
   display: none;
 }
 .wp-caption {
-  border: 1px solid #cfcfcf;
+  border: 1px solid #6f7982;
   max-width: 100%;
 }
 .wp-caption img {
@@ -312,12 +313,12 @@ input::-moz-focus-inner {
   border: 0;
 }
 ::selection {
-  background: #444444;
-  color: #ffffff;
+  background: #2a2f36;
+  color: #f5fcff;
 }
 ::-moz-selection {
-  background: #444444;
-  color: #ffffff;
+  background: #2a2f36;
+  color: #f5fcff;
 }
 #masthead .site-branding .site-title {
   font-size: 1em;
