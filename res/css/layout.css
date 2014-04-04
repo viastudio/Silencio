@@ -3,6 +3,7 @@
 /* Variables
 -------------------------------------------------------------- */
 /* Colors */
+/* Custom Prototyping Font */
 /* Fonts */
 /* Weights */
 /* Mix-Ins */
@@ -212,7 +213,7 @@ body {
 .menu-nav a.menu-button {
   display: inline-block;
   line-height: 1;
-  color: #6a6a6a !important;
+  color: #4b5461 !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 .menu-nav a.menu-button:hover,
@@ -229,7 +230,7 @@ body {
 }
 #page {
   position: relative;
-  background: #ffffff;
+  background: #f5fcff;
   width: 100%;
   min-height: 200%;
   left: 0;
@@ -252,7 +253,7 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  background: #444444;
+  background: #2a2f36;
   -webkit-transform: translate3d(-100%, 0, 0);
   -moz-transform: translate3d(-100%, 0, 0);
   transform: translate3d(-100%, 0, 0);
@@ -267,7 +268,7 @@ body {
 }
 #masthead #site-navigation,
 #masthead #ancillary-navigation {
-  background: #444444;
+  background: #2a2f36;
 }
 #masthead #site-navigation ul,
 #masthead #ancillary-navigation ul {
@@ -293,12 +294,12 @@ body {
   display: block;
   margin: 0;
   padding: 15px 15px 15px 20px;
-  color: #ffffff;
+  color: #f5fcff;
 }
 #masthead #site-navigation ul li a:hover,
 #masthead #ancillary-navigation ul li a:hover {
-  background: #cfcfcf;
-  color: #444444 !important;
+  background: #6f7982;
+  color: #2a2f36 !important;
 }
 .menu-active #page {
   -webkit-transform: translate3d(70%, 0, 0);
@@ -334,7 +335,7 @@ body {
 }
 .nav-next a,
 .nav-previous a {
-  background-color: #444444;
+  background-color: #2a2f36;
   color: #fff;
   text-transform: uppercase;
   padding: 8px 14px;
@@ -425,8 +426,8 @@ body {
   }
   #masthead #site-navigation ul li a:hover,
   #masthead #ancillary-navigation ul li a:hover {
-    background: #cfcfcf;
-    color: #444444 !important;
+    background: #6f7982;
+    color: #2a2f36 !important;
   }
   #masthead #site-navigation ul li a:hover ul.children,
   #masthead #ancillary-navigation ul li a:hover ul.children {
@@ -434,8 +435,8 @@ body {
   }
   #masthead #site-navigation ul li a:hover a,
   #masthead #ancillary-navigation ul li a:hover a {
-    background: #cfcfcf;
-    color: #444444;
+    background: #6f7982;
+    color: #2a2f36;
   }
   #masthead #site-navigation ul li:first-child,
   #masthead #ancillary-navigation ul li:first-child {
@@ -444,7 +445,7 @@ body {
   #masthead #site-navigation ul li ul.children,
   #masthead #ancillary-navigation ul li ul.children {
     display: none;
-    background: #cfcfcf;
+    background: #6f7982;
     position: absolute;
     margin: 0;
     padding: 0;
@@ -459,13 +460,13 @@ body {
   }
   #masthead #site-navigation ul li ul.children li a,
   #masthead #ancillary-navigation ul li ul.children li a {
-    color: #444444;
+    color: #2a2f36;
     padding: 8px 16px;
     display: block;
   }
   #masthead #site-navigation ul li ul.children li a:hover,
   #masthead #ancillary-navigation ul li ul.children li a:hover {
-    background: #444444;
+    background: #2a2f36;
     color: #fff !important;
   }
   /* Footer

@@ -17,6 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link type="text/plain" rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -40,26 +41,29 @@
 
 <body <?php body_class(); ?>>
     <div class="body-wrap">
-    	<div id="page" class="hfeed site">
-    		<header id="masthead" class="site-header" role="banner">
-                <nav class="menu-nav">
-                    <a class="menu-button" href="#"><i class="fa fa-bars"></i></a>
-                </nav>
-
-    			<div class="site-branding">
-    				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-    			</div><!-- .site-branding -->
-
-                <div class="nav-container">
-        			<nav id="site-navigation" class="main-navigation" role="navigation">
-        				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-        			</nav><!-- #site-navigation -->
-                    <nav id="ancillary-navigation" class="ancillary-navigation" role="navigation">
-                        <?php wp_nav_menu( array( 'theme_location' => 'ancillary' ) ); ?>
+        <div id="page" class="hfeed site">
+            <header id="masthead" class="site-header" role="banner">
+                <div class="content-container">
+                    <nav class="menu-nav">
+                        <a class="menu-button" href="#"><i class="fa fa-bars"></i></a>
                     </nav>
-                </div>
 
-    		</header><!-- #masthead .site-header -->
+                    <div class="site-branding">
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                    </div><!-- .site-branding -->
+                </div><!-- .content-container -->
 
-    		<div id="content" class="site-content">
+                    <div class="nav-container">
+                        <div class="content-container">
+                            <nav id="site-navigation" class="main-navigation" role="navigation">
+                                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                            </nav><!-- #site-navigation -->
+                            <nav id="ancillary-navigation" class="ancillary-navigation" role="navigation">
+                                <?php wp_nav_menu( array( 'theme_location' => 'ancillary' ) ); ?>
+                            </nav>
+                        </div><!-- .content-container -->
+                    </div><!-- .nav-container -->
+            </header><!-- #masthead .site-header -->
+
+            <div id="content" class="site-content">
