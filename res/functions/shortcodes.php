@@ -5,78 +5,79 @@
  * Tutorial and sample here: http://tutorials.mysitemyway.com/adding-column-layout-shortcodes-to-a-wordpress-theme/
  */
 
-function via_row( $atts, $content = null ) {
+function silencio_row( $atts, $content = null ) {
    return '<div class="row">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('row', 'via_row');
+add_shortcode('row', 'silencio_row');
 
-function via_col1( $atts, $content = null ) {
+function silencio_col1( $atts, $content = null ) {
    return '<div class="col-md-1">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col1', 'via_col1');
+add_shortcode('col1', 'silencio_col1');
 
-function via_col2( $atts, $content = null ) {
+function silencio_col2( $atts, $content = null ) {
    return '<div class="col-md-2">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col2', 'via_col2');
+add_shortcode('col2', 'silencio_col2');
 
-function via_col3( $atts, $content = null ) {
+function silencio_col3( $atts, $content = null ) {
    return '<div class="col-md-3">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col3', 'via_col3');
+add_shortcode('col3', 'silencio_col3');
 
-function via_col4( $atts, $content = null ) {
+function silencio_col4( $atts, $content = null ) {
    return '<div class="col-md-4">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col4', 'via_col4');
+add_shortcode('col4', 'silencio_col4');
 
-function via_col5( $atts, $content = null ) {
+function silencio_col5( $atts, $content = null ) {
    return '<div class="col-md-5">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col5', 'via_col5');
+add_shortcode('col5', 'silencio_col5');
 
-function via_col6( $atts, $content = null ) {
+function silencio_col6( $atts, $content = null ) {
    return '<div class="col-md-6">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col6', 'via_col6');
+add_shortcode('col6', 'silencio_col6');
 
-function via_col7( $atts, $content = null ) {
+function silencio_col7( $atts, $content = null ) {
    return '<div class="col-md-7">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col7', 'via_col7');
+add_shortcode('col7', 'silencio_col7');
 
-function via_col8( $atts, $content = null ) {
+function silencio_col8( $atts, $content = null ) {
    return '<div class="col-md-8">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col8', 'via_col8');
+add_shortcode('col8', 'silencio_col8');
 
-function via_col9( $atts, $content = null ) {
+function silencio_col9( $atts, $content = null ) {
    return '<div class="col-md-9">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col9', 'via_col9');
+add_shortcode('col9', 'silencio_col9');
 
-function via_col10( $atts, $content = null ) {
+function silencio_col10( $atts, $content = null ) {
    return '<div class="col-md-10">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col10', 'via_col10');
+add_shortcode('col10', 'silencio_col10');
 
-function via_col11( $atts, $content = null ) {
+function silencio_col11( $atts, $content = null ) {
    return '<div class="col-md-11">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col11', 'via_col11');
+add_shortcode('col11', 'silencio_col11');
 
-function via_col12( $atts, $content = null ) {
+function silencio_col12( $atts, $content = null ) {
    return '<div class="col-md-12">' . do_shortcode($content) . '</div>';
 }
-add_shortcode('col12', 'via_col12');
+add_shortcode('col12', 'silencio_col12');
 
 /*
  * Custom Shortcodes Part 2
  * Disabling Wordpress wpautop and wptexturize filters.
+ * http://tutorials.mysitemyway.com/adding-column-layout-shortcodes-to-a-wordpress-theme/
  */
 
 
-function via_formatter($content) {
+function silencio_formatter($content) {
 	$new_content = '';
 
 	/* Matches the contents and the open and closing tags */
@@ -110,12 +111,8 @@ remove_filter('the_content', 'wpautop');
 remove_filter('the_content', 'wptexturize');
 
 // Before displaying for viewing, apply this function
-add_filter('the_content', 'via_formatter', 99);
-add_filter('widget_text', 'via_formatter', 99);
-
-
-//Long posts should require a higher limit, see http://core.trac.wordpress.org/ticket/8553
-//@ini_set('pcre.backtrack_limit', 500000);
+add_filter('the_content', 'silencio_formatter', 99);
+add_filter('widget_text', 'silencio_formatter', 99);
 
 // end shortcodes
 ?>
