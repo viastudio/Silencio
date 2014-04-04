@@ -9,6 +9,7 @@ function silencio_setup() {
 	require( get_template_directory() . '/res/functions/shortcodes.php' );
 	require( get_template_directory() . '/res/functions/widgets.php' );
 	require( get_template_directory() . '/res/functions/excerpts.php' );
+    require( get_template_directory() . '/res/functions/post-types.php' );
 	//require( get_template_directory() . '/res/customizer.php' );
 	//require( get_template_directory() . '/res/jetpack.php' );
 
@@ -82,6 +83,7 @@ add_action( 'widgets_init', 'silencio_widgets_init' );
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
+
 	if(!is_admin() && VIA_ENVIRONMENT == 'dev'){
 		wp_deregister_script('jquery');
 		wp_register_script('jquery', ("http://code.jquery.com/jquery-1.10.2.js"), false, '1.8.2', true);
