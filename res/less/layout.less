@@ -1,5 +1,5 @@
 /* Variables
--------------------------------------------------------------- */
+----------------------------------------------- */
 @import "../bootstrap/variables.less";
 @import "../bootstrap/mixins.less";
 @import "variables.less";
@@ -7,67 +7,67 @@
 /* Layout
 ----------------------------------------------- */
 body {
-	padding: 0;
+    padding: 0;
 }
 
 #page {
-	.container;
+    .container;
 }
 
 #masthead, #colophon {
-	.make-row();
+    .make-row();
 
-	.site-branding {
-		.make-sm-column(12);
-	    .make-md-column(12);
-	    .make-lg-column(12);
-	}
+    .site-branding {
+        .make-sm-column(12);
+        .make-md-column(12);
+        .make-lg-column(12);
+    }
 
-	#site-navigation {
-		.make-sm-column(12);
-	    .make-md-column(12);
-	    .make-lg-column(12);
-	}
+    #site-navigation {
+        .make-sm-column(12);
+        .make-md-column(12);
+        .make-lg-column(12);
+    }
 }
 
 #content {
-	.make-row();
+    .make-row();
 
-	#primary-full {
-		.make-sm-column(12);
-	    .make-md-column(12);
-	    .make-lg-column(12);
-	}
+    #primary-full {
+        .make-sm-column(12);
+        .make-md-column(12);
+        .make-lg-column(12);
+    }
 
-	#primary {
-		.make-sm-column(12);
-	    .make-md-column(9);
-	    .make-lg-column(9);
-	}
+    #primary {
+        .make-sm-column(12);
+        .make-md-column(9);
+        .make-lg-column(9);
+    }
 
-	#secondary {
-		.make-sm-column(12);
-	    .make-md-column(3);
-	    .make-lg-column(4);
-	}
+    #secondary {
+        .make-sm-column(12);
+        .make-md-column(3);
+        .make-lg-column(4);
+    }
 }
 
 /* Header
 ----------------------------------------------- */
 #masthead {
-	.site-branding {
-		.site-title {
+    .site-branding {
+        .site-title {
 
-		}
+        }
 
-		.site-description {
+        .site-description {
 
-		}
-	}
+        }
+    }
 
-	#site-navigation {
+    #site-navigation {
 
-	}
+    }
 }
 
 /* Front Page
@@ -76,31 +76,31 @@ body {
 /* Page
 ----------------------------------------------- */
 #main {
-	ul, ol {
-		margin: 0 0 20px 20px;
-	}
+    ul, ol {
+        margin: 0 0 20px 20px;
+    }
 
-	ul {
-		list-style: disc;
-	}
+    ul {
+        list-style: disc;
+    }
 
-	.gform_wrapper {
-		ul {
-			margin: 0;
-		}
-	}
+    .gform_wrapper {
+        ul {
+            margin: 0;
+        }
+    }
 }
 
 /* Post
 ----------------------------------------------- */
 .entry-header {
-	.entry-title {
+    .entry-title {
 
-	}
+    }
 
-	.entry-meta {
+    .entry-meta {
 
-	}
+    }
 }
 
 .entry-content {
@@ -118,34 +118,34 @@ article {
 }
 
 .continue-reading {
-	display: inline-block;
+    display: inline-block;
 }
 
 /* Navigation  */
 
 .navigation {
-	margin: 10px 0;
-	padding: 10px 0;
-	overflow: hidden;
+    margin: 10px 0;
+    padding: 10px 0;
+    overflow: hidden;
 }
 
 .nav-next a, .nav-previous a {
-	background-color: @black;
-	color: #fff;
-	text-transform: uppercase;
-	padding: 8px 14px;
-	font-size: 1em;
-	display: block;
+    background-color: @black;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    font-size: 1em;
+    display: block;
 }
 
 .nav-previous {
-	float: left;
-	width: inherit;
+    float: left;
+    width: inherit;
 }
 
 .nav-next {
-	float: right;
-	width: inherit;
+    float: right;
+    width: inherit;
 }
 
 /* Sidebar & Widgets
@@ -155,48 +155,48 @@ article {
 }
 
 .widget-last {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* Footer
 ----------------------------------------------- */
 #colophon {
-	.footer-widget {
+    .footer-widget {
 
-	}
+    }
 
-	.footer-nav {
+    .footer-nav {
 
-	}
+    }
 
-	.site-info {
+    .site-info {
 
-		.address {
+        .address {
 
-		}
+        }
 
-		.directions {
+        .directions {
 
-		}
+        }
 
-		.social-media {
+        .social-media {
 
-		}
-	}
+        }
+    }
 }
 
 .via_tag {
-	text-align: right;
+    text-align: right;
 
-	a {
-		padding-left: 28px;
-		background: no-repeat left 50%;
-		.at2x('../img/logo_via.png', 23px, 10px);
-	}
+    a {
+        padding-left: 28px;
+        background: no-repeat left 50%;
+        .at2x('../img/logo_via.png', 23px, 10px);
+    }
 }
 
 /*  IE Specific
-================================================== */
+----------------------------------------------- */
 .ie8 {
 
 }
