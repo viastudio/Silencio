@@ -6,7 +6,6 @@ if ( ! isset( $content_width ) ) {
     $content_width = 640; /* pixels */
 }
 
-
 if ( ! function_exists( 'silencio_setup' ) ):
 
 function silencio_setup() {
@@ -19,7 +18,6 @@ function silencio_setup() {
 	require( get_template_directory() . '/res/functions/excerpts.php' );
     // require( get_template_directory() . '/res/functions/post-types.php' );
     // require( get_template_directory() . '/res/functions/taxonomies.php' );
-	//require( get_template_directory() . '/res/customizer.php' );
 	//require( get_template_directory() . '/res/jetpack.php' );
 
 	add_theme_support( 'automatic-feed-links' );
@@ -217,28 +215,7 @@ $custom_metabox =  new WPAlchemy_MetaBox(array
 /*
  * Registering Theme Options:
  */
-if ( is_admin( ) ) { require_once('res/functions/silencio-theme-settings-basic.php'); }
-
-/*
- * Collects our theme options
- * @return array
- */
-function silencio_get_global_options() {
-	$silencio_option = array();
-	$silencio_option = get_option('silencio_options');
-return $silencio_option;
-}
-
- /*
- * Call the function and collect in variable
- *
- * Should be used in template files like this:
- * <?php echo $silencio_option['silencio_txt_input']; ?>
- *
- * Note: Should you notice that the variable ($silencio_option) is empty when used in certain templates such as header.php, sidebar.php and footer.php
- * you will need to call the function (copy the line below and paste it) at the top of those documents (within php tags)!
- */
-$silencio_option = silencio_get_global_options();
+require_once('res/functions/silencio-theme-settings-basic.php');
 
 /*
  * Takes our theme option's location info and produces a maps link appropriate to the user's device.
