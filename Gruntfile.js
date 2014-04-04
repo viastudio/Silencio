@@ -11,7 +11,8 @@ module.exports = function(grunt) {
                     // 'res/js/boostrap.js',
                     'res/js/global.js',
                     'res/js/fitvids.js',
-                    'res/js/fastclick.js'
+                    'res/js/google.fastbutton.js',
+                    'res/js/jquery.google.fastbutton.js'
                 ],
                 dest: 'res/build/global.min.js'
             }
