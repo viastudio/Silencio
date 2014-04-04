@@ -5,20 +5,20 @@ function silencio_register_taxonomies() {
     $slug = 'color';
 
     $labels = array(
-        'name' => _x( $plural, 'Taxonomy plural name', 'via' ),
-        'singular_name' => __( $singular, 'via' ),
-        'search_items' => __( 'Search ' . $plural, 'via' ),
-        'popular_items' => __( 'Popular ' . $plural, 'via' ),
-        'all_items' => __( 'All ' . $plural, 'via' ),
-        'parent_item' => __( 'Parent ' . $singular, 'via' ),
-        'parent_item_colon' => __( 'Parent ' . $singular, 'via' ),
-        'edit_item' => __( 'Edit ' . $singular, 'via' ),
-        'update_item' => __( 'Update ' . $singular, 'via' ),
-        'add_new_item' => __( 'Add New ' . $singular, 'via' ),
-        'new_item_name' => __( 'New ' . $singular, 'via' ),
-        'add_or_remove_items' => __( 'Add or remove ' . $plural, 'via' ),
-        'choose_from_most_used' => __( 'Choose from most used ' . $plural, 'via' ),
-        'menu_name' => __( $plural, 'via' ),
+        'name' => _x( $plural, 'Taxonomy plural name', 'silencio' ),
+        'singular_name' => __( $singular, 'silencio' ),
+        'search_items' => __( 'Search ' . $plural, 'silencio' ),
+        'popular_items' => __( 'Popular ' . $plural, 'silencio' ),
+        'all_items' => __( 'All ' . $plural, 'silencio' ),
+        'parent_item' => __( 'Parent ' . $singular, 'silencio' ),
+        'parent_item_colon' => __( 'Parent ' . $singular, 'silencio' ),
+        'edit_item' => __( 'Edit ' . $singular, 'silencio' ),
+        'update_item' => __( 'Update ' . $singular, 'silencio' ),
+        'add_new_item' => __( 'Add New ' . $singular, 'silencio' ),
+        'new_item_name' => __( 'New ' . $singular, 'silencio' ),
+        'add_or_remove_items' => __( 'Add or remove ' . $plural, 'silencio' ),
+        'choose_from_most_used' => __( 'Choose from most used ' . $plural, 'silencio' ),
+        'menu_name' => __( $plural, 'silencio' ),
     );
 
     $args = array(
