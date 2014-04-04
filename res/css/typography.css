@@ -82,6 +82,12 @@ p {
   margin-bottom: 1.5em;
   margin-top: 0;
 }
+p.intro {
+  margin-bottom: 0.9375em;
+  line-height: 1.286em;
+  font-size: 1.75em;
+  font-weight: 300;
+}
 b,
 strong {
   font-weight: bold;
