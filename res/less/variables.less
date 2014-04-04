@@ -34,12 +34,6 @@
     padding-right: 15px;
 }
 
-// HACK: Custom row mixin, wraps BS' mixin due :extend not working.
-.row() {
-    .clearfix;
-    .make-row;
-}
-
 .rounded( @radius: 3px ) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius: @radius;

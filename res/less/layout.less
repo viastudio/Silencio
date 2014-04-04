@@ -1,6 +1,7 @@
 /* Variables
 ----------------------------------------------- */
 @import "../bootstrap/variables.less";
+@import "../bootstrap/utilities.less";
 @import "../bootstrap/mixins.less";
 @import "variables.less";
 
@@ -15,7 +16,7 @@ body {
 }
 
 #masthead, #colophon {
-    .row;
+    .make-row;
 
     .site-branding {
         .make-sm-column(12);
@@ -31,7 +32,7 @@ body {
 }
 
 #content {
-    .row;
+    .make-row;
     .backface-visibility(hidden); // stop text wiggle on transition in Chrome
 
     #primary-full {
@@ -109,7 +110,6 @@ body {
     min-height: 200%;
     left: 0;
     .backface-visibility(hidden);
-    .transform(translate3d(0, 0, 0));
     .transition-prefixed(transform, 600ms, cubic-bezier(.09,.95,.49,.94));
 }
 
