@@ -72,6 +72,45 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
 		return $help;
 	}
 
+    /**
+    * Editor Customizations
+    */
+
+    add_filter( 'mce_buttons_2', 'silencio_add_style_select' );
+
+    function silencio_add_style_select( $buttons ) {
+        array_unshift( $buttons, 'styleselect' );
+        return $buttons;
+    }
+
+    add_filter( 'tiny_mce_before_init', 'silencio_add_styles' );
+
+    function silencio_add_styles( $settings ) {
+
+        $style_formats = array(
+            array(
+                'title' => 'Intro',
+                'selector' => 'p',
+                'classes' => 'intro'
+            ),
+            array(
+                'title' => 'Button',
+                'selector' => 'a',
+                'classes' => 'btn'
+            )
+        );
+
+        $settings['style_formats'] = json_encode( $style_formats );
+
+        return $settings;
+
+    }
+
+    function silencio_add_editor_styles() {
+        add_editor_style( 'res/css/mce-editor-style.css' );
+    }
+
+    add_action( 'init', 'silencio_add_editor_styles' );
 } //wrapper for admin functions
 // End Custom Admin functions
 ?>
