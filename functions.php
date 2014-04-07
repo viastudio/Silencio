@@ -16,6 +16,7 @@ function silencio_setup() {
 	require( get_template_directory() . '/res/functions/shortcodes.php' );
 	require( get_template_directory() . '/res/functions/widgets.php' );
 	require( get_template_directory() . '/res/functions/excerpts.php' );
+    require( get_template_directory() . '/res/functions/tinymce.php' );
     // require( get_template_directory() . '/res/functions/post-types.php' );
     // require( get_template_directory() . '/res/functions/taxonomies.php' );
 	//require( get_template_directory() . '/res/jetpack.php' );
