@@ -6,6 +6,8 @@
 #masthead:after,
 #colophon:before,
 #colophon:after,
+.nav-container:before,
+.nav-container:after,
 #content:before,
 #content:after {
   content: " ";
@@ -14,6 +16,7 @@
 .clearfix:after,
 #masthead:after,
 #colophon:after,
+.nav-container:after,
 #content:after {
   clear: both;
 }
@@ -69,11 +72,7 @@ body {
   padding: 0;
 }
 #page {
-  max-width: 1170px;
-  width: 94%;
-  margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100%;
 }
 #masthead,
 #colophon {
@@ -108,38 +107,30 @@ body {
     width: 100%;
   }
 }
-#masthead #site-navigation,
-#colophon #site-navigation,
-#masthead #ancillary-navigation,
-#colophon #ancillary-navigation {
+.nav-container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.nav-container #site-navigation {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  #masthead #site-navigation,
-  #colophon #site-navigation,
-  #masthead #ancillary-navigation,
-  #colophon #ancillary-navigation {
+  .nav-container #site-navigation {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 992px) {
-  #masthead #site-navigation,
-  #colophon #site-navigation,
-  #masthead #ancillary-navigation,
-  #colophon #ancillary-navigation {
+  .nav-container #site-navigation {
     float: left;
     width: 100%;
   }
 }
 @media (min-width: 1200px) {
-  #masthead #site-navigation,
-  #colophon #site-navigation,
-  #masthead #ancillary-navigation,
-  #colophon #ancillary-navigation {
+  .nav-container #site-navigation {
     float: left;
     width: 100%;
   }
@@ -152,6 +143,7 @@ body {
   -ms-backface-visibility: hidden;
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
+  margin: 20px auto;
 }
 #content #primary-full {
   position: relative;
@@ -227,10 +219,12 @@ body {
 }
 /* Header
 ----------------------------------------------- */
+#masthead {
+  background: #6f7982;
+  color: #ffffff;
+}
 #masthead .site-branding {
   display: inline-block;
-  padding-left: 0;
-  padding-right: 0;
 }
 #masthead .site-branding .site-description {
   display: none;
@@ -262,7 +256,7 @@ body {
 }
 #page {
   position: relative;
-  background: #f5fcff;
+  background: #ffffff;
   width: 100%;
   min-height: 200%;
   left: 0;
@@ -276,7 +270,7 @@ body {
   -o-transition: -o-transform 600ms cubic-bezier(0.09, 0.95, 0.49, 0.94);
   transition: transform 600ms cubic-bezier(0.09, 0.95, 0.49, 0.94);
 }
-#masthead .nav-container {
+.nav-container {
   width: 70%;
   position: absolute;
   top: 0;
@@ -292,15 +286,13 @@ body {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-#masthead #site-navigation {
+#site-navigation {
   padding-top: 3.25em;
 }
-#masthead #site-navigation,
-#masthead #ancillary-navigation {
+#site-navigation {
   background: #2a2f36;
 }
-#masthead #site-navigation ul,
-#masthead #ancillary-navigation ul {
+#site-navigation ul {
   display: block;
   list-style: none;
   margin: 0;
@@ -310,23 +302,20 @@ body {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-#masthead #site-navigation ul li,
-#masthead #ancillary-navigation ul li {
+#site-navigation ul li {
   display: block;
   margin: 0;
   padding: 0;
   position: relative;
   line-height: 1.4em;
 }
-#masthead #site-navigation ul li a,
-#masthead #ancillary-navigation ul li a {
+#site-navigation ul li a {
   display: block;
   margin: 0;
   padding: 15px 15px 15px 20px;
-  color: #f5fcff;
+  color: #ffffff;
 }
-#masthead #site-navigation ul li a:hover,
-#masthead #ancillary-navigation ul li a:hover {
+#site-navigation ul li a:hover {
   background: #6f7982;
   color: #2a2f36 !important;
 }
@@ -388,17 +377,19 @@ body {
 ----------------------------------------------- */
 #colophon {
   text-align: center;
+  background: #cad6dd;
+  padding: 10px 0;
 }
-.via_tag {
+#colophon .via_tag {
   text-align: center;
 }
-.via_tag a {
+#colophon .via_tag a {
   padding-left: 28px;
   background: no-repeat left 50%;
   background-image: url('../img/logo_via.png');
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
-  .via_tag a {
+  #colophon .via_tag a {
     background-image: url("../img/logo_via@2x.png");
     background-size: 23px 10px;
   }
@@ -411,8 +402,6 @@ body {
     ----------------------------------------------- */
   #masthead .site-branding {
     display: block;
-    padding-left: 15px;
-    padding-right: 15px;
   }
   #masthead .site-branding .site-description {
     display: block;
@@ -422,57 +411,52 @@ body {
   }
   /* Menu
     ----------------------------------------------- */
-  #masthead .nav-container {
+  .nav-container {
     position: relative;
     z-index: 2;
     font-size: 1em;
     width: 100%;
     padding: 0;
+    margin: 0 auto;
     -webkit-transform: none;
     -moz-transform: none;
     transform: none;
   }
-  #masthead #site-navigation {
+  .nav-container #site-navigation {
+    padding-left: 0;
     padding-top: 0;
+    padding-right: 0;
   }
-  #masthead #site-navigation ul,
-  #masthead #ancillary-navigation ul {
-    display: inline-block;
+  .nav-container #site-navigation ul {
+    display: block;
     margin: 0 auto;
   }
-  #masthead #site-navigation ul li,
-  #masthead #ancillary-navigation ul li {
+  .nav-container #site-navigation ul li {
     display: inline-block;
     margin: 0;
     padding: 0;
     position: relative;
   }
-  #masthead #site-navigation ul li a,
-  #masthead #ancillary-navigation ul li a {
-    display: inline-block;
-    padding: 12px 16px 10px;
+  .nav-container #site-navigation ul li a {
+    display: block;
+    padding: 8px 14px;
     line-height: 1em;
   }
-  #masthead #site-navigation ul li a:hover,
-  #masthead #ancillary-navigation ul li a:hover {
+  .nav-container #site-navigation ul li a:hover {
     background: #6f7982;
     color: #2a2f36 !important;
   }
-  #masthead #site-navigation ul li a:hover ul.children,
-  #masthead #ancillary-navigation ul li a:hover ul.children {
+  .nav-container #site-navigation ul li a:hover ul.sub-menu {
     display: block;
   }
-  #masthead #site-navigation ul li a:hover a,
-  #masthead #ancillary-navigation ul li a:hover a {
+  .nav-container #site-navigation ul li a:hover a {
     background: #6f7982;
     color: #2a2f36;
   }
-  #masthead #site-navigation ul li:first-child,
-  #masthead #ancillary-navigation ul li:first-child {
+  .nav-container #site-navigation ul li:first-child {
     border-left: 0 none;
   }
-  #masthead #site-navigation ul li ul.children,
-  #masthead #ancillary-navigation ul li ul.children {
+  .nav-container #site-navigation ul li ul.sub-menu {
     display: none;
     background: #6f7982;
     position: absolute;
@@ -482,28 +466,50 @@ body {
     left: 0;
     text-align: left;
   }
-  #masthead #site-navigation ul li ul.children li,
-  #masthead #ancillary-navigation ul li ul.children li {
+  .nav-container #site-navigation ul li ul.sub-menu li {
     border-left: 0 none !important;
     display: block;
   }
-  #masthead #site-navigation ul li ul.children li a,
-  #masthead #ancillary-navigation ul li ul.children li a {
+  .nav-container #site-navigation ul li ul.sub-menu li a {
     color: #2a2f36;
     padding: 8px 16px;
     display: block;
   }
-  #masthead #site-navigation ul li ul.children li a:hover,
-  #masthead #ancillary-navigation ul li ul.children li a:hover {
+  .nav-container #site-navigation ul li ul.sub-menu li a:hover {
     background: #2a2f36;
     color: #fff !important;
+  }
+  .nav-container #site-navigation ul li:hover ul.sub-menu {
+    display: block;
+  }
+  .nav-container #site-navigation ul li:hover ul.sub-menu li ul.sub-menu {
+    display: none;
+  }
+  .nav-container #site-navigation ul li:hover ul.sub-menu li:hover ul.sub-menu {
+    display: block;
+    position: absolute;
+    left: 220px;
+    top: 0;
   }
   /* Footer
     ----------------------------------------------- */
   #colophon {
     text-align: left;
   }
-  .via_tag {
+  #colophon #footer-nav {
+    display: block;
+  }
+  #colophon #footer-nav li {
+    display: inline-block;
+  }
+  #colophon #footer-nav li a {
+    display: block;
+    padding: 4px 8px;
+  }
+  #colophon #footer-nav li ul {
+    display: none;
+  }
+  #colophon .via_tag {
     text-align: right;
   }
 }

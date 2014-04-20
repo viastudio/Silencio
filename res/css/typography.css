@@ -50,6 +50,7 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto', sans-serif;
+  margin-top: 0;
 }
 h1 {
   font-size: 2em;
@@ -314,11 +315,11 @@ input::-moz-focus-inner {
 }
 ::selection {
   background: #2a2f36;
-  color: #f5fcff;
+  color: #ffffff;
 }
 ::-moz-selection {
   background: #2a2f36;
-  color: #f5fcff;
+  color: #ffffff;
 }
 #masthead .site-branding .site-title {
   font-size: 1em;
