@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: [
-                    // 'res/js/bootstrap.js',
+                    'res/js/bootstrap.js',
                     'res/js/global.js',
                     'res/js/fitvids.js',
                     'res/js/google.fastbutton.js',
@@ -24,8 +24,7 @@ module.exports = function(grunt) {
                     'res/css/bootstrap.css',
                     'res/css/font-awesome.css',
                     'res/css/typography.css',
-                    'res/css/layout.css',
-                    'res/css/prototype.css'
+                    'res/css/layout.css'
                 ],
                 dest: 'res/build/global.min.css'
             }
