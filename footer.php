@@ -11,17 +11,17 @@
 
             <footer id="colophon" class="site-footer" role="contentinfo">
                 <div class="container">
-                    <nav id="footer-nav" role="navigation">
+                    <!-- <nav id="footer-nav" role="navigation">
                         <?php wp_nav_menu(array('theme_location' => 'footer-menu' )); ?>
-                    </nav><!-- #footer-nav -->
+                    </nav> -->
 
-                    <aside id="footer-widget" role="complementary">
+                    <!-- <aside id="footer-widget" role="complementary">
                         <?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {} ?>
-                    </aside><!-- #footer-widget -->
+                    </aside> -->
 
                     <aside class="site-info">
                         <ul class="address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
-                            <li><span itemprop="name"><?php bloginfo( 'name' ); ?></span></li>
+                            <li>&#169; <?php echo date('Y');?>  <span itemprop="name"><?php bloginfo( 'name' ); ?></span></li>
                             <?php if(($street = get_theme_mod('theme_option_street_txt_input')) != '') { ?>
                             <li><span itemprop="street-address"><?php echo $street; ?></span></li>
                             <?php } if(($city = get_theme_mod('theme_option_city_txt_input')) != '') { ?>
@@ -37,9 +37,9 @@
                             <?php } ?>
                         </ul><!-- .address -->
 
-                        <div class="directions">
+                        <!-- <div class="directions">
                             <a href="<?php echo $directions ?>"><i class="icon-map-marker"></i> View on a map</a>
-                        </div><!-- .directions -->
+                        </div> -->
 
                         <ul class="social-media">
                             <?php if(($facebook = get_theme_mod('theme_option_facebook_txt_input')) != '') { ?>
@@ -54,9 +54,9 @@
                         </ul><!-- .social-media -->
                     </aside><!-- .site-info -->
 
-                    <aside class="via_tag">
+                   <!--  <aside class="via_tag">
                         <p><a href="http://viastudio.com" rel="external" title="Built by VIA Studio">Built by VIA Studio</a></p>
-                    </aside><!-- .via_tag -->
+                    </aside> -->
                 </div><!-- .container -->
             </footer><!-- #colophon .site-footer -->
         </div><!-- #page -->

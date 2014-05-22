@@ -9,10 +9,10 @@ module.exports = function(grunt) {
             build: {
                 src: [
                     'res/js/bootstrap.js',
-                    'res/js/global.js',
                     'res/js/fitvids.js',
                     'res/js/google.fastbutton.js',
-                    'res/js/jquery.google.fastbutton.js'
+                    'res/js/jquery.google.fastbutton.js',
+                    'res/js/global.js'
                 ],
                 dest: 'res/build/global.min.js'
             }

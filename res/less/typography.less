@@ -23,9 +23,8 @@ body {
 body, button, input, select, textarea {
     color: @black;
     font-family: @copy;
-    line-height: 1.25;
+    line-height: 1.5;
 }
-
 
 hr {
     background-color: @grey;
@@ -34,8 +33,6 @@ hr {
     margin-bottom: 1.5em;
 }
 
-/* Text elements */
-
 h1, h2, h3, h4, h5, h6 {
     font-family: @heading;
     margin-top: 0;
@@ -43,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 2em;
+    font-weight: @semibold;
     /* 2x body copy size = 32px */
     line-height: 1.25;
     /* 45px / 36px */
@@ -50,6 +48,7 @@ h1 {
 
 h2 {
     font-size: 1.625em;
+    font-weight: @bold;
     /* 1.625x body copy size = 26px */
     line-height: 1.15384615;
     /* 30px / 26px */
@@ -57,6 +56,7 @@ h2 {
 
 h3 {
     font-size: 1.375em;
+    font-weight: @semibold;
     /* 1.375x body copy size = 22px */
     line-height: 1.13636364;
     /* 25px / 22px */
@@ -69,7 +69,7 @@ h4 {
 }
 
 p {
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     margin-top: 0;
 }
 
@@ -169,6 +169,7 @@ a:visited {
 
 a:hover, a:focus, a:active {
     color: lighten(@primary, 10%);
+    text-decoration: none;
 }
 
 /* Lists */
@@ -184,18 +185,6 @@ ul {
 
 ol {
     list-style: decimal;
-}
-
-ul ul, ol ol, ul ol, ol ul {
-
-}
-
-dt {
-
-}
-
-dd {
-
 }
 
 /* Buttons & Forms */
