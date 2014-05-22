@@ -17,7 +17,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link type="text/plain" rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -27,8 +26,8 @@
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.7.1.min.js"></script>
 
 <!-- Typekit -->
-<!-- <script type="text/javascript" src="//use.typekit.net/#########.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
+<script type="text/javascript" src="//use.typekit.net/jhx1rix.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 
 <?php wp_head(); ?>

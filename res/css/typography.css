@@ -3,7 +3,6 @@
 /* Variables
 -------------------------------------------------------------- */
 /* Colors */
-/* Custom Prototyping Font */
 /* Fonts */
 /* Weights */
 /* Mix-Ins */
@@ -32,40 +31,42 @@ button,
 input,
 select,
 textarea {
-  color: #2a2f36;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.25;
+  color: #000000;
+  font-family: "open-sans", sans-serif;
+  line-height: 1.5;
 }
 hr {
-  background-color: #6f7982;
+  background-color: #d7d7d7;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
 }
-/* Text elements */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: "open-sans", sans-serif;
   margin-top: 0;
 }
 h1 {
   font-size: 2em;
+  font-weight: 600;
   /* 2x body copy size = 32px */
   line-height: 1.25;
   /* 45px / 36px */
 }
 h2 {
   font-size: 1.625em;
+  font-weight: 700;
   /* 1.625x body copy size = 26px */
   line-height: 1.15384615;
   /* 30px / 26px */
 }
 h3 {
   font-size: 1.375em;
+  font-weight: 600;
   /* 1.375x body copy size = 22px */
   line-height: 1.13636364;
   /* 25px / 22px */
@@ -76,7 +77,7 @@ h4 {
   line-height: 1.11111111;
 }
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   margin-top: 0;
 }
 p.intro {
@@ -120,7 +121,7 @@ var {
 }
 abbr,
 acronym {
-  border-bottom: 1px dotted #2a2f36;
+  border-bottom: 1px dotted #000000;
   cursor: help;
 }
 mark,
@@ -160,15 +161,16 @@ th {
 /* Links */
 a {
   text-decoration: none;
-  color: #383f47;
+  color: #3a6db2;
 }
 a:visited {
-  color: #383f47;
+  color: #3a6db2;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #4e5864;
+  color: #5787c8;
+  text-decoration: none;
 }
 /* Lists */
 ul,
@@ -211,7 +213,7 @@ button:active,
 html input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-  background: #585f66;
+  background: #bebebe;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -258,7 +260,7 @@ img.wp-smiley {
   display: none;
 }
 .wp-caption {
-  border: 1px solid #6f7982;
+  border: 1px solid #d7d7d7;
   max-width: 100%;
 }
 .wp-caption img {
@@ -314,11 +316,11 @@ input::-moz-focus-inner {
   border: 0;
 }
 ::selection {
-  background: #2a2f36;
+  background: #000000;
   color: #ffffff;
 }
 ::-moz-selection {
-  background: #2a2f36;
+  background: #000000;
   color: #ffffff;
 }
 #masthead .site-branding .site-title {

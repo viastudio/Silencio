@@ -27,7 +27,7 @@ function silencio_setup() {
 
     register_nav_menu( 'primary', __( 'Primary Menu', 'silencio' ) );
     register_nav_menu( 'ancillary', __( 'Ancillary Menu', 'silencio' ) );
-    register_nav_menu( 'footer-menu', __( 'Footer Menu', 'silencio' ) );
+    // register_nav_menu( 'footer-menu', __( 'Footer Menu', 'silencio' ) );
 }
 
 endif; // silencio_setup
@@ -76,14 +76,14 @@ function silencio_widgets_init() {
         'after_title' => '</h3>',
     ));
 
-    register_sidebar( array(
-        'name' => __( 'Footer Sidebar', 'silencio' ),
-        'id' => 'footer-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ));
+    // register_sidebar( array(
+    //     'name' => __( 'Footer Sidebar', 'silencio' ),
+    //     'id' => 'footer-sidebar',
+    //     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    //     'after_widget' => "</aside>",
+    //     'before_title' => '<h3 class="widget-title">',
+    //     'after_title' => '</h3>',
+    // ));
 }
 
 add_action( 'widgets_init', 'silencio_widgets_init' );
