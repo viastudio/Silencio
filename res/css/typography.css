@@ -32,7 +32,7 @@ input,
 select,
 textarea {
   color: #000000;
-  font-family: "open-sans", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   line-height: 1.5;
 }
 hr {
@@ -47,7 +47,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "open-sans", sans-serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin-top: 0;
 }
 h1 {

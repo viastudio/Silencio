@@ -25,10 +25,9 @@
 <!-- Modernizr -->
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.7.1.min.js"></script>
 
-<!-- Typekit -->
-<script type="text/javascript" src="//use.typekit.net/jhx1rix.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+<!-- Typekit >
+<script type="text/javascript" src="//use.typekit.net/########.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
 <?php wp_head(); ?>
 
