@@ -18,7 +18,7 @@ function silencio_register_post_types() {
                 'not_found_in_trash' => __( 'No ' . $plural . ' found in Trash', 'silencio' )
             ),
             'public' => true,
-            'supports' => array('title', 'thumbnail', 'page-attributes'),
+            'supports' => array('title', 'editor', 'author', 'excerpt', 'revisions', 'thumbnail'),
             'has_archive' => true,
             'rewrite' => array('slug' => $slug)
         )
