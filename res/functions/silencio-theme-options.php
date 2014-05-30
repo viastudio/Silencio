@@ -7,13 +7,13 @@
  */
 function silencio_options_page_sections() {
 
-	$sections = array();
-	$sections['theme_options'] = array(
+    $sections = array();
+    $sections['theme_options'] = array(
         'title' => __('Theme Options', 'silencio'),
         'description' => __('Customize your theme', 'silencio'),
     );
 
-	return $sections;
+    return $sections;
 }
 
 /**
@@ -22,77 +22,83 @@ function silencio_options_page_sections() {
  * @return array
  */
 function silencio_options_page_fields() {
-	// Text Form Fields section
+    // Text Form Fields section
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "street_txt_input",
-		"label"   => __( 'Street Address', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "street_txt_input",
+        "label"   => __( 'Street Address', 'silencio' ),
+        "type"    => "text"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "city_txt_input",
-		"label"   => __( 'City', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "city_txt_input",
+        "label"   => __( 'City', 'silencio' ),
+        "type"    => "text"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "state_txt_input",
-		"label"   => __( 'State', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "state_txt_input",
+        "label"   => __( 'State', 'silencio' ),
+        "type"    => "text"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "zip_txt_input",
-		"label"   => __( 'Zip Code', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "zip_txt_input",
+        "label"   => __( 'Zip Code', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_zip"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "phone_txt_input",
-		"label"   => __( 'Phone Number', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "phone_txt_input",
+        "label"   => __( 'Phone Number', 'silencio' ),
+        "type"    => "text"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "facebook_txt_input",
-		"label"   => __( 'Facebook Link', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "facebook_txt_input",
+        "label"   => __( 'Facebook Link', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "twitter_txt_input",
-		"label"   => __( 'Twitter Link', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "twitter_txt_input",
+        "label"   => __( 'Twitter Link', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "youtube_txt_input",
-		"label"   => __( 'YouTube Link', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "youtube_txt_input",
+        "label"   => __( 'YouTube Link', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "googleplus_txt_input",
-		"label"   => __( 'Google Plus Link', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "googleplus_txt_input",
+        "label"   => __( 'Google Plus Link', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
 
-	$options[] = array(
-		"section" => "theme_options",
-		"id"      => SILENCIO_SHORTNAME . "email_txt_input",
-		"label"   => __( 'Email Address', 'silencio' ),
-		"type"    => "text"
-	);
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "email_txt_input",
+        "label"   => __( 'Email Address', 'silencio' ),
+        "type"    => "text",
+        "sanitize_callback" => 'silencio_email'
+    );
 
     $choices = array(
         ' ' => '- select page -'
@@ -111,5 +117,5 @@ function silencio_options_page_fields() {
         "choices" => $choices
     );
 
-	return $options;
+    return $options;
 }
