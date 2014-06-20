@@ -99,6 +99,7 @@ function silencio_scripts() {
         wp_enqueue_script('jquery');
 
         // Enqueue 3rd party libs
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/res/js/bootstrap.js', array('jquery'), false, true);
         wp_enqueue_script('fitvids', get_template_directory_uri() . '/res/js/fitvids.js', array('jquery'), false, true);
         wp_enqueue_script('google.fastbutton', get_template_directory_uri() . '/res/js/google.fastbutton.js', array('jquery'), false, true);
         wp_enqueue_script('jquery.google.fastbutton', get_template_directory_uri() . '/res/js/jquery.google.fastbutton.js', array('jquery'), false, true);
