@@ -55,8 +55,17 @@
             <div class="nav-container">
                 <div class="container">
                     <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <div class="nav-controls">
+                        <a class="menu-button menu-close" href="#"><i class="fa fa-times"></i></a>
+<?php
+get_search_form();
+?>
+                    </div>
                         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
                     </nav><!-- #site-navigation -->
+                    <nav id="ancillary-navigation" role="navigation">
+                        <?php wp_nav_menu( array( 'theme_location' => 'ancillary' ) ); ?>
+                    </nav><!-- #ancillary-navigation -->
                 </div><!-- .container -->
             </div><!-- .nav-container -->
 

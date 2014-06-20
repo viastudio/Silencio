@@ -4,7 +4,7 @@
 $(document).ready(function() {
     prepare_fitvid();
     prepare_menu({
-        container: $('#page'),
+        container: $('#content'),
         menu_button: $('.menu-button'),
         menu_active_class: 'menu-active'
     });
@@ -31,5 +31,11 @@ function prepare_menu(options) {
         else {
             options.container.off('fastClick'); // don't need to listen to this until the menu is opened
         }
+    });
+
+    $('.sub-menu').collapse({ toggle: false }).addClass('collapse');
+
+    $('.btn-menu-dropdown').on('fastClick', function(e) {
+        $(this).siblings('.sub-menu').collapse('toggle');
     });
 }
