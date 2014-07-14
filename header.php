@@ -8,14 +8,14 @@
 
 <head>
 
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta charset="<?php bloginfo('charset'); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
 <title><?php wp_title(''); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link type="text/plain" rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
 
 <!--[if lt IE 9]>
@@ -46,8 +46,8 @@
                         <a class="menu-button" href="#"><i class="fa fa-bars"></i></a>
                     </nav>
                     <div class="site-branding">
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                        <!-- <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2> -->
+                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <!-- <h2 class="site-description"><?php bloginfo('description'); ?></h2> -->
                     </div><!-- .site-branding -->
                 </div><!-- .container -->
             </header><!-- #masthead .site-header -->
@@ -61,10 +61,10 @@
 get_search_form();
 ?>
                     </div>
-                        <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                     </nav><!-- #site-navigation -->
                     <nav id="ancillary-navigation" role="navigation">
-                        <?php wp_nav_menu( array( 'theme_location' => 'ancillary' ) ); ?>
+<?php wp_nav_menu(array('theme_location' => 'ancillary')); ?>
                     </nav><!-- #ancillary-navigation -->
                 </div><!-- .container -->
             </div><!-- .nav-container -->

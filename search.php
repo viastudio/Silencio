@@ -1,30 +1,40 @@
-<?php get_header(); ?>
+<?php
+get_header();
+?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <section id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+<?php if (have_posts()) {
+?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'silencio' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+            <header class="page-header">
+                <h1 class="page-title"><?php printf(__('Search Results for: %s', 'silencio'), '<span>' . get_search_query() . '</span>'); ?></h1>
+            </header><!-- .page-header -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+<?php
+    while (have_posts()) {
+        the_post();
+?>
+<?php get_template_part('content', 'search'); ?>
+<?php
+    }
+?>
 
-				<?php get_template_part( 'content', 'search' ); ?>
+<?php silencio_paging_nav(); ?>
 
-			<?php endwhile; ?>
+<?php
+} else {
+?>
 
-			<?php silencio_paging_nav(); ?>
+<?php get_template_part('content', 'none'); ?>
 
-		<?php else : ?>
+<?php
+}
+?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+        </main><!-- #main -->
+    </section><!-- #primary -->
 
 <?php get_sidebar('post'); ?>
 <?php get_footer(); ?>
