@@ -156,8 +156,8 @@
 
 /* Retina image helper mixing that allows you to specify different images for different device widths */
 .at2x(@path, @w, @h, @device-width) {
-    @highdpi: ~"(max-width:@{device-width}px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width:@{device-width}px) and (min--moz-device-pixel-ratio: 1.5), (max-width:@{device-width}px) and (-o-min-device-pixel-ratio: 3/2), (max-width:@{device-width}px) and (min-resolution: 1.5dppx)";
-    @media (max-width:@device-width) {
+    @highdpi: ~"(min-width:@{device-width}) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:@{device-width}) and (min--moz-device-pixel-ratio: 1.5), (min-width:@{device-width}) and (-o-min-device-pixel-ratio: 3/2), (min-width:@{device-width}) and (min-resolution: 1.5dppx)";
+    @media (min-width:@device-width) {
         background-image: url(@path);
     }
     @at2x_path: ~`@{path}.replace(/\.\w+$/, function(match) { return "@2x" + match; })`;
