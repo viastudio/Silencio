@@ -10,8 +10,11 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="res/css/global.css">
-    <script src="res/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+     <!-- Typekit -->
+    <script type="text/javascript" src="//use.typekit.net/jhx1rix.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -22,22 +25,60 @@
         ga('create', 'UA-53211420-1', 'auto');
         ga('send', 'pageview');
     </script>
+
+    <link rel="stylesheet" href="res/css/global.css">
+    <script src="res/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <body data-spy="scroll" data-target="navbar">
+        <header id="masthead" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                        <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="#">Project name</a>
-                </div>
-            </div>
-        </div>
+                    <a class="navbar-brand" href="#">Silencio</a>
+                </div><!-- .navbar-header -->
+
+                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                    </ul>
+                </div><!-- .navbar-collapse -->
+            </div><!-- .container -->
+        </header><!-- .navbar -->
+
+        <section id="about">
+            <div class="container">
+                <div class="browsers">
+
+                </div><!-- .browsers -->
+                <h2>SILENCIO</h2>
+                <h5>A Content-First Starter Theme for WordPress</h5>
+                <h3>Where will the <span>Content</span> take you?</h3>
+            </div><!-- .container -->
+        </section><!-- #about -->
+
+        <section id="features">
+            <div class="container">
+                <h2>Features</h2>
+            </div><!-- .container -->
+        </section><!-- #features -->
+
+        <section id="roadmap">
+            <div class="container">
+                <h2>Roadmap</h2>
+            </div><!-- .container -->
+        </section><!-- #roadmap -->
+
+        <footer id="colophon">
+            <div class="container">
+                <h4>Built by VIA Studio</h4>
+            </div><!-- .container -->
+        </footer><!-- #colophon -->
+
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
