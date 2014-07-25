@@ -30,59 +30,160 @@
     <script src="res/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 
-    <body data-spy="scroll" data-target="navbar">
-        <header id="masthead" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <body>
+        <section id="masthead">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand" href="#">Silencio</a>
-                </div><!-- .navbar-header -->
-
-                <div class="collapse navbar-collapse" id="bs-navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#roadmap">Roadmap</a></li>
-                    </ul>
-                </div><!-- .navbar-collapse -->
+                <h2>SILENCIO</h2>
+                <h5>A content-first starter theme for wordpress</h5>
+                <div class="browser">
+                    <div class="browser-top-bar">
+                        <div class="browser-circle"></div>
+                        <div class="browser-circle"></div>
+                        <div class="browser-circle"></div>
+                    </div><!-- .browser-top-bar -->
+                    <div class="browser-content">
+                        <p>Where will <span>the content</span> take you? <img src="/res/img/blinking-cursor.gif"></p>
+                    </div><!-- .browser-content -->
+                </div><!-- .browser -->
             </div><!-- .container -->
-        </header><!-- .navbar -->
+            <div id="video-container">
+                <video autoplay="autoplay" loop="loop" class="fillWidth">
+                    <source src="/res/img/starfield.mp4" type="video/mp4"/>
+                </video>
+            </div><!-- #video-container -->
+        </section><!-- #masthead -->
 
         <section id="about">
             <div class="container">
-                <div class="browsers">
-
-                </div><!-- .browsers -->
-                <h2>SILENCIO</h2>
-                <h5>A Content-First Starter Theme for WordPress</h5>
-                <h3>Where will the <span>Content</span> take you?</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Tell <span>Your</span> Story</h2>
+                        <p class="intro">WordPress is a great platform for content generation. Silencio makes structuring your content types even easier.</p>
+                        <p>This starter theme was specifically built for iterative project development. By rapidly prototyping in the browser, most content requirements can easily be solved.</p>
+                    </div><!-- .col6 -->
+                    <div class="col-md-6">
+                        <img src="/res/img/iterative.png">
+                    </div><!-- .col6 -->
+                </div><!-- .row -->
             </div><!-- .container -->
         </section><!-- #about -->
 
         <section id="features">
             <div class="container">
                 <h2>Features</h2>
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Architecture</h3>
+                                    <p>Silencio’s foundation was built from Underscores and Bootstrap. We also include Font Awesome for icons. The template markup follows PSR2 standards, rather than WordPress conventions.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Theme Style</h3>
+                                    <p>Silencio’s stylesheet is meant to be hacked. It includes files for layout and typography, as well as a variables file that calls mix-ins and other reusable patterns from Bootstrap. Grunt handles packaging it all together into a global css file.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                        </div><!-- .row -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Templates</h3>
+                                    <p>There are two templates bundled with Silencio, Typography and UI Kit. Using these templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Theme Options</h3>
+                                    <p>Using WordPress’ Customizer, you can easily add social profiles and address information to the footer. This can be expanded further in the theme options file found in the functions folder.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                        </div><!-- .row -->
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Meta Boxes</h3>
+                                    <p>We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Grunt</h3>
+                                    <p>Our Grunt config compiles Less to CSS and CoffeeScript to Javascript for local development. For production deploys, all resources get concatenated and minified into a build folder.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                        </div><!-- .row -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <article>
+                                    <h3>Widgets</h3>
+                                    <p>Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose which categories you’d like to display entries from. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.</p>
+                                </article>
+                            </div><!-- .col6 -->
+                        </div><!-- .row -->
+                    </div><!-- .col7 -->
+                    <div class="col-md-4 col-md-offset-1 box">
+                        <h3>Functions</h3>
+                        <p>The functions file contains all our best practices, refactoring reusable pieces into their own components, included in the /res folder.</p>
+                        <h6>Functionality refactored into pluggable components:</h6>
+                        <ul class="list-unstyled">
+                            <li>Template Tags</li>
+                            <li>Shortcodes (including bootstrap grid elements)</li>
+                            <li>Custom Widgets</li>
+                            <li>Excerpts</li>
+                            <li>TinyMCE</li>
+                            <li>Custom Post Types</li>
+                            <li>Custom Taxonomies</li>
+                            <li>Jetpack Controls</li>
+                        </ul>
+                        <h6>Other Functionality:</h6>
+                        <ul class="list-unstyled">
+                            <li>Sidebar/Widget Areas per template</li>
+                            <li>Custom Client User Role</li>
+                            <li>Debugging Variables Helper</li>
+                        </ul>
+
+                        <h3>Recommended Plugins</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="http://wordpress.org/plugins/akismet/">Akismet</a></li>
+                            <li><a href="http://wordpress.org/plugins/authors/">Authors Widget</a></li>
+                            <li><a href="http://wordpress.org/plugins/edit-flow/">Edit Flow</a></li>
+                            <li><a href="http://www.gravityforms.com/">Gravity Forms</a></li>
+                            <li><a href="http://wordpress.org/plugins/jetpack/">Jetpack</a></li>
+                            <li><a href="http://wordpress.org/plugins/widget-css-classes/">Widget CSS Classes</a></li>
+                        </ul>
+                    </div><!-- .col4 -->
+                </div><!-- .row -->
             </div><!-- .container -->
         </section><!-- #features -->
 
         <section id="roadmap">
             <div class="container">
                 <h2>Roadmap</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                    </div><!-- .col4 -->
+                    <div class="col-md-8">
+                    </div><!-- .col8 -->
+                </div><!-- .row -->
             </div><!-- .container -->
         </section><!-- #roadmap -->
 
         <footer id="colophon">
             <div class="container">
-                <h4>Built by VIA Studio</h4>
+                <a href="http://viastudio.com">
+                    <figure class="logo"></figure>
+                    <h4>Built by VIA Studio</h4>
+                </a>
             </div><!-- .container -->
         </footer><!-- #colophon -->
 
-
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.js"><\/script>')</script>
-
         <script src="res/js/vendor/bootstrap.js"></script>
         <script src="res/js/global.js"></script>
     </body>

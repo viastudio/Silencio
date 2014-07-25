@@ -48,25 +48,24 @@ h4,
 h5,
 h6 {
   font-family: "source-sans-pro", sans-serif;
+  font-weight: 400;
   margin-top: 0;
+  text-transform: uppercase;
 }
 h1 {
   font-size: 2em;
-  font-weight: 600;
   /* 2x body copy size = 32px */
   line-height: 1.25;
   /* 45px / 36px */
 }
 h2 {
   font-size: 1.625em;
-  font-weight: 700;
   /* 1.625x body copy size = 26px */
   line-height: 1.15384615;
   /* 30px / 26px */
 }
 h3 {
   font-size: 1.375em;
-  font-weight: 600;
   /* 1.375x body copy size = 22px */
   line-height: 1.13636364;
   /* 25px / 22px */
@@ -81,10 +80,13 @@ p {
   margin-top: 0;
 }
 p.intro {
-  margin-bottom: 0.9375em;
-  line-height: 1.286em;
-  font-size: 1.75em;
-  font-weight: 300;
+  color: #687285;
+  font-family: "chaparral-pro", sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1em;
+  margin-bottom: 16px;
 }
 b,
 strong {
@@ -130,65 +132,59 @@ th {
 /* Links */
 a {
   text-decoration: none;
-  color: #c5d1a3;
+  color: #776d70;
 }
 a:visited {
-  color: #c5d1a3;
+  color: #776d70;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #dae2c5;
+  color: #918689;
   text-decoration: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.5em;
-    /* 2.5x body copy size = 40px */
-    line-height: 1.125;
+    font-size: 1.5em;
+    line-height: 1;
   }
   h2 {
-    font-size: 2em;
-    /* 2x body copy size = 32px */
-    line-height: 1.25;
+    font-size: 1.25em;
+    line-height: 1;
   }
   h3 {
-    font-size: 1.5em;
-    /* 1.5x body copy size = 24px */
-    line-height: 1.25;
+    font-size: 1.125em;
+    line-height: 1;
   }
   h4 {
-    line-height: 1.22222222;
-    /* (22px / 18px */
+    line-height: 1;
   }
   blockquote {
-    font-size: 1.5em;
-    /* 24px / 16px = */
-    line-height: 1.45833333;
-    /* 35px / 24px */
-  }
-  #masthead .site-branding .site-title {
-    font-size: 3em;
+    font-size: 1.25em;
+    line-height: 1;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   h1 {
-    font-size: 3em;
+    font-size: 2em;
     /* 3x body copy size = 48px */
     line-height: 1.05;
     /* keep to a multiple of the 20px line height and something more appropriate for display headings */
   }
   h2 {
-    font-size: 2.25em;
+    font-size: 1.5em;
     /* 2.25x body copy size = 36px */
     line-height: 1.25;
   }
   h3 {
-    font-size: 1.75em;
+    font-size: 1.25em;
     /* 1.75x body copy size = 28px */
     line-height: 1.25;
   }
 }
-/* Large devices (large desktops, 1200px and up) */

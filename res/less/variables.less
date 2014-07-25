@@ -6,18 +6,18 @@
 /* Colors */
 @black: #363d45;
 @white: #fff;
-@grey: #687285;
 @gray-darker: #363d45;
 @gray-dark: #4c4a52;
 @gray: #687285;
 @gray-light: #dde2e8;
 @gray-lighter: #ebeef1;
-@primary: #c5d1a3; //blue
-@secondary: #a3b7d1; //green
+@primary: #776D70; //beige
+@secondary: #0099d9; //blue
 
 /* Fonts */
 @heading: "source-sans-pro",sans-serif;
 @copy: "source-sans-pro",sans-serif;
+@serif: "chaparral-pro",sans-serif;
 @mono: "courier-prime",monospace;
 
 /* Weights */
@@ -30,15 +30,16 @@
 
 /* Mix-Ins */
 .container (
-    @max-width: 1170px,
+    @max-width: 992px,
     @width: 94%,
     @margin: 0 auto,
+
 ) {
     max-width: @max-width;
     width: @width;
     margin: @margin;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .rounded( @radius: 3px ) {
@@ -70,7 +71,7 @@
 
 .transition(
     @what : all,
-    @length : 1s,
+    @length : .2s,
     @easing : ease-in-out
 ) {
     -webkit-transition: @what @length @easing;
