@@ -1,6 +1,7 @@
 /* Variables
 ----------------------------------------------- */
 @import "../bootstrap/variables.less";
+@import "../bootstrap/utilities.less";
 @import "../bootstrap/mixins.less";
 @import "variables.less";
 
@@ -11,188 +12,35 @@ body {
 }
 
 #page {
-    .container;
+    width: 100%;
 }
 
 #masthead, #colophon {
-    .make-row();
+    .make-row;
 
     .site-branding {
         .make-sm-column(12);
         .make-md-column(12);
         .make-lg-column(12);
-    }
-
-    #site-navigation {
-        .make-sm-column(12);
-        .make-md-column(12);
-        .make-lg-column(12);
-    }
-}
-
-#content {
-    .make-row();
-
-    #primary-full {
-        .make-sm-column(12);
-        .make-md-column(12);
-        .make-lg-column(12);
-    }
-
-    #primary {
-        .make-sm-column(12);
-        .make-md-column(9);
-        .make-lg-column(9);
-    }
-
-    #secondary {
-        .make-sm-column(12);
-        .make-md-column(3);
-        .make-lg-column(4);
     }
 }
 
 /* Header
 ----------------------------------------------- */
 #masthead {
-    .site-branding {
-        .site-title {
 
-        }
-
-        .site-description {
-
-        }
-    }
-
-    #site-navigation {
-
-    }
 }
-
-/* Front Page
------------------------------------------------ */
 
 /* Page
 ----------------------------------------------- */
 #main {
-    ul, ol {
-        margin: 0 0 20px 20px;
-    }
 
-    ul {
-        list-style: disc;
-    }
-
-    .gform_wrapper {
-        ul {
-            margin: 0;
-        }
-    }
-}
-
-/* Post
------------------------------------------------ */
-.entry-header {
-    .entry-title {
-
-    }
-
-    .entry-meta {
-
-    }
-}
-
-.entry-content {
-
-}
-
-footer.entry-meta {
-
-}
-
-/* Archive
------------------------------------------------ */
-article {
-
-}
-
-.continue-reading {
-    display: inline-block;
-}
-
-/* Navigation  */
-
-.navigation {
-    margin: 10px 0;
-    padding: 10px 0;
-    overflow: hidden;
-}
-
-.nav-next a, .nav-previous a {
-    background-color: @black;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 8px 14px;
-    font-size: 1em;
-    display: block;
-}
-
-.nav-previous {
-    float: left;
-    width: inherit;
-}
-
-.nav-next {
-    float: right;
-    width: inherit;
-}
-
-/* Sidebar & Widgets
------------------------------------------------ */
-.widget {
-
-}
-
-.widget-last {
-    margin-bottom: 0;
 }
 
 /* Footer
 ----------------------------------------------- */
 #colophon {
-    .footer-widget {
 
-    }
-
-    .footer-nav {
-
-    }
-
-    .site-info {
-
-        .address {
-
-        }
-
-        .directions {
-
-        }
-
-        .social-media {
-
-        }
-    }
-}
-
-.via_tag {
-    text-align: right;
-
-    a {
-        padding-left: 28px;
-        background: no-repeat left 50%;
-        .at2x('../img/logo_via.png', 23px, 10px);
-    }
 }
 
 /*  IE Specific
