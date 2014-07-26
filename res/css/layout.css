@@ -79,6 +79,9 @@ section {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+section p:last-child {
+  margin-bottom: 0;
+}
 #masthead,
 #colophon {
   margin-left: -15px;
@@ -309,7 +312,8 @@ section {
   color: #00638d;
 }
 #roadmap {
-  background: #687285;
+  background: url(../img/bg_roadmap.png) 0 200px #687285;
+  color: #ffffff;
 }
 /* Footer
 ----------------------------------------------- */

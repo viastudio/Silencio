@@ -143,6 +143,12 @@ a:active {
   color: #918689;
   text-decoration: none;
 }
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:focus,
+a.btn-primary:active {
+  color: #ffffff;
+}
 img {
   max-width: 100%;
   height: auto;

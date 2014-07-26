@@ -23,6 +23,10 @@ body {
 section {
     padding-top: 60px;
     padding-bottom: 60px;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
 }
 
 #masthead, #colophon {
@@ -268,7 +272,8 @@ section {
 }
 
 #roadmap {
-    background: @gray;
+    background: url(../img/bg_roadmap.png) 0 200px @gray;
+    color: @white;
 }
 
 /* Footer
