@@ -70,7 +70,7 @@ body {
 }
 .container {
   max-width: 992px;
-  width: 94%;
+  width: 92%;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -138,6 +138,9 @@ section p:last-child {
   padding-bottom: 0;
   position: relative;
   text-align: center;
+}
+#masthead #video-container {
+  display: none;
 }
 #masthead h2 {
   background: linear-gradient(rgba(104, 114, 133, 0.92), rgba(104, 114, 133, 0.92)), url(../img/static_animated.gif);
@@ -222,23 +225,6 @@ section p:last-child {
   margin: 0;
   padding-top: 36px;
 }
-#masthead #video-container {
-  display: block;
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  text-align: left;
-  z-index: 1;
-}
-#masthead #video-container video {
-  opacity: .6;
-  position: absolute;
-  z-index: 0;
-  min-width: 100%;
-}
 /* Content
 ----------------------------------------------- */
 #about {
@@ -253,6 +239,10 @@ section p:last-child {
 }
 #about h2 span {
   font-weight: 600;
+}
+.image-col {
+  margin: 40px 0 0;
+  text-align: center;
 }
 #features {
   background: #ffffff;
@@ -373,5 +363,28 @@ section p:last-child {
     letter-spacing: 2px;
     margin: 8px auto 40px;
     text-transform: uppercase;
+  }
+  .image-col {
+    margin: 0;
+  }
+}
+/* For Video */
+@media (min-width: 1070px) {
+  #masthead #video-container {
+    display: block;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-align: left;
+    z-index: 1;
+  }
+  #masthead #video-container video {
+    opacity: .6;
+    position: absolute;
+    z-index: 0;
+    min-width: 100%;
   }
 }
