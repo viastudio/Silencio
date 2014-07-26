@@ -132,15 +132,15 @@ th {
 /* Links */
 a {
   text-decoration: none;
-  color: #776d70;
+  color: #0099d9;
 }
 a:visited {
-  color: #776d70;
+  color: #0099d9;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #918689;
+  color: #0db8ff;
   text-decoration: none;
 }
 a.btn-primary,

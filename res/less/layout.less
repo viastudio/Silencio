@@ -21,8 +21,8 @@ body {
 }
 
 section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
+    width: 100%;
 
     p:last-child {
         margin-bottom: 0;
@@ -31,6 +31,8 @@ section {
 
 #masthead, #colophon {
     .make-row;
+    margin-left: 0;
+    margin-right: 0;
 
     .site-branding {
         .make-sm-column(12);
@@ -72,7 +74,7 @@ section {
 
     h2 {
         background: linear-gradient(rgba(104,114,133,0.92), rgba(104,114,133,0.92)), url(../img/static_animated.gif);
-        .rounded(8px);
+        .rounded(10px);
         display: inline-block;
         font-size: 2.5em;
         font-weight: @light;
@@ -137,7 +139,6 @@ section {
         border-bottom: none;
         border-top-left-radius: 0.1875em;
         border-top-right-radius: 0.1875em;
-        box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.4);
         display: inline-block;
         text-align: left;
         background-color: white;

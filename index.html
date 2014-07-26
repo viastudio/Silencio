@@ -32,6 +32,11 @@
 
     <body>
         <section id="masthead">
+            <div id="video-container">
+                <video autoplay="autoplay" loop="loop" class="fillWidth">
+                    <source src="http://silencio.io.s3.amazonaws.com/starfield.mp4" type="video/mp4"/>
+                </video>
+            </div><!-- #video-container -->
             <div class="container">
                 <h2>SILENCIO</h2>
                 <h5>A content-first starter theme for wordpress</h5>
@@ -46,11 +51,6 @@
                     </div><!-- .browser-content -->
                 </div><!-- .browser -->
             </div><!-- .container -->
-            <div id="video-container">
-                <video autoplay="autoplay" loop="loop" class="fillWidth">
-                    <source src="http://silencio.io.s3.amazonaws.com/starfield.mp4" type="video/mp4"/>
-                </video>
-            </div><!-- #video-container -->
         </section><!-- #masthead -->
 
         <section id="about">
@@ -59,7 +59,7 @@
                     <div class="col-md-6">
                         <h2>Tell <span>Your</span> Story</h2>
                         <p class="intro">WordPress is a great platform for content generation. Silencio makes structuring your content types even easier.</p>
-                        <p>This starter theme was specifically built for iterative project development. By rapidly prototyping in the browser, most content requirements can easily be solved.</p>
+                        <p>This starter theme was specifically built for <a href="http://viastudio.com/an-introduction-to-iterative-development/">Iterative Project Development</a>. By rapidly prototyping in the browser, most content requirements can easily be solved using one of the features below.</p>
                         <p><a href="https://github.com/viastudio/Silencio" class="btn btn-primary"><i class="fa fa-github"></i> View Project on GitHub</a></p>
                     </div><!-- .col6 -->
                     <div class="col-md-6 image-col">
@@ -78,7 +78,7 @@
                             <div class="col-md-6">
                                 <article>
                                     <h3>Architecture</h3>
-                                    <p>Silencio’s foundation was built from Underscores and Bootstrap. We also include Font Awesome for icons. The template markup follows PSR2 standards, rather than WordPress conventions.</p>
+                                    <p>Silencio’s foundation was built from <a href="http://underscores.me/">Underscores</a> and <a href="http://getbootstrap.com/">Bootstrap</a>. We also include <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> for icons. The template markup follows PSR2 standards, rather than WordPress conventions.</p>
                                 </article>
                             </div><!-- .col6 -->
                             <div class="col-md-6">
@@ -108,7 +108,7 @@
                             <div class="col-md-6">
                                 <article>
                                     <h3>Meta Boxes</h3>
-                                    <p>We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.</p>
+                                    <p>We’ve incorporated the <a href="http://www.farinspace.com/wpalchemy-metabox/">WP-Alchemy library</a> for easily adding custom meta-boxes to projects. The framework is very extensible.</p>
                                 </article>
                             </div><!-- .col6 -->
                             <div class="col-md-6">
@@ -164,12 +164,15 @@
 
         <section id="roadmap">
             <div class="container">
-                <h2>Roadmap</h2>
                 <div class="row">
-                    <div class="col-md-4">
-                    </div><!-- .col4 -->
-                    <div class="col-md-8">
-                    </div><!-- .col8 -->
+                    <div class="col-md-2">
+                        <img src="res/img/roadmap.png" class="hidden-xs hidden-sm">
+                    </div><!-- .col1 -->
+                     <div class="col-md-8">
+                        <h2>Roadmap</h2>
+                        <p>In the near future, we'll be writing full documentation for Silencio. Other features will include: Environment Variables, Deployment Scripts, and more Meta-Box Examples.</p>
+                        <p>Silencio is an open-source project, so please, contribute and send us your PR's!</p>
+                    </div><!-- .col11 -->
                 </div><!-- .row -->
             </div><!-- .container -->
         </section><!-- #roadmap -->
