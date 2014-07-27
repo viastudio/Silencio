@@ -1,5 +1,7 @@
 /* Variables
 -------------------------------------------------------------- */
+/* Variables
+-------------------------------------------------------------- */
 /* Colors */
 /* Fonts */
 /* Weights */
@@ -29,64 +31,62 @@ button,
 input,
 select,
 textarea {
-  color: #444444;
-  font-family: Helvetica, Arial, sans-serif;
-  line-height: 1.25;
+  color: #363d45;
+  font-family: "source-sans-pro", sans-serif;
+  line-height: 1.5;
 }
 hr {
-  background-color: #cfcfcf;
+  background-color: #687285;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
 }
-/* Text elements */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  text-transform: uppercase;
 }
 h1 {
   font-size: 2em;
   /* 2x body copy size = 32px */
-
   line-height: 1.25;
   /* 45px / 36px */
-
 }
 h2 {
   font-size: 1.625em;
   /* 1.625x body copy size = 26px */
-
   line-height: 1.15384615;
   /* 30px / 26px */
-
 }
 h3 {
   font-size: 1.375em;
   /* 1.375x body copy size = 22px */
-
   line-height: 1.13636364;
   /* 25px / 22px */
-
 }
 h4 {
   font-size: 1.125em;
   /* 1.125x body copy size = 18px */
-
   line-height: 1.11111111;
 }
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   margin-top: 0;
 }
 p.intro {
-  margin-bottom: 0.9375em;
-  line-height: 1.286em;
-  font-size: 1.75em;
-  font-weight: 300;
+  color: #687285;
+  font-family: "chaparral-pro", sans-serif;
+  font-size: 1.5em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1em;
+  margin-bottom: 16px;
 }
 b,
 strong {
@@ -101,14 +101,12 @@ i {
 blockquote {
   font-size: 1.25em;
   /* 20px / 16px */
-
   line-height: 1.25;
   /* 25px / 20px */
-
 }
 pre {
   background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-family: "courier-prime", monospace;
   font-size: 15px;
   font-size: 1.5rem;
   line-height: 1.6;
@@ -121,39 +119,8 @@ code,
 kbd,
 tt,
 var {
-  font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-}
-abbr,
-acronym {
-  border-bottom: 1px dotted #444444;
-  cursor: help;
-}
-mark,
-ins {
-  text-decoration: none;
-}
-sup,
-sub {
-  font-size: 75%;
-  height: 0;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sup {
-  bottom: 1ex;
-}
-sub {
-  top: .5ex;
-}
-small {
-  font-size: 75%;
-}
-big {
-  font-size: 125%;
-}
-figure {
-  margin: 0;
+  font-family: "courier-prime", monospace;
+  font-size: 15px;
 }
 table {
   margin: 0 0 1.5em;
@@ -165,232 +132,65 @@ th {
 /* Links */
 a {
   text-decoration: none;
-  color: #0c79a6;
+  color: #0099d9;
 }
 a:visited {
-  color: #0c79a6;
+  color: #0099d9;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #0f9cd6;
+  color: #0db8ff;
+  text-decoration: none;
 }
-/* Lists */
-ul,
-ol {
-  margin: 0;
-  padding: 0;
+a.btn-primary,
+a.btn-primary:hover,
+a.btn-primary:focus,
+a.btn-primary:active {
+  color: #ffffff;
 }
-ul {
-  list-style: none;
-}
-ol {
-  list-style: decimal;
-}
-/* Buttons & Forms */
-button,
-input,
-select,
-textarea {
-  font-size: 100%;
-  /* Corrects font size not being inherited in all browsers */
-
-  margin: 0;
-  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-
-  vertical-align: baseline;
-  /* Improves appearance and consistency in all browsers */
-
-  *vertical-align: middle;
-  /* Improves appearance and consistency in all browsers */
-
-}
-button,
-input {
-  line-height: normal;
-  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
-
-  *overflow: visible;
-  /* Corrects inner spacing displayed oddly in IE6/7 */
-
-}
-button:focus,
-html input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-button:active,
-html input[type="button"]:active,
-input[type="reset"]:active,
-input[type="submit"]:active {
-  background: #b6b6b6;
-}
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  padding: 0;
-}
-input[type="search"] {
-  -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-}
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-textarea {
-  overflow: auto;
-}
-/* Media
------------------------------------------------ */
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 1.5em;
-  margin-bottom: 1.5em;
-}
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 1.5em;
-  margin-bottom: 1.5em;
-}
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto 1.5em;
-}
-img.wp-smiley {
-  display: none;
-}
-.wp-caption {
-  border: 1px solid #cfcfcf;
-  max-width: 100%;
-}
-.wp-caption img {
-  display: block;
-  margin: 1.2% auto 0;
-  max-width: 98%;
-}
-.wp-caption-text {
-  text-align: center;
-}
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
-.site-content .gallery {
-  margin-bottom: 1.5em;
-}
-.site-content .gallery a img {
-  border: none;
-  height: auto;
-  max-width: 90%;
-}
-.site-content .gallery dd {
-  margin: 0;
-}
-embed,
-iframe,
-object {
-  max-width: 100%;
-}
-/* Text meant only for screen readers */
-.assistive-text {
-  clip: rect(1px 1px 1px 1px);
-  /* IE6, IE7 */
-
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute !important;
-}
-/* Fluid Images */
 img {
   max-width: 100%;
   height: auto;
 }
-/* Pretty Ampersands */
-span.amp {
-  font-family: Adobe Caslon Pro, Baskerville, "Goudy Old Style", "Palatino", "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  font-size: 110%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-/* Misc. */
-input::-moz-focus-inner {
-  border: 0;
-}
-::selection {
-  background: #444444;
-  color: #ffffff;
-}
-::-moz-selection {
-  background: #444444;
-  color: #ffffff;
-}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   h1 {
-    font-size: 2.5em;
-    /* 2.5x body copy size = 40px */
-  
-    line-height: 1.125;
+    font-size: 1.5em;
+    line-height: 1;
   }
   h2 {
-    font-size: 2em;
-    /* 2x body copy size = 32px */
-  
-    line-height: 1.25;
+    font-size: 1.25em;
+    line-height: 1;
   }
   h3 {
-    font-size: 1.5em;
-    /* 1.5x body copy size = 24px */
-  
-    line-height: 1.25;
+    font-size: 1.125em;
+    line-height: 1;
   }
   h4 {
-    line-height: 1.22222222;
-    /* (22px / 18px */
-  
+    line-height: 1;
   }
   blockquote {
-    font-size: 1.5em;
-    /* 24px / 16px = */
-  
-    line-height: 1.45833333;
-    /* 35px / 24px */
-  
+    font-size: 1.25em;
+    line-height: 1;
   }
 }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   h1 {
-    font-size: 3em;
+    font-size: 2em;
     /* 3x body copy size = 48px */
-  
     line-height: 1.05;
     /* keep to a multiple of the 20px line height and something more appropriate for display headings */
-  
   }
   h2 {
-    font-size: 2.25em;
+    font-size: 1.5em;
     /* 2.25x body copy size = 36px */
-  
     line-height: 1.25;
   }
   h3 {
-    font-size: 1.75em;
+    font-size: 1.25em;
     /* 1.75x body copy size = 28px */
-  
     line-height: 1.25;
   }
-}
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  
 }

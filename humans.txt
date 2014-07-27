@@ -1,57 +1,13 @@
-/* TEAM */
-    Front-End Developer & Web Designer: Shawn Coots
-    Contact: shawn [at] viastudio.com
-    Twitter: @shawncoots
-    From: Louisville, Kentucky, USA
+# humanstxt.org/
+# The humans responsible & technology colophon
 
-    Designer: Emilee Dover
-    Contact: emilee [at] viastudio.com
-    From: Louisville, Kentucky, USA
+# TEAM
+    VIA Studio
 
-    Front-End Developer: Joe Flynn
-    Contact: joe [at] viastudio.com
-    Twitter: @infophysics
-    From: Louisville, Kentucky, USA
+    Shawn Coots
+    Designer/Developer
+    @shawncoots
 
-    Back-End Developer: Joel Jacob
-    Contact: joel [at] viastudio.com
-    From: Louisville, Kentucky, USA
+# TECHNOLOGY COLOPHON
 
-    Back-End Developer: Jason McCreary
-    Contact: jmac [at] viastudio.com
-    Twitter: @gonedark
-    From: Louisville, Kentucky, USA
-
-    Back-End Developer: Jeremy Dunn
-    Twitter: @innerspacesuit
-    Contact: jeremy [at] viastudio.com
-    From: Evansville, Indiana, USA
-
-/* THANKS */
-
-    Bootstrap: Mark Otto, Jacob Thornton, Chris Rebert, Julian Thilo
-    URL: http://getbootstrap.com/
-
-    Underscores: Automattic Theme Team
-    URL: http://underscores.me/
-
-    Font Awesome: Dave Gandry
-    URL: http://fontawesome.io/
-
-    Grunt.js: Bocoup
-    URL: http://gruntjs.com/
-
-    WP-Alchemy: Dimas Begunoff
-    URL: http://www.farinspace.com/wpalchemy-metabox/
-
-    FitVids: Chris Coyier & Paravel
-    URL: http://fitvidsjs.com/
-
-    Respond.js: Scott Jehl, Paul Irish, Nicholas Zakas
-    URL: http://responsejs.com/
-
-/* SITE */
-    Last update: 2014/04/04
-    Language: English
-    Doctype:HTML5
-    IDE: Sublime Text
+    HTML5, CSS3, Bootstrap, jQuery, Modernizr
