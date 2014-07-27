@@ -14,10 +14,10 @@ Our Grunt config compiles Less to CSS and CoffeeScript to Javascript for local d
 We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.
 
 ### Templates
-There are two templates bundled with Silencio, Typography and UI Kit. Using these templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete.
+There are two templates bundled with Silencio - Typography and UI Kit. Using these templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete.
 
 ### Widgets
-Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose which categories you’d like to display entries from. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.
+Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose the categories from which you’d like to display entries. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.
 
 ### Theme Options
 Using WordPress’ Customizer, you can easily add social profiles and address information to the footer. This can be expanded further in the theme options file found in the functions folder.
