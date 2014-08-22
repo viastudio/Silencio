@@ -7,17 +7,19 @@ if (! isset( $content_width)) {
 }
 
 if (! function_exists('silencio_setup')) {
-
     function silencio_setup() {
-        require_once( dirname(__FILE__) . '/res/functions/admin.php' );
-        require( get_template_directory() . '/res/functions/template-tags.php' );
-        require( get_template_directory() . '/res/functions/shortcodes.php' );
-        require( get_template_directory() . '/res/functions/widgets.php' );
-        require( get_template_directory() . '/res/functions/excerpts.php' );
-        require( get_template_directory() . '/res/functions/tinymce.php' );
-        // require( get_template_directory() . '/res/functions/post-types.php' );
-        // require( get_template_directory() . '/res/functions/taxonomies.php' );
-        //require( get_template_directory() . '/res/jetpack.php' );
+        require_once(dirname(__FILE__) . '/res/functions/admin.php');
+        require(get_template_directory() . '/res/functions/template-tags.php');
+        require(get_template_directory() . '/res/functions/shortcodes.php');
+        require(get_template_directory() . '/res/functions/widgets.php');
+        require(get_template_directory() . '/res/functions/excerpts.php');
+        require(get_template_directory() . '/res/functions/tinymce.php');
+        require(get_template_directory() . '/res/functions/users.php');
+        require(get_template_directory() . '/res/functions/sidebars.php');
+        require(get_template_directory() . '/res/functions/metaboxes.php');
+        // require( get_template_directory() . '/res/functions/post-types.php');
+        // require( get_template_directory() . '/res/functions/taxonomies.php');
+        //require( get_template_directory() . '/res/jetpack.php');
 
         add_theme_support('automatic-feed-links');
         add_theme_support('post-thumbnails');
@@ -27,7 +29,6 @@ if (! function_exists('silencio_setup')) {
         register_nav_menu('ancillary', __('Ancillary Menu', 'silencio'));
         // register_nav_menu( 'footer-menu', __( 'Footer Menu', 'silencio' ) );
     }
-
 }
 
 add_action('after_setup_theme', 'silencio_setup');
@@ -38,59 +39,10 @@ if (function_exists('add_image_size')) {
     add_image_size('header-thumb', 1170, 400, true); //(cropped)
 }
 
-// Add oEmbed to Widgets
-add_filter('widget_text', array($wp_embed, 'run_shortcode'), 8);
-add_filter('widget_text', array($wp_embed, 'autoembed'), 8);
-
-/**
- * Register widgetized area and update sidebar with default widgets
- */
-function silencio_widgets_init() {
-
-    register_sidebar(array(
-        'name' => __('Home Sidebar', 'silencio'),
-        'id' => 'home-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ));
-
-    register_sidebar(array(
-        'name' => __('Page Sidebar', 'silencio'),
-        'id' => 'page-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ));
-
-    register_sidebar(array(
-        'name' => __('Post Sidebar', 'silencio'),
-        'id' => 'post-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => "</aside>",
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>'
-    ));
-
-    // register_sidebar( array(
-    //     'name' => __( 'Footer Sidebar', 'silencio' ),
-    //     'id' => 'footer-sidebar',
-    //     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-    //     'after_widget' => "</aside>",
-    //     'before_title' => '<h3 class="widget-title">',
-    //     'after_title' => '</h3>',
-    // ));
-}
-
-add_action('widgets_init', 'silencio_widgets_init');
-
 /**
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
-
     if (!is_admin() && VIA_ENVIRONMENT == 'dev') {
         wp_deregister_script('jquery');
         wp_register_script('jquery', ("http://code.jquery.com/jquery-1.10.2.js"), false, '1.8.2', true);
@@ -131,56 +83,6 @@ function silencio_scripts() {
 
 add_action('wp_enqueue_scripts', 'silencio_scripts');
 
-/*
- * Custom Role for Client User
- * The role has all of the capabilities of an editor, plus the ability to manage theme options.
- * Theme options inculde widgets, menus, theme options (if theme supports), custom backbground (if theme supports), custom header (if theme supports).
- * Optionally, the role can have the capability of creating new users by uncommenting  create_users and list_users
- *
- * For more capability options, see http://codex.wordpress.org/Roles_and_Capabilities#Capability_vs._Role_Table
- *
- */
-add_action('admin_init', 'silencio_custom_role');
-function silencio_custom_role() {
-
-    if (!get_role('client_user')) {
-        // let's use the editor as the base  capabilities
-        $caps = get_role('editor')->capabilities;
-
-        // add our new capabilities
-        $caps = array_merge($caps, array(
-            'edit_theme_options' => true,
-            'create_users' => true,
-            'edit_users' => true,
-            'delete_users' => true,
-            'list_users' => true,
-            'remove_users' => true,
-            'promote_users' => true
-        ));
-        add_role('client_user', 'Client User', $caps);
-    }
-
-    // Gravity Forms Permissions
-    if (!get_role('forms_user')) {
-        // let's use the subscriber as the base capabilities
-        $caps = get_role('subscriber')->capabilities;
-
-        // add our new capabilities
-        $caps = array_merge($caps, array(
-            'gravityforms_view_entries' => true,
-            'gravityforms_export_entries' => true,
-            'gravityforms_delete_entries' => true
-        ));
-        add_role('forms_user', 'Forms User', $caps);
-    }
-}
-
-function add_grav_forms() {
-    $role = get_role('client_user');
-    $role->add_cap('gform_full_access');
-}
-
-add_action('admin_init', 'add_grav_forms');
 
 /**
  * Fix Uncaught Reference Error from Gravity Forms - Puts js call in the footer, where it should be.
@@ -189,26 +91,6 @@ add_filter("gform_init_scripts_footer", "init_scripts");
 function init_scripts() {
     return true;
 }
-
-/*
- * Custom Meta Box Functions
- */
-include_once 'res/functions/wpalchemy/MetaBox.php';
-include_once 'res/functions/wpalchemy/MediaAccess.php';
-$wpalchemy_media_access = new WPAlchemy_MediaAccess();
-
-// Custom Meta Box Specs
-$custom_metabox = new WPAlchemy_MetaBox(array
-(
-    'id' => '_example_meta',
-    'title' => 'Custom Options',
-    'types' => array('silencio_example'),
-    'context' => 'normal', // same as above, defaults to "normal"
-    'priority' => 'high', // same as above, defaults to "high"
-    'prefix' => 'silencio_',
-    'template' => get_stylesheet_directory() . '/res/functions/wpalchemy/example-meta.php',
-    'mode' => WPALCHEMY_MODE_EXTRACT
-));
 
 /*
  * Registering Theme Options:
