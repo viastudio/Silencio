@@ -111,7 +111,7 @@ function silencio_options_page_fields() {
 
     $options[] = array(
         "section" => "theme_options",
-        "id"      => viatheme_SHORTNAME . "_calendar_page_select_input",
+        "id"      => SILENCIO_SHORTNAME . "_calendar_page_select_input",
         "label"   => __( 'Calendar Page', 'viatheme_textdomain' ),
         "type"    => "select",
         "choices" => $choices
