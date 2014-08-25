@@ -2,16 +2,22 @@
 /*
  * Custom Meta Box Functions
  */
-include_once 'res/functions/wpalchemy/MetaBox.php';
-include_once 'res/functions/wpalchemy/MediaAccess.php';
-$wpalchemy_media_access = new WPAlchemy_MediaAccess();
+include_once 'wpalchemy/MetaBox.php';
+include_once 'wpalchemy/MediaAccess.php';
+
+if (is_admin()) {
+    add_action('admin_enqueue_scripts', 'metabox_style');
+}
+
+function metabox_style() {
+    wp_enqueue_style('wpalchemy-metabox', get_stylesheet_directory_uri() . '/res/functions/wpalchemy/meta.css');
+}
+
 
 // Custom Meta Box Specs
-$custom_metabox = new WPAlchemy_MetaBox(array
-(
+$custom_metabox = new WPAlchemy_MetaBox(array(
     'id' => '_example_meta',
     'title' => 'Custom Options',
-    'types' => array('silencio_example'),
     'context' => 'normal', // same as above, defaults to "normal"
     'priority' => 'high', // same as above, defaults to "high"
     'prefix' => 'silencio_',
