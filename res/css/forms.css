@@ -86,7 +86,9 @@ textarea.ginput_container textarea {
 .ginput_container textarea {
   height: auto;
 }
-.gform_button {
+.gform_button,
+input[type="submit"].gform_button,
+input[type="reset"].gform_button {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -109,12 +111,20 @@ textarea.ginput_container textarea {
   border-color: #357ebd;
 }
 .gform_button:hover,
-.gform_button:focus {
+input[type="submit"].gform_button:hover,
+input[type="reset"].gform_button:hover,
+.gform_button:focus,
+input[type="submit"].gform_button:focus,
+input[type="reset"].gform_button:focus {
   color: #333333;
   text-decoration: none;
 }
 .gform_button:active,
-.gform_button.active {
+input[type="submit"].gform_button:active,
+input[type="reset"].gform_button:active,
+.gform_button.active,
+input[type="submit"].gform_button.active,
+input[type="reset"].gform_button.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
@@ -124,8 +134,14 @@ textarea.ginput_container textarea {
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125) 4px 8px 2px rgba(0, 0, 0, 0.3);
 }
 .gform_button.disabled,
+input[type="submit"].gform_button.disabled,
+input[type="reset"].gform_button.disabled,
 .gform_button[disabled],
-fieldset[disabled] .gform_button {
+input[type="submit"].gform_button[disabled],
+input[type="reset"].gform_button[disabled],
+fieldset[disabled] .gform_button,
+fieldset[disabled] input[type="submit"].gform_button,
+fieldset[disabled] input[type="reset"].gform_button {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -137,20 +153,38 @@ fieldset[disabled] .gform_button {
   box-shadow: none 4px 8px 2px rgba(0, 0, 0, 0.3);
 }
 .gform_button:hover,
+input[type="submit"].gform_button:hover,
+input[type="reset"].gform_button:hover,
 .gform_button:focus,
+input[type="submit"].gform_button:focus,
+input[type="reset"].gform_button:focus,
 .gform_button:active,
+input[type="submit"].gform_button:active,
+input[type="reset"].gform_button:active,
 .gform_button.active,
-.open .dropdown-toggle.gform_button {
+input[type="submit"].gform_button.active,
+input[type="reset"].gform_button.active,
+.open .dropdown-toggle.gform_button,
+.open .dropdown-toggleinput[type="submit"].gform_button,
+.open .dropdown-toggleinput[type="reset"].gform_button {
   color: #ffffff;
   background-color: #3276b1;
   border-color: #285e8e;
 }
 .gform_button:active,
+input[type="submit"].gform_button:active,
+input[type="reset"].gform_button:active,
 .gform_button.active,
-.open .dropdown-toggle.gform_button {
+input[type="submit"].gform_button.active,
+input[type="reset"].gform_button.active,
+.open .dropdown-toggle.gform_button,
+.open .dropdown-toggleinput[type="submit"].gform_button,
+.open .dropdown-toggleinput[type="reset"].gform_button {
   background-image: none;
 }
-.gform_button .badge {
+.gform_button .badge,
+input[type="submit"].gform_button .badge,
+input[type="reset"].gform_button .badge {
   color: #428bca;
   background-color: #ffffff;
 }
@@ -232,4 +266,47 @@ fieldset[disabled] .gform_button {
 }
 #gforms_confirmation_message .alert-link {
   color: #2b542c;
+}
+.validation_message {
+  color: #a94442;
+}
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px;
+}
+.ginput_complex {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.ginput_complex label {
+  font-weight: normal;
+}
+.ginput_complex .ginput_left,
+.ginput_complex .ginput_right {
+  float: left;
+  width: 100%;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .ginput_complex .ginput_left,
+  .ginput_complex .ginput_right {
+    float: left;
+    width: 50%;
+  }
+}
+.ginput_complex .ginput_full {
+  position: relative;
+  float: left;
+  width: 100%;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
 }

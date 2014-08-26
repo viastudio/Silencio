@@ -1,5 +1,6 @@
-// GravityForms Bootstrap Overrides
+// Gravity Forms Bootstrap Overrides
 // http://roots.io/style-gravity-forms-with-bootstrap/
+// -----------------------------------------------
 @import (reference) "../bootstrap/type.less";
 @import (reference) "../bootstrap/mixins.less";
 @import (reference) "../bootstrap/forms.less";
@@ -34,7 +35,9 @@
     height: auto;
 }
 
-.gform_button {
+.gform_button,
+input[type="submit"].gform_button,
+input[type="reset"].gform_button {
     .btn();
     .btn-primary();
 }
@@ -63,4 +66,39 @@
 #gforms_confirmation_message {
     .alert();
     .alert-success();
+}
+
+// VIA Customizations
+// -----------------------------------------------
+.validation_message {
+    color: @alert-danger-text;
+}
+
+// Hide honeypot
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}
+
+.ginput_complex {
+    .make-row();
+
+    label {
+        font-weight: normal;
+    }
+
+    .ginput_left,
+    .ginput_right {
+        .make-xs-column(12);
+        .make-md-column(6);
+    }
+
+    .ginput_full {
+        .make-xs-column(12);
+    }
 }

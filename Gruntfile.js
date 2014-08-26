@@ -24,7 +24,6 @@ module.exports = function(grunt) {
                     'res/css/bootstrap.css',
                     'res/css/font-awesome.css',
                     'res/css/typography.css',
-                    'res/css/forms.css',
                     'res/css/layout.css'
                 ],
                 dest: 'res/build/global.min.css'
