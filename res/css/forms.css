@@ -1,6 +1,7 @@
-.gform_wrapper ul {
+#main .gform_wrapper ul {
   padding-left: 0;
   list-style: none;
+  margin-left: 0;
 }
 .gform_wrapper li {
   margin-bottom: 15px;
