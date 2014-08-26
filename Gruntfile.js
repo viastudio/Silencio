@@ -56,21 +56,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // Disabled by default
-        // coffee: {
-        //     dev: {
-        //         files: [
-        //             {
-        //                 expand: true,
-        //                 cwd: 'res/coffee',
-        //                 src: ['*.coffee'],
-        //                 dest: 'res/js/',
-        //                 ext: '.js'
-        //             }
-        //         ]
-        //     }
-        // },
-
         // Contains tasks to run when grunt watch is invoked. Whenever any of the files specified are modified, executes tasks specified.
         watch: {
             less: {

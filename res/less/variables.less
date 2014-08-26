@@ -1,27 +1,27 @@
-/* Variables
--------------------------------------------------------------- */
+// Variables
+// --------------------------------------------------------------
 @import "../bootstrap/variables.less";
 @import "../bootstrap/mixins.less";
 
-/* Colors */
+// Colors
 @black: #000;
 @white: #fff;
 @grey: #d7d7d7;
 @primary: #3a6db2; //blue
 @secondary: #d7d7d7; //light
 
-/* Fonts */
+// Fonts
 @heading: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @copy: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-/* Weights */
+// Weights
 @light: 300;
 @regular: 400;
 @semibold: 600;
 @bold: 700;
 @extrabold: 800;
 
-/* Mix-Ins */
+// Mix-Ins
 .container (
     @max-width: 1170px,
     @width: 94%,
@@ -139,10 +139,10 @@
             animation-delay: @delay;
 }
 
-/* From retina.less
- * A helper mixin for applying high-resolution background images (http://www.retinajs.com)
- * Append @2x to the end of your retina version. ex: /images/my_image@2x.png
- */
+// From retina.less
+// A helper mixin for applying high-resolution background images (http://www.retinajs.com)
+// Append @2x to the end of your retina version. ex: /images/my_image@2x.png
+//
 .at2x(@path, @w, @h) {
     @highdpi: ~"(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";
     background-image: url(@path);
@@ -154,7 +154,7 @@
     }
 }
 
-/* Retina image helper mixing that allows you to specify different images for different device widths */
+// Retina image helper mixing that allows you to specify different images for different device widths
 .at2x(@path, @w, @h, @device-width) {
     @highdpi: ~"(min-width:@{device-width}) and (-webkit-min-device-pixel-ratio: 1.5), (min-width:@{device-width}) and (min--moz-device-pixel-ratio: 1.5), (min-width:@{device-width}) and (-o-min-device-pixel-ratio: 3/2), (min-width:@{device-width}) and (min-resolution: 1.5dppx)";
     @media (min-width:@device-width) {

@@ -1,7 +1,5 @@
 /* Variables
 ----------------------------------------------- */
-.clearfix:before,
-.clearfix:after,
 #masthead:before,
 #masthead:after,
 #colophon:before,
@@ -11,57 +9,11 @@
   content: " ";
   display: table;
 }
-.clearfix:after,
 #masthead:after,
 #colophon:after,
 #content:after {
   clear: both;
 }
-.center-block {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.pull-right {
-  float: right !important;
-}
-.pull-left {
-  float: left !important;
-}
-.hide {
-  display: none !important;
-}
-.show {
-  display: block !important;
-}
-.invisible {
-  visibility: hidden;
-}
-.text-hide {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0;
-}
-.hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-.affix {
-  position: fixed;
-}
-/* Variables
--------------------------------------------------------------- */
-/* Colors */
-/* Fonts */
-/* Weights */
-/* Mix-Ins */
-/* From retina.less
- * A helper mixin for applying high-resolution background images (http://www.retinajs.com)
- * Append @2x to the end of your retina version. ex: /images/my_image@2x.png
- */
-/* Retina image helper mixing that allows you to specify different images for different device widths */
 /* Layout
 ----------------------------------------------- */
 body {
@@ -338,9 +290,6 @@ body {
 }
 #main ul {
   list-style: disc;
-}
-#main .gform_wrapper ul {
-  margin: 0;
 }
 /* Post
 ----------------------------------------------- */
