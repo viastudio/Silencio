@@ -1,54 +1,35 @@
 jQuery(document).ready(function($) {
+    tinymce.PluginManager.add('silencio_grid', function(editor, url) {
+        editor.addButton('silencio_grid', {
+            type: 'listbox',
+            text: 'Grid Layout',
+            icon: false,
+            fixedWidth: true,
+            minWidth: 80,
+            onselect: function(e) {
+                var content = tinymce.activeEditor.selection.getContent();
 
-    tinymce.create('tinymce.plugins.grid', {
-        init : function(ed, url) {
-        },
-
-        // Create our dropdown
-        createControl: function(controlName, controlManager) {
-            var gridShortcodes = [
-                'row',
-                'col1',
-                'col2',
-                'col3',
-                'col4',
-                'col5',
-                'col6',
-                'col7',
-                'col8',
-                'col9',
-                'col10',
-                'col11',
-                'col12'
-            ];
-
-            if (controlName === 'silencio_grid') {
-                var grid_select = controlManager.createListBox('silencio_grid', {
-                     title: 'Grid Layout',
-                     onselect: function(shortcode) {
-                        var content = tinyMCE.activeEditor.selection.getContent();
-
-                        if (content !== '') {
-                            tinyMCE.activeEditor.selection.setContent('[' + shortcode + ']' + content + '[/' + shortcode + ']');
-                        }
-
-                        return false; // reset value after click
-                     }
-                });
-
-                for (var i = 0; i < gridShortcodes.length; i++) {
-                    grid_select.add(gridShortcodes[i], gridShortcodes[i]);
+                if (content !== '') {
+                    tinymce.activeEditor.selection.setContent('[' + this.value() + ']' + content + '[/' + this.value() + ']');
                 }
 
-                return grid_select;
-            }
-
-            return null;
-        }
+                this.value(null);
+            },
+            values: [
+                {text: 'row', value: 'row'},
+                {text: 'col1', value: 'col1'},
+                {text: 'col2', value: 'col2'},
+                {text: 'col3', value: 'col3'},
+                {text: 'col4', value: 'col4'},
+                {text: 'col5', value: 'col5'},
+                {text: 'col6', value: 'col6'},
+                {text: 'col7', value: 'col7'},
+                {text: 'col8', value: 'col8'},
+                {text: 'col9', value: 'col9'},
+                {text: 'col10', value: 'col10'},
+                {text: 'col11', value: 'col11'},
+                {text: 'col12', value: 'col12'}
+            ]
+        });
     });
-
-    // Register our TinyMCE plugin
-    // first parameter is the button ID1
-    // second parameter must match the first parameter of the tinymce.create() function above
-    tinymce.PluginManager.add('silencio_grid', tinymce.plugins.grid);
 });
