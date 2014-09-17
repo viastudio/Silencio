@@ -4,10 +4,6 @@
     Twitter: @shawncoots
     From: Louisville, Kentucky, USA
 
-    Designer: Emilee Dover
-    Contact: emilee [at] viastudio.com
-    From: Louisville, Kentucky, USA
-
     Front-End Developer: Joe Flynn
     Contact: joe [at] viastudio.com
     Twitter: @infophysics
