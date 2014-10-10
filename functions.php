@@ -42,7 +42,7 @@ if (function_exists('add_image_size')) {
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
-    if (!is_admin() && VIA_ENVIRONMENT == 'dev') {
+    if (!is_admin() && defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT == 'dev') {
         wp_deregister_script('jquery');
         wp_register_script('jquery', ("//code.jquery.com/jquery-1.10.2.js"), false, '1.8.2', true);
         wp_enqueue_script('jquery');
@@ -59,7 +59,7 @@ function silencio_scripts() {
     }
 
     // Disable this environment check & load min.css if you want to test in IE8 with respond.js
-    if (VIA_ENVIRONMENT == 'dev') {
+    if (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT == 'dev') {
         $global = 'js/global.js';
         $style = 'css/global.css';
     } else {
