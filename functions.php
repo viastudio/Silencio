@@ -165,7 +165,7 @@ function silencio_build_directions_url($street, $city, $state, $zip) {
     }
 
     // Serve up an Apple Maps link if on an iOS 6 device, otherwise serve up a Google Maps link.
-    if ($iOS_version >= 6) {
+    if (isset($iOS_version) && $iOS_version >= 6) {
         return "https://maps.apple.com/maps?q=" . $address;
     } else {
         return "https://maps.google.com/maps?q=" . $address;
