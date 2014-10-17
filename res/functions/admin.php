@@ -45,16 +45,12 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
         unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
 
         //custom dashboard widgets
-        wp_add_dashboard_widget('custom_help_widget', 'Help and Support', 'custom_dashboard_help'); // add a new custom widget for help and support
+        wp_add_dashboard_widget('custom_help_widget', 'Theme by VIA Studio', 'custom_dashboard_help'); // add a new custom widget for help and support
     }
 
     function custom_dashboard_help() {
         echo '
-            <p style="text-align:center;"><img src="' . get_template_directory_uri() . '/res/img/logo_via_dashboard.png">
-            <h2>Need help?</h2>
-            <p>That "help" tab up top provides contextual help throughout the administrative panel. If you need additional support, you can contact your web team at <a href="http://www.viastudio.com">VIA Studio</a>:</p>
-            <p><strong>Phone:</strong> 502-498-8477</p>
-            <p><strong>Email:</strong> <a href="mailto:support@viastudio.com">support@viastudio.com</a></p>
+            <p style="text-align:center;"><a href="http://viastudio.com"><img src="http://viastudio.com/via-silencio-ad.png"></a></p>
         ';
     }
 
