@@ -18,7 +18,7 @@ if (! function_exists('silencio_setup')) {
         require(get_template_directory() . '/res/functions/metaboxes.php');
         // require( get_template_directory() . '/res/functions/post-types.php');
         // require( get_template_directory() . '/res/functions/taxonomies.php');
-        //require( get_template_directory() . '/res/jetpack.php');
+        // require( get_template_directory() . '/res/jetpack.php');
 
         add_theme_support('automatic-feed-links');
         add_theme_support('post-thumbnails');
@@ -120,13 +120,13 @@ function silencio_widgets_init() {
         'after_title' => '</h3>'
     ));
 
-    register_sidebar( array(
-        'name' => __( 'Footer Sidebar', 'silencio' ),
+    register_sidebar(array(
+        'name' => __('Footer Sidebar', 'silencio'),
         'id' => 'footer-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget' => "</aside>",
         'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
+        'after_title' => '</h3>'
     ));
 }
 

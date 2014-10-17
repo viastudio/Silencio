@@ -4,7 +4,7 @@ define('SILENCIO_PAGE_BASENAME', 'silencio-settings'); // the settings page slug
 
 require_once('silencio-theme-options.php');
 
-add_action( 'customize_register', 'silencio_register_settings' );
+add_action('customize_register', 'silencio_register_settings');
 
 /**
  * Helper function for defining variables for the current page
@@ -28,7 +28,7 @@ function silencio_get_settings() {
  * @param (array) $args The array of arguments to be used in creating the field
  * @return function call
  */
-function silencio_create_settings_field($wp_customize, $args = array() ) {
+function silencio_create_settings_field($wp_customize, $args = array()) {
     // default array to overwrite when calling the function
     $defaults = array(
         'id'      => 'default_field',
@@ -40,10 +40,10 @@ function silencio_create_settings_field($wp_customize, $args = array() ) {
     );
 
     // "extract" to be able to use the array keys as variables in our function output below
-    extract( wp_parse_args( $args, $defaults ) );
+    extract(wp_parse_args($args, $defaults));
 
     $setting_args = array(
-        'sanitize_callback' => $sanitize_callback,
+        'sanitize_callback' => $sanitize_callback
     );
 
     $wp_customize->add_setting($id, $setting_args);
@@ -63,27 +63,27 @@ function silencio_create_settings_field($wp_customize, $args = array() ) {
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function silencio_register_settings($wp_customize){
+function silencio_register_settings($wp_customize) {
     $settings_output = silencio_get_settings();
     $silencio_option_name = $settings_output['silencio_option_name'];
 
     // sections
-    if(!empty($settings_output['silencio_page_sections'])){
+    if (!empty($settings_output['silencio_page_sections'])) {
         // call the "add_settings_section" for each!
-        foreach ( $settings_output['silencio_page_sections'] as $id => $options ) {
+        foreach ($settings_output['silencio_page_sections'] as $id => $options) {
             $wp_customize->add_section(
                 $id,
                 array(
                     'title' => $options['title'],
                     'description' => $options['description'],
-                    'priority' => 35,
+                    'priority' => 35
                 )
             );
         }
     }
 
     // fields
-    if(!empty($settings_output['silencio_page_fields'])){
+    if (!empty($settings_output['silencio_page_fields'])) {
         foreach ($settings_output['silencio_page_fields'] as $option) {
             silencio_create_settings_field($wp_customize, $option);
         }
@@ -144,4 +144,3 @@ function silencio_no_html($value) {
 function silencio_zip($value) {
     return preg_match('/^\d{5}(?:[-\s]\d{4})?$/', $value) ? $value : false;
 }
-?>

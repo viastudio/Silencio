@@ -72,11 +72,15 @@ foreach ($options as $value => $label) {
 
     <label>Authors <span>(Enter in each authors name)</span></label>
 
-<?php while($metabox->have_fields('authors', 3)): ?>
+<?php
+while ($metabox->have_fields('authors', 3)) {
+?>
     <p>
         <input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>" />
     </p>
-<?php endwhile; ?>
+<?php
+}
+?>
 
     <label>Info</label>
 
@@ -88,14 +92,18 @@ foreach ($options as $value => $label) {
 
     <label>Links <span>(Enter in the link title and url)</span></label>
 
-<?php while($metabox->have_fields('links', 5)): ?>
+<?php
+while ($metabox->have_fields('links', 5)) {
+?>
     <p>
 <?php $metabox->the_field('title'); ?>
         <input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>" placeholder="Title" />
 
         <input type="text" name="<?php $metabox->the_name('url'); ?>" value="<?php $metabox->the_value('url'); ?>" placeholder="Url" />
     </p>
-<?php endwhile; ?>
+<?php
+}
+?>
 
 
     <h2>And One Examples</h2>
@@ -106,15 +114,21 @@ foreach ($options as $value => $label) {
 
     <label>And One... <span>(Enter in a value)</span></label>
 
-<?php while($metabox->have_fields_and_one('and_one')): ?>
+<?php
+while ($metabox->have_fields_and_one('and_one')) {
+?>
     <p>
         <input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>" />
     </p>
-<?php endwhile; ?>
+<?php
+}
+?>
 
     <label>And One Group <span>(Enter in the link title and description)</span></label>
 
-<?php while($metabox->have_fields_and_one('and_one_group')): ?>
+<?php
+while ($metabox->have_fields_and_one('and_one_group')) {
+?>
     <p>
 <?php $metabox->the_field('title'); ?>
         <input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>" placeholder="eg. Google" />
@@ -122,7 +136,9 @@ foreach ($options as $value => $label) {
 <?php $metabox->the_field('description'); ?>
         <input type="text" name="<?php $metabox->the_name(); ?>" value="<?php $metabox->the_value(); ?>" placeholder="eg. http://google.com" />
     </p>
-<?php endwhile; ?>
+<?php
+}
+?>
 
     <h2>Repeating Groups</h2>
     <h4>Documents</h4>
@@ -132,7 +148,7 @@ foreach ($options as $value => $label) {
     <p>Add documents to the library by entering in a title, URL and selecting a level of access</p>
 
 <?php
-while($mb->have_fields_and_multi('docs')):
+while ($mb->have_fields_and_multi('docs')) {
     $mb->the_group_open();
 ?>
 
@@ -155,7 +171,7 @@ while($mb->have_fields_and_multi('docs')):
 
 <?php
     $mb->the_group_close();
-endwhile;
+}
 ?>
 
     <p style="margin-bottom:15px; padding-top:5px;"><a href="#" class="docopy-docs button">Add Document</a></p>

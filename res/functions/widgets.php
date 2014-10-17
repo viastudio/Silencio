@@ -1,53 +1,51 @@
 <?php
 /**
- * Adds Silencio_Children_Pages widget.
+ * Adds SilencioChildrenPages widget.
  */
-class Silencio_Children_Pages extends WP_Widget {
+class SilencioChildrenPages extends WP_Widget {
 
-/**
- * Register widget with WordPress.
- */
+    /**
+     * Register widget with WordPress.
+     */
     public function __construct() {
         parent::__construct(
-            'silencio_children_pages', // Base ID
+            'SilencioChildrenPages', // Base ID
             'Silencio Children Pages', // Name
-            array( 'description' => 'Displays child pages for the current page, with the parent page as the widget title.' ) // Args
+            array('description' => 'Displays child pages for the current page, with the parent page as the widget title.') // Args
         );
     }
 
-/**
- * Front-end display of widget.
- *
- * @see WP_Widget::widget()
- *
- * @param array $args     Widget arguments.
- * @param array $instance Saved values from database.
- */
-    public function widget( $args, $instance ) {
-        global $post;
-        extract( $args );
+    /**
+     * Front-end display of widget.
+     *
+     * @see WP_Widget::widget()
+     *
+     * @param array $args     Widget arguments.
+     * @param array $instance Saved values from database.
+     */
+    public function widget($args, $instance) {
+        $post = $GLOBALS['post'];
+        extract($args);
 
-        if($post->post_parent) {
-            $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
+        if ($post->post_parent) {
+            $children = wp_list_pages("title_li=&child_of=" . $post->post_parent . "&echo=0");
             $title = get_the_title($post->post_parent);
-        }
-
-        else {
-            $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+        } else {
+            $children = wp_list_pages("title_li=&child_of=" . $post->ID . "&echo=0");
             $title = get_the_title($post->ID);
         }
 
-        $title = apply_filters( 'widget_title', $title );
+        $title = apply_filters('widget_title', $title);
 
         if ($children) {
 
-        echo $before_widget;
-        if (!empty($title)) {
-            echo $before_title . $title . $after_title;
-        }
+            echo $before_widget;
+            if (!empty($title)) {
+                echo $before_title . $title . $after_title;
+            }
 ?>
           <ul>
-            <?php echo $children; ?>
+<?php echo $children; ?>
           </ul>
 
 <?php
@@ -55,72 +53,72 @@ class Silencio_Children_Pages extends WP_Widget {
         echo $after_widget;
     }
 
-/**
- * Back-end widget form.
- *
- * @see WP_Widget::form()
- *
- * @param array $instance Previously saved values from database.
- */
-        public function form($instance) {
-/* Set up some default widget settings. */
+    /**
+     * Back-end widget form.
+     *
+     * @see WP_Widget::form()
+     *
+     * @param array $instance Previously saved values from database.
+     */
+    public function form($instance) {
+        /* Set up some default widget settings. */
 ?>
 
     <p>This widget lists all child pages of the current parent. It displays nothing if there aren't any children.</p>
 
 <?php
             $defaults = array();
-            $instance = wp_parse_args( (array) $instance, $defaults );
-        }
+            $instance = wp_parse_args((array) $instance, $defaults);
+    }
 
-/**
- * Sanitize widget form values as they are saved.
- *
- * @see WP_Widget::update()
- *
- * @param array $new_instance Values just sent to be saved.
- * @param array $old_instance Previously saved values from database.
- *
- * @return array Updated safe values to be saved.
- */
-    function update( $new_instance, $old_instance ) {
+    /**
+     * Sanitize widget form values as they are saved.
+     *
+     * @see WP_Widget::update()
+     *
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
+     *
+     * @return array Updated safe values to be saved.
+     */
+    public function update($new_instance, $old_instance) {
         $instance = $old_instance;
 
         return $instance;
     }
 }
 
-// register Silencio_Children_Pages widget
-add_action( 'widgets_init', create_function( '', 'register_widget( "silencio_children_pages" );' ) );
+// register SilencioChildrenPages widget
+add_action('widgets_init', create_function('', 'register_widget("SilencioChildrenPages");'));
 
 
 /**
  * Adds Silencio_Category_Posts widget.
  */
-class Silencio_Category_Posts extends WP_Widget {
+class SilencioCategoryPosts extends WP_Widget {
 
-/**
- * Register widget with WordPress.
- */
+    /**
+     * Register widget with WordPress.
+     */
     public function __construct() {
         parent::__construct(
-            'silencio_category_posts', // Base ID
+            'SilencioCategoryPosts', // Base ID
             'Silencio Category Posts', // Name
-            array( 'description' => 'The most recent posts in a category' ) // Args
+            array('description' => 'The most recent posts in a category') // Args
         );
     }
 
-/**
- * Front-end display of widget.
- *
- * @see WP_Widget::widget()
- *
- * @param array $args     Widget arguments.
- * @param array $instance Saved values from database.
- */
-    public function widget( $args, $instance ) {
-        extract( $args );
-        $title = apply_filters( 'widget_title', $instance['title'] );
+    /**
+     * Front-end display of widget.
+     *
+     * @see WP_Widget::widget()
+     *
+     * @param array $args     Widget arguments.
+     * @param array $instance Saved values from database.
+     */
+    public function widget($args, $instance) {
+        extract($args);
+        $title = apply_filters('widget_title', $instance['title']);
 
         echo $before_widget;
         if (!empty($title)) {
@@ -142,7 +140,7 @@ class Silencio_Category_Posts extends WP_Widget {
             }
 ?>
         </dl>
-        <p class="more"><a href="<?php echo get_permalink(get_option('page_for_posts') );?>" title="More News">More News</a></p>
+        <p class="more"><a href="<?php echo get_permalink(get_option('page_for_posts'));?>" title="More News">More News</a></p>
 <?php
         }
 
@@ -154,21 +152,21 @@ class Silencio_Category_Posts extends WP_Widget {
     }
 
 
-/**
- * Back-end widget form.
- *
- * @see WP_Widget::form()
- *
- * @param array $instance Previously saved values from database.
- */
-        public function form($instance) {
-            /* Set up some default widget settings. */
-            $defaults = array( 'title' => '');
-            $instance = wp_parse_args( (array) $instance, $defaults );
+    /**
+     * Back-end widget form.
+     *
+     * @see WP_Widget::form()
+     *
+     * @param array $instance Previously saved values from database.
+     */
+    public function form($instance) {
+        /* Set up some default widget settings. */
+        $defaults = array('title' => '');
+        $instance = wp_parse_args((array) $instance, $defaults);
 ?>
     <p>
-        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'silencio' ); ?></label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
+        <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'silencio'); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
     </p>
 
     <h4>Show Categories</h4>
@@ -177,44 +175,43 @@ class Silencio_Category_Posts extends WP_Widget {
 
             $cats = get_terms('category', array('hide_empty' => false));
 
-            foreach ($cats as $cat){
-                $instance['silencio-cat-'. $cat->term_id] = isset($instance['silencio-cat-'. $cat->term_id]) ? $instance['silencio-cat-'. $cat->term_id] : false;
+        foreach ($cats as $cat) {
+            $instance['silencio-cat-' . $cat->term_id] = isset($instance['silencio-cat-' . $cat->term_id]) ? $instance['silencio-cat-' . $cat->term_id] : false;
 ?>
-        <p><input class="checkbox" type="checkbox" <?php checked($instance['silencio-cat-'. $cat->term_id], true) ?> id="<?php echo $this->get_field_id('silencio-cat-'. $cat->term_id); ?>" name="<?php echo $this->get_field_name('silencio-cat-'. $cat->term_id); ?>" />
-        <label for="<?php echo $this->get_field_id('silencio-cat-'. $cat->term_id); ?>"><?php echo $cat->name ?></label></p>
+        <p><input class="checkbox" type="checkbox" <?php checked($instance['silencio-cat-' . $cat->term_id], true) ?> id="<?php echo $this->get_field_id('silencio-cat-' . $cat->term_id); ?>" name="<?php echo $this->get_field_name('silencio-cat-' . $cat->term_id); ?>" />
+        <label for="<?php echo $this->get_field_id('silencio-cat-' . $cat->term_id); ?>"><?php echo $cat->name ?></label></p>
 <?php
                 unset($cat);
-            }
+        }
 ?>
     </div>
 <?php
-        }
+    }
 
 
-/**
- * Sanitize widget form values as they are saved.
- *
- * @see WP_Widget::update()
- *
- * @param array $new_instance Values just sent to be saved.
- * @param array $old_instance Previously saved values from database.
- *
- * @return array Updated safe values to be saved.
- */
-    function update( $new_instance, $old_instance ) {
+    /**
+     * Sanitize widget form values as they are saved.
+     *
+     * @see WP_Widget::update()
+     *
+     * @param array $new_instance Values just sent to be saved.
+     * @param array $old_instance Previously saved values from database.
+     *
+     * @return array Updated safe values to be saved.
+     */
+    public function update($new_instance, $old_instance) {
         $instance = $old_instance;
-        $instance['title'] = strip_tags( $new_instance['title'] );
+        $instance['title'] = strip_tags($new_instance['title']);
 
         $cats = get_terms('category', array('hide_empty' => false));
         $selected_cats = array();
 
-        foreach ($cats as $cat){
-            if (isset($new_instance['silencio-cat-'. $cat->term_id])) {
-                $instance['silencio-cat-'. $cat->term_id] = 1;
+        foreach ($cats as $cat) {
+            if (isset($new_instance['silencio-cat-' . $cat->term_id])) {
+                $instance['silencio-cat-' . $cat->term_id] = 1;
                 $selected_cats[] = $cat->term_id;
-            }
-            else {
-                $instance['silencio-cat-'. $cat->term_id] = 0;
+            } else {
+                $instance['silencio-cat-' . $cat->term_id] = 0;
             }
 
             unset($cat);
@@ -227,6 +224,5 @@ class Silencio_Category_Posts extends WP_Widget {
     }
 }
 
-// register Silencio_Category_Posts widget
-add_action( 'widgets_init', create_function( '', 'register_widget( "silencio_category_posts" );' ) );
-?>
+// register SilencioCategoryPosts widget
+add_action('widgets_init', create_function('', 'register_widget("SilencioCategoryPosts");'));

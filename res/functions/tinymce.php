@@ -4,8 +4,9 @@ add_action('init', 'silencio_shortcode_button_init');
 function silencio_shortcode_button_init() {
 
     //Abort early if the user will never see TinyMCE
-    if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') && get_user_option('rich_editing') == 'true')
-           return;
+    if (! current_user_can('edit_posts') && ! current_user_can('edit_pages') && get_user_option('rich_editing') == 'true') {
+        return;
+    }
 
     //Add a callback to register our tinymce plugin
     add_filter("mce_external_plugins", "silencio_register_tinymce_plugin");

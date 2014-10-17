@@ -14,8 +14,8 @@ function metabox_style() {
 }
 
 
-// Custom Meta Box Specs
-$custom_metabox = new WPAlchemy_MetaBox(array(
+// Custom Meta Box Specs - Uncomment to activate the example.
+/*$custom_metabox = new WPAlchemy_MetaBox(array(
     'id' => '_example_meta',
     'title' => 'Custom Options',
     'context' => 'normal', // same as above, defaults to "normal"
@@ -23,4 +23,4 @@ $custom_metabox = new WPAlchemy_MetaBox(array(
     'prefix' => 'silencio_',
     'template' => get_stylesheet_directory() . '/res/functions/wpalchemy/example-meta.php',
     'mode' => WPALCHEMY_MODE_EXTRACT
-));
+));*/
