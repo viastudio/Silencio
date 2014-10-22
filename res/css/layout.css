@@ -386,6 +386,13 @@ body {
 }
 /*  IE Specific
 ----------------------------------------------- */
+/*  Bootstrap Overrides
+----------------------------------------------- */
+.pagination > li > span,
+.pagination > li > span:hover,
+.pagination > li > span:focus {
+  color: #000000;
+}
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   /* Header
