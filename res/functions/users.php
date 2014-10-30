@@ -16,15 +16,18 @@ function silencio_custom_role() {
         $caps = get_role('editor')->capabilities;
 
         // add our new capabilities
-        $caps = array_merge($caps, array(
-            'edit_theme_options' => true,
-            'create_users' => true,
-            'edit_users' => true,
-            'delete_users' => true,
-            'list_users' => true,
-            'remove_users' => true,
-            'promote_users' => true
-        ));
+        $caps = array_merge(
+            $caps,
+            array(
+                'edit_theme_options' => true,
+                'create_users' => true,
+                'edit_users' => true,
+                'delete_users' => true,
+                'list_users' => true,
+                'remove_users' => true,
+                'promote_users' => true
+            )
+        );
         add_role('client_user', 'Client User', $caps);
     }
 
@@ -34,11 +37,14 @@ function silencio_custom_role() {
         $caps = get_role('subscriber')->capabilities;
 
         // add our new capabilities
-        $caps = array_merge($caps, array(
-            'gravityforms_view_entries' => true,
-            'gravityforms_export_entries' => true,
-            'gravityforms_delete_entries' => true
-        ));
+        $caps = array_merge(
+            $caps,
+            array(
+                'gravityforms_view_entries' => true,
+                'gravityforms_export_entries' => true,
+                'gravityforms_delete_entries' => true
+            )
+        );
         add_role('forms_user', 'Forms User', $caps);
     }
 }

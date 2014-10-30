@@ -58,23 +58,17 @@ if (have_posts()) {
 <?php
     while (have_posts()) {
         the_post();
-?>
-<?php get_template_part('content', get_post_format()); ?>
-<?php
+        get_template_part('content', get_post_format());
     }
-?>
-<?php silencio_paging_nav(); ?>
-<?php
+    silencio_paging_nav();
 } else {
-?>
-<?php get_template_part('content', 'none'); ?>
-
-<?php
+    get_template_part('content', 'none');
 }
 ?>
 
         </main><!-- #main -->
     </section><!-- #primary -->
 
-<?php get_sidebar('post'); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar('post');
+get_footer();

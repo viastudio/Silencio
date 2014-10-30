@@ -29,7 +29,9 @@
 <script type="text/javascript" src="//use.typekit.net/########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
-<?php wp_head(); ?>
+<?php
+wp_head();
+?>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/res/js/respond.min.js"></script>
@@ -61,10 +63,14 @@
 get_search_form();
 ?>
                     </div>
-<?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+<?php
+wp_nav_menu(array('theme_location' => 'primary'));
+?>
                     </nav><!-- #site-navigation -->
                     <nav id="ancillary-navigation" role="navigation">
-<?php wp_nav_menu(array('theme_location' => 'ancillary')); ?>
+<?php
+wp_nav_menu(array('theme_location' => 'ancillary'));
+?>
                     </nav><!-- #ancillary-navigation -->
                 </div><!-- .container -->
             </div><!-- .nav-container -->

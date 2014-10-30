@@ -10,7 +10,8 @@ if (post_password_required()) {
 if (have_comments()) {
 ?>
     <h2 class="comments-title">
-<?php printf(_nx('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'silencio'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>');
+<?php
+    printf(_nx('One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'silencio'), number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>');
 ?>
     </h2>
 
@@ -27,7 +28,9 @@ if (have_comments()) {
 ?>
 
     <ol class="comment-list">
-<?php wp_list_comments(array('callback' => 'silencio_comment')); ?>
+<?php
+    wp_list_comments(array('callback' => 'silencio_comment'));
+?>
     </ol><!-- .comment-list -->
 
 <?php
@@ -40,17 +43,15 @@ if (have_comments()) {
         </nav><!-- #comment-nav-below -->
 <?php
     }
-?>
-<?php
 }
-?>
-<?php
+
 if (! comments_open() && '0' != get_comments_number() && post_type_supports(get_post_type(), 'comments')) {
 ?>
     <p class="no-comments"><?php _e('Comments are closed.', 'silencio'); ?></p>
 <?php
 }
+
+comment_form();
 ?>
-<?php comment_form(); ?>
 
 </div><!-- #comments -->

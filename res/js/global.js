@@ -1,7 +1,7 @@
 // JSHint ignores
 /* global FastClick: true */
 
-$(document).ready(function() {
+$(document).ready(function () {
     prepare_fitvid();
     prepare_menu({
         container: $('#content'),
@@ -27,15 +27,14 @@ function prepare_menu(options) {
                 body.toggleClass(options.menu_active_class);
                 options.container.off('fastClick'); // don't need to listen to this until the menu is opened
             });
-        }
-        else {
+        } else {
             options.container.off('fastClick'); // don't need to listen to this until the menu is opened
         }
     });
 
     $('.sub-menu').collapse({ toggle: false }).addClass('collapse');
 
-    $('.btn-menu-dropdown').on('fastClick', function(e) {
+    $('.btn-menu-dropdown').on('fastClick', function (e) {
         $(this).siblings('.sub-menu').collapse('toggle');
     });
 }

@@ -5,7 +5,8 @@ get_header();
     <section id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
-<?php if (have_posts()) {
+<?php
+if (have_posts()) {
 ?>
 
             <header class="page-header">
@@ -15,26 +16,17 @@ get_header();
 <?php
     while (have_posts()) {
         the_post();
-?>
-<?php get_template_part('content', 'search'); ?>
-<?php
+        get_template_part('content', 'search');
     }
-?>
-
-<?php silencio_paging_nav(); ?>
-
-<?php
+    silencio_paging_nav();
 } else {
-?>
-
-<?php get_template_part('content', 'none'); ?>
-
-<?php
+    get_template_part('content', 'none');
 }
 ?>
 
         </main><!-- #main -->
     </section><!-- #primary -->
 
-<?php get_sidebar('post'); ?>
-<?php get_footer(); ?>
+<?php
+get_sidebar('post');
+get_footer();
