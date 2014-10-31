@@ -12,11 +12,14 @@ get_header();
 
                 <div class="page-content">
                     <p>Nothing was found. Please use the Search box below.</p>
-<?php get_search_form(); ?>
+<?php
+get_search_form();
+?>
                 </div><!-- .page-content -->
             </section><!-- .error-404 -->
 
         </main><!-- #main -->
     </div><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -3,12 +3,16 @@
         <h1 class="entry-title"><?php the_title(); ?></h1>
 
         <div class="entry-meta">
-<?php silencio_posted_on(); ?>
+<?php
+silencio_posted_on();
+?>
         </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
 
     <div class="entry-content">
-<?php the_content(); ?>
+<?php
+the_content();
+?>
     </div><!-- .entry-content -->
 
     <footer class="footer-meta">

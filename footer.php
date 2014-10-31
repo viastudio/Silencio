@@ -17,11 +17,14 @@ if (isset($options['theme_option_street_txt_input'], $options['theme_option_city
             <footer id="colophon" class="site-footer" role="contentinfo">
                 <div class="container">
                     <!-- <nav id="footer-nav" role="navigation">
-<?php wp_nav_menu(array('theme_location' => 'footer-menu')); ?>
+<?php
+wp_nav_menu(array('theme_location' => 'footer-menu'));
+?>
                     </nav> -->
 
                     <!-- <aside id="footer-widget" role="complementary">
-<?php if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {
+<?php
+if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {
 }
 ?>
                     </aside> -->

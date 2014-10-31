@@ -13,15 +13,14 @@ if (is_home() && current_user_can('publish_posts')) {
 ?>
 
         <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'silencio'); ?></p>
-<?php get_search_form(); ?>
 <?php
+    get_search_form();
 } else {
 ?>
 
     <p><?php _e('It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'silencio'); ?></p>
-<?php get_search_form(); ?>
-
 <?php
+    get_search_form();
 }
 ?>
     </div><!-- .page-content -->
