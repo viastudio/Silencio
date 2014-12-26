@@ -20,3 +20,9 @@ function silencio_jetpack_setup() {
     );
 }
 add_action('after_setup_theme', 'silencio_jetpack_setup');
+
+/**
+ * Disables auto-activation of Jetpack modules
+ * See: http://jetpack.me/2013/10/07/do-not-automatically-activate-a-jetpack-module/
+ */
+add_filter('jetpack_get_default_modules', '__return_empty_array');
