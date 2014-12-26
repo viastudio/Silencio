@@ -19,7 +19,7 @@ function silencio_jetpack_setup() {
         )
     );
 }
-add_action('after_setup_theme', 'silencio_jetpack_setup');
+// add_action('after_setup_theme', 'silencio_jetpack_setup');
 
 /**
  * Disables auto-activation of Jetpack modules
