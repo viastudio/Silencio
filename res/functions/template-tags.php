@@ -270,4 +270,4 @@ function silencio_category_transient_flusher() {
     delete_transient('all_the_cool_cats');
 }
 add_action('edit_category', 'silencio_category_transient_flusher');
-add_action('save_post', 'silencio_catego<th class="actions-hidden"><span>Actions</span></th>ry_transient_flusher');
+add_action('save_post', 'silencio_category_transient_flusher');
