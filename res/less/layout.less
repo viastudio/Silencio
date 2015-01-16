@@ -191,6 +191,16 @@ body {
     }
 }
 
+.no-csstransitions {
+    .nav-container {
+        left: -100%;
+    }
+
+    .menu-active #page {
+        left: 100%;
+    }
+}
+
 /* Front Page
 ----------------------------------------------- */
 #primary, #primary-full {
@@ -420,6 +430,16 @@ body {
     .menu-active {
         #page {
             .transform(translate3d(0, 0, 0));
+        }
+    }
+
+    .no-csstransitions {
+        .menu-active #page {
+            left: 0;
+        }
+
+        .nav-container {
+            left: 0;
         }
     }
 
