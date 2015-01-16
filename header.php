@@ -67,11 +67,6 @@ get_search_form();
 wp_nav_menu(array('theme_location' => 'primary'));
 ?>
                     </nav><!-- #site-navigation -->
-                    <nav id="ancillary-navigation" role="navigation">
-<?php
-wp_nav_menu(array('theme_location' => 'ancillary'));
-?>
-                    </nav><!-- #ancillary-navigation -->
                 </div><!-- .container -->
             </div><!-- .nav-container -->
 
