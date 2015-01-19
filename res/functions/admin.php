@@ -49,19 +49,9 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
     }
 
     function custom_dashboard_help() {
-        $guide_url = get_theme_mod('theme_option_guide_url_txt_input');
-?>
-        <p>
-            <a href="http://viastudio.com"><img src="http://viastudio.com/via-silencio-ad.png"></a>
-        </p>
-<?php
-        if (!empty($guide_url)) {
-?>
-        <p>
-            <a class="button button-primary button-hero" href="<?php echo $guide_url; ?>" target="_blank">View User Guide</a>
-        </p>
-<?php
-        }
+        echo '
+            <p style="text-align:center;"><a href="http://viastudio.com"><img src="http://viastudio.com/via-silencio-ad.png"></a></p>
+        ';
     }
 
     /**
