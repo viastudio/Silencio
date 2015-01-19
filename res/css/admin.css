@@ -21,3 +21,6 @@
     background-image: none;
     width: 0;
 }
+#custom_help_widget .inside {
+    text-align: center;
+}
