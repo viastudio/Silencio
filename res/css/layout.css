@@ -276,6 +276,12 @@ body {
   -moz-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
+.no-csstransitions .nav-container {
+  left: -100%;
+}
+.no-csstransitions .menu-active #page {
+  left: 100%;
+}
 /* Front Page
 ----------------------------------------------- */
 #primary,
@@ -377,11 +383,11 @@ body {
   padding-left: 28px;
   background: no-repeat left 50%;
   background-image: url('../img/logo_via.png');
+  background-size: 23px 10px;
 }
 @media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
   #colophon .via_tag a {
     background-image: url("../img/logo_via@2x.png");
-    background-size: 23px 10px;
   }
 }
 /*  IE Specific
@@ -416,6 +422,12 @@ body {
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+  .no-csstransitions .menu-active #page {
+    left: 0;
+  }
+  .no-csstransitions .nav-container {
+    left: 0;
   }
   /* Menu
     ----------------------------------------------- */

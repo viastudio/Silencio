@@ -116,6 +116,12 @@ function silencio_options_page_fields() {
         "type"    => "select",
         "choices" => $choices
     );
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "guide_url_txt_input",
+        "label"   => __('WordPress User Guide URL', 'silencio'),
+        "type"    => "text"
+    );
 
     return $options;
 }
