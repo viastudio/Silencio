@@ -67,10 +67,25 @@ function silencio_scripts() {
         $style = 'build/global.min.css';
     }
 
-    wp_enqueue_script('global', get_template_directory_uri() . '/res/' . $global, array('jquery'), filemtime(get_stylesheet_directory() . '/res/' . $global), true);
+    /*
+     * If VIA_DEPLOYMENT is defined, contents are appended to bust client-side caches.
+     * If it's not defined, fall back to file modified time.
+     */
+    wp_enqueue_script(
+        'global',
+        get_template_directory_uri() . '/res/' . $global,
+        array('jquery'),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $global),
+        true
+    );
 
-    // Register the style like this for a theme:
-    wp_register_style('via-style', get_template_directory_uri() . '/res/' . $style, array(), filemtime(get_stylesheet_directory() . '/res/' . $style), 'all');
+    wp_register_style(
+        'via-style',
+        get_template_directory_uri() . '/res/' . $style,
+        array(),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $style),
+        'all'
+    );
 
     // enqueing:
     wp_enqueue_style('via-style');
