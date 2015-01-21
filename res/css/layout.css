@@ -365,6 +365,92 @@ body {
 .widget {
   margin-bottom: 20px;
 }
+.widget_silenciochildrenpages {
+  padding: 0;
+  border: 2px solid black;
+  background: white;
+}
+.widget_silenciochildrenpages .current_page_item {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.widget_silenciochildrenpages p:last-child {
+  margin-bottom: 0;
+}
+.widget_silenciochildrenpages h3.widget-title {
+  background: #3a6db2;
+  font-size: 1.5em;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.widget_silenciochildrenpages h3.widget-title a {
+  color: white;
+}
+.widget_silenciochildrenpages ul li.current_page_item {
+  font-weight: 700;
+}
+.widget_silenciochildrenpages ul a {
+  display: block;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  position: relative;
+  border-bottom: 1px solid black;
+}
+.widget_silenciochildrenpages li:last-child > a {
+  border-bottom: 0;
+}
+.widget_silenciochildrenpages .children {
+  display: none;
+}
+.widget_silenciochildrenpages .children a {
+  text-transform: none;
+  font-weight: 400;
+  border-bottom: 1px solid black;
+  padding-left: 40px;
+}
+.widget_silenciochildrenpages .children li:last-child > a {
+  border-bottom: 1px solid black;
+}
+.widget_silenciochildrenpages .current_page_ancestor > .children,
+.widget_silenciochildrenpages .current_page_item > .children {
+  display: block;
+}
+.widget_silenciochildrenpages .children .children a {
+  padding-left: 60px;
+}
+.widget_silenciochildrenpages .children .children .children a {
+  padding-left: 80px;
+}
+.widget_silenciochildrenpages .current_page_ancestor > a,
+.widget_silenciochildrenpages .current_page_item > a {
+  font-weight: 700;
+  color: #ffffff;
+}
+.widget_silenciochildrenpages .current_page_item > a {
+  background-color: #ffffff;
+  color: #3a6db2;
+}
+.widget_silenciochildrenpages .children > .current_page_item > a,
+.widget_silenciochildrenpages .children > .current_page_ancestor > a {
+  background-color: #ffffff;
+  color: #3a6db2;
+}
+.widget_silenciochildrenpages .children > .current_page_item > a:before,
+.widget_silenciochildrenpages .children > .current_page_ancestor > a:before {
+  content: none;
+}
+.widget_silenciochildrenpages .children > .current_page_ancestor > a {
+  border-bottom: 1px solid #ffffff;
+}
+.widget_silenciochildrenpages .children .children > .current_page_item > a {
+  background-color: #ffffff;
+  color: #3a6db2;
+}
+.widget_silenciochildrenpages .current_page_ancestor > a {
+  background-color: #ffffff;
+  color: #3a6db2;
+}
 .widget-last {
   margin-bottom: 0;
 }
