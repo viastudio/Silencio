@@ -332,8 +332,108 @@ body {
     }
 }
 
-.widget_silencio_children_pages {
+.widget_silenciochildrenpages {
+    padding: 0;
+    border: 2px solid black;
+    background: white;
+    .current_page_item{
+        background-color: rgba(0,0,0,.1);
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
 
+    h3.widget-title {
+        background: @primary;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        a{
+            color:white;
+        }
+    }
+
+    ul {
+        li.current_page_item {
+            font-weight: @bold;
+        }
+    }
+
+    ul a {
+        display: block;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        position: relative;
+        border-bottom: 1px solid black;
+    }
+
+    li:last-child > a {
+        border-bottom: 0;
+    }
+
+    .children {
+        display: none;
+        a {
+            text-transform: none;
+            font-weight: @regular;
+            border-bottom: 1px solid black;
+            padding-left: 40px;
+        }
+
+        li:last-child > a {
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .current_page_ancestor > .children,
+    .current_page_item > .children {
+        display: block;
+    }
+
+    .children .children a {
+        padding-left: 60px;
+    }
+
+    .children .children .children a {
+        padding-left: 80px;
+    }
+
+    .current_page_ancestor > a,
+    .current_page_item > a {
+        font-weight: @bold;
+        color: @white;
+    }
+
+    .current_page_item > a {
+        background-color: lighten(@primary, 65%);
+        color: @primary;
+    }
+
+    .children > .current_page_item > a,
+    .children > .current_page_ancestor > a {
+        background-color: lighten(@primary, 65%);
+        color: @primary;
+
+        &:before {
+            content: none;
+        }
+    }
+
+    .children > .current_page_ancestor > a {
+        border-bottom: 1px solid lighten(@grey, 17%);
+    }
+
+    .children .children > .current_page_item > a {
+        background-color: lighten(@primary, 65%);
+        color: @primary;
+    }
+
+    .current_page_ancestor > a {
+        background-color: lighten(@primary, 65%);
+        color: @primary;
+    }
 }
 
 .widget_silencio_category_posts {
