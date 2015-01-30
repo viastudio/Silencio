@@ -40,6 +40,11 @@ wp_head();
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+if (function_exists('gtm4wp_the_gtm_tag')) {
+    gtm4wp_the_gtm_tag();
+}
+?>
     <div class="body-wrap">
         <div id="page" class="hfeed site">
             <header id="masthead" class="site-header" role="banner">
