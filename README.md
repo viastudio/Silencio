@@ -58,3 +58,102 @@ Silencio’s stylesheet is meant to be hacked. It includes files for layout and 
 - WordPress SEO: Should be configured at site launch.
 
 Built by VIA Studio.
+
+## Getting Started
+Silencio is pretty easy to get up and running. There are a few tools you’ll need to set up if you want to make use of LESS and Silencio’s easy build scripts. If you’re not into that, you can skip this bit and work directly on the included CSS and JS files.
+
+1. [Node.js](http://nodejs.org) Install this first.
+2. [Grunt](http://gruntjs.com/getting-started) is used for automating common front-end tasks like compiling LESS to CSS and building a single minified JS and CSS file for production.
+3. Copy Silencio into WordPress’ `wp-content/themes/` folder like you would any other theme.
+4. From the command line, run `npm install`. This will install everything Grunt needs to compile LESS, CSS, and JS.
+
+You only need to install Node & Grunt on the machine you’re using for development, so don’t worry if your hosting doesn’t support it or let you install things.
+
+Once you’re done with all of that, you’re ready to start hacking!
+
+## Grunt
+There are two tasks included with Silencio.
+* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/css`.
+* `grunt` will build your theme for release. This includes compiling LESS to CSS, minifying CSS into `res/build/global.min.css`, and minifying JS into `res/build/global.min.js`.
+
+### Configuration
+Any JS files that you want to include in your `global.min.js` can be added to the `uglify.build.src` array. Similarly, add CSS files to `cssmin.build.src` to include them in `global.min.css`. LESS files will automatically be included in Silencio's watch task.
+
+## LESS Mixins
+`variables.less` contains an assortment of mixins to make theme development faster. Most handle browser-specific prefixes for newer CSS properties, and are pretty self-explanitory.
+
+### .at2x(@path, @w, @h)
+Given an image path and a width & height, sets a background image on an element and creates a media query for a 2x version of that asset. Make sure your 2x asset is named the same and has `@2x` at the end of the filename, and you’re good to go.
+
+### .at2x(@path, @w, @h, @device-width)
+Apply different 1x & 2x assets depending on device width.
+
+## Theme Options
+`theme-options.php` includes a basic set of location-related theme options. You can copy any of the `$options[] = ...` blocks to add your own. Just make sure you change your options ID to something different and it'll show up in the Appearance > Customize screen when Silencio is enabled.
+
+## Metaboxes
+`metaboxes.php` includes an example of a custom meta box created using the [WPAlchemy](http://www.farinspace.com/wpalchemy-metabox/) metabox helper. Include this file in functions.php and uncomment the example metabox to see it in action. You can use this to add just about any kind of custom data to a post, page, or custom post type with an easier UI than what's provided by the built-in custom fields editor and without pulling in another plugin.
+
+## Function Reference
+
+### Template Tags
+#### silencio_paging_nav()
+Display navigation to next/previous set of posts when applicable.
+#### silencio_paging_numeric()
+Displays numeric pagination using Bootstrap’s pagination styles.
+#### silencio_post_nav()
+Display navigation to next/previous post when applicable.
+#### silencio_comment($comment, $args, $depth)
+Template for comments and pingbacks. Used as a callback by wp_list_comments() for displaying the comments.
+#### silencio_posted_on()
+Prints HTML with meta information for the current post-date/time and author.
+#### silencio_categorized_blog()
+Returns true if a blog has more than 1 category.
+#### silencio_category_transient_flusher()
+Flush out the transients used in silencio_categorized_blog.
+
+### Shortcodes
+Silencio bundles shortcodes that allow your users to take advantage of Bootstrap’s 12 column grid. Make use of this grid in posts like so.
+
+    [row]
+        [span6]
+            Content!
+        [/span6]
+    [span6]
+            More content!
+        [/span6]
+    [/row]
+
+Replace span6 with span1 - span12, and make sure you don’t put more than 12 units in one row.
+
+### Custom widgets
+Silencio includes two custom widgets. `/res/functions/widgets.php` is also a great place to register any custom widgets of your own.
+
+#### SilencioCategoryPosts
+Lists posts in the same category as the post you’re currently viewing.
+
+#### SilencioChildrenPages
+Lists pages that are direct descendants of the current page. This widget will not display if the current page has no children.
+
+### Excerpts
+Silencio provides some minimal customizes WordPress’ default excerpt settings. You can build upon these to suit your project.
+
+#### via_excerpt_length($length)
+Change the integer this returns to set your site’s excerpt length.
+
+#### via_continue_reading_link()
+Formats the “Continue Reading" link for excerpts.
+
+#### via_auto_excerpt_more($more)
+Replaces the default "…" excerpt with a more attractive "Continue Reading >>" link.
+
+### TinyMCE
+Silencio provides a handy dropdown for the aformentioned grid styles. You can add your own TinyMCE plugins & buttons using the `silencio_register_tinymce_plugin` and `silencio_add_tinymce_button` functions, respectively.
+
+### Post Types & Taxonomies
+Silencio includes a "Slider" example custom post type. It isn't included by default, but can be enabled by uncommenting the post-types.php include in functions.php. You can customize and copy this to create any custom post type.
+
+taxonomies.php includes a similar example for a custom taxonomy.
+
+### Jetpack
+Silencio is compatible with Jetpack's infinite scroll plugin, and also disables auto-activation of new Jetpack modules by default. This prevents unexpected issues from new Jetpack functionality being enabled after a plugin update.
