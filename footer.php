@@ -22,7 +22,7 @@ wp_nav_menu(array('theme_location' => 'footer-menu'));
 ?>
                     </nav> -->
 
-                    <!-- <aside id="footer-widget" role="complementary">
+                    <!-- <aside class="footer-widget" role="complementary">
 <?php
 if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {
 }
