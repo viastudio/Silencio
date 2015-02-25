@@ -13,7 +13,7 @@
   padding-left: 1px;
   color: #a94442;
 }
-.ginput_container input,
+.ginput_container input:not([type="checkbox"]):not([type="radio"]),
 .ginput_container select,
 .ginput_container textarea {
   display: block;
@@ -39,7 +39,7 @@
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s 1s ease-in-out;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s 1s ease-in-out;
 }
-.ginput_container input:focus,
+.ginput_container input:not([type="checkbox"]):not([type="radio"]):focus,
 .ginput_container select:focus,
 .ginput_container textarea:focus {
   border-color: #66afe9;
@@ -50,39 +50,79 @@
   -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) 4px 8px 2px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6) 4px 8px 2px rgba(0, 0, 0, 0.3);
 }
-.ginput_container input::-moz-placeholder,
+.ginput_container input:not([type="checkbox"]):not([type="radio"])::-moz-placeholder,
 .ginput_container select::-moz-placeholder,
 .ginput_container textarea::-moz-placeholder {
   color: #999999;
   opacity: 1;
 }
-.ginput_container input:-ms-input-placeholder,
+.ginput_container input:not([type="checkbox"]):not([type="radio"]):-ms-input-placeholder,
 .ginput_container select:-ms-input-placeholder,
 .ginput_container textarea:-ms-input-placeholder {
   color: #999999;
 }
-.ginput_container input::-webkit-input-placeholder,
+.ginput_container input:not([type="checkbox"]):not([type="radio"])::-webkit-input-placeholder,
 .ginput_container select::-webkit-input-placeholder,
 .ginput_container textarea::-webkit-input-placeholder {
   color: #999999;
 }
-.ginput_container input[disabled],
+.ginput_container input:not([type="checkbox"]):not([type="radio"])[disabled],
 .ginput_container select[disabled],
 .ginput_container textarea[disabled],
-.ginput_container input[readonly],
+.ginput_container input:not([type="checkbox"]):not([type="radio"])[readonly],
 .ginput_container select[readonly],
 .ginput_container textarea[readonly],
-fieldset[disabled] .ginput_container input,
+fieldset[disabled] .ginput_container input:not([type="checkbox"]):not([type="radio"]),
 fieldset[disabled] .ginput_container select,
 fieldset[disabled] .ginput_container textarea {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
 }
-textarea.ginput_container input,
+textarea.ginput_container input:not([type="checkbox"]):not([type="radio"]),
 textarea.ginput_container select,
 textarea.ginput_container textarea {
   height: auto;
+}
+.ginput_container .gfield_checkbox li {
+  display: block;
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.ginput_container .gfield_checkbox li label {
+  display: inline;
+  font-weight: normal;
+  cursor: pointer;
+}
+.ginput_container .gfield_checkbox li[disabled],
+fieldset[disabled] .ginput_container .gfield_checkbox li {
+  cursor: not-allowed;
+}
+.ginput_container .gfield_checkbox li input {
+  position: absolute;
+  margin-left: -20px;
+}
+.ginput_container .gfield_radio li {
+  display: block;
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
+.ginput_container .gfield_radio li label {
+  display: inline;
+  font-weight: normal;
+  cursor: pointer;
+}
+.ginput_container .gfield_radio li[disabled],
+fieldset[disabled] .ginput_container .gfield_radio li {
+  cursor: not-allowed;
+}
+.ginput_container .gfield_radio li input {
+  position: absolute;
+  margin-left: -20px;
 }
 .ginput_container textarea {
   height: auto;
