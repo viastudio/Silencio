@@ -26,10 +26,27 @@
     color: @state-danger-text;
 }
 
-.ginput_container input,
+.ginput_container input:not([type="checkbox"]):not([type="radio"]),
 .ginput_container select,
 .ginput_container textarea {
     .form-control();
+}
+
+.ginput_container .gfield_checkbox li {
+    .checkbox();
+
+    input {
+        position: absolute;
+        margin-left: -20px;
+    }
+}
+.ginput_container .gfield_radio li {
+    .radio();
+
+    input {
+        position: absolute;
+        margin-left: -20px;
+    }
 }
 
 .ginput_container textarea {
