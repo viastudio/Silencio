@@ -208,7 +208,7 @@ if (!function_exists('silencio_posted_on')) {
     function silencio_posted_on() {
         $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
         if (get_the_time('U') !== get_the_modified_time('U')) {
-            $time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
+            $time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
         }
 
         $time_string = sprintf(
@@ -232,6 +232,17 @@ if (!function_exists('silencio_posted_on')) {
                 esc_html(get_the_author())
             )
         );
+    }
+}
+if (!function_exists('silencio_footer_meta')) {
+    /**
+     * Footer meta
+     */
+    function silencio_footer_meta() {
+        $category_list = get_the_category_list(__(', ', 'silencio'));
+        $tag_list = get_the_tag_list('', __(', ', 'silencio'));
+        printf("<span>Categories: %s </span>", $category_list, get_permalink());
+        printf("<span> | Tags: %s </span>", $tag_list, get_permalink());
     }
 }
 
