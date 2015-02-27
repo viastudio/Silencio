@@ -15,12 +15,13 @@ function metabox_style() {
 
 
 // Custom Meta Box Specs - Uncomment to activate the example.
-/*$custom_metabox = new WPAlchemy_MetaBox(array(
-    'id' => '_example_meta',
-    'title' => 'Custom Options',
-    'context' => 'normal', // same as above, defaults to "normal"
-    'priority' => 'high', // same as above, defaults to "high"
-    'prefix' => 'silencio_',
-    'template' => get_stylesheet_directory() . '/res/functions/wpalchemy/example-meta.php',
-    'mode' => WPALCHEMY_MODE_EXTRACT
-));*/
+// $custom_metabox = new WPAlchemy_MetaBox(array(
+//     'id' => '_example_meta',
+//     'title' => 'Custom Options',
+//     'context' => 'normal', // same as above, defaults to "normal"
+//     'priority' => 'high', // same as above, defaults to "high"
+//     'prefix' => 'silencio_',
+//     'include_template' => 'template-metaboxes.php',
+//     'template' => get_stylesheet_directory() . '/res/functions/wpalchemy/example-meta.php',
+//     'mode' => WPALCHEMY_MODE_EXTRACT
+// ));
