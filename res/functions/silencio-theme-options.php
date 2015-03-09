@@ -62,6 +62,13 @@ function silencio_options_page_fields() {
 
     $options[] = array(
         "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "fax_txt_input",
+        "label"   => __('Fax Number', 'silencio'),
+        "type"    => "text"
+    );
+
+    $options[] = array(
+        "section" => "theme_options",
         "id"      => SILENCIO_SHORTNAME . "facebook_txt_input",
         "label"   => __('Facebook Link', 'silencio'),
         "type"    => "text",
