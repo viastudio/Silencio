@@ -234,6 +234,7 @@ if (!function_exists('silencio_posted_on')) {
         );
     }
 }
+
 if (!function_exists('silencio_footer_meta')) {
     /**
      * Footer meta

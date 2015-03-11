@@ -105,13 +105,22 @@ body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
 
 .ginput_complex {
     .make-row();
+    clear: both;
+    margin-bottom: 20px;
+    overflow: hidden;
 
     label {
         font-weight: normal;
     }
 
+    br {
+        display: none;
+    }
+
     .ginput_left,
-    .ginput_right {
+    .ginput_right,
+    .name_first,
+    .name_last {
         .make-xs-column(12);
         .make-md-column(6);
     }
