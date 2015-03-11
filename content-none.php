@@ -1,4 +1,4 @@
-<section class="no-results not-found">
+<div class="no-results not-found">
     <header class="page-header">
         <h1 class="page-title"><?php _e('Nothing Found', 'silencio'); ?></h1>
     </header><!-- .page-header -->
@@ -24,4 +24,4 @@ if (is_home() && current_user_can('publish_posts')) {
 }
 ?>
     </div><!-- .page-content -->
-</section><!-- .no-results -->
+</div><!-- .no-results -->
