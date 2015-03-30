@@ -41,20 +41,6 @@ body {
     width: 100%;
   }
 }
-@media (min-width: 992px) {
-  #masthead .site-branding,
-  #colophon .site-branding {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  #masthead .site-branding,
-  #colophon .site-branding {
-    float: left;
-    width: 100%;
-  }
-}
 #content {
   margin-left: -15px;
   margin-right: -15px;
@@ -77,18 +63,6 @@ body {
     width: 100%;
   }
 }
-@media (min-width: 992px) {
-  #content #primary-full {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 1200px) {
-  #content #primary-full {
-    float: left;
-    width: 100%;
-  }
-}
 #content #primary {
   position: relative;
   min-height: 1px;
@@ -96,18 +70,6 @@ body {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  #content #primary {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  #content #primary {
-    float: left;
-    width: 75%;
-  }
-}
-@media (min-width: 1200px) {
   #content #primary {
     float: left;
     width: 66.66666667%;
@@ -120,18 +82,6 @@ body {
   padding-right: 15px;
 }
 @media (min-width: 768px) {
-  #content #secondary {
-    float: left;
-    width: 100%;
-  }
-}
-@media (min-width: 992px) {
-  #content #secondary {
-    float: left;
-    width: 25%;
-  }
-}
-@media (min-width: 1200px) {
   #content #secondary {
     float: left;
     width: 33.33333333%;
