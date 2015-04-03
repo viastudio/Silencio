@@ -55,17 +55,17 @@ if (!empty($options['theme_option_zip_txt_input'])) {
 }
 if (!empty($options['theme_option_phone_txt_input'])) {
 ?>
-                            <li><span itemprop="tel"><?php echo $options['theme_option_phone_txt_input']; ?> <i class="fa fa-phone"></i></span></li>
+                            <li><span itemprop="tel"><i class="fa fa-phone"></i> <?php echo $options['theme_option_phone_txt_input']; ?></span></li>
 <?php
 }
 if (!empty($options['theme_option_fax_txt_input'])) {
 ?>
-                            <li><span itemprop="faxNumber"><?php echo $options['theme_option_fax_txt_input']; ?></span></li>
+                            <li><i class="fa fa-fax"></i> <span itemprop="faxNumber"><?php echo $options['theme_option_fax_txt_input']; ?></span></li>
 <?php
 }
 if (!empty($options['theme_option_email_txt_input'])) {
 ?>
-                            <li><span itemprop="email"><a href="<?php echo $options['theme_option_email_txt_input']; ?>">Email <i class="fa fa-envelope"></i></a></span></li>
+                            <li><span itemprop="email"> <i class="fa fa-envelope"></i> <a href="mailto:<?php echo $options['theme_option_email_txt_input']; ?>">Email</a></span></li>
 <?php
 }
 ?>
