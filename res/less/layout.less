@@ -3,8 +3,8 @@
 @import (reference) "../bootstrap/variables.less";
 @import (reference) "../bootstrap/utilities.less";
 @import (reference) "../bootstrap/mixins.less";
-@import "variables.less";
-// @import "forms.less";
+@import "lib/variables.less";
+// @import "lib/forms.less";
 
 /* Layout
 ----------------------------------------------- */
@@ -94,8 +94,8 @@ body {
     width: 100%;
     min-height: 200%;
     left: 0;
-    .backface-visibility(hidden);
-    .transition-prefixed(transform, 600ms, cubic-bezier(.09,.95,.49,.94));
+    backface-visibility: hidden;
+    transition: transform, 600ms, cubic-bezier(.09,.95,.49,.94);
 }
 
 .nav-container {
@@ -106,8 +106,8 @@ body {
     height: 100%;
     background: @black;
 
-    .transform(translate3d(-100%, 0, 0));
-    .backface-visibility(hidden);
+    transform: translate3d(-100%, 0, 0);
+    backface-visibility: hidden;
 
     .menu-close {
         font-size: 1.2em;
@@ -177,7 +177,7 @@ body {
 
 .menu-active {
     #page {
-        .transform(translate3d(100%, 0, 0));
+        transform: translate3d(100%, 0, 0);
     }
 }
 
@@ -517,7 +517,7 @@ body {
 
     .menu-active {
         #page {
-            .transform(translate3d(0, 0, 0));
+            transform: translate3d(0, 0, 0);
         }
     }
 
@@ -541,7 +541,7 @@ body {
         padding: 0;
         margin: 0 auto;
 
-        .transform(none);
+        transform: none;
 
         #site-navigation, #ancillary-navigation {
             padding-left: 0;

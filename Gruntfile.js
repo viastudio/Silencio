@@ -44,11 +44,29 @@ module.exports = function(grunt) {
                 ]
             },
             dev: {
-                    files: [
+                files: [
                     {
                         expand: true,
                         cwd: 'res/less/',
                         src: ['*.less'],
+                        dest: 'res/.tmp/css/',
+                        ext: '.css'
+                    }
+                ]
+            }
+        },
+
+        // Add vendor prefixed styles
+        autoprefixer: {
+            options: {
+                browsers: ['last 2 versions'],
+            },
+            dev: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'res/.tmp/css/',
+                        src: ['typography.css', 'layout.css'],
                         dest: 'res/css/',
                         ext: '.css'
                     }
@@ -59,8 +77,12 @@ module.exports = function(grunt) {
         // Contains tasks to run when grunt watch is invoked. Whenever any of the files specified are modified, executes tasks specified.
         watch: {
             less: {
-                files: 'res/less/*.less',
+                files: 'res/less/**/*.less',
                 tasks: 'less:dev'
+            },
+            autoprefixer: {
+                files: 'res/.tmp/css/*.css',
+                tasks: 'autoprefixer:dev'
             }
         }
     });
@@ -69,8 +91,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task - executes when you run grunt in the theme root.
-    grunt.registerTask('default', ['less:dev', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['less:dev', 'autoprefixer:dev', 'uglify', 'cssmin']);
 };

@@ -211,8 +211,6 @@ input[type="radio"] {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-decoration {
@@ -303,6 +301,10 @@ span.amp {
 /* Misc. */
 input::-moz-focus-inner {
   border: 0;
+}
+::-moz-selection {
+  background: #000000;
+  color: #ffffff;
 }
 ::selection {
   background: #000000;
