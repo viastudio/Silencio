@@ -14,7 +14,7 @@ Our Grunt config compiles Less to CSS and CoffeeScript to Javascript for local d
 We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.
 
 ### Templates
-There are two templates bundled with Silencio, Typography and UI Kit. Using these templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete.
+There are four templates bundled with Silencio: Typography, UI Kit, Metaboxes, and Full Width. Using the Typography and Full Width templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete. The Metabox template is a resource for the developer to demonstrate how data from custom WP Alchemy Metaboxes can be displayed. The Full Width Template can be used for content pages that do not include a sidebar.
 
 ### Widgets
 Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose which categories you’d like to display entries from. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.
