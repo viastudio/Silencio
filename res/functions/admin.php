@@ -98,12 +98,12 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
                 'title' => 'Intro',
                 'selector' => 'p',
                 'classes' => 'intro'
-           ),
+            ),
             array(
                 'title' => 'Button',
                 'selector' => 'a',
                 'classes' => 'btn'
-           )
+            )
         );
 
         $settings['style_formats'] = json_encode($style_formats);
