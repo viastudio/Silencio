@@ -93,11 +93,9 @@ function silencio_formatter($content) {
     foreach ($pieces as $piece) {
         /* Look for presence of the shortcode */
         if (preg_match($pattern_contents, $piece, $matches)) {
-
             /* Append to content (no formatting) */
             $new_content .= $matches[1];
         } else {
-
             /* Format and append to content */
             $new_content .= wptexturize(wpautop($piece));
         }
