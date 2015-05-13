@@ -8,7 +8,7 @@ We all know that WordPress is a great platform for content generation. Silencio 
 Set up your project locally and on production.
 
 ### Grunt
-Our Grunt config compiles Less to CSS and CoffeeScript to Javascript for local development. For production deploys, all resources get concatenated and minified into a build folder.
+Our Grunt config compiles LESS to CSS, then inserts browser vendor prefixes using Autoprefixer for local development. For production deploys, all resources get concatenated and minified into a build folder.
 
 ### Meta Boxes
 We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.
@@ -73,14 +73,14 @@ Once you’re done with all of that, you’re ready to start hacking!
 
 ## Grunt
 There are two tasks included with Silencio.
-* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/css`.
+* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/.tmp/css`. Autoprefixer then does it's magic and outputs results to `res/css`. 
 * `grunt` will build your theme for release. This includes compiling LESS to CSS, minifying CSS into `res/build/global.min.css`, and minifying JS into `res/build/global.min.js`.
 
 ### Configuration
-Any JS files that you want to include in your `global.min.js` can be added to the `uglify.build.src` array. Similarly, add CSS files to `cssmin.build.src` to include them in `global.min.css`. LESS files will automatically be included in Silencio's watch task.
+Any JS files that you want to include in your `global.min.js` can be added to the `uglify.build.src` array. Similarly, add CSS files to `cssmin.build.src` to include them in `global.min.css`. LESS files will automatically be included in Silencio's watch task, unless they're in `less/lib`. This folder is for LESS utilities that don't correspond to a CSS file.
 
 ## LESS Mixins
-`variables.less` contains an assortment of mixins to make theme development faster. Most handle browser-specific prefixes for newer CSS properties, and are pretty self-explanitory.
+`less/lib/variables.less` contains an assortment of mixins to make theme development faster, and is a handy place to store variables available in all stylesheets.
 
 ### .at2x(@path, @w, @h)
 Given an image path and a width & height, sets a background image on an element and creates a media query for a 2x version of that asset. Make sure your 2x asset is named the same and has `@2x` at the end of the filename, and you’re good to go.
