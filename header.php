@@ -22,9 +22,6 @@
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
-<!-- Modernizr -->
-<script src="<?php echo get_template_directory_uri(); ?>/res/js/modernizr-2.7.1.min.js"></script>
-
 <!-- Typekit >
 <script type="text/javascript" src="//use.typekit.net/########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
