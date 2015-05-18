@@ -55,7 +55,7 @@ if (!empty($options['theme_option_zip_txt_input'])) {
 }
 if (!empty($options['theme_option_phone_txt_input'])) {
 ?>
-                            <li><span itemprop="tel"><i class="fa fa-phone"></i> <?php echo $options['theme_option_phone_txt_input']; ?></span></li>
+                            <li><span itemprop="tel"><i class="fa fa-phone"></i><a href="tel:<?php echo $options['theme_option_phone_txt_input']; ?>"> <?php echo $options['theme_option_phone_txt_input']; ?></a></span></li>
 <?php
 }
 if (!empty($options['theme_option_fax_txt_input'])) {
