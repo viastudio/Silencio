@@ -10,6 +10,7 @@ module.exports = function(grunt) {
                 src: [
                     'res/js/bootstrap.js',
                     'res/js/fitvids.js',
+                    'res/js/retina.js',
                     'res/js/google.fastbutton.js',
                     'res/js/jquery.google.fastbutton.js',
                     'res/js/global.js'
