@@ -11,57 +11,79 @@ function silencio_row($atts, $content = null) {
 add_shortcode('row', 'silencio_row');
 
 function silencio_col1($atts, $content = null) {
-    return '<div class="col-md-1">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-1' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col1', 'silencio_col1');
 
 function silencio_col2($atts, $content = null) {
-    return '<div class="col-md-2">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-2' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col2', 'silencio_col2');
 
 function silencio_col3($atts, $content = null) {
-    return '<div class="col-md-3">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-3' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col3', 'silencio_col3');
 
 function silencio_col4($atts, $content = null) {
-    return '<div class="col-md-4">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-4' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col4', 'silencio_col4');
 
 function silencio_col5($atts, $content = null) {
-    return '<div class="col-md-5">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-5' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col5', 'silencio_col5');
 
 function silencio_col6($atts, $content = null) {
-    return '<div class="col-md-6">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-6' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col6', 'silencio_col6');
 
 function silencio_col7($atts, $content = null) {
-    return '<div class="col-md-7">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-7' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col7', 'silencio_col7');
 
 function silencio_col8($atts, $content = null) {
-    return '<div class="col-md-8">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-8' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col8', 'silencio_col8');
 
 function silencio_col9($atts, $content = null) {
-    return '<div class="col-md-9">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-9' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col9', 'silencio_col9');
 
 function silencio_col10($atts, $content = null) {
-    return '<div class="col-md-10">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-10' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col10', 'silencio_col10');
 
 function silencio_col11($atts, $content = null) {
-    return '<div class="col-md-11">' . do_shortcode($content) . '</div>';
+    $a = shortcode_atts(array('offset' => ''), $atts);
+    $offset = $a['offset'] ? ' col-md-offset-' . esc_attr($a['offset']) : '';
+    return '<div class="col-md-11' . $offset . '">'  . do_shortcode($content) . '</div>';
 }
 add_shortcode('col11', 'silencio_col11');
 
