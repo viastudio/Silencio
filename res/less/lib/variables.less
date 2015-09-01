@@ -33,6 +33,38 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+.make-btn(@color; @background; @border; @hover-color: @color; @hover-background: @background; @hover-border: @border) {
+    color: @color;
+    background-color: @background;
+    border-color: @border;
+
+    &:hover,
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        color: @hover-color;
+        background-color: @hover-background;
+        border-color: @hover-border;
+    }
+
+    &:visited {
+        color: @color;
+        background-color: @background;
+        border-color: @border;
+        &:hover {
+            color: @hover-color;
+            background-color: @hover-background;
+            border-color: @hover-border;
+        }
+    }
+    &:active,
+    &.active,
+    .open > .dropdown-toggle& {
+        background-image: none;
+    }
+}
 
 // From retina.less
 // A helper mixin for applying high-resolution background images (http://www.retinajs.com)
