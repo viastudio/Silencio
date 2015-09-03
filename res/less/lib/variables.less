@@ -21,7 +21,17 @@
 @bold: 700;
 @extrabold: 800;
 
+//Breakpoints
+@screen-sm: 768px;
+@screen-md: 992px;
+@screen-lg: 1200px;
+
 // Mix-Ins
+.respond(@minWidth; @rules) {
+    @media only screen and (min-width: @minWidth) {
+        @rules();
+    }
+}
 .container (
     @max-width: 1170px,
     @width: 94%,
