@@ -11,10 +11,10 @@ Set up your project locally and on production.
 Our Grunt config compiles LESS to CSS, then inserts browser vendor prefixes using Autoprefixer for local development. For production deploys, all resources get concatenated and minified into a build folder.
 
 ### Meta Boxes
-We’ve incorporated the WP-Alchemy library for easily adding custom meta-boxes to projects. The framework is very extensible.
+We’ve incorporated the CMB2 library for easily adding custom meta-boxes to projects. The framework is very extensible.
 
 ### Templates
-There are four templates bundled with Silencio: Typography, UI Kit, Metaboxes, and Full Width. Using the Typography and Full Width templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete. The Metabox template is a resource for the developer to demonstrate how data from custom WP Alchemy Metaboxes can be displayed. The Full Width Template can be used for content pages that do not include a sidebar.
+There are four templates bundled with Silencio: Typography, UI Kit, Metaboxes, and Full Width. Using the Typography and Full Width templates, the designer and developer can style all available type and bootstrap outputs in the browser. They can be removed from the project once design is complete. The Metabox template is a resource for the developer to demonstrate how data from custom CMB2 Metaboxes can be displayed. The Full Width Template can be used for content pages that do not include a sidebar.
 
 ### Widgets
 Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose which categories you’d like to display entries from. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.
@@ -73,7 +73,7 @@ Once you’re done with all of that, you’re ready to start hacking!
 
 ## Grunt
 There are two tasks included with Silencio.
-* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/.tmp/css`. Autoprefixer then does it's magic and outputs results to `res/css`. 
+* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/.tmp/css`. Autoprefixer then does it's magic and outputs results to `res/css`.
 * `grunt` will build your theme for release. This includes compiling LESS to CSS, minifying CSS into `res/build/global.min.css`, and minifying JS into `res/build/global.min.js`.
 
 ### Configuration
@@ -92,7 +92,7 @@ Apply different 1x & 2x assets depending on device width.
 `theme-options.php` includes a basic set of location-related theme options. You can copy any of the `$options[] = ...` blocks to add your own. Just make sure you change your options ID to something different and it'll show up in the Appearance > Customize screen when Silencio is enabled.
 
 ## Metaboxes
-`metaboxes.php` includes an example of a custom meta box created using the [WPAlchemy](http://www.farinspace.com/wpalchemy-metabox/) metabox helper. Include this file in functions.php and uncomment the example metabox to see it in action. You can use this to add just about any kind of custom data to a post, page, or custom post type with an easier UI than what's provided by the built-in custom fields editor and without pulling in another plugin.
+`metaboxes.php` includes an example of a custom meta box created using the [CMB2](https://github.com/WebDevStudios/CMB2) metabox helper. Include this file in functions.php and uncomment the example metabox to see it in action. You can use this to add just about any kind of custom data to a post, page, or custom post type with an easier UI than what's provided by the built-in custom fields editor and without pulling in another plugin.
 
 ## Function Reference
 
@@ -119,7 +119,7 @@ Silencio bundles shortcodes that allow your users to take advantage of Bootstrap
         [span6]
             Content!
         [/span6]
-    [span6]
+        [span6]
             More content!
         [/span6]
     [/row]
