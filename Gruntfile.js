@@ -1,5 +1,5 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -8,41 +8,36 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: [
-                    'res/js/bootstrap.js',
-                    'res/js/fitvids.js',
-                    'res/js/google.fastbutton.js',
-                    'res/js/jquery.google.fastbutton.js',
+                    '/res/components/jquery/dist/jquery.js',
+                    'res/components/bootstrap/dist/js/bootstrap.js',
+                    'res/components/fitvids/jquery.fitvids.js',
+                    'res/components/google-fastbutton/jquery.google.fastbutton.js',
                     'res/js/global.js'
                 ],
                 dest: 'res/build/global.min.js'
+            },
+            respond: {
+                src: ['res/components/respond/respond.min.js'],
+                dest: 'res/build/respond.min.js'
             }
         },
+
         // CSS Minifier. Add your files to be minified in the src array.
         cssmin: {
             build: {
                 src: [
-                    'res/css/bootstrap.css',
-                    'res/css/font-awesome.css',
+                    'res/components/bootstrap/dist/css/bootstrap.css',
+                    'res/components/font-awesome/css/font-awesome.css',
                     'res/css/typography.css',
                     'res/css/layout.css'
                 ],
                 dest: 'res/build/global.min.css'
             }
         },
+
         /* Compiles LESS files in res/less. Uses grunt's glob expansion to get everything in the dir.
          * You won't need to update this when you add a new file. */
         less: {
-            boot: {
-                    files: [
-                    {
-                        expand: true,
-                        cwd: 'res/bootstrap/',
-                        src: ['bootstrap.less'],
-                        dest: 'res/css/',
-                        ext: '.css'
-                    }
-                ]
-            },
             dev: {
                 files: [
                     {
@@ -59,7 +54,7 @@ module.exports = function(grunt) {
         // Add vendor prefixed styles
         autoprefixer: {
             options: {
-                browsers: ['last 2 versions'],
+                browsers: ['last 2 versions']
             },
             dev: {
                 files: [
