@@ -51,16 +51,19 @@ module.exports = function (grunt) {
         },
 
         // Add vendor prefixed styles
-        autoprefixer: {
+        postcss: {
             options: {
-                browsers: ['last 2 versions']
+                map: false,
+                processors: [
+                    require('autoprefixer')({browsers: ['last 2 versions']})
+                ]
             },
             dev: {
                 files: [
                     {
                         expand: true,
                         cwd: 'res/.tmp/css/',
-                        src: ['typography.css', 'layout.css'],
+                        src: ['*.css'],
                         dest: 'res/css/',
                         ext: '.css'
                     }
@@ -85,9 +88,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task - executes when you run grunt in the theme root.
-    grunt.registerTask('default', ['less:dev', 'autoprefixer:dev', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['less:dev', 'postcss:dev', 'uglify', 'cssmin']);
 };
