@@ -15,7 +15,7 @@ function prepare_fitvid() {
 }
 
 function prepare_menu(options) {
-    options.menu_button.on('fastClick', function (e) {
+    options.menu_button.on('click', function (e) {
         var body = $('body');
 
         e.preventDefault();
@@ -23,18 +23,18 @@ function prepare_menu(options) {
 
         // if the menu is displayed, hook up an event to hide the menu when #page is tapped but not scrolled
         if (body.hasClass(options.menu_active_class)) {
-            options.container.on('fastClick', function () {
+            options.container.on('click', function () {
                 body.toggleClass(options.menu_active_class);
-                options.container.off('fastClick'); // don't need to listen to this until the menu is opened
+                options.container.off('click'); // don't need to listen to this until the menu is opened
             });
         } else {
-            options.container.off('fastClick'); // don't need to listen to this until the menu is opened
+            options.container.off('click'); // don't need to listen to this until the menu is opened
         }
     });
 
     $('.sub-menu').collapse({ toggle: false }).addClass('collapse');
 
-    $('.btn-menu-dropdown').on('fastClick', function (e) {
+    $('.btn-menu-dropdown').on('click', function (e) {
         $(this).siblings('.sub-menu').collapse('toggle');
     });
 }

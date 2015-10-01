@@ -11,13 +11,12 @@ module.exports = function (grunt) {
                     '/res/components/jquery/dist/jquery.js',
                     'res/components/bootstrap/dist/js/bootstrap.js',
                     'res/components/fitvids/jquery.fitvids.js',
-                    'res/components/google-fastbutton/jquery.google.fastbutton.js',
                     'res/js/global.js'
                 ],
                 dest: 'res/build/global.min.js'
             },
             respond: {
-                src: ['res/components/respond/respond.min.js'],
+                src: ['res/components/respond/dest/respond.src.js'],
                 dest: 'res/build/respond.min.js'
             }
         },

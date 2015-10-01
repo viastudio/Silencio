@@ -7,7 +7,6 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
     "fitvids": "~1.1.0",
-    "google-fastbutton": "~1.0.1",
     "respond": "~1.4.2",
     "font-awesome": "~4.4.0"
   }

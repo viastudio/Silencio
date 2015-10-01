@@ -50,13 +50,12 @@ function silencio_scripts() {
         // JS
         wp_enqueue_script('bootstrap', get_template_directory_uri() . '/res/components/bootstrap/dist/js/bootstrap.js', array('jquery'), false, true);
         wp_enqueue_script('fitvids', get_template_directory_uri() . '/res/components/fitvids/jquery.fitvids.js', array('jquery'), false, true);
-        wp_enqueue_script('google.fastbutton', get_template_directory_uri() . '/res/components/google-fastbutton/jquery.google.fastbutton.js', array('jquery'), false, true);
 
         // CSS
-        wp_register_style('bootstrap', get_template_directory_uri() . '/res/components/bootstrap/dist/bootstrap.css', array());
-        wp_register_style('font-awesome', get_template_directory_uri() . 'res/components/font-awesome/css/font-awesome.css', array());
-        wp_register_style('typography', get_template_directory_uri() . '/res/css/typography.css', array());
-        wp_register_style('layout', get_template_directory_uri() . 'res/css/layout.css', array());
+        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/res/components/bootstrap/dist/css/bootstrap.css', array());
+        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/res/components/font-awesome/css/font-awesome.css', array());
+        wp_enqueue_style('typography', get_template_directory_uri() . '/res/css/typography.css', array());
+        wp_enqueue_style('layout', get_template_directory_uri() . '/res/css/layout.css', array());
     }
 
     // Disable this environment check & load min.css if you want to test in IE8 with respond.js
