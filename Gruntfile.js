@@ -1,5 +1,5 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     // Project configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -8,41 +8,35 @@ module.exports = function(grunt) {
         uglify: {
             build: {
                 src: [
-                    'res/js/bootstrap.js',
-                    'res/js/fitvids.js',
-                    'res/js/google.fastbutton.js',
-                    'res/js/jquery.google.fastbutton.js',
+                    '/res/components/jquery/dist/jquery.js',
+                    'res/components/bootstrap/dist/js/bootstrap.js',
+                    'res/components/fitvids/jquery.fitvids.js',
                     'res/js/global.js'
                 ],
                 dest: 'res/build/global.min.js'
+            },
+            respond: {
+                src: ['res/components/respond/dest/respond.src.js'],
+                dest: 'res/build/respond.min.js'
             }
         },
+
         // CSS Minifier. Add your files to be minified in the src array.
         cssmin: {
             build: {
                 src: [
-                    'res/css/bootstrap.css',
-                    'res/css/font-awesome.css',
+                    'res/components/bootstrap/dist/css/bootstrap.css',
+                    'res/components/font-awesome/css/font-awesome.css',
                     'res/css/typography.css',
                     'res/css/layout.css'
                 ],
                 dest: 'res/build/global.min.css'
             }
         },
+
         /* Compiles LESS files in res/less. Uses grunt's glob expansion to get everything in the dir.
          * You won't need to update this when you add a new file. */
         less: {
-            boot: {
-                    files: [
-                    {
-                        expand: true,
-                        cwd: 'res/bootstrap/',
-                        src: ['bootstrap.less'],
-                        dest: 'res/css/',
-                        ext: '.css'
-                    }
-                ]
-            },
             dev: {
                 files: [
                     {
@@ -57,16 +51,19 @@ module.exports = function(grunt) {
         },
 
         // Add vendor prefixed styles
-        autoprefixer: {
+        postcss: {
             options: {
-                browsers: ['last 2 versions'],
+                map: false,
+                processors: [
+                    require('autoprefixer')({browsers: ['last 2 versions']})
+                ]
             },
             dev: {
                 files: [
                     {
                         expand: true,
                         cwd: 'res/.tmp/css/',
-                        src: ['typography.css', 'layout.css'],
+                        src: ['*.css'],
                         dest: 'res/css/',
                         ext: '.css'
                     }
@@ -91,9 +88,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task - executes when you run grunt in the theme root.
-    grunt.registerTask('default', ['less:dev', 'autoprefixer:dev', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['less:dev', 'postcss:dev', 'uglify', 'cssmin']);
 };

@@ -31,7 +31,7 @@ wp_head();
 ?>
 
 <!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/res/js/respond.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/res/build/respond.min.js"></script>
 <![endif]-->
 
 </head>
