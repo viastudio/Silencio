@@ -79,7 +79,7 @@ module.exports = function (grunt) {
             },
             autoprefixer: {
                 files: 'res/.tmp/css/*.css',
-                tasks: 'autoprefixer:dev'
+                tasks: 'postcss:dev'
             }
         }
     });
