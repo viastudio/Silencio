@@ -571,11 +571,12 @@ body {
 
     .via_tag {
         text-align: center;
-
-        a {
-            padding-left: 28px;
-            background: no-repeat left 50%;
-            .at2x('../img/logo_via.png', 23px, 10px);
+        svg {
+            width: 28px;
+            height: auto;
+            path {
+                fill: @white;
+            }
         }
     }
     .respond(@screen-sm, {
