@@ -1,12 +1,12 @@
-jQuery(document).ready(function($) {
-    tinymce.PluginManager.add('silencio_grid', function(editor, url) {
+jQuery(document).ready(function ($) {
+    tinymce.PluginManager.add('silencio_grid', function (editor, url) {
         editor.addButton('silencio_grid', {
             type: 'listbox',
             text: 'Grid Layout',
             icon: false,
             fixedWidth: true,
             minWidth: 80,
-            onselect: function(e) {
+            onselect: function (e) {
                 var content = tinymce.activeEditor.selection.getContent();
 
                 if (content !== '') {
