@@ -18,7 +18,6 @@ function prepare_menu(options) {
     options.menu_button.on('click', function (e) {
         var body = $('body');
 
-        e.preventDefault();
         body.toggleClass(options.menu_active_class);
 
         // if the menu is displayed, hook up an event to hide the menu when #page is tapped but not scrolled
@@ -27,12 +26,13 @@ function prepare_menu(options) {
                 body.toggleClass(options.menu_active_class);
                 options.container.off('click'); // don't need to listen to this until the menu is opened
             });
-        } else {
-            options.container.off('click'); // don't need to listen to this until the menu is opened
+            return;
         }
+
+        options.container.off('click'); // don't need to listen to this until the menu is opened
     });
 
-    $('.sub-menu').collapse({ toggle: false }).addClass('collapse');
+    $('.sub-menu').collapse({toggle: false}).addClass('collapse');
 
     $('.btn-menu-dropdown').on('click', function (e) {
         $(this).siblings('.sub-menu').collapse('toggle');

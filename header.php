@@ -47,7 +47,7 @@ if (function_exists('gtm4wp_the_gtm_tag')) {
             <header id="masthead" class="site-header" role="banner">
                 <div class="container">
                     <nav class="menu-nav">
-                        <a class="menu-button" href="#"><i class="fa fa-bars"></i></a>
+                        <button type="button" class="menu-button" href="#"><span class="sr-only">Open Menu</span><i class="fa fa-bars"></i></button>
                     </nav>
                     <div class="site-branding">
                         <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
@@ -59,12 +59,12 @@ if (function_exists('gtm4wp_the_gtm_tag')) {
             <div class="nav-container">
                 <div class="container">
                     <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <div class="nav-controls">
-                        <a class="menu-button menu-close" href="#"><i class="fa fa-times"></i></a>
+                        <div class="nav-controls">
+                            <button type="button" class="menu-button menu-close" href="#"><span class="sr-only">Close Menu</span><i class="fa fa-times"></i></button>
 <?php
 get_search_form();
 ?>
-                    </div>
+                        </div>
 <?php
 wp_nav_menu(array('theme_location' => 'primary'));
 ?>

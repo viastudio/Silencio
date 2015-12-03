@@ -84,19 +84,35 @@ if (isset($directions)) {
 <?php
 if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
-                            <li><a href="<?php echo $options['theme_option_facebook_txt_input']; ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li>
+                                <a href="<?php echo $options['theme_option_facebook_txt_input']; ?>">
+                                    <i class="fa fa-facebook"></i><span class="sr-only">Facebook</span>
+                                </a>
+                            </li>
 <?php
 } if (!empty($options['theme_option_twitter_txt_input'])) {
 ?>
-                            <li><a href="<?php echo $options['theme_option_twitter_txt_input']; ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li>
+                                <a href="<?php echo $options['theme_option_twitter_txt_input']; ?>">
+                                    <i class="fa fa-twitter"></i><span class="sr-only">Twitter</span>
+                                </a>
+                            </li>
 <?php
 } if (!empty($options['theme_option_youtube_txt_input'])) {
 ?>
-                            <li><a href="<?php echo $options['theme_option_youtube_txt_input']; ?>"><i class="fa fa-youtube-play"></i></a></li>
+                            <li>
+                                <a href="<?php echo $options['theme_option_youtube_txt_input']; ?>">
+                                    <i class="fa fa-youtube-play"></i><span class="sr-only">YouTube</span>
+                                </a>
+                            </li>
 <?php
 } if (!empty($options['theme_option_googleplus_txt_input'])) {
 ?>
-                            <li><a href="<?php echo $options['theme_option_googleplus_txt_input']; ?>"><i class="fa fa-google-plus"></i></a></li>
+                            <li>
+                                <a href="<?php echo $options['theme_option_googleplus_txt_input']; ?>">
+                                    <i class="fa fa-google-plus"></i><span class="sr-only">Google+</span>
+                                </a>
+                            </li>
 <?php
 }
 ?>
