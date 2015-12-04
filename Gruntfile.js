@@ -8,7 +8,7 @@ module.exports = function (grunt) {
         uglify: {
             build: {
                 src: [
-                    '/res/components/jquery/dist/jquery.js',
+                    'res/components/jquery/dist/jquery.js',
                     'res/components/bootstrap/dist/js/bootstrap.js',
                     'res/components/fitvids/jquery.fitvids.js',
                     'res/js/global.js'
