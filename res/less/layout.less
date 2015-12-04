@@ -76,11 +76,13 @@ body {
         display: none;
     });
 
-    a.menu-button {
+    .menu-button {
         display: inline-block;
         line-height: 1;
         color: @white !important;
         -webkit-tap-highlight-color: rgba(255,255,255,1); // remove inverted color box on tap
+        background: transparent;
+        border: 0;
 
         &:hover, &:active {
             text-decoration: none;
@@ -88,7 +90,7 @@ body {
     }
 
     &.right {
-        a.menu-button {
+        .menu-button {
             float: right;
         }
     }
@@ -135,6 +137,8 @@ body {
         padding: 0;
         line-height: 1;
         margin: 0 5px;
+        background: transparent;
+        border: 0;
     }
 
     .search-form {
