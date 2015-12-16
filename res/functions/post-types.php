@@ -5,7 +5,7 @@ function silencio_register_post_types() {
     $slug = 'slider';
 
     register_post_type(
-        'silencio_' . $slug,
+        'sil_' . $slug,
         array(
             'labels' => array(
                 'name' => __($plural, 'silencio'),

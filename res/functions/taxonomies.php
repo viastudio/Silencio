@@ -27,7 +27,7 @@ function silencio_register_taxonomies() {
         'rewrite'           => $slug
     );
 
-    register_taxonomy('silencio_' . $slug, array('silencio_slider'), $args);
+    register_taxonomy('sil_' . $slug, array('silencio_slider'), $args);
 }
 
 add_action('init', 'silencio_register_taxonomies');
