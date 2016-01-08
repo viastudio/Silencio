@@ -101,6 +101,22 @@ function silencio_options_page_fields() {
 
     $options[] = array(
         "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "linkedin_txt_input",
+        "label"   => __('LinkedIn Link', 'silencio'),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
+
+    $options[] = array(
+        "section" => "theme_options",
+        "id"      => SILENCIO_SHORTNAME . "instagram_txt_input",
+        "label"   => __('Instagram Link', 'silencio'),
+        "type"    => "text",
+        "sanitize_callback" => "silencio_url"
+    );
+
+    $options[] = array(
+        "section" => "theme_options",
         "id"      => SILENCIO_SHORTNAME . "email_txt_input",
         "label"   => __('Email Address', 'silencio'),
         "type"    => "text",

@@ -114,6 +114,22 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
                                 </a>
                             </li>
 <?php
+} if (!empty($options['theme_option_instagram_txt_input'])) {
+?>
+                            <li>
+                                <a href="<?php echo $options['theme_option_instagram_txt_input']; ?>">
+                                    <i class="fa fa-instagram"></i><span class="sr-only">Google+</span>
+                                </a>
+                            </li>
+<?php
+} if (!empty($options['theme_option_linkedin_txt_input'])) {
+?>
+                            <li>
+                                <a href="<?php echo $options['theme_option_linkedin_txt_input']; ?>">
+                                    <i class="fa fa-linkedin"></i><span class="sr-only">Google+</span>
+                                </a>
+                            </li>
+<?php
 }
 ?>
                         </ul><!-- .social-media -->
