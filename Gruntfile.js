@@ -11,6 +11,7 @@ module.exports = function (grunt) {
                     'res/components/jquery/dist/jquery.js',
                     'res/components/bootstrap/dist/js/bootstrap.js',
                     'res/components/fitvids/jquery.fitvids.js',
+                    'res/components/picturefill/dist/picturefill.js',
                     'res/js/global.js'
                 ],
                 dest: 'res/build/global.min.js'
