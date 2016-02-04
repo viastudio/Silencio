@@ -38,6 +38,48 @@ if (function_exists('add_image_size')) {
     add_image_size('header-thumb', 1170, 400, true); //(cropped)
 }
 
+//Custom Content Image Sizes Attribute
+function silencio_content_image_sizes_attr($sizes, $size) {
+    $width = $size[0];
+
+    //Page without sidebar
+    if (get_page_template_slug() === 'template-full_width.php') {
+        if ($width > 910) {
+            return '(max-width: 768px) 92vw, (max-width: 992px) 690px, (max-width: 1200px) 910px, 1110px';
+        }
+        if ($width < 910 && $width > 690) {
+            return '(max-width: 768px) 92vw, (max-width: 992px) 690px, 910px';
+        }
+        return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
+    }
+
+    //Page with sidebar
+    if ($width > 597) {
+        return '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
+    }
+    if ($width < 597 && $width > 450) {
+        return '(max-width: 768px) 92vw, (max-width: 992px) 450px, 597px';
+    }
+
+    return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
+}
+add_filter('wp_calculate_image_sizes', 'silencio_content_image_sizes_attr', 10 , 2);
+
+//Custom Thumbnail Sizes Attribute
+function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
+    //Calculate Image Sizes by type and breakpoint
+    //Header Images
+    if ($size === 'header-thumb') {
+        $attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
+
+    //Blog Thumbnails
+    } else if ($size === 'blog-thumb') {
+        $attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
+    }
+    return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_attr', 10 , 3);
+
 /**
  * Enqueue scripts and styles
  */
