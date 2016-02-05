@@ -4,7 +4,7 @@ Template Name: UI Kit
 */
 get_header();
 ?>
-    <div id="primary-full" class="content-area">
+    <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 <?php
 while (have_posts()) {
@@ -13,124 +13,13 @@ while (have_posts()) {
 }
 ?>
             <hr />
-            <!-- Navbar
-            ================================================== -->
-            <div class="bs-docs-section clearfix">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-header">
-                            <h1 id="navbar">Navbar</h1>
-                        </div>
-
-                        <div class="bs-component">
-                            <div class="navbar navbar-default">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <a class="navbar-brand" href="#">Brand</a>
-                                </div>
-                                <div class="navbar-collapse collapse navbar-responsive-collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="#">Active</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li class="dropdown-header">Dropdown header</li>
-                                                <li><a href="#">Separated link</a></li>
-                                                <li><a href="#">One more separated link</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <form class="navbar-form navbar-left">
-                                        <input type="text" class="form-control col-lg-8" placeholder="Search">
-                                    </form>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="#">Link</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bs-component">
-                            <div class="navbar navbar-inverse">
-                                <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
-                                    <a class="navbar-brand" href="#">Brand</a>
-                                </div>
-                                <div class="navbar-collapse collapse navbar-inverse-collapse">
-                                    <ul class="nav navbar-nav">
-                                        <li class="active"><a href="#">Active</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li class="dropdown-header">Dropdown header</li>
-                                                <li><a href="#">Separated link</a></li>
-                                                <li><a href="#">One more separated link</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <form class="navbar-form navbar-left">
-                                        <input type="text" class="form-control col-lg-8" placeholder="Search">
-                                    </form>
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="#">Link</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div><!-- /example -->
-                    </div>
-                </div>
-            </div>
 
             <!-- Buttons
             ================================================== -->
             <div class="bs-docs-section">
-                <div class="page-header">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 id="buttons">Buttons</h1>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
+                        <h1 id="buttons">Buttons</h1>
                         <p class="bs-component">
                             <button type="button" class="btn btn-default">Default</button>
                             <button type="button" class="btn btn-primary">Primary</button>
@@ -149,125 +38,10 @@ while (have_posts()) {
                             <button type="button" class="btn btn-danger disabled">Danger</button>
                             <button type="button" class="btn btn-link disabled">Link</button>
                         </p>
-                        <div style="margin-bottom: 15px;">
-                            <div class="btn-toolbar bs-component" style="margin: 0;">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">Default</button>
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-primary">Primary</button>
-                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success">Success</button>
-                                    <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-info">Info</button>
-                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-warning">Warning</button>
-                                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="bs-component">
-                            <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                            <button type="button" class="btn btn-primary">Default button</button>
-                            <button type="button" class="btn btn-primary btn-sm">Small button</button>
-                            <button type="button" class="btn btn-primary btn-xs">Mini button</button>
-                        </p>
-                    </div>
-                    <div class="col-lg-6">
-                        <p class="bs-component">
-                            <button type="button" class="btn btn-default btn-lg btn-block">Block level button</button>
-                        </p>
-                        <div class="bs-component" style="margin-bottom: 15px;">
-                            <div class="btn-group btn-group-justified">
-                                <a href="#" class="btn btn-default">Left</a>
-                                <a href="#" class="btn btn-default">Middle</a>
-                                <a href="#" class="btn btn-default">Right</a>
-                            </div>
-                        </div>
-                        <div class="bs-component" style="margin-bottom: 15px;">
-                            <div class="btn-toolbar">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">1</button>
-                                    <button type="button" class="btn btn-default">2</button>
-                                    <button type="button" class="btn btn-default">3</button>
-                                    <button type="button" class="btn btn-default">4</button>
-                                </div>
-
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">5</button>
-                                    <button type="button" class="btn btn-default">6</button>
-                                    <button type="button" class="btn btn-default">7</button>
-                                </div>
-
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default">8</button>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                            Dropdown
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Dropdown link</a></li>
-                                            <li><a href="#">Dropdown link</a></li>
-                                            <li><a href="#">Dropdown link</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bs-component">
-                            <div class="btn-group-vertical">
-                                <button type="button" class="btn btn-default">Button</button>
-                                <button type="button" class="btn btn-default">Button</button>
-                                <button type="button" class="btn btn-default">Button</button>
-                                <button type="button" class="btn btn-default">Button</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div><!-- .bs-docs-section -->
+            </div>
+
 
             <!-- Tables
             ================================================== -->
@@ -347,130 +121,10 @@ while (have_posts()) {
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="well bs-component">
-                            <form class="form-horizontal">
-                                <fieldset>
-                                    <legend>Legend</legend>
-                                    <div class="form-group">
-                                        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                                        <div class="col-lg-10">
-                                            <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                                        <div class="col-lg-10">
-                                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox"> Checkbox
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                                        <div class="col-lg-10">
-                                            <textarea class="form-control" rows="3" id="textArea"></textarea>
-                                            <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-lg-2 control-label">Radios</label>
-                                        <div class="col-lg-10">
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                                    Option one is this
-                                                </label>
-                                            </div>
-                                            <div class="radio">
-                                                <label>
-                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                                    Option two can be something else
-                                                </label>
-                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="select" class="col-lg-2 control-label">Selects</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control" id="select">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                            <br>
-                                            <select multiple="" class="form-control">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-10 col-lg-offset-2">
-                                            <button class="btn btn-default">Cancel</button>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-lg-offset-1">
-                        <form class="bs-component">
-                            <div class="form-group">
-                                <label class="control-label" for="focusedInput">Focused input</label>
-                                <input class="form-control" id="focusedInput" type="text" value="This is focused...">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label" for="disabledInput">Disabled input</label>
-                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
-                            </div>
-                            <div class="form-group has-warning">
-                                <label class="control-label" for="inputWarning">Input warning</label>
-                                <input type="text" class="form-control" id="inputWarning">
-                            </div>
-                            <div class="form-group has-error">
-                                <label class="control-label" for="inputError">Input error</label>
-                                <input type="text" class="form-control" id="inputError">
-                            </div>
-                            <div class="form-group has-success">
-                                <label class="control-label" for="inputSuccess">Input success</label>
-                                <input type="text" class="form-control" id="inputSuccess">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="inputLarge">Large input</label>
-                                <input class="form-control input-lg" type="text" id="inputLarge">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="inputDefault">Default input</label>
-                                <input type="text" class="form-control" id="inputDefault">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label" for="inputSmall">Small input</label>
-                                <input class="form-control input-sm" type="text" id="inputSmall">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Input addons</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-default" type="button">Button</button>
-                                    </span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                <div class="bs-component">
+<?php
+gravity_form(1);
+?>
                 </div>
             </div>
 
@@ -481,99 +135,6 @@ while (have_posts()) {
                     <div class="col-lg-12">
                         <div class="page-header">
                             <h1 id="nav">Navs</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <h2 id="nav-tabs">Tabs</h2>
-                        <div class="bs-component">
-                            <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-                                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                                <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                                <li class="disabled"><a>Disabled</a></li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    Dropdown <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <div id="myTabContent" class="tab-content">
-                                <div class="tab-pane fade active in" id="home">
-                                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-                                </div>
-                                <div class="tab-pane fade" id="profile">
-                                    <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
-                                </div>
-                                <div class="tab-pane fade" id="dropdown1">
-                                    <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
-                                </div>
-                                <div class="tab-pane fade" id="dropdown2">
-                                    <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <h2 id="nav-pills">Pills</h2>
-                        <div class="bs-component">
-                            <ul class="nav nav-pills">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Profile</a></li>
-                                <li class="disabled"><a href="#">Disabled</a></li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                    Dropdown <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <br>
-                        <div class="bs-component">
-                            <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-                                <li class="active"><a href="#">Home</a></li>
-                                <li><a href="#">Profile</a></li>
-                                <li class="disabled"><a href="#">Disabled</a></li>
-                                <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
-                        <div class="bs-component">
-                            <ul class="breadcrumb">
-                                <li class="active">Home</li>
-                            </ul>
-                            <ul class="breadcrumb">
-                                <li><a href="#">Home</a></li>
-                                <li class="active">Library</li>
-                            </ul>
-                            <ul class="breadcrumb" style="margin-bottom: 5px;">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Library</a></li>
-                                <li class="active">Data</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -673,7 +234,7 @@ while (have_posts()) {
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-12">
                         <h2>Labels</h2>
                         <div class="bs-component" style="margin-bottom: 40px;">
                             <span class="label label-default">Default</span>
@@ -682,16 +243,6 @@ while (have_posts()) {
                             <span class="label label-warning">Warning</span>
                             <span class="label label-danger">Danger</span>
                             <span class="label label-info">Info</span>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <h2>Badges</h2>
-                        <div class="bs-component">
-                            <ul class="nav nav-pills">
-                                <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
-                                <li><a href="#">Profile <span class="badge"></span></a></li>
-                                <li><a href="#">Messages <span class="badge">3</span></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -704,62 +255,6 @@ while (have_posts()) {
                     <div class="col-lg-12">
                         <div class="page-header">
                             <h1 id="container">Containers</h1>
-                        </div>
-                        <div class="bs-component">
-                            <div class="jumbotron">
-                                <h1>Jumbotron</h1>
-                                <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>List groups</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="bs-component">
-                            <ul class="list-group">
-                                <li class="list-group-item">
-                                    <span class="badge">14</span>
-                                    Cras justo odio
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge">2</span>
-                                    Dapibus ac facilisis in
-                                </li>
-                                <li class="list-group-item">
-                                    <span class="badge">1</span>
-                                    Morbi leo risus
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="bs-component">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item active">
-                                    Cras justo odio</a>
-                                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                                <a href="#" class="list-group-item">Morbi leo risus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="bs-component">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">List group item heading</h4>
-                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <h4 class="list-group-item-heading">List group item heading</h4>
-                                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -871,4 +366,5 @@ while (have_posts()) {
         </main><!-- #main -->
     </div><!-- #primary -->
 <?php
+get_sidebar('page');
 get_footer();
