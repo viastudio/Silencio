@@ -116,15 +116,24 @@ Flush out the transients used in silencio_categorized_blog.
 Silencio bundles shortcodes that allow your users to take advantage of Bootstrap’s 12 column grid. Make use of this grid in posts like so.
 
     [row]
-        [span6]
+        [col6]
             Content!
-        [/span6]
-        [span6]
+        [/col6]
+        [col6]
             More content!
-        [/span6]
+        [/col6]
     [/row]
 
-Replace span6 with span1 - span12, and make sure you don’t put more than 12 units in one row.
+Replace col6 with col1 - col12, and make sure you don’t put more than 12 units in one row. Additionally, you can add offsets to your columns.
+
+    [row]
+        [col5 offset="1"]
+            Content!
+        [/col5]
+        [col5]
+            More content!
+        [/col5]
+    [/row]
 
 ### Custom widgets
 Silencio includes two custom widgets. `/res/functions/widgets.php` is also a great place to register any custom widgets of your own.
