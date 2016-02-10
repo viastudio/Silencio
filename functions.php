@@ -63,7 +63,7 @@ function silencio_content_image_sizes_attr($sizes, $size) {
 
     return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
 }
-add_filter('wp_calculate_image_sizes', 'silencio_content_image_sizes_attr', 10 , 2);
+add_filter('wp_calculate_image_sizes', 'silencio_content_image_sizes_attr', 10, 2);
 
 //Custom Thumbnail Sizes Attribute
 function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
@@ -72,13 +72,13 @@ function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
     if ($size === 'header-thumb') {
         $attr['sizes'] = '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
 
-    //Blog Thumbnails
-    } else if ($size === 'blog-thumb') {
+        //Blog Thumbnails
+    } elseif ($size === 'blog-thumb') {
         $attr['sizes'] = '(max-width: 992px) 200px, (max-width: 1200px) 127px, 160px';
     }
     return $attr;
 }
-add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_attr', 10 , 3);
+add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_attr', 10, 3);
 
 /**
  * Enqueue scripts and styles
