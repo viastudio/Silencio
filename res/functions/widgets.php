@@ -6,5 +6,7 @@ foreach (glob("$widgetsDir/*.php") as $file) {
     $widget = pathinfo($file, PATHINFO_FILENAME);
 
     require($file);
-    add_action('widgets_init', create_function('', "register_widget('$widget');"));
+    add_action('widgets_init', function () use ($widget) {
+        register_widget($widget);
+    });
 }
