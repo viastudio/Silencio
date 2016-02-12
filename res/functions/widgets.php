@@ -1,7 +1,10 @@
 <?php
-require(get_template_directory() . '/res/functions/widgets/SilencioCategoryPosts.php');
-require(get_template_directory() . '/res/functions/widgets/SilencioChildrenPages.php');
+$widgetsDir = get_template_directory() . '/res/functions/widgets';
 
-// register SilencioCategoryPosts & SilencioChildrenPages widgets
-add_action('widgets_init', create_function('', 'register_widget("SilencioCategoryPosts");'));
-add_action('widgets_init', create_function('', 'register_widget("SilencioChildrenPages");'));
+//Auto-load all widgets in res/functions/widgets
+foreach (glob("$widgetsDir/*.php") as $file) {
+    $widget = pathinfo($file, PATHINFO_FILENAME);
+
+    require($file);
+    add_action('widgets_init', create_function('', "register_widget('$widget');"));
+}
