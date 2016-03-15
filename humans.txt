@@ -1,27 +1,26 @@
 /* TEAM */
-    Front-End Developer & Web Designer: Shawn Coots
-    Contact: shawn [at] viastudio.com
-    Twitter: @shawncoots
-    From: Louisville, Kentucky, USA
-
     Front-End Developer: Joe Flynn
     Contact: joe [at] viastudio.com
     Twitter: @infophysics
+    From: Louisville, Kentucky, USA
+
+    Front-End Developer: Natalie Miller
+    Contact: natalie [at] viastudio.com
     From: Louisville, Kentucky, USA
 
     Back-End Developer: Joel Jacob
     Contact: joel [at] viastudio.com
     From: Louisville, Kentucky, USA
 
-    Back-End Developer: Jason McCreary
-    Contact: jmac [at] viastudio.com
-    Twitter: @gonedark
-    From: Louisville, Kentucky, USA
-
     Back-End Developer: Jeremy Dunn
     Twitter: @innerspacesuit
     Contact: jeremy [at] viastudio.com
     From: Evansville, Indiana, USA
+
+    Back-End Developer: Mark Biek
+    Twitter: @antelopelovefan
+    Contact: mark [at] viastudio.com
+    From: Louisville, Kentucky, USA
 
 /* THANKS */
 
@@ -47,7 +46,7 @@
     URL: http://responsejs.com/
 
 /* SITE */
-    Last update: 2014/04/04
+    Last update: 2016/03/15
     Language: English
     Doctype:HTML5
     IDE: Sublime Text
