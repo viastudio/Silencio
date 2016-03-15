@@ -120,7 +120,7 @@ function silencio_scripts() {
         true
     );
 
-    if (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT != 'dev') {
+    if (!defined('VIA_ENVIRONMENT') || (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT != 'dev')) {
         wp_register_style(
             'global',
             get_template_directory_uri() . '/res/build/global.min.css',
