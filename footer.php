@@ -11,7 +11,6 @@ if (isset($options['theme_option_street_txt_input'], $options['theme_option_city
 }
 
 ?>
-                </div><!-- .container -->
             </div><!-- #content .site-content -->
 
             <footer id="colophon" class="site-footer" role="contentinfo">
