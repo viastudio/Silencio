@@ -73,4 +73,3 @@ wp_nav_menu(array('theme_location' => 'primary'));
             </div><!-- .nav-container -->
 
             <div id="content" class="site-content">
-                <div class="container">
