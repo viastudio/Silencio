@@ -142,31 +142,39 @@ gravity_form(1);
                     <div class="col-lg-6">
                         <h2 id="pagination">Pagination</h2>
                         <div class="bs-component">
-                            <ul class="pagination">
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
-                            <ul class="pagination pagination-lg">
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
-                            <ul class="pagination pagination-sm">
-                                <li class="disabled"><a href="#">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&raquo;</a></li>
-                            </ul>
+                            <div class="pagination-container">
+                                <ul class="pagination">
+                                   <li class="disabled"><a class="page-numbers" href="#">prev</a></li>
+                                    <li><a class="page-numbers current" href="#">1</a></li>
+                                    <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="page-numbers" href="#">3</a></li>
+                                    <li><a class="page-numbers" href="#">4</a></li>
+                                    <li><a class="page-numbers" href="#">5</a></li>
+                                    <li><a class="next page-numbers" href="#">next</a></li>
+                                </ul>
+                            </div>
+                            <div class="pagination-container">
+                                <ul class="pagination pagination-lg">
+                                    <li class="disabled"><a class="page-numbers" href="#">prev</a></li>
+                                    <li><a class="page-numbers current" href="#">1</a></li>
+                                    <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="page-numbers" href="#">3</a></li>
+                                    <li><a class="page-numbers" href="#">4</a></li>
+                                    <li><a class="page-numbers" href="#">5</a></li>
+                                    <li><a class="next page-numbers" href="#">next</a></li>
+                                </ul>
+                            </div>
+                            <div class="pagination-container">
+                                <ul class="pagination pagination-sm">
+                                    <li class="disabled"><a class="page-numbers" href="#">prev</a></li>
+                                    <li><a class="page-numbers current" href="#">1</a></li>
+                                    <li><a class="page-numbers" href="#">2</a></li>
+                                    <li><a class="page-numbers" href="#">3</a></li>
+                                    <li><a class="page-numbers" href="#">4</a></li>
+                                    <li><a class="page-numbers" href="#">5</a></li>
+                                    <li><a class="next page-numbers" href="#">next</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
