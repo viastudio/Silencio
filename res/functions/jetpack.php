@@ -26,3 +26,10 @@ function silencio_jetpack_setup() {
  * See: http://jetpack.me/2013/10/07/do-not-automatically-activate-a-jetpack-module/
  */
 add_filter('jetpack_get_default_modules', '__return_empty_array');
+
+/**
+ * Don't check Publicize by default
+ */
+if (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT === 'dev') {
+    add_filter('publicize_checkbox_default', '__return_false');
+}
