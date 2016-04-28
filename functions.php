@@ -190,6 +190,23 @@ function silencio_widgets_init() {
 
 add_action('widgets_init', 'silencio_widgets_init');
 
+/*
+ * Gravityforms Markup Customization:
+ */
+add_filter('gform_submit_button', function ($button, $form) {
+    return "<button class=\"btn btn-primary\" id=\"gform_submit_button_{$form['id']}\">{$form['button']['text']}</button>";
+}, 10, 2);
+add_filter('gform_validation_message', function ($message, $form) {
+    return "<div class=\"alert alert-danger\"><h4>Error</h4><p>" . esc_html__('There was a problem with your submission.', 'gravityforms') . ' ' . esc_html__('Errors have been highlighted below.', 'gravityforms') . '</p></div>';
+}, 10, 2);
+add_filter('gform_confirmation', function ($confirmation, $form, $entry, $ajax) {
+    foreach ($form['confirmations'] as $confirm) {
+        if ($confirm['type'] === 'message') {
+            $confirmation = "<div class=\"alert alert-success\"><h4>Success</h4>$confirmation</div>";
+        }
+    }
+    return $confirmation;
+}, 10, 4);
 
 /**
  * Fix Uncaught Reference Error from Gravity Forms - Puts js call in the footer, where it should be.
