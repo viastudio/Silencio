@@ -82,10 +82,10 @@ Any JS files that you want to include in your `global.min.js` can be added to th
 ## LESS Mixins
 `less/lib/variables.less` contains an assortment of mixins to make theme development faster, and is a handy place to store variables available in all stylesheets.
 
-### .at2x(@path, @w, @h)
+### .at2x(@path, @size)
 Given an image path and a width & height, sets a background image on an element and creates a media query for a 2x version of that asset. Make sure your 2x asset is named the same and has `@2x` at the end of the filename, and you’re good to go.
 
-### .at2x(@path, @w, @h, @device-width)
+### .at2x(@path, @size, @device-width)
 Apply different 1x & 2x assets depending on device width.
 
 ## Theme Options
