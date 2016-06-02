@@ -262,3 +262,25 @@ if (!function_exists('debug')) {
         echo '</pre>';
     }
 }
+
+/**
+* Load a template part & pass in variables declared in caller scope. Optionally return as a string.
+* @param string $path path to template file, minus .php (eg. `content-page`, `partial/folder/template-name`)
+* @param array $args map of variables to load into scope
+* @param bool $echo echo or return rendered template
+* @return null or rendered template string
+*/
+function silencio_partial($path, $args = [], $echo = true) {
+    if (!empty($args)) {
+        extract($args);
+    }
+
+    if ($echo) {
+        include(locate_template($path . '.php'));
+        return;
+    }
+
+    ob_start();
+    include(locate_template($path . '.php'));
+    return ob_get_clean();
+}
