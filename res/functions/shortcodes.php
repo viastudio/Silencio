@@ -92,46 +92,22 @@ function silencio_col12($atts, $content = null) {
 }
 add_shortcode('col12', 'silencio_col12');
 
-/*
- * Custom Shortcodes Part 2
- * Disabling Wordpress wpautop and wptexturize filters.
- * http://tutorials.mysitemyway.com/adding-column-layout-shortcodes-to-a-wordpress-theme/
- */
-
-
-function silencio_formatter($content) {
-    $new_content = '';
-
-    /* Matches the contents and the open and closing tags */
-    $pattern_full = '{(\[raw\].*?\[/raw\])}is';
-
-    /* Matches just the contents */
-    $pattern_contents = '{\[raw\](.*?)\[/raw\]}is';
-
-    /* Divide content into pieces */
-    $pieces = preg_split($pattern_full, $content, -1, PREG_SPLIT_DELIM_CAPTURE);
-
-    /* Loop over pieces */
-    foreach ($pieces as $piece) {
-        /* Look for presence of the shortcode */
-        if (preg_match($pattern_contents, $piece, $matches)) {
-            /* Append to content (no formatting) */
-            $new_content .= $matches[1];
-        } else {
-            /* Format and append to content */
-            $new_content .= wptexturize(wpautop($piece));
-        }
-    }
-
-    return $new_content;
+/**
+* Clean up extra p & br tags around shortcodes post-wpautop
+* Adapted from: https://github.com/MWDelaney/bootstrap-3-shortcodes/blob/master/includes/actions-filters.php#L42
+* @param $content string WordPress content
+*/
+function silencio_clean_shortcodes($content) {
+    return strtr(
+        $content,
+        array(
+            '<p>[' => '[',
+            ']</p>' => ']',
+            ']<br />' => ']',
+            ']<br>' => ']'
+        )
+    );
 }
-
-// Remove the 2 main auto-formatters
-remove_filter('the_content', 'wpautop');
-remove_filter('the_content', 'wptexturize');
-
-// Before displaying for viewing, apply this function
-add_filter('the_content', 'silencio_formatter', 99);
-add_filter('widget_text', 'silencio_formatter', 99);
+add_filter('the_content', 'silencio_clean_shortcodes');
 
 // end shortcodes
