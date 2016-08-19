@@ -262,7 +262,16 @@ if (!function_exists('debug')) {
         echo '</pre>';
     }
 }
-
+/*
+* Helper function for getting post thumbnail url
+*
+*/
+function get_post_thumbnail_url($size) {
+    $thumb_id = get_post_thumbnail_id();
+    $thumb_url_array = wp_get_attachment_image_src($thumb_id, $size, true);
+    $thumb_url = $thumb_url_array[0];
+    return $thumb_url;
+}
 /**
 * Load a template part & pass in variables declared in caller scope. Optionally return as a string.
 * @param string $path path to template file, minus .php (eg. `content-page`, `partial/folder/template-name`)
