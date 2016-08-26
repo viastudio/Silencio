@@ -84,7 +84,7 @@ if (isset($directions)) {
 if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_facebook_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_facebook_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-facebook"></i><span class="sr-only">Facebook</span>
                                 </a>
                             </li>
@@ -92,7 +92,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 } if (!empty($options['theme_option_twitter_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_twitter_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_twitter_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-twitter"></i><span class="sr-only">Twitter</span>
                                 </a>
                             </li>
@@ -100,7 +100,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 } if (!empty($options['theme_option_youtube_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_youtube_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_youtube_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-youtube-play"></i><span class="sr-only">YouTube</span>
                                 </a>
                             </li>
@@ -108,7 +108,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 } if (!empty($options['theme_option_googleplus_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_googleplus_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_googleplus_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-google-plus"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
@@ -116,7 +116,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 } if (!empty($options['theme_option_instagram_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_instagram_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_instagram_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-instagram"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
@@ -124,7 +124,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 } if (!empty($options['theme_option_linkedin_txt_input'])) {
 ?>
                             <li>
-                                <a href="<?php echo $options['theme_option_linkedin_txt_input']; ?>">
+                                <a href="<?php echo $options['theme_option_linkedin_txt_input']; ?>" target="_blank">
                                     <i class="fa fa-linkedin"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
@@ -135,7 +135,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
                     </aside><!-- .site-info -->
 
                     <!-- <aside class="via_tag">
-                        <p><a href="http://viastudio.com" rel="external" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/img/via-mark.svg");?>Built by VIA Studio</a></p>
+                        <p><a href="http://viastudio.com" rel="external" target="_blank" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/img/via-mark.svg");?>Built by VIA Studio</a></p>
                     </aside> -->
                 </div><!-- .container -->
             </footer><!-- #colophon .site-footer -->
