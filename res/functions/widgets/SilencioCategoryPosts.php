@@ -76,7 +76,7 @@ class SilencioCategoryPosts extends WP_Widget {
             $cats = get_terms('category', array('hide_empty' => false));
 
         foreach ($cats as $cat) {
-            $instance['silencio-cat-' . $cat->term_id] = isset($instance['silencio-cat-' . $cat->term_id]) ? $instance['silencio-cat-' . $cat->term_id] : false;
+                $instance['silencio-cat-' . $cat->term_id] = isset($instance['silencio-cat-' . $cat->term_id]) ? $instance['silencio-cat-' . $cat->term_id] : false;
 ?>
         <p><input class="checkbox" type="checkbox" <?php checked($instance['silencio-cat-' . $cat->term_id], true) ?> id="<?php echo $this->get_field_id('silencio-cat-' . $cat->term_id); ?>" name="<?php echo $this->get_field_name('silencio-cat-' . $cat->term_id); ?>" />
         <label for="<?php echo $this->get_field_id('silencio-cat-' . $cat->term_id); ?>"><?php echo $cat->name ?></label></p>

@@ -5,12 +5,12 @@ class SilencioChildrenPages extends WP_Widget {
     */
     public function __construct() {
         parent::__construct(
-        'SilencioChildrenPages', // Base ID
-        'Silencio Children Pages', // Name
-        array('description' => 'Displays child pages for the current page, with the parent page as the widget title.') // Args
-    );
-}
-/**
+            'SilencioChildrenPages', // Base ID
+            'Silencio Children Pages', // Name
+            array('description' => 'Displays child pages for the current page, with the parent page as the widget title.') // Args
+        );
+    }
+    /**
 * Front-end display of widget.
 *
 * @see WP_Widget::widget()
@@ -37,7 +37,7 @@ class SilencioChildrenPages extends WP_Widget {
 ?>
         <ul class="nav-parent">
 <?php
-        echo $children;
+            echo $children;
 ?>
         </ul>
 
@@ -46,24 +46,24 @@ class SilencioChildrenPages extends WP_Widget {
             echo $after_widget;
     }
 
-/**
+    /**
 * Back-end widget form.
 *
 * @see WP_Widget::form()
 *
 * @param array $instance Previously saved values from database.
 */
-public function form($instance) {
-    /* Set up some default widget settings. */
+    public function form($instance) {
+        /* Set up some default widget settings. */
 ?>
 
-    <p>This widget lists all child pages of the current parent. It displays nothing if there aren't any children.</p>
+        <p>This widget lists all child pages of the current parent. It displays nothing if there aren't any children.</p>
 
-    <?php
-    $defaults = array();
-    $instance = wp_parse_args((array) $instance, $defaults);
-}
-/**
+<?php
+        $defaults = array();
+        $instance = wp_parse_args((array) $instance, $defaults);
+    }
+    /**
 * Sanitize widget form values as they are saved.
 *
 * @see WP_Widget::update()
@@ -73,8 +73,8 @@ public function form($instance) {
 *
 * @return array Updated safe values to be saved.
 */
-public function update($new_instance, $old_instance) {
-    $instance = $old_instance;
-    return $instance;
-}
+    public function update($new_instance, $old_instance) {
+        $instance = $old_instance;
+        return $instance;
+    }
 }

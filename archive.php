@@ -49,7 +49,7 @@ if (have_posts()) {
                 </h1>
 <?php
     $term_description = term_description();
-    if (! empty( $term_description)) {
+    if (! empty($term_description)) {
         printf('<div class="taxonomy-description">%s</div>', $term_description);
     }
 ?>
