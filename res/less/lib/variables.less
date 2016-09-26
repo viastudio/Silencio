@@ -2,6 +2,7 @@
 // --------------------------------------------------------------
 @import "../../components/bootstrap/less/variables.less";
 @import "../../components/bootstrap/less/mixins.less";
+@import (reference) "../../components/font-awesome/less/variables.less";
 
 // Colors
 @black: #000;
@@ -86,6 +87,13 @@
     .open > .dropdown-toggle& {
         background-image: none;
     }
+}
+
+// Place FontAwesome icon in ::before & ::after
+// ex. .make-icon(facebook);
+.make-icon(@name) {
+    font-family: @icon;
+    content: ~"'@{fa-var-@{name}}'";
 }
 
 // From retina.less

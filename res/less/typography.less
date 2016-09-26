@@ -48,55 +48,55 @@ h6 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: @semibold;
     line-height: 1.25;
 
     .respond(@screen-sm, {
-        font-size: 2.5em;
+        font-size: 2.5rem;
         line-height: 1.125;
     });
 
     .respond(@screen-md, {
-        font-size: 3em;
+        font-size: 3rem;
         line-height: 1.05;
     });
 }
 
 h2 {
-    font-size: 1.625em;
+    font-size: 1.625rem;
     font-weight: @bold;
     line-height: 1.15384615;
 
     .respond(@screen-sm, {
-        font-size: 2em;
+        font-size: 2rem;
         line-height: 1.25;
     });
 
     .respond(@screen-md, {
-        font-size: 2.25em;
+        font-size: 2.25rem;
         line-height: 1.25;
     });
 }
 
 h3 {
-    font-size: 1.375em;
+    font-size: 1.375rem;
     font-weight: @semibold;
     line-height: 1.13636364;
 
     .respond(@screen-sm, {
-        font-size: 1.5em;
+        font-size: 1.5rem;
         line-height: 1.25;
     });
 
     .respond(@screen-md, {
-        font-size: 1.75em;
+        font-size: 1.75rem;
         line-height: 1.25;
     });
 }
 
 h4 {
-    font-size: 1.125em;
+    font-size: 1.125rem;
     line-height: 1.11111111;
 
     .respond(@screen-sm, {
@@ -138,7 +138,7 @@ p {
 p.intro {
     margin-bottom: 0.9375em;
     line-height: 1.286em;
-    font-size: 1.75em;
+    font-size: 1.75rem;
     font-weight: @light;
 }
 
@@ -155,7 +155,7 @@ i {
 }
 
 blockquote {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     line-height: 1.25;
 
     .respond(@screen-sm, {
@@ -166,8 +166,7 @@ blockquote {
 
 pre {
     background: #eee;
-    font-family: "Courier 10 Pitch", Courier, monospace;
-    font-size: 15px;
+    font: 15px @mono;
     font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: 1.6em;
@@ -180,7 +179,7 @@ code,
 kbd,
 tt,
 var {
-    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font: 15px @mono;
 }
 
 abbr,
