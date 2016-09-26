@@ -257,11 +257,16 @@ body {
                     }
                 }
             }
-        }
 
-        li.current_page_item a, li.current-menu-item a {
-            background: @primary;
-            color: @white !important;
+            &.current_page_item,
+            &.current-menu-item,
+            &.current-menu-parent,
+            &.current_page_parent {
+                > a {
+                    background: @primary;
+                    color: @white !important;
+                }
+            }
         }
     }
 }
