@@ -2,6 +2,7 @@
 // --------------------------------------------------------------
 @import "../../components/bootstrap/less/variables.less";
 @import "../../components/bootstrap/less/mixins.less";
+@import (reference) "../../components/font-awesome/less/variables.less";
 
 // Colors
 @black: #000;
@@ -13,6 +14,8 @@
 // Fonts
 @heading: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 @copy: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+@mono: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+@icon: 'FontAwesome';
 
 // Weights
 @light: 300;
@@ -84,6 +87,13 @@
     .open > .dropdown-toggle& {
         background-image: none;
     }
+}
+
+// Place FontAwesome icon in ::before & ::after
+// ex. .make-icon(facebook);
+.make-icon(@name) {
+    font-family: @icon;
+    content: ~"'@{fa-var-@{name}}'";
 }
 
 // From retina.less
