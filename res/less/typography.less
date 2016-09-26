@@ -20,7 +20,11 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea {
     color: @black;
     font-family: @copy;
     line-height: 1.5;
@@ -33,7 +37,12 @@ hr {
     margin-bottom: 1.5em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: @heading;
     margin-top: 0;
 }
@@ -42,10 +51,12 @@ h1 {
     font-size: 2em;
     font-weight: @semibold;
     line-height: 1.25;
+
     .respond(@screen-sm, {
         font-size: 2.5em;
         line-height: 1.125;
     });
+
     .respond(@screen-md, {
         font-size: 3em;
         line-height: 1.05;
@@ -61,6 +72,7 @@ h2 {
         font-size: 2em;
         line-height: 1.25;
     });
+
     .respond(@screen-md, {
         font-size: 2.25em;
         line-height: 1.25;
@@ -86,8 +98,35 @@ h3 {
 h4 {
     font-size: 1.125em;
     line-height: 1.11111111;
+
     .respond(@screen-sm, {
         line-height: 1.22222222;
+    });
+
+    .respond(@screen-md, {
+
+    });
+}
+
+h5 {
+
+    .respond(@screen-sm, {
+
+    });
+
+    .respond(@screen-md, {
+
+    });
+}
+
+h6 {
+
+    .respond(@screen-sm, {
+
+    });
+
+    .respond(@screen-md, {
+
     });
 }
 
@@ -103,11 +142,15 @@ p.intro {
     font-weight: @light;
 }
 
-b, strong {
+b,
+strong {
     font-weight: bold;
 }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
     font-style: italic;
 }
 
@@ -115,7 +158,7 @@ blockquote {
     font-size: 1.25em;
     line-height: 1.25;
 
-    .respond (@screen-sm, {
+    .respond(@screen-sm, {
         font-size: 1.5em;
         line-height: 1.45833333;
     });
@@ -133,20 +176,26 @@ pre {
     max-width: 100%;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
     font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 }
 
-abbr, acronym {
+abbr,
+acronym {
     border-bottom: 1px dotted @black;
     cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
     text-decoration: none;
 }
 
-sup, sub {
+sup,
+sub {
     font-size: 75%;
     height: 0;
     line-height: 0;
@@ -193,14 +242,17 @@ a:visited {
     color: @primary;
 }
 
-a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
     color: lighten(@primary, 10%);
     text-decoration: none;
 }
 
 /* Lists */
 
-ul, ol {
+ul,
+ol {
     margin: 0;
     padding: 0;
 }
@@ -214,14 +266,18 @@ ol {
 }
 
 /* Buttons & Forms */
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
     font-size: 100%; /* Corrects font size not being inherited in all browsers */
     margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
     vertical-align: baseline; /* Improves appearance and consistency in all browsers */
     *vertical-align: middle; /* Improves appearance and consistency in all browsers */
 }
 
-button, input {
+button,
+input {
     line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
     *overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
 }
@@ -251,7 +307,8 @@ input[type="submit"]:active {
     background: darken(@grey, 10%);
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
 }
@@ -263,24 +320,30 @@ input[type="search"] {
     box-sizing: content-box;
 }
 
-input[type="search"]::-webkit-search-decoration {
+input[type="search"] {
     -webkit-appearance: none;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
 
-input[type=text], input[type=email], textarea {
+input[type=text],
+input[type=email],
+textarea {
 
 }
 
-input[type=text]:focus, input[type=email]:focus, textarea:focus {
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
 
 }
 
-input[type=text], input[type=email] {
+input[type=text],
+input[type=email] {
 
 }
 
@@ -347,7 +410,9 @@ img.wp-smiley {
     margin: 0;
 }
 
-embed, iframe, object {
+embed,
+iframe,
+object {
     max-width: 100%;
 }
 

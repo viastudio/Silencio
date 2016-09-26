@@ -20,7 +20,8 @@ body {
     width: 100%;
 }
 
-#masthead, #colophon {
+#masthead,
+#colophon {
     .make-row;
 
     .site-branding {
@@ -47,18 +48,21 @@ body {
     .site-branding {
         display: inline-block;
 
+        .respond(@screen-sm, {
+            display: block;
+        });
+
         .site-description {
             display: none;
+
+            .respond(@screen-sm, {
+                display: block;
+            });
         }
     }
+
     .respond(@screen-sm, {
         background: none;
-        .site-branding {
-            display: block;
-            .site-description {
-                display: block;
-            }
-        }
     });
 }
 
@@ -68,6 +72,7 @@ body {
     padding: 12px 16px;
     display: inline-block;
     z-index: @z-index-2;
+
     .respond(@screen-sm, {
         display: none;
     });
@@ -80,7 +85,8 @@ body {
         background: transparent;
         border: 0;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
             text-decoration: none;
         }
     }
@@ -117,6 +123,7 @@ body {
     background: @black;
     transform: translate3d(-100%, 0, 0);
     backface-visibility: hidden;
+
     .respond(@screen-sm, {
         position: relative;
         z-index: @z-index-2;
@@ -155,6 +162,7 @@ body {
     .nav-controls {
         margin-bottom: 15px;
         padding: 15px 0;
+
         .respond(@screen-sm, {
             display: none;
         });
@@ -163,6 +171,7 @@ body {
 
 #site-navigation, #ancillary-navigation {
     background: @black;
+
     .respond(@screen-sm, {
         padding-left: 0;
         padding-top: 0;
@@ -172,6 +181,7 @@ body {
     ul {
         list-style: none;
         margin: 0;
+
         .respond(@screen-sm, {
             display: block;
         });
@@ -184,6 +194,7 @@ body {
             padding: 0;
             position: relative;
             line-height: 1.4em;
+
             .respond(@screen-sm, {
                 display: inline-block;
             });
@@ -193,6 +204,7 @@ body {
                 margin: 0;
                 padding: 15px 15px 15px 20px;
                 color: @white;
+
                 .respond(@screen-sm, {
                     padding: 8px 14px;
                     line-height: 1em;
@@ -207,6 +219,7 @@ body {
                 background: @primary;
                 color: @white !important;
             }
+
             &:hover {
                 .respond(@screen-sm, {
                     ul.sub-menu {
@@ -214,8 +227,10 @@ body {
                     }
                 });
             }
+
             ul.sub-menu {
                 display: none;
+
                 .respond(@screen-sm, {
                     background: @primary;
                     position: absolute;
@@ -225,6 +240,7 @@ body {
                     left: 0;
                     text-align: left;
                 });
+
                 li {
                     border-left: 0 none !important;
                     display: block;
@@ -239,6 +255,7 @@ body {
                             color: @white !important;
                         }
                     }
+
                     &:hover {
                         .respond(@screen-sm, {
                             ul.sub-menu {
@@ -250,8 +267,8 @@ body {
                                 top: 0;
                             }
                         });
-
                     }
+
                     ul.sub-menu {
                         display: none;
                     }
@@ -274,6 +291,7 @@ body {
 .menu-active {
     #page {
         transform: translate3d(100%, 0, 0);
+
         .respond(@screen-sm, {
             transform: translate3d(0, 0, 0);
         });
@@ -286,7 +304,8 @@ body {
     .container-fixed();
 }
 
-#primary, #primary-full {
+#primary,
+#primary-full {
     margin-bottom: 20px;
     .respond(@screen-sm, {
         margin-bottom: 0;
@@ -300,7 +319,8 @@ body {
 }
 
 #main {
-    ul, ol {
+    ul,
+    ol {
         margin: 0 0 20px 20px;
     }
 
@@ -383,7 +403,8 @@ body {
     overflow: hidden;
 }
 
-.nav-next a, .nav-previous a {
+.nav-next a,
+.nav-previous a {
     background-color: @primary;
     color: #fff;
     text-transform: uppercase;
@@ -445,10 +466,12 @@ body {
 .widget_silenciochildrenpages {
     padding: 0;
     border: 2px solid black;
-    background: white;
-    .current_page_item{
+    background: @white;
+
+    .current_page_item {
         background-color: rgba(0,0,0,.1);
     }
+
     p:last-child {
         margin-bottom: 0;
     }
@@ -460,8 +483,9 @@ body {
         padding: 10px 20px;
         text-align: center;
         text-transform: uppercase;
-        a{
-            color:white;
+
+        a {
+            color: @white;
         }
     }
 
@@ -485,6 +509,7 @@ body {
 
     .children {
         display: none;
+
         a {
             text-transform: none;
             font-weight: @regular;
@@ -588,16 +613,20 @@ body {
 
     .via_tag {
         text-align: center;
+
         svg {
             width: 28px;
             height: auto;
+
             path {
                 fill: @white;
             }
         }
     }
+
     .respond(@screen-sm, {
         text-align: left;
+
         .footer-widget {
 
         }
@@ -618,6 +647,7 @@ body {
                 }
             }
         }
+
         .site-info {
 
             .address {
