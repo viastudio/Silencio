@@ -318,7 +318,7 @@ body {
     .container-fixed();
 }
 
-#main {
+.entry-content {
     ul,
     ol {
         margin: 0 0 20px 20px;
@@ -403,24 +403,27 @@ body {
     overflow: hidden;
 }
 
-.nav-next a,
-.nav-previous a {
+.breadcrumbs {
+    padding: 8px 15px;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+#main .dropdown-menu {
+    margin: 0;
+    list-style: none;
+}
+
+.taxonomy-list a {
     background-color: @primary;
-    color: #fff;
-    text-transform: uppercase;
-    padding: 8px 14px;
-    font-size: 1em;
-    display: block;
-}
+    padding: 4px 10px;
+    margin-right: 3px;
+    color: @white;
 
-.nav-previous {
-    float: left;
-    width: inherit;
-}
-
-.nav-next {
-    float: right;
-    width: inherit;
+    &:hover {
+        background-color: lighten(@primary, 5%);
+    }
 }
 
 /* 404
@@ -667,6 +670,23 @@ body {
             text-align: right;
         }
     });
+}
+
+// Social Icons
+.social-media {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        font-size: 2rem;
+        margin-right: 6px;
+        padding: 4px 10px;
+    }
 }
 
 /*  IE Specific
