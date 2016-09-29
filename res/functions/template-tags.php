@@ -40,22 +40,22 @@ if (! function_exists('silencio_paging_nav')) {
         }
 ?>
         <nav class="navigation paging-navigation" role="navigation">
-            <div class="nav-links">
+            <ul class="pager">
 
 <?php
         if (get_next_posts_link()) {
 ?>
-                <div class="nav-previous"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'silencio')); ?></div>
+                <li class="previous"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'silencio')); ?></li>
 <?php
         }
         if (get_previous_posts_link()) {
 ?>
-                <div class="nav-next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'silencio')); ?></div>
+                <li class="next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'silencio')); ?></li>
 <?php
         }
 ?>
 
-            </div><!-- .nav-links -->
+            </ul><!-- .nav-links -->
         </nav><!-- .navigation -->
 <?php
     }
