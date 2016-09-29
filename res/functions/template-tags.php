@@ -240,13 +240,13 @@ if (!function_exists('silencio_footer_meta')) {
      * Footer meta
      */
     function silencio_footer_meta() {
-        $category_list = get_the_category_list(__(', ', 'silencio'));
-        $tag_list = get_the_tag_list('', __(', ', 'silencio'));
+        $category_list = get_the_category_list(__(' ', 'silencio'));
+        $tag_list = get_the_tag_list('', __(' ', 'silencio'));
         if (has_category()) {
-            printf("<span>Categories: %s </span>", $category_list, get_permalink());
+            printf("<span>Categories: %s </span>", '<span class="taxonomy-list category-list">' . $category_list . '</span>', get_permalink());
         }
         if (has_tag()) {
-            printf("<span> | Tags: %s </span>", $tag_list, get_permalink());
+            printf("<span>Tags: %s </span>", '<span class="taxonomy-list category-list">' . $tag_list . '</span>', get_permalink());
         }
 
     }
