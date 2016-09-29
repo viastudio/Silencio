@@ -8,7 +8,7 @@
     "bootstrap": "~3.3.5",
     "fitvids": "~1.1.0",
     "respond": "~1.4.2",
-    "font-awesome": "~4.4.0",
+    "font-awesome": "~4.6.3",
     "picturefill": "~3.0.1"
   }
 }
