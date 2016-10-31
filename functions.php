@@ -17,6 +17,7 @@ if (! function_exists('silencio_setup')) {
         require(get_template_directory() . '/res/functions/users.php');
         require(get_template_directory() . '/res/functions/metaboxes.php');
         require(get_template_directory() . '/res/functions/jetpack.php');
+        // require(get_template_directory() . '/res/functions/mime-types.php');
         // require(get_template_directory() . '/res/functions/post-types.php');
         // require(get_template_directory() . '/res/functions/taxonomies.php');
 
