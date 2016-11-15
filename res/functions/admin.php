@@ -52,7 +52,7 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
         $guide_url = get_theme_mod('theme_option_guide_url_txt_input');
 ?>
         <p>
-            <a href="http://viastudio.com"><img src="http://viastudio.com/via-silencio-ad.png"></a>
+            <a href="http://viastudio.com"><img src="https://viastudio.com/via-silencio-ad.png"></a>
         </p>
 <?php
         if (!empty($guide_url)) {
