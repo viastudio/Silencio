@@ -85,29 +85,7 @@ add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
-    if (!is_admin() && defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT == 'dev') {
-        wp_deregister_script('jquery');
-        wp_register_script('jquery', get_template_directory_uri() . '/res/components/jquery/dist/jquery.js', false, '2.1.4', true);
-        wp_enqueue_script('jquery');
-
-        // JS
-        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/res/components/bootstrap/dist/js/bootstrap.js', array('jquery'), false, true);
-        wp_enqueue_script('fitvids', get_template_directory_uri() . '/res/components/fitvids/jquery.fitvids.js', array('jquery'), false, true);
-        wp_enqueue_script('picturefill', get_template_directory_uri() . '/res/components/picturefill/dist/picturefill.js', false, true);
-
-        // CSS
-        wp_enqueue_style('bootstrap', get_template_directory_uri() . '/res/components/bootstrap/dist/css/bootstrap.css', array());
-        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/res/components/font-awesome/css/font-awesome.css', array());
-        wp_enqueue_style('typography', get_template_directory_uri() . '/res/css/typography.css', array());
-        wp_enqueue_style('layout', get_template_directory_uri() . '/res/css/layout.css', array());
-    }
-
-    // Disable this environment check & load min.css if you want to test in IE8 with respond.js
-    if (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT == 'dev') {
-        $global = 'js/global.js';
-    } else {
-        $global = 'build/global.min.js';
-    }
+    $global = 'build/global.min.js';
 
     /*
      * If VIA_DEPLOYMENT is defined, contents are appended to bust client-side caches.
@@ -116,23 +94,29 @@ function silencio_scripts() {
     wp_enqueue_script(
         'global',
         get_template_directory_uri() . '/res/' . $global,
-        array('jquery'),
         defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $global),
         true
     );
 
-    if (!defined('VIA_ENVIRONMENT') || (defined('VIA_ENVIRONMENT') && VIA_ENVIRONMENT != 'dev')) {
-        wp_register_style(
-            'global',
-            get_template_directory_uri() . '/res/build/global.min.css',
-            array(),
-            defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/global.min.css'),
-            'all'
-        );
+    wp_register_style(
+        'dist',
+        get_template_directory_uri() . '/res/build/dist.min.css',
+        array(),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/dist.min.css'),
+        'all'
+    );
 
-        // enqueing:
-        wp_enqueue_style('global');
-    }
+    wp_register_style(
+        'global',
+        get_template_directory_uri() . '/res/build/global.min.css',
+        array(),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/global.min.css'),
+        'all'
+    );
+
+    // enqueing:
+    wp_enqueue_style('dist');
+    wp_enqueue_style('global');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

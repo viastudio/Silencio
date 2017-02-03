@@ -20,7 +20,10 @@ const paths = {
         'res/components/picturefill/dist/picturefill.js',
         'res/js/global.js'
     ],
-    css: ['res/components/**/*.css', 'res/css/**/*css'],
+    css: [
+        'res/components/bootstrap/dist/css/bootstrap.css',
+        'res/components/font-awesome/css/font-awesome.css'
+    ],
     less: ['res/less/**/*.less'],
     out: 'res/build/'
 };
@@ -37,32 +40,36 @@ gulp.task('scripts', () => {
         }))
         .pipe(uglify().on('error', gutil.log))
         .pipe(concat('global.min.js'))
-        .pipe(sourcemaps.write({
-            includeContent: false
-        }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.out));
 });
 
-gulp.task('styles', () => {
-    var lessStream = gulp.src(paths.less)
-        .pipe(less());
-
-    var cssStream = gulp.src(paths.css);
-
-    var merged = merge(lessStream, cssStream)
+//Compile any 3rd-party CSS
+gulp.task('css', () => {
+    return gulp.src(paths.css)
         .pipe(sourcemaps.init())
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
-        .pipe(cssmin())
-        .pipe(concat('global.min.css'))
-        .pipe(sourcemaps.write({
-            includeContent: false
-        }))
+        .pipe(concat('dist.min.css'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(paths.out));
-
-    return merged;
 });
+
+//Compile our LESS files
+gulp.task('less', () => {
+    return gulp.src(paths.less)
+        .pipe(sourcemaps.init())
+        .pipe(less())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(concat('global.min.css'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.out));
+});
+
+gulp.task('styles', ['css', 'less']);
 
 gulp.task('watch', () => {
     gulp.watch('res/js/**/*js', ['scripts']);
