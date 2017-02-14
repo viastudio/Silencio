@@ -9,14 +9,14 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.1.7",
+    "gulp-cssnano": "^2.1.2",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
     "less": "^2.7.2",
-    "merge-stream": "^1.0.1",
+    "merge2": "^1.0.3",
     "run-sequence": "^1.2.2"
   }
 }

@@ -87,10 +87,6 @@ add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_
 function silencio_scripts() {
     $global = 'build/global.min.js';
 
-    /*
-     * If VIA_DEPLOYMENT is defined, contents are appended to bust client-side caches.
-     * If it's not defined, fall back to file modified time.
-     */
     wp_enqueue_script(
         'global',
         get_template_directory_uri() . '/res/' . $global,
@@ -99,10 +95,10 @@ function silencio_scripts() {
     );
 
     wp_register_style(
-        'dist',
-        get_template_directory_uri() . '/res/build/dist.min.css',
+        'vendor',
+        get_template_directory_uri() . '/res/build/vendor.min.css',
         array(),
-        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/dist.min.css'),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/vendor.min.css'),
         'all'
     );
 
@@ -115,7 +111,7 @@ function silencio_scripts() {
     );
 
     // enqueing:
-    wp_enqueue_style('dist');
+    wp_enqueue_style('vendor');
     wp_enqueue_style('global');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
