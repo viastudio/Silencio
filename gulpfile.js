@@ -10,6 +10,12 @@ const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const del = require('del');
 const rename = require('gulp-rename');
+const gulpif = require('gulp-if');
+const gutil = require('gulp-util');
+
+let config = {
+    buildSourcemaps: false
+};
 
 const paths = {
     vendorScripts: [
@@ -52,10 +58,10 @@ gulp.task('scripts', () => {
     //This step builds sourcemaps (into global.min.js.map), minifies
     //all JS and combines all of them into a single file
     return merge2(vendorJS, ourJS)
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
         .pipe(uglify())
         .pipe(concat('global.min.js'))
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
         .pipe(gulp.dest(paths.out))
     ;
 });
@@ -65,28 +71,38 @@ gulp.task('styles', () => {
     //This allows us to have sourcemaps for our stuff that
     //references the LESS files intead of the compiled CSS
     var vendorCSS = gulp.src(paths.css)
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
         .pipe(nano())
         .pipe(concat('vendor.min.css'))
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
         .pipe(gulp.dest(paths.out));
 
     return gulp.src(paths.less)
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
         .pipe(less())
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
         .pipe(nano())
         .pipe(concat('global.min.css'))
-        .pipe(sourcemaps.write('.'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
         .pipe(gulp.dest(paths.out));
 });
 
 gulp.task('watch', () => {
+    config.buildSourcemaps = true;
+    gutil.log('Building with sourcemaps');
+
     gulp.watch('res/js/**/*js', ['scripts']);
     gulp.watch('res/css/**/*.css', ['styles']);
     gulp.watch('res/less/**/*.less', ['styles']);
+});
+
+gulp.task('dev', () => {
+    config.buildSourcemaps = true;
+    gutil.log('Building with sourcemaps');
+
+    run('styles', 'scripts');
 });
 
 gulp.task('clean', () => {
@@ -95,4 +111,6 @@ gulp.task('clean', () => {
     ]);
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['clean', 'styles', 'scripts'], () => {
+    gutil.log('Finished build without sourcemaps');
+});
