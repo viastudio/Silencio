@@ -39,6 +39,31 @@ const paths = {
     out: 'res/build/'
 };
 
+let emitVendorStyles = () => {
+    //Combine all of our 3rd-party CSS into a separate file
+    //This allows us to have sourcemaps for our stuff that
+    //references the LESS files intead of the compiled CSS
+    var vendorCSS = gulp.src(paths.css)
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
+        .pipe(nano())
+        .pipe(concat('vendor.min.css'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out));
+};
+
+let emitOurStyles = () => {
+    return gulp.src(paths.less)
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
+        .pipe(less())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(nano())
+        .pipe(concat('global.min.css'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out));
+};
+
 let emitRespondJs = () => {
     //Emit respond.js as a separate file since it's included separately
     var respond = gulp.src('res/components/respond/dest/respond.src.js')
@@ -98,37 +123,26 @@ gulp.task('scripts', () => {
     ;
 });
 
-gulp.task('styles', () => {
-    //Combine all of our 3rd-party CSS into a separate file
-    //This allows us to have sourcemaps for our stuff that
-    //references the LESS files intead of the compiled CSS
-    var vendorCSS = gulp.src(paths.css)
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
-        .pipe(nano())
-        .pipe(concat('vendor.min.css'))
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
-        .pipe(gulp.dest(paths.out));
-
-    return gulp.src(paths.less)
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
-        .pipe(less())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions']
-        }))
-        .pipe(nano())
-        .pipe(concat('global.min.css'))
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
-        .pipe(gulp.dest(paths.out));
+gulp.task('vendor-styles', () => {
+    emitVendorStyles();
 });
 
-gulp.task('watch', ['clean', 'vendor-scripts', 'dev'], () => {
+gulp.task('our-styles', () => {
+    emitOurStyles();
+});
+
+gulp.task('styles', () => {
+    emitVendorStyles();
+    emitOurStyles();
+});
+
+gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
     config.env = 'dev';
     config.buildSourcemaps = true;
     gutil.log('Building with sourcemaps');
 
     gulp.watch('res/js/**/*js', ['dev-scripts']);
-    gulp.watch('res/css/**/*.css', ['styles']);
-    gulp.watch('res/less/**/*.less', ['styles']);
+    gulp.watch('res/less/**/*.less', ['our-styles']);
 });
 
 gulp.task('dev', () => {
@@ -136,7 +150,7 @@ gulp.task('dev', () => {
     config.buildSourcemaps = true;
     gutil.log('Building with sourcemaps');
 
-    run('styles', 'vendor-scripts', 'dev-scripts');
+    run('vendor-styles', 'our-styles', 'vendor-scripts', 'dev-scripts');
 });
 
 gulp.task('clean', () => {
