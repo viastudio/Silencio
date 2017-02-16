@@ -14,6 +14,7 @@ const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 
 let config = {
+    env: 'prod',
     buildSourcemaps: false
 };
 
@@ -38,30 +39,61 @@ const paths = {
     out: 'res/build/'
 };
 
-gulp.task('scripts', () => {
-    //Emit response.js as a separate file since it's included separately
+let emitRespondJs = () => {
+    //Emit respond.js as a separate file since it's included separately
     var respond = gulp.src('res/components/respond/dest/respond.src.js')
         .pipe(rename('respond.min.js'))
         .pipe(gulp.dest(paths.out));
+};
 
+let vendorJsStream = () => {
     //Pull in angular & other 3rd party JS files into their own streams
     //This is so we can avoid transpiling them which causes problems
-    var vendorJS = gulp.src(paths.vendorScripts);
+    return gulp.src(paths.vendorScripts);
+};
 
+let ourJsStream = () => {
     //Grab all of our JS and convert from ES6 as needed
-    var ourJS = gulp.src(paths.ourScripts)
+    return gulp.src(paths.ourScripts)
         .pipe(babel({
             presets: ['es2015']
         }));
+};
 
-    //NOTE: merge2 processes the streams in order (which is important for us)
-    //This step builds sourcemaps (into global.min.js.map), minifies
-    //all JS and combines all of them into a single file
-    return merge2(vendorJS, ourJS)
+gulp.task('vendor-scripts', () => {
+    let vendorJS = vendorJsStream();
+
+    return vendorJS
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
+        .pipe(uglify())
+        .pipe(concat('vendor.min.js'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out));
+});
+
+gulp.task('dev-scripts', () => {
+    let ourJS = ourJsStream();
+
+    return ourJS
         .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
         .pipe(uglify())
         .pipe(concat('global.min.js'))
         .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out))
+    ;
+});
+
+gulp.task('scripts', () => {
+    emitRespondJs();
+
+    var vendorJS = vendorJsStream();
+    var ourJS = ourJsStream();
+
+    //NOTE: merge2 processes the streams in order (which is important for us)
+    //This minifies all JS and combines all of them into a single file
+    return merge2(vendorJS, ourJS)
+        .pipe(uglify())
+        .pipe(concat('global.min.js'))
         .pipe(gulp.dest(paths.out))
     ;
 });
@@ -89,20 +121,22 @@ gulp.task('styles', () => {
         .pipe(gulp.dest(paths.out));
 });
 
-gulp.task('watch', () => {
+gulp.task('watch', ['clean', 'vendor-scripts', 'dev'], () => {
+    config.env = 'dev';
     config.buildSourcemaps = true;
     gutil.log('Building with sourcemaps');
 
-    gulp.watch('res/js/**/*js', ['scripts']);
+    gulp.watch('res/js/**/*js', ['dev-scripts']);
     gulp.watch('res/css/**/*.css', ['styles']);
     gulp.watch('res/less/**/*.less', ['styles']);
 });
 
 gulp.task('dev', () => {
+    config.env = 'dev';
     config.buildSourcemaps = true;
     gutil.log('Building with sourcemaps');
 
-    run('styles', 'scripts');
+    run('styles', 'vendor-scripts', 'dev-scripts');
 });
 
 gulp.task('clean', () => {
@@ -112,5 +146,5 @@ gulp.task('clean', () => {
 });
 
 gulp.task('default', ['clean', 'styles', 'scripts'], () => {
-    gutil.log('Finished build without sourcemaps');
+    gutil.log('Built without sourcemaps');
 });
