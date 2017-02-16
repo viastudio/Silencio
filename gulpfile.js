@@ -39,6 +39,18 @@ const paths = {
     out: 'res/build/'
 };
 
+let logErr = (msg) => {
+    gutil.log(gutil.colors.red(`Error: ${msg}`));
+};
+
+let logWarn = (msg) => {
+    gutil.log(gutil.colors.yellow(`Warning: ${msg}`));
+};
+
+let logInfo = (msg) => {
+    gutil.log(gutil.colors.cyan(`Info: ${msg}`));
+}
+
 let emitVendorStyles = () => {
     //Combine all of our 3rd-party CSS into a separate file
     //This allows us to have sourcemaps for our stuff that
@@ -139,7 +151,7 @@ gulp.task('styles', () => {
 gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
     config.env = 'dev';
     config.buildSourcemaps = true;
-    gutil.log('Building with sourcemaps');
+    logInfo('Building with sourcemaps');
 
     gulp.watch('res/js/**/*js', ['dev-scripts']);
     gulp.watch('res/less/**/*.less', ['our-styles']);
@@ -148,7 +160,7 @@ gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
 gulp.task('dev', () => {
     config.env = 'dev';
     config.buildSourcemaps = true;
-    gutil.log('Building with sourcemaps');
+    logInfo("Dev build.\nSourcemaps, vendor JS in a separate file.");
 
     run('vendor-styles', 'our-styles', 'vendor-scripts', 'dev-scripts');
 });
@@ -159,6 +171,15 @@ gulp.task('clean', () => {
     ]);
 });
 
+gulp.task('help', () => {
+    logInfo(`Available commands:
+    gulp        (Production build)
+    gulp dev    (Dev build)
+    gulp watch  (Dev build, then watch for LESS/JS changes)
+    gulp clean  (Delete contents of res/build)`);
+});
+
 gulp.task('default', ['clean', 'styles', 'scripts'], () => {
-    gutil.log('Built without sourcemaps');
+    logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
+    logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
 });
