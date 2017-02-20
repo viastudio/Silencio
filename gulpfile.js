@@ -13,11 +13,6 @@ const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 
-let config = {
-    env: 'prod',
-    buildSourcemaps: false
-};
-
 const paths = {
     vendorScripts: [
         'res/components/jquery/dist/jquery.js',
@@ -49,6 +44,16 @@ let logWarn = (msg) => {
 
 let logInfo = (msg) => {
     gutil.log(gutil.colors.cyan(`Info: ${msg}`));
+}
+
+let config = {
+    env: 'prod',
+    buildSourcemaps: false
+};
+
+if (typeof process.env.ENVIRONMENT !== 'undefined') {
+    config.env = 'dev';
+    logInfo(`Performing dev build since ENVIRONMENT was set to ${process.env.ENVIRONMENT}.`);
 }
 
 let emitVendorStyles = () => {
@@ -179,7 +184,13 @@ gulp.task('help', () => {
     gulp clean  (Delete contents of res/build)`);
 });
 
-gulp.task('default', ['clean', 'styles', 'scripts'], () => {
-    logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
-    logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
-});
+if (config.env == 'prod') {
+    gulp.task('default', ['clean', 'styles', 'scripts'], () => {
+        logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
+        logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
+    });
+} else {
+    gulp.task('default', () => {
+        run('dev');
+    });
+}
