@@ -51,7 +51,7 @@ let config = {
     buildSourcemaps: false
 };
 
-if (typeof process.env.ENVIRONMENT !== 'undefined') {
+if (typeof process.env.ENVIRONMENT !== 'undefined' && process.env.ENVIRONMENT !== 'undefined') {
     config.env = 'dev';
     logInfo(`Performing dev build since ENVIRONMENT was set to ${process.env.ENVIRONMENT}.`);
 }
