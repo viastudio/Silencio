@@ -1019,10 +1019,6 @@ fitvids.1.1.0@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/fitvids.1.1.0/-/fitvids.1.1.0-1.1.0.tgz#9eef79b1a79c3d817e1daff44e3d93375633a629"
 
-fitvids@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/fitvids/-/fitvids-2.0.0.tgz#b7bb7a19db83fa021a9f980b6f02e82b2e3662c8"
-
 flagged-respawn@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-0.3.2.tgz#ff191eddcd7088a675b2610fffc976be9b8074b5"
@@ -2542,6 +2538,10 @@ resolve-url@~0.2.1:
 resolve@^1.1.6, resolve@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
+
+respond@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/respond/-/respond-0.9.0.tgz#fd8c298efe03b3bb7f4fc4cb58ddd7f34b51cd68"
 
 right-align@^0.1.1:
   version "0.1.3"
