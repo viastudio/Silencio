@@ -15,17 +15,17 @@ const gutil = require('gulp-util');
 
 const paths = {
     vendorScripts: [
-        'res/components/jquery/dist/jquery.js',
-        'res/components/bootstrap/dist/js/bootstrap.js',
-        'res/components/fitvids/jquery.fitvids.js',
-        'res/components/picturefill/dist/picturefill.js'
+        'node_modules/jquery/dist/jquery.js',
+        'node_modules/bootstrap/dist/js/bootstrap.js',
+        'node_modules/fitvids.1.1.0/jquery.fitvids.js',
+        'node_modules/picturefill/dist/picturefill.js'
     ],
     ourScripts: [
         'res/js/global.js'
     ],
     css: [
-        'res/components/bootstrap/dist/css/bootstrap.css',
-        'res/components/font-awesome/css/font-awesome.css'
+        'node_modules/bootstrap/dist/css/bootstrap.css',
+        'node_modules/font-awesome/css/font-awesome.css'
     ],
     less: [
         'res/less/typography.less',
