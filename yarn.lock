@@ -2539,9 +2539,9 @@ resolve@^1.1.6, resolve@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
 
-respond@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/respond/-/respond-0.9.0.tgz#fd8c298efe03b3bb7f4fc4cb58ddd7f34b51cd68"
+respond.js@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/respond.js/-/respond.js-1.4.2.tgz#fd5c07450acce6090916d8d090b86b672dd9748b"
 
 right-align@^0.1.1:
   version "0.1.3"

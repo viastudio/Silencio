@@ -19,7 +19,7 @@ const paths = {
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/fitvids.1.1.0/jquery.fitvids.js',
         'node_modules/picturefill/dist/picturefill.js',
-        'node_modules/respond/main.js'
+        'node_modules/respond.js/dest/respond.src.js'
     ],
     ourScripts: [
         'res/js/global.js'

@@ -23,7 +23,7 @@
     "less": "^2.7.2",
     "merge2": "^1.0.3",
     "picturefill": "^3.0.2",
-    "respond": "^0.9.0",
+    "respond.js": "^1.4.2",
     "run-sequence": "^1.2.2"
   }
 }
