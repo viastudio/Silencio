@@ -18,8 +18,7 @@ const paths = {
         'node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/fitvids.1.1.0/jquery.fitvids.js',
-        'node_modules/picturefill/dist/picturefill.js',
-        'node_modules/respond.js/dest/respond.src.js'
+        'node_modules/picturefill/dist/picturefill.js'
     ],
     ourScripts: [
         'res/js/global.js'
@@ -84,7 +83,7 @@ let emitOurStyles = () => {
 
 let emitRespondJs = () => {
     //Emit respond.js as a separate file since it's included separately
-    var respond = gulp.src('res/components/respond/dest/respond.src.js')
+    var respond = gulp.src('node_modules/respond.js/dest/respond.src.js')
         .pipe(rename('respond.min.js'))
         .pipe(gulp.dest(paths.out));
 };
