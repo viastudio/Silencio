@@ -20,13 +20,8 @@ body {
     width: 100%;
 }
 
-#masthead,
 #colophon {
     .make-row;
-
-    .site-branding {
-        .make-sm-column(12);
-    }
 }
 
 #content {
@@ -111,7 +106,7 @@ body {
     min-height: 200%;
     left: 0;
     backface-visibility: hidden;
-    transition: transform, 600ms, cubic-bezier(.09,.95,.49,.94);
+    transition: transform 6s cubic-bezier(.09,.95,.49,.94);
 }
 
 .nav-container {
@@ -423,7 +418,8 @@ body {
 /* Sidebar & Widgets
 ----------------------------------------------- */
 .home,
-.page-template-template-sidebar {
+.page-template-template-sidebar,
+.archive {
     #content {
         .container;
     }
