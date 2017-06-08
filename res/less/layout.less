@@ -228,53 +228,6 @@ body {
                 });
             }
 
-            ul.sub-menu {
-                display: none;
-
-                .respond(@screen-sm, {
-                    background: @primary;
-                    position: absolute;
-                    margin: 0;
-                    padding: 0;
-                    min-width: 220px;
-                    left: 0;
-                    text-align: left;
-                });
-
-                li {
-                    border-left: 0 none !important;
-                    display: block;
-
-                    a {
-                        color: @white;
-                        padding: 8px 16px;
-                        display: block;
-
-                        &:hover {
-                            background: @black;
-                            color: @white !important;
-                        }
-                    }
-
-                    &:hover {
-                        .respond(@screen-sm, {
-                            ul.sub-menu {
-                                background: @primary;
-                                color: @white;
-                                display: block;
-                                position: absolute;
-                                left: 220px;
-                                top: 0;
-                            }
-                        });
-                    }
-
-                    ul.sub-menu {
-                        display: none;
-                    }
-                }
-            }
-
             &.current_page_item,
             &.current-menu-item,
             &.current-menu-parent,
@@ -283,6 +236,56 @@ body {
                     background: @primary;
                     color: @white !important;
                 }
+            }
+        }
+    }
+}
+
+#site-navigation,
+#ancillary-navigation {
+    ul.sub-menu {
+        display: none;
+
+        .respond(@screen-sm, {
+            background: @primary;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            min-width: 220px;
+            left: 0;
+            text-align: left;
+        });
+
+        li {
+            border-left: 0 none !important;
+            display: block;
+
+            a {
+                color: @white;
+                padding: 8px 16px;
+                display: block;
+
+                &:hover {
+                    background: @black;
+                    color: @white !important;
+                }
+            }
+
+            &:hover {
+                .respond(@screen-sm, {
+                    ul.sub-menu {
+                        background: @primary;
+                        color: @white;
+                        display: block;
+                        position: absolute;
+                        left: 220px;
+                        top: 0;
+                    }
+                });
+            }
+
+            ul.sub-menu {
+                display: none;
             }
         }
     }
@@ -300,10 +303,6 @@ body {
 
 /* Front Page
 ----------------------------------------------- */
-.home #content {
-    .container-fixed();
-}
-
 #primary,
 #primary-full {
     margin-bottom: 20px;
@@ -314,10 +313,6 @@ body {
 
 /* Page
 ----------------------------------------------- */
-.page #content {
-    .container-fixed();
-}
-
 .entry-content {
     ul,
     ol {
@@ -331,11 +326,6 @@ body {
 
 /* Post
 ----------------------------------------------- */
-.blog #content,
-.single #content {
-    .container-fixed();
-}
-
 .entry-header {
     .entry-title {
 
@@ -357,10 +347,6 @@ body {
 
 /* Archive
 ----------------------------------------------- */
-.archive #content {
-    .container-fixed();
-}
-
 .archive-article {
     border-bottom: 1px solid @grey;
     margin-bottom: 24px;
@@ -428,19 +414,26 @@ body {
 
 /* 404
 ----------------------------------------------- */
-.error404 #content {
-    .container-fixed();
-}
+
 
 /* Search
 ----------------------------------------------- */
-.search #content {
-    .container-fixed();
-}
 
 
 /* Sidebar & Widgets
 ----------------------------------------------- */
+.home,
+.page-template-template-sidebar {
+    #content {
+        .container;
+    }
+    #primary {
+        .make-sm-column(8);
+    }
+    #secondary {
+        .make-sm-column(4);
+    }
+}
 .widget {
     margin-bottom: 20px;
 
