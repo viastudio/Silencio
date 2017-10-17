@@ -135,7 +135,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
                     </aside><!-- .site-info -->
 
                     <!-- <aside class="via_tag">
-                        <p><a href="http://viastudio.com" rel="external" target="_blank" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/img/via-mark.svg");?>Built by VIA Studio</a></p>
+                        <p><a href="http://viastudio.com" rel="external" target="_blank" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/build/img/via-mark.svg");?>Built by VIA Studio</a></p>
                     </aside> -->
                 </div><!-- .container -->
             </footer><!-- #colophon .site-footer -->

@@ -13,6 +13,16 @@ const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
 
+/*
+** Images: Imagemin is the default for images added to the theme.
+** For large/hi-res image needs add Guetzli to build process.
+** Don't forget to change image paths to /build/img
+*/
+
+const changed = require('gulp-changed');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+
 const paths = {
     vendorScripts: [
         'node_modules/jquery/dist/jquery.js',
@@ -140,6 +150,19 @@ gulp.task('scripts', () => {
     ;
 });
 
+gulp.task('images', () => {
+    const dest = 'res/build/img';
+
+    return gulp.src('res/img/*')
+        .pipe(changed(dest))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(dest))
+});
+
 gulp.task('vendor-styles', () => {
     emitVendorStyles();
 });
@@ -167,7 +190,7 @@ gulp.task('dev', () => {
     config.buildSourcemaps = true;
     logInfo("Dev build.\nSourcemaps, vendor JS in a separate file.");
 
-    run('vendor-styles', 'our-styles', 'vendor-scripts', 'dev-scripts');
+    run('vendor-styles', 'our-styles', 'vendor-scripts', 'dev-scripts', 'images');
 });
 
 gulp.task('clean', () => {
@@ -181,11 +204,12 @@ gulp.task('help', () => {
     gulp        (Production build)
     gulp dev    (Dev build)
     gulp watch  (Dev build, then watch for LESS/JS changes)
-    gulp clean  (Delete contents of res/build)`);
+    gulp clean  (Delete contents of res/build)
+    gulp images (Uses Imagemin to compress images)`);
 });
 
 if (config.env == 'prod') {
-    gulp.task('default', ['clean', 'styles', 'scripts'], () => {
+    gulp.task('default', ['clean', 'styles', 'scripts', 'images'], () => {
         logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
         logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
     });
