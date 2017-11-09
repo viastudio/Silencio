@@ -12,6 +12,8 @@ const del = require('del');
 const rename = require('gulp-rename');
 const gulpif = require('gulp-if');
 const gutil = require('gulp-util');
+const webpack = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
 
 /*
 ** Images: Imagemin is the default for images added to the theme.
@@ -28,10 +30,9 @@ const paths = {
         'node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/fitvids.1.1.0/jquery.fitvids.js',
-        'node_modules/picturefill/dist/picturefill.js'
-    ],
-    ourScripts: [
-        'res/js/global.js'
+        'node_modules/picturefill/dist/picturefill.js',
+        'node_modules/babel-polyfill/dist/polyfill.min.js',
+        'node_modules/whatwg-fetch/fetch.js',
     ],
     css: [
         'node_modules/bootstrap/dist/css/bootstrap.css',
@@ -98,56 +99,10 @@ let emitRespondJs = () => {
         .pipe(gulp.dest(paths.out));
 };
 
-let vendorJsStream = () => {
-    //Pull in angular & other 3rd party JS files into their own streams
-    //This is so we can avoid transpiling them which causes problems
-    return gulp.src(paths.vendorScripts);
-};
-
-let ourJsStream = () => {
-    //Grab all of our JS and convert from ES6 as needed
-    return gulp.src(paths.ourScripts)
-        .pipe(babel({
-            presets: ['es2015']
-        }));
-};
-
 gulp.task('vendor-scripts', () => {
-    let vendorJS = vendorJsStream();
-
-    return vendorJS
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
-        .pipe(uglify())
+    return gulp.src(paths.vendorScripts)
         .pipe(concat('vendor.min.js'))
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
         .pipe(gulp.dest(paths.out));
-});
-
-gulp.task('dev-scripts', () => {
-    let ourJS = ourJsStream();
-
-    return ourJS
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
-        .pipe(uglify())
-        .pipe(concat('global.min.js'))
-        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
-        .pipe(gulp.dest(paths.out))
-    ;
-});
-
-gulp.task('scripts', () => {
-    emitRespondJs();
-
-    var vendorJS = vendorJsStream();
-    var ourJS = ourJsStream();
-
-    //NOTE: merge2 processes the streams in order (which is important for us)
-    //This minifies all JS and combines all of them into a single file
-    return merge2(vendorJS, ourJS)
-        .pipe(uglify())
-        .pipe(concat('global.min.js'))
-        .pipe(gulp.dest(paths.out))
-    ;
 });
 
 gulp.task('images', () => {
@@ -181,7 +136,7 @@ gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
     config.buildSourcemaps = true;
     logInfo('Building with sourcemaps');
 
-    gulp.watch('res/js/**/*js', ['dev-scripts']);
+    gulp.watch('res/js/**/*js', ['webpack-watch']);
     gulp.watch('res/less/**/*.less', ['our-styles']);
 });
 
@@ -190,7 +145,23 @@ gulp.task('dev', () => {
     config.buildSourcemaps = true;
     logInfo("Dev build.\nSourcemaps, vendor JS in a separate file.");
 
-    run('vendor-styles', 'our-styles', 'vendor-scripts', 'dev-scripts', 'images');
+    run('vendor-styles', 'our-styles', 'vendor-scripts', 'webpack');
+});
+
+gulp.task('webpack-watch', function (done) {
+    webpackConfig.watch = true;
+
+    return gulp.src('res/js/global.js')
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest(paths.out));
+});
+
+gulp.task('webpack', function (done) {
+    webpackConfig.watch = false;
+
+    return gulp.src('res/js/global.js')
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest(paths.out));
 });
 
 gulp.task('clean', () => {
@@ -209,7 +180,7 @@ gulp.task('help', () => {
 });
 
 if (config.env == 'prod') {
-    gulp.task('default', ['clean', 'styles', 'scripts', 'images'], () => {
+    gulp.task('default', ['clean', 'styles', 'vendor-scripts', 'webpack', 'images'], () => {
         logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
         logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
     });
