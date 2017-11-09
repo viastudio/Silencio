@@ -7,8 +7,12 @@ We all know that WordPress is a great platform for content generation. Silencio 
 ### Environment Variable
 Set up your project locally and on production.
 
-### Grunt
-Our Grunt config compiles LESS to CSS, then inserts browser vendor prefixes using Autoprefixer for local development. For production deploys, all resources get concatenated and minified into a build folder.
+### Gulp & Webpack
+Silencio use gulp to compile LESS to CSS, optimize images & svgs, and bundle vendor JS files. Silencio-specific JS is compiled through webpack so you can use ES6 & ES17 features and to make it easier to add frameworks like ReactJS or Vue.
+
+To do a standalone dev build run `gulp dev`, otherwise run `gulp` for a production build.
+
+Running `gulp watch` will launch both the gulp watch command as well as the webpack watch command so rebuilds are very fast.
 
 ### Meta Boxes
 We’ve incorporated the CMB2 library for easily adding custom meta-boxes to projects. The framework is very extensible.
@@ -44,7 +48,7 @@ Other Functionality
 - Debugging Variables Helper
 
 ### Theme Style
-Silencio’s stylesheet is meant to be hacked. It includes files for layout and typography, as well as a variables file that calls mix-ins and other reusable patterns from Bootstrap. Grunt handles packaging it all together into a global css file.
+Silencio’s stylesheet is meant to be hacked. It includes files for layout and typography, as well as a variables file that calls mix-ins and other reusable patterns from Bootstrap. Gulp handles packaging it all together into a global css file.
 
 ### Recommended Plugins
 - Akismet: blocks spam comments
@@ -63,18 +67,14 @@ Built by VIA Studio.
 Silencio is pretty easy to get up and running. There are a few tools you’ll need to set up if you want to make use of LESS and Silencio’s easy build scripts. If you’re not into that, you can skip this bit and work directly on the included CSS and JS files.
 
 1. [Node.js](http://nodejs.org) Install this first.
-2. [Grunt](http://gruntjs.com/getting-started) is used for automating common front-end tasks like compiling LESS to CSS and building a single minified JS and CSS file for production.
-3. Copy Silencio into WordPress’ `wp-content/themes/` folder like you would any other theme.
-4. From the command line, run `npm install`. This will install everything Grunt needs to compile LESS, CSS, and JS.
+2. [Gulp](https://gulpjs.com/) is used for automating common front-end tasks like compiling LESS to CSS and building a single minified JS and CSS file for production.
+3. [Webpack](https://webpack.js.org/) is used for compiling JS.
+4. Copy Silencio into WordPress’ `wp-content/themes/` folder like you would any other theme.
+5. From the command line, run `npm install`. This will install everything Gulp needs to compile LESS, CSS, and JS.
 
-You only need to install Node & Grunt on the machine you’re using for development, so don’t worry if your hosting doesn’t support it or let you install things.
+You only need to install Node, Gulp, & Webpack on the machine you’re using for development, so don’t worry if your hosting doesn’t support it or let you install things.
 
 Once you’re done with all of that, you’re ready to start hacking!
-
-## Grunt
-There are two tasks included with Silencio.
-* `grunt watch` monitors `res/less` for changes, compiles, and copies the results to `res/.tmp/css`. Autoprefixer then does it's magic and outputs results to `res/css`.
-* `grunt` will build your theme for release. This includes compiling LESS to CSS, minifying CSS into `res/build/global.min.css`, and minifying JS into `res/build/global.min.js`.
 
 ### Configuration
 Any JS files that you want to include in your `global.min.js` can be added to the `uglify.build.src` array. Similarly, add CSS files to `cssmin.build.src` to include them in `global.min.css`. LESS files will automatically be included in Silencio's watch task, unless they're in `less/lib`. This folder is for LESS utilities that don't correspond to a CSS file.
