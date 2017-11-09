@@ -25,7 +25,6 @@ const pngquant = require('imagemin-pngquant');
 
 const paths = {
     vendorScripts: [
-        'node_modules/jquery/dist/jquery.js',
         'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/fitvids.1.1.0/jquery.fitvids.js',
         'node_modules/picturefill/dist/picturefill.js'
