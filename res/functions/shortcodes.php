@@ -92,6 +92,35 @@ function silencio_col12($atts, $content = null) {
 }
 add_shortcode('col12', 'silencio_col12');
 
+function silencio_table($atts, $content = null) {
+    return '<table class="table">' . do_shortcode($content) . '</table>';
+}
+add_shortcode('table', 'silencio_table');
+
+function silencio_table_head($atts, $content = null) {
+    return '<thead>' . do_shortcode($content) . '</thead>';
+}
+add_shortcode('table_head', 'silencio_table_head');
+
+function silencio_table_body($atts, $content = null) {
+    return '<tbody>' . do_shortcode($content) . '</tbody>';
+}
+add_shortcode('table_body', 'silencio_table_body');
+
+function silencio_tr($atts, $content = null) {
+    return '<tr>' . do_shortcode($content) . '</tr>';
+}
+add_shortcode('tr', 'silencio_tr');
+function silencio_th($atts, $content = null) {
+    return '<th>' . do_shortcode($content) . '</th>';
+}
+add_shortcode('th', 'silencio_th');
+function silencio_td($atts, $content = null) {
+    return '<td>' . do_shortcode($content) . '</td>';
+}
+add_shortcode('td', 'silencio_td');
+
+
 /**
 * Clean up extra p & br tags around shortcodes post-wpautop
 * Adapted from: https://github.com/MWDelaney/bootstrap-3-shortcodes/blob/master/includes/actions-filters.php#L42
