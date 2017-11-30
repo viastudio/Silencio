@@ -19,6 +19,7 @@ function silencio_shortcode_button_init() {
 //This callback registers our plug-in
 function silencio_register_tinymce_plugin($plugin_array) {
     $plugin_array['silencio_grid'] = get_template_directory_uri() . '/res/functions/js/tinymce.grid.js';
+    $plugin_array['silencio_table'] = get_template_directory_uri() . '/res/functions/js/tinymce.table.js';
     return $plugin_array;
 }
 
@@ -26,5 +27,6 @@ function silencio_register_tinymce_plugin($plugin_array) {
 function silencio_add_tinymce_button($buttons) {
     //Add the button ID to the $button array
     $buttons[] = "silencio_grid";
+    $buttons[] = "silencio_table";
     return $buttons;
 }
