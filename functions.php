@@ -3,7 +3,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if (!isset($content_width)) {
-    $content_width = 740; /* pixels */
+    $content_width = 1200; /* pixels */
 }
 
 if (! function_exists('silencio_setup')) {
@@ -40,31 +40,15 @@ if (function_exists('add_image_size')) {
 }
 
 //Custom Content Image Sizes Attribute
-function silencio_content_image_sizes_attr($sizes, $size) {
+add_filter('wp_calculate_image_sizes', function ($sizes, $size) use ($content_width) {
     $width = $size[0];
 
-    //Page without sidebar
-    if (get_page_template_slug() === 'template-full_width.php') {
-        if ($width > 910) {
-            return '(max-width: 768px) 92vw, (max-width: 992px) 690px, (max-width: 1200px) 910px, 1110px';
-        }
-        if ($width < 910 && $width > 690) {
-            return '(max-width: 768px) 92vw, (max-width: 992px) 690px, 910px';
-        }
-        return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
+    if (is_null($content_width) || $width < $content_width) {
+        return $sizes;
     }
 
-    //Page with sidebar
-    if ($width > 597) {
-        return '(max-width: 768px) 92vw, (max-width: 992px) 450px, (max-width: 1200px) 597px, 730px';
-    }
-    if ($width < 597 && $width > 450) {
-        return '(max-width: 768px) 92vw, (max-width: 992px) 450px, 597px';
-    }
-
-    return '(max-width: ' . $width . 'px) 92vw, ' . $width . 'px';
-}
-add_filter('wp_calculate_image_sizes', 'silencio_content_image_sizes_attr', 10, 2);
+    return '(min-width: ' . $content_width . 'px) ' . $content_width . 'px, 100vw';
+}, 10, 2);
 
 //Custom Thumbnail Sizes Attribute
 function silencio_post_thumbnail_sizes_attr($attr, $attachment, $size) {
