@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-
-<!--[if IEMobile 7 ]> <html <?php language_attributes(); ?>class="no-js iem7"> <![endif]-->
-<!--[if lt IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie6 oldie"> <![endif]-->
-<!--[if IE 7 ]> <html <?php language_attributes(); ?> class="no-js ie7 oldie"> <![endif]-->
-<!--[if IE 8 ]> <html <?php language_attributes(); ?> class="no-js ie8 oldie"> <![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
+<html <?php language_attributes(); ?> class="no-js">
 
 <head>
-
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -18,10 +12,6 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link type="text/plain" rel="author" href="<?php echo get_template_directory_uri(); ?>/humans.txt" />
 
-<!--[if lt IE 9]>
-<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
 <!-- Typekit >
 <script type="text/javascript" src="//use.typekit.net/########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
@@ -29,11 +19,6 @@
 <?php
 wp_head();
 ?>
-
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/res/build/respond.min.js"></script>
-<![endif]-->
-
 </head>
 
 <body <?php body_class(); ?>>
