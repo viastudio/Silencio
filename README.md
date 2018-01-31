@@ -23,6 +23,52 @@ There are four templates bundled with Silencio: Typography, UI Kit, Metaboxes, a
 ### Widgets
 Included are Children Pages and Category Posts widgets. They give you more options than the standard WordPress counterparts. Category Posts let you choose which categories you’d like to display entries from. Children Pages displays all child pages of the current parent. If there are no children, nothing is displayed.
 
+#### SilencioAbstractWidget
+The `SilencioAbstractWidget` is a helper class to make it easier to create simple widgets (ie simple forms or other widgets that don't require any custom logic).
+
+To use it, create a widget in the `res/functions/widgets` directory that extends `SilencioAbstractWidget` instead of `WP_Widget`.
+
+Your new widget only needs a constructor, a `drawWidget` method, and a `drawForm` method.
+
+The constructor takes 3 arguments: The widget classname, the widget title, the widget description, and an optional list of form fields.
+
+For example:
+```
+<?php
+class TestWidget extends SilencioAbstractWidget {
+    public function __construct() {
+        parent::__construct(
+            'TestWidget',
+            'Test Widget',
+            'This is a test widget',
+            [
+                'title',
+            ]
+        );
+    }
+
+    protected function drawWidget($args, $instance) {
+?>
+        <div class="widget>
+<?php
+        echo wpautop($instance['title']);
+?>
+        </div>
+<?php
+    }
+
+    protected function drawForm($instance) {
+?>
+    <p>
+        <label for="<?php echo $this->get_field_id('title'); ?>">Title</label>
+        <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
+    </p>
+<?php
+    }
+}
+```
+
+
 ### Theme Options
 Using WordPress’ Customizer, you can easily add social profiles and address information to the footer. This can be expanded further in the theme options file found in the functions folder.
 
