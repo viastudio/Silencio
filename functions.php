@@ -169,7 +169,12 @@ add_action('widgets_init', 'silencio_widgets_init');
  * Gravityforms Markup Customization:
  */
 add_filter('gform_submit_button', function ($button, $form) {
-    return "<button class=\"btn btn-primary\" id=\"gform_submit_button_{$form['id']}\">{$form['button']['text']}</button>";
+    $dom = new DOMDocument();
+    $dom->loadHTML($button);
+    $input = $dom->getElementsByTagName('input')->item(0);
+    $tabindex = $input->getAttribute('tabindex');
+
+    return "<button type=\"submit\" tabindex=\"{$tabindex}\" class=\"btn btn-primary\" id=\"gform_submit_button_{$form['id']}\">{$form['button']['text']}</button>";
 }, 10, 2);
 add_filter('gform_validation_message', function ($message, $form) {
     return "<div class=\"alert alert-danger\"><h4>Error</h4><p>" . esc_html__('There was a problem with your submission.', 'gravityforms') . ' ' . esc_html__('Errors have been highlighted below.', 'gravityforms') . '</p></div>';
