@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const less = require('gulp-less');
+const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const nano = require('gulp-cssnano');
@@ -37,9 +37,9 @@ const paths = {
         'node_modules/bootstrap/dist/css/bootstrap.css',
         'node_modules/font-awesome/css/font-awesome.css'
     ],
-    less: [
-        'res/less/typography.less',
-        'res/less/layout.less'
+    sass: [
+        'res/sass/typography.scss',
+        'res/sass/layout.scss'
     ],
     out: 'res/build/'
 };
@@ -79,9 +79,9 @@ let emitVendorStyles = () => {
 };
 
 let emitOurStyles = () => {
-    return gulp.src(paths.less)
+    return gulp.src(paths.sass)
         .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
-        .pipe(less())
+        .pipe(sass())
         .pipe(autoprefixer({
             browsers: ['last 2 versions']
         }))
@@ -136,7 +136,7 @@ gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
     logInfo('Building with sourcemaps');
 
     gulp.watch('res/js/**/*js', ['webpack-watch']);
-    gulp.watch('res/less/**/*.less', ['our-styles']);
+    gulp.watch('res/sass/**/*.scss', ['our-styles']);
 });
 
 gulp.task('dev', () => {
@@ -173,7 +173,7 @@ gulp.task('help', () => {
     logInfo(`Available commands:
     gulp        (Production build)
     gulp dev    (Dev build)
-    gulp watch  (Dev build, then watch for LESS/JS changes)
+    gulp watch  (Dev build, then watch for SASS/JS changes)
     gulp clean  (Delete contents of res/build)
     gulp images (Uses Imagemin to compress images)`);
 });
