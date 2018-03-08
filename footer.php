@@ -13,7 +13,7 @@ if (isset($options['theme_option_street_txt_input'], $options['theme_option_city
 ?>
             </div><!-- #content .site-content -->
 
-            <footer id="colophon" class="site-footer" role="contentinfo">
+            <footer id="colophon" class="footer" role="contentinfo">
                 <div class="container">
                     <!-- <nav id="footer-nav" role="navigation">
 <?php

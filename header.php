@@ -30,31 +30,29 @@ if (function_exists('gtm4wp_the_gtm_tag')) {
     <div class="body-wrap">
         <div id="page" class="hfeed site">
             <header id="masthead" class="site-header" role="banner">
-                <div class="container">
-                    <nav class="menu-nav">
-                        <button type="button" class="menu-button" href="#"><span class="sr-only">Open Menu</span><i class="fa fa-bars"></i></button>
-                    </nav>
-                    <div class="site-branding">
-                        <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                        <!-- <h2 class="site-description"><?php bloginfo('description'); ?></h2> -->
-                    </div><!-- .site-branding -->
-                </div><!-- .container -->
-            </header><!-- #masthead .site-header -->
-
-            <div class="nav-container">
-                <div class="container">
-                    <nav id="site-navigation" class="main-navigation" role="navigation">
-                        <div class="nav-controls">
-                            <button type="button" class="menu-button menu-close" href="#"><span class="sr-only">Close Menu</span><i class="fa fa-times"></i></button>
+                <nav class="navbar" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <h1 class="site-title navbar-item"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <button class="button navbar-burger" data-target="navMenu"><span></span><span></span><span></span></button>
+                    </div>
+                    <div class="navbar-menu" id="navMenu">
+<?php
+wp_nav_menu([
+    'theme_location' => 'primary',
+    'container' => false,
+    'items_wrap' => '<div class="navbar-start %2$s">%3$s</div>',
+    'walker' => new Bulma_Navbar_Menu()
+]);
+?>
+                        <div class="navbar-end">
+                            <div class="navbar-item">
 <?php
 get_search_form();
 ?>
+                            </div>
                         </div>
-<?php
-wp_nav_menu(array('theme_location' => 'primary'));
-?>
-                    </nav><!-- #site-navigation -->
-                </div><!-- .container -->
-            </div><!-- .nav-container -->
+                    </div>
+                </nav>
+            </header><!-- #masthead .site-header -->
 
             <div id="content" class="site-content">
