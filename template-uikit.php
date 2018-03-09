@@ -66,53 +66,31 @@ while (have_posts()) {
                         </tr>
                     </tbody>
                 </table>
-
             </div>
 
             <!-- Forms
             ================================================== -->
-            <div class="bs-docs-section">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-header">
-                            <h2 id="forms">Forms</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="bs-component">
+            <div>
+                <h2>Forms</h2>
 <?php
 gravity_form(1);
 ?>
-                </div>
             </div>
 
             <!-- Navs
             ================================================== -->
-            <div class="bs-docs-section">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-header">
-                            <h2 id="nav">Navs</h2>
-                        </div>
-                    </div>
-                </div>
-                <h3>Pagination</h3>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h4>Numeric</h4>
-                        <nav class="navigation">
-                            <div class="pagination-container">
-                                <ul class="pagination">
-                                   <li class="disabled"><a class="page-numbers" href="#">prev</a></li>
-                                    <li><a class="page-numbers current" href="#">1</a></li>
-                                    <li><a class="page-numbers" href="#">2</a></li>
-                                    <li><a class="page-numbers" href="#">3</a></li>
-                                    <li><a class="page-numbers" href="#">4</a></li>
-                                    <li><a class="page-numbers" href="#">5</a></li>
-                                    <li><a class="next page-numbers" href="#">next</a></li>
-                                </ul>
-                            </div>
-                        </nav>
+            <div>
+                <h2>Pagination</h2>
+                <h3>Numeric</h3>
+                <nav class="pagination is-centered">
+                    <ul class="pagination-list">
+                        <li><span class="page-numbers current">1</span></li>
+                        <li><a class="page-numbers" href="#">2</a></li>
+                        <li><a class="page-numbers" href="#">3</a></li>
+                        <li><a class="page-numbers" href="#">4</a></li>
+                        <li><a class="page-numbers" href="#">5</a></li>
+                    </ul>
+                </nav>
                     </div>
                     <div class="col-lg-6">
                         <h4>Previous/next</h4>

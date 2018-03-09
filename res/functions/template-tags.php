@@ -82,7 +82,7 @@ if (!function_exists('silencio_paging_numeric')) {
         ]);
         if (is_array($pages)) {
             $paged = (get_query_var('paged') == 0) ? 1 : get_query_var('paged');
-            echo '<div class="pagination-container"><ul class="pagination">';
+            echo '<nav class="pagination is-centered"><ul class="pagination-list">';
             foreach ($pages as $page) {
                 echo "<li>$page</li>";
             }
