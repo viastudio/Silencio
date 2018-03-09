@@ -18,3 +18,12 @@ foreach (glob("$widgetsDir/*.php") as $file) {
         register_widget($widget);
     });
 }
+
+
+add_filter('page_menu_link_attributes', function ($atts, $page, $depth, $args, $current_page) {
+    if ($current_page == $page->ID) {
+        $atts['class'] .= ' is-active';
+    }
+
+    return $atts;
+}, 10, 5);
