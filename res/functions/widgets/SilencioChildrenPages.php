@@ -9,6 +9,8 @@ class SilencioChildrenPages extends WP_Widget {
             'Silencio Children Pages', // Name
             array('description' => 'Displays child pages for the current page, with the parent page as the widget title.') // Args
         );
+
+        $this->widget_options['classname'] .= ' menu';
     }
     /**
 * Front-end display of widget.
@@ -23,6 +25,7 @@ class SilencioChildrenPages extends WP_Widget {
         $top_ancestor = get_page(array_reverse(get_post_ancestors($post->ID))[0]);
         $title = get_the_title($top_ancestor->ID);
         extract($args);
+
         if ($post->post_parent) {
             $children = wp_list_pages("title_li=&child_of=" . $top_ancestor->ID . "&echo=0");
         } else {
@@ -32,10 +35,10 @@ class SilencioChildrenPages extends WP_Widget {
         if ($children) {
             echo $before_widget;
             if (!empty($title)) {
-                echo $before_title . '<a href="' . get_permalink($top_ancestor->ID) . '">' . $title . '</a>' . $after_title;
+                echo $before_title . '<p class="menu-label"><a href="' . get_permalink($top_ancestor->ID) . '">' . $title . '</a></p>' . $after_title;
             }
 ?>
-        <ul class="nav-parent">
+        <ul class="menu-list">
 <?php
             echo $children;
 ?>

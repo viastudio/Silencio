@@ -38,7 +38,7 @@ The markup in these files need to be rewritten to work with Bulma
 * widgets.php
 * bootstrap.php
 * SilencioCategoryPosts.php
-* SilencioChildrenPages.php
+* ~~SilencioChildrenPages.php~~
 
 # Javascript Replacements
 These libraries need replacements that aren't dependent upon jQuery
