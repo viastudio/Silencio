@@ -38,8 +38,8 @@ const paths = {
         'node_modules/font-awesome/css/font-awesome.css'
     ],
     sass: [
-        'res/sass/typography.scss',
-        'res/sass/layout.scss'
+        'res/sass/layout.scss',
+        'res/sass/typography.scss'
     ],
     out: 'res/build/'
 };
