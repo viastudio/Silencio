@@ -49,8 +49,22 @@ $addColors: (
 );
 $colors: map-merge($colors, $addColors);
 
+/* Custom Mixins
+----------------------------------------------- */
 @mixin respond ($breakpoint) {
     @media only screen and (min-width: $breakpoint) {
         @content;
+    }
+}
+@mixin make-btn($bg, $border, $color) {
+    background: $bg;
+    color: $color;
+    border: 1px solid $border;
+    &:hover {
+        background: darken($bg, 8%);
+        transition: all 0.3s ease;
+    }
+    &:active {
+        background:darken($bg,25%);
     }
 }

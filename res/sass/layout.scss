@@ -42,3 +42,39 @@ body {
 .entry-content {
     padding: 1em 0;
 }
+
+/* Tables
+----------------------------------------------- */
+.table-responsive {
+    thead {
+        display: none;
+        @include respond($screen-md) {
+            display: table-header-group;
+        }
+    }
+    tbody {
+        tr {
+            border-bottom: 1px solid $grey;
+            @include respond($screen-md) {
+                border-bottom: 0;
+            }
+        }
+        td {
+            display: block;
+            border-bottom: 0;
+            &:before {
+                content: attr(data-heading);
+                font-weight: 700;
+                margin-right: 5px;
+                @include respond($screen-md) {
+                    display: none;
+                }
+            }
+            @include respond($screen-md) {
+                display: table-cell;
+                border-bottom: 1px solid $grey;
+            }
+        }
+    }
+
+}

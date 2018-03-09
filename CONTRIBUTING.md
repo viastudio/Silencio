@@ -20,7 +20,7 @@ The markup in these files need to be rewritten to work with Bulma
 * ~~sidebar-post.php~~
 * ~~single.php~~
 * ~~template-full_width.php~~
-* template-typography.php
+* ~~template-typography.php~~
 * template-uikit.php
 * admin.php
 * excerpts.php

@@ -16,135 +16,57 @@ while (have_posts()) {
 
             <!-- Buttons
             ================================================== -->
-            <div class="bs-docs-section">
-                <h2 id="buttons">Buttons</h2>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3>Standard</h3>
-                        <p class="bs-component">
-                            <button type="button" class="btn btn-default">Default</button>
-                            <button type="button" class="btn btn-primary">Primary</button>
-                            <button type="button" class="btn btn-success">Success</button>
-                            <button type="button" class="btn btn-danger">Danger</button>
-                            <button type="button" class="btn btn-link">Link</button>
-                        </p>
-                        <p class="bs-component">
-                            <button type="button" class="btn btn-default disabled">Default</button>
-                            <button type="button" class="btn btn-primary disabled">Primary</button>
-                            <button type="button" class="btn btn-success disabled">Success</button>
-                            <button type="button" class="btn btn-danger disabled">Danger</button>
-                            <button type="button" class="btn btn-link disabled">Link</button>
-                        </p>
-                    </div>
-                    <div class="col-sm-6">
-                        <h3>Dropdown</h3>
-                        <!-- forced open for styling convenience -->
-                        <div class="btn-group open">
-                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                                Action <i class="fa fa-caret-down"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <h2>Buttons</h2>
+                <p>
+                    <button type="button" class="button button-default">Default</button>
+                    <button type="button" class="button button-primary">Primary</button>
+                    <button type="button" class="button button-link">Link</button>
+                </p>
             </div>
-
+            <hr>
 
             <!-- Tables
             ================================================== -->
-            <div class="bs-docs-section">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="page-header">
-                            <h2 id="tables">Tables</h2>
-                        </div>
-                        <div class="bs-component">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Column heading</th>
-                                        <th>Column heading</th>
-                                        <th>Column heading</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                      </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                        <td>Column content</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    Panel Table
-                                </div>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Column heading</th>
-                                            <th>Column heading</th>
-                                            <th>Column heading</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                          </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                            <td>Column content</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div><!-- /example -->
-                    </div>
-                </div>
+            <div>
+                <h2>Tables</h2>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                            <th>Column heading</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                          </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                            <td>Column content</td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
 
             <!-- Forms
@@ -159,7 +81,7 @@ while (have_posts()) {
                 </div>
                 <div class="bs-component">
 <?php
-gravity_form(1);
+//gravity_form(1);
 ?>
                 </div>
             </div>
