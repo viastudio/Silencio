@@ -1,16 +1,17 @@
 <?php
 get_header();
 ?>
-
-    <section id="primary" class="content-area">
-        <main id="main" class="site-main" role="main">
+    <div class="columns">
+        <section id="primary" class="content-area column is-three-quarters">
+            <main id="main" class="site-main" role="main">
 
 <?php
 if (have_posts()) {
 ?>
-
-            <header class="page-header">
-                <h1 class="page-title">
+                <section class="hero is-primary page-header">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="page-title">
 <?php
     if (is_category()) {
         single_cat_title();
@@ -46,29 +47,46 @@ if (have_posts()) {
         _e('Archives', 'silencio');
     }
 ?>
-                </h1>
+                            </h1>
 <?php
     $term_description = term_description();
     if (! empty($term_description)) {
         printf('<div class="taxonomy-description">%s</div>', $term_description);
     }
 ?>
-            </header><!-- .page-header -->
+                        </div>
+                    </div>
+                </section><!-- .hero.page-header -->
 
+                <div class="tile is-ancestor">
 <?php
+    $count = 0;
+    $cards_per_row = 2;
     while (have_posts()) {
         the_post();
+        if ($count % $cards_per_row === 0) {
+?>
+                </div>
+                <div class="tile is-ancestor">
+<?php
+        }
+        $count++;
         get_template_part('content', get_post_format());
     }
+?>
+                </div><!-- .tile -->
+<?php
     silencio_paging_nav();
 } else {
     get_template_part('content', 'none');
 }
 ?>
-
-        </main><!-- #main -->
-    </section><!-- #primary -->
+            </main><!-- #main -->
+        </section><!-- #primary -->
 
 <?php
 get_sidebar('post');
+?>
+</div><!-- .columns -->
+<?php
 get_footer();

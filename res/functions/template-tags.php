@@ -38,25 +38,29 @@ if (! function_exists('silencio_paging_nav')) {
         if ($GLOBALS['wp_query']->max_num_pages < 2) {
             return;
         }
+        $next = __('<span class="meta-nav">&larr;</span> Older posts', 'silencio');
+        $previous = __('Newer posts <span class="meta-nav">&rarr;</span>', 'silencio');
 ?>
-        <nav class="navigation paging-navigation" role="navigation">
-            <ul class="pager">
-
+        <nav class="pagination is-centered" role="navigation" aria-label="pagination">
 <?php
-        if (get_next_posts_link()) {
-?>
-                <li class="previous"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'silencio')); ?></li>
-<?php
-        }
         if (get_previous_posts_link()) {
+            previous_posts_link($previous);
+        } else {
 ?>
-                <li class="next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'silencio')); ?></li>
+            <a class="pagination-next" disabled><?php echo $previous; ?></a>
 <?php
+
+        }
+        if (get_next_posts_link()) {
+            next_posts_link($next);
+        } else {
+?>
+            <a class="pagination-previous" disabled><?php echo $next; ?></a>
+<?php
+
         }
 ?>
-
-            </ul><!-- .nav-links -->
-        </nav><!-- .navigation -->
+        </nav><!-- .pagination -->
 <?php
     }
 }
@@ -281,5 +285,13 @@ function silencio_categorized_blog() {
 function silencio_category_transient_flusher() {
     delete_transient('post_categories');
 }
+
 add_action('edit_category', 'silencio_category_transient_flusher');
 add_action('save_post', 'silencio_category_transient_flusher');
+add_filter('next_posts_link_attributes', function ($attr) {
+    return $attr .= 'class="pagination-previous"';
+});
+
+add_filter('previous_posts_link_attributes', function ($attr) {
+    return $attr .= 'class="pagination-next"';
+});

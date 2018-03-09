@@ -2,12 +2,12 @@
 The markup in these files need to be rewritten to work with Bulma
 
 * ~~404.php~~
-* archive.php
+* ~~archive.php~~
 * comments.php
 * content-none.php
 * ~~content-page.php~~
 * ~~content-single.php~~
-* content.php
+* ~~content.php~~
 * footer.php
 * ~~front-page.php~~
 * functions.php
