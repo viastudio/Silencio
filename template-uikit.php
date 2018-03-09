@@ -81,7 +81,7 @@ while (have_posts()) {
                 </div>
                 <div class="bs-component">
 <?php
-//gravity_form(1);
+gravity_form(1);
 ?>
                 </div>
             </div>
