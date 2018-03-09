@@ -13,6 +13,7 @@ $family-serif: "Merriweather", "Georgia", serif;
 // 3. Set the derived variables
 // Use the new pink as the primary color
 $primary: $pink;
+$secondary: $blue;
 $primary-invert: $pink-invert;
 // Use the existing orange as the danger color
 $danger: $orange;
@@ -27,6 +28,18 @@ $twitter-invert: findColorInvert($twitter);
 $github: #333;
 $github-invert: findColorInvert($github);
 
+// Fonts
+$heading: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$copy: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$mono: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$icon: 'FontAwesome';
+
+//Breakpoints
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1216px;
+$screen-xl: 1408px;
+
 // 5. Add new color variables to the color map.
 @import "../../../node_modules/bulma/sass/utilities/derived-variables.sass";
 $addColors: (
@@ -35,3 +48,9 @@ $addColors: (
   "github": ($github, $github-invert)
 );
 $colors: map-merge($colors, $addColors);
+
+@mixin respond ($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
