@@ -37,7 +37,7 @@ add_action('after_setup_theme', 'silencio_setup');
 // Custom Thumbnail Sizes
 if (function_exists('add_image_size')) {
     add_image_size('blog-thumb', 200, 160, true); //(cropped)
-    add_image_size('header-thumb', 1170, 400, true); //(cropped)
+    add_image_size('header-thumb', 1200, 400, true); //(cropped)
 }
 
 //Custom Content Image Sizes Attribute

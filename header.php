@@ -54,5 +54,9 @@ get_search_form();
                     </div>
                 </nav>
             </header><!-- #masthead .site-header -->
+<?php
+silencio_partial('partials/hero', array(), true);
+?>
+            <section id="content" class="site-content">
+                <div class="container">
 
-            <div id="content" class="site-content">
