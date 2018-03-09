@@ -42,7 +42,7 @@ add_shortcode('column-75', 'silencio_column_three_quarters');
 
 
 function silencio_table($atts, $content = null) {
-    return '<table class="table">' . do_shortcode($content) . '</table>';
+    return '<table class="table table-responsive">' . do_shortcode($content) . '</table>';
 }
 add_shortcode('table', 'silencio_table');
 

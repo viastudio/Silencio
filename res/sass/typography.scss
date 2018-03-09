@@ -65,6 +65,7 @@ h1 {
 h2 {
     font-size: 1.625rem;
     line-height: 1.15384615;
+    margin-bottom: .5em;
 
     @include respond($screen-sm) {
         font-size: 2rem;
@@ -241,4 +242,16 @@ ul {
 
 ol {
     list-style: decimal;
+}
+
+/* Buttons */
+
+.button-default {
+    @include make-btn($secondary, $secondary, $white);
+}
+.button-primary {
+    @include make-btn($primary, $primary, $white);
+}
+.button-link {
+    border: 0;
 }
