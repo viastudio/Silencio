@@ -33,18 +33,20 @@ class SilencioCategoryPosts extends WP_Widget {
 
         if ($my_query->have_posts()) {
 ?>
-        <dl class="post list">
+        <ul class="post list">
 <?php
             while ($my_query->have_posts()) {
                 $my_query->the_post();
 ?>
-            <dt class="date"><?php the_time('M j'); ?></dt>
-            <dd class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></dd>
+            <li>
+                <span class="tag"><?php the_time('M j'); ?></span>
+                <h5 class="title is-5"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h5>
+            </li>
 <?php
             }
 ?>
-        </dl>
-        <p class="more"><a href="<?php echo get_permalink(get_option('page_for_posts'));?>" title="More News">More News</a></p>
+        </ul>
+        <p><a class="button is-link is-outlined is-fullwidth" href="<?php echo get_permalink(get_option('page_for_posts'));?>" title="More News">More News</a></p>
 <?php
         }
         wp_reset_query();

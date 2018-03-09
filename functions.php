@@ -130,7 +130,7 @@ function silencio_widgets_init() {
     register_sidebar(array(
         'name' => __('Home Sidebar', 'silencio'),
         'id' => 'home-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="box widget %2$s">',
         'after_widget' => "</aside>",
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'
@@ -139,7 +139,7 @@ function silencio_widgets_init() {
     register_sidebar(array(
         'name' => __('Page Sidebar', 'silencio'),
         'id' => 'page-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="box widget %2$s">',
         'after_widget' => "</aside>",
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'
@@ -148,7 +148,7 @@ function silencio_widgets_init() {
     register_sidebar(array(
         'name' => __('Post Sidebar', 'silencio'),
         'id' => 'post-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'before_widget' => '<aside id="%1$s" class="box widget %2$s">',
         'after_widget' => "</aside>",
         'before_title' => '<h3 class="widget-title">',
         'after_title' => '</h3>'

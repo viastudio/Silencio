@@ -109,3 +109,20 @@ body {
         }
     }
 }
+
+/* Widgets
+----------------------------------------------- */
+.widget_silenciocategoryposts {
+    .title {
+        a {
+            display: block;
+            padding: .5em 0;
+        }
+    }
+    .post.list {
+        margin-top: 1em;
+        li {
+            margin-bottom: 0.75em;
+        }
+    }
+}
