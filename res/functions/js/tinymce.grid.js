@@ -11,24 +11,20 @@ jQuery(document).ready(function ($) {
 
                 if (content !== '') {
                     tinymce.activeEditor.selection.setContent('[' + this.value() + ']' + content + '[/' + this.value() + ']');
+                } else {
+                    tinymce.activeEditor.selection.setContent('[' + this.value() + '][/' + this.value() + ']');
                 }
 
                 this.value(null);
             },
             values: [
                 {text: 'row', value: 'row'},
-                {text: 'col1', value: 'col1'},
-                {text: 'col2', value: 'col2'},
-                {text: 'col3', value: 'col3'},
-                {text: 'col4', value: 'col4'},
-                {text: 'col5', value: 'col5'},
-                {text: 'col6', value: 'col6'},
-                {text: 'col7', value: 'col7'},
-                {text: 'col8', value: 'col8'},
-                {text: 'col9', value: 'col9'},
-                {text: 'col10', value: 'col10'},
-                {text: 'col11', value: 'col11'},
-                {text: 'col12', value: 'col12'}
+                {text: 'column', value: 'column'},
+                {text: 'column 1/2', value: 'column-50'},
+                {text: 'column 1/3', value: 'column-33'},
+                {text: 'column 2/3', value: 'column-66'},
+                {text: 'column 1/4', value: 'column-25'},
+                {text: 'column 3/4', value: 'column-75'}
             ]
         });
     });
