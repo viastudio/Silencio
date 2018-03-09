@@ -1,15 +1,15 @@
 # HTML Files
 The markup in these files need to be rewritten to work with Bulma
 
-* 404.php
+* ~~404.php~~
 * archive.php
 * comments.php
 * content-none.php
-* content-page.php
-* content-single.php
+* ~~content-page.php~~
+* ~~content-single.php~~
 * content.php
 * footer.php
-* front-page.php
+* ~~front-page.php~~
 * functions.php
 * ~~header.php~~
 * index.php
