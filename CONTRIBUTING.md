@@ -2,7 +2,6 @@
 The markup in these files need to be rewritten to work with Bulma
 
 * ~~404.php~~
-* ~~archive.php~~
 * comments.php
 * content-none.php
 * ~~content-page.php~~
@@ -12,7 +11,7 @@ The markup in these files need to be rewritten to work with Bulma
 * ~~front-page.php~~
 * functions.php
 * ~~header.php~~
-* index.php
+* ~~index.php~~
 * ~~page.php~~
 * search.php
 * ~~searchform.php~~
