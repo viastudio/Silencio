@@ -16,20 +16,21 @@ if (isset($options['theme_option_street_txt_input'], $options['theme_option_city
 
             <footer id="colophon" class="footer" role="contentinfo">
                 <div class="container">
-                    <!-- <nav id="footer-nav" role="navigation">
+                    <div class="columns">
+<!--                         <nav id="footer-nav" role="navigation" class="column">
 <?php
 wp_nav_menu(array('theme_location' => 'footer-menu'));
 ?>
-                    </nav> -->
+                        </nav> -->
 
-                    <!-- <aside class="footer-widget" role="complementary">
+                    <aside class="footer-widget" role="complementary" class="column">
 <?php
 if (!function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-sidebar')) {
 }
 ?>
-                    </aside> -->
+                    </aside>
 
-                    <aside class="site-info">
+                    <aside class="site-info column">
                         <ul class="address" itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
                             <li>&#169; <?php echo date('Y');?>  <span itemprop="name"><?php bloginfo('name'); ?></span></li>
 <?php
@@ -74,9 +75,9 @@ if (!empty($options['theme_option_email_txt_input'])) {
 <?php
 if (isset($directions)) {
 ?>
-                        <!-- <div class="directions">
+                        <div class="directions">
                             <a href="<?php echo $directions ?>"><i class="fa fa-map-marker"></i> View on a map</a>
-                        </div> -->
+                        </div>
 <?php
 }
 ?>
