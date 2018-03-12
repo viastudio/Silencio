@@ -7,7 +7,7 @@ The markup in these files need to be rewritten to work with Bulma
 * ~~content-page.php~~
 * ~~content-single.php~~
 * ~~content.php~~
-* footer.php
+* ~~footer.php~~
 * ~~front-page.php~~
 * functions.php
 * ~~header.php~~
