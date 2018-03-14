@@ -106,8 +106,8 @@ function silencio_scripts() {
     );
 
     // enqueing:
-    wp_enqueue_style('vendor');
-    wp_enqueue_style('global');
+    // wp_enqueue_style('vendor');
+    // wp_enqueue_style('global');
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');

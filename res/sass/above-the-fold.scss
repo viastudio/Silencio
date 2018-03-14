@@ -1,0 +1,34 @@
+@import "lib/variables";
+@import "../../node_modules/bulma/bulma";
+@import "typography";
+
+/* Layout
+----------------------------------------------- */
+
+body {
+    padding: 0;
+}
+
+#page {
+    width: 100%;
+}
+
+#content {
+    padding: 1.5em .75em;
+
+    @include respond($screen-md) {
+        padding: 3em 0;
+    }
+    #primary {
+        @include respond($screen-sm) {
+            order: 2;
+        }
+    }
+}
+
+/* Page
+----------------------------------------------- */
+
+#featured-image img {
+    width: 100%;
+}
