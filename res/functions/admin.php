@@ -102,7 +102,7 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
             array(
                 'title' => 'Button',
                 'selector' => 'a',
-                'classes' => 'btn'
+                'classes' => 'button'
             )
         );
 

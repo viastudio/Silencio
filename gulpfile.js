@@ -27,19 +27,19 @@ const pngquant = require('imagemin-pngquant');
 
 const paths = {
     vendorScripts: [
-        'node_modules/bootstrap/dist/js/bootstrap.js',
         'node_modules/fitvids.1.1.0/jquery.fitvids.js',
         'node_modules/picturefill/dist/picturefill.js',
         'node_modules/babel-polyfill/dist/polyfill.min.js',
         'node_modules/whatwg-fetch/fetch.js',
     ],
     css: [
-        'node_modules/bootstrap/dist/css/bootstrap.css',
         'node_modules/font-awesome/css/font-awesome.css'
     ],
     sass: [
         'res/sass/layout.scss',
-        'res/sass/typography.scss'
+    ],
+    aboveFold: [
+        'res/sass/above-the-fold.scss',
     ],
     out: 'res/build/'
 };
@@ -91,6 +91,18 @@ let emitOurStyles = () => {
         .pipe(gulp.dest(paths.out));
 };
 
+let emitAboveTheFoldStyles = () => {
+    return gulp.src(paths.aboveFold)
+        .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(nano())
+        .pipe(concat('above-the-fold.min.css'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out));
+};
+
 let emitRespondJs = () => {
     //Emit respond.js as a separate file since it's included separately
     var respond = gulp.src('node_modules/respond.js/dest/respond.src.js')
@@ -123,11 +135,13 @@ gulp.task('vendor-styles', () => {
 
 gulp.task('our-styles', () => {
     emitOurStyles();
+    emitAboveTheFoldStyles();
 });
 
 gulp.task('styles', () => {
     emitVendorStyles();
     emitOurStyles();
+    emitAboveTheFoldStyles();
 });
 
 gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
