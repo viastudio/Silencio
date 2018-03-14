@@ -84,7 +84,7 @@ function silencio_scripts() {
     wp_enqueue_script(
         'bundle',
         get_template_directory_uri() . '/res/' . $bundle,
-        array('jquery'),
+        array(),
         defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $bundle),
         true
     );
