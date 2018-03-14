@@ -17,7 +17,7 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 <?php
     echo '<style>';
-    echo file_get_contents(get_template_directory_uri() . '/res/build/above-the-fold.min.css');
+    echo file_get_contents(get_template_directory_uri() . '/res/build/above-the-fold.css');
     echo '</style>';
 wp_head();
 ?>
@@ -30,8 +30,7 @@ if (function_exists('gtm4wp_the_gtm_tag')) {
 }
 ?>
 <noscript id="deferred-styles">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/res/build/vendor.min.css'; ?>"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/res/build/global.min.css'; ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/res/build/deferred.css'; ?>"/>
 </noscript>
 <script>
       var loadDeferredStyles = function() {

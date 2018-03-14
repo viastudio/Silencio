@@ -27,6 +27,7 @@
     "merge2": "^1.0.3",
     "picturefill": "^3.0.2",
     "promise-polyfill": "^6.0.2",
+    "require-dir": "^1.0.0",
     "respond.js": "^1.4.2",
     "run-sequence": "^1.2.2",
     "webpack": "^3.8.1",
