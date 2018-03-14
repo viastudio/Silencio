@@ -3,12 +3,14 @@ const config = require('./config.js');
 
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 const webpack = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 
 gulp.task('vendor-scripts', () => {
     return gulp.src(paths.vendorScripts)
         .pipe(concat('vendor.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(paths.out));
 });
 

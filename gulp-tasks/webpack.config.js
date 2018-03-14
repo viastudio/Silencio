@@ -10,6 +10,7 @@ var config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    plugins: [new webpack.optimize.UglifyJsPlugin()],
     devtool: 'source-map',
     module: {
         loaders: [

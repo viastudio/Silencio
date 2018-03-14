@@ -16,9 +16,9 @@
 <script type="text/javascript" src="//use.typekit.net/########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 <?php
-    echo '<style>';
-    echo file_get_contents(get_template_directory_uri() . '/res/build/above-the-fold.css');
-    echo '</style>';
+echo '<style>';
+echo file_get_contents(get_template_directory_uri() . '/res/build/above-the-fold.css');
+echo '</style>';
 wp_head();
 ?>
 </head>
