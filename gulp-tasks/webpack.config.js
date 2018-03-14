@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 var path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'res/build');
-var APP_DIR = path.resolve(__dirname, 'res/js');
+var BUILD_DIR = path.resolve(__dirname, '../res/build');
+var APP_DIR = path.resolve(__dirname, '../res/js');
 
 var config = {
     entry: APP_DIR + '/global.js',
