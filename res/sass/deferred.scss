@@ -9,9 +9,7 @@
 
 /* Post
 ----------------------------------------------- */
-.entry-content {
-    padding: 1em 0;
-}
+
 
 /* Tables
 ----------------------------------------------- */
@@ -95,4 +93,27 @@
             margin-bottom: 0.75em;
         }
     }
+}
+
+/* UI Kit
+----------------------------------------------- */
+.navigation .pager {
+    display: flex;
+    margin: 1em 0;
+    .previous,
+    .next {
+        width: 50%;
+        a {
+            @include make-btn($primary, $primary, $black);
+            display: inline-block;
+        }
+    }
+    .next {
+        text-align: right;
+    }
+}
+
+.alert {
+    display: block;
+    padding: 14px 28px;
 }

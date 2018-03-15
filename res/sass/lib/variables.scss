@@ -60,6 +60,7 @@ $colors: map-merge($colors, $addColors);
     background: $bg;
     color: $color;
     border: 1px solid $border;
+    padding: 7px 14px;
     &:hover {
         background: darken($bg, 8%);
         transition: all 0.3s ease;
