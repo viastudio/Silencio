@@ -56,17 +56,17 @@ if (!empty($options['theme_option_zip_txt_input'])) {
 }
 if (!empty($options['theme_option_phone_txt_input'])) {
 ?>
-                            <li><span itemprop="tel"><i class="fa fa-phone"></i><a href="tel:<?php echo $options['theme_option_phone_txt_input']; ?>"> <?php echo $options['theme_option_phone_txt_input']; ?></a></span></li>
+                            <li><span itemprop="tel"><i class="fas fa-phone"></i><a href="tel:<?php echo $options['theme_option_phone_txt_input']; ?>"> <?php echo $options['theme_option_phone_txt_input']; ?></a></span></li>
 <?php
 }
 if (!empty($options['theme_option_fax_txt_input'])) {
 ?>
-                            <li><i class="fa fa-fax"></i> <span itemprop="faxNumber"><?php echo $options['theme_option_fax_txt_input']; ?></span></li>
+                            <li><i class="fas fa-fax"></i> <span itemprop="faxNumber"><?php echo $options['theme_option_fax_txt_input']; ?></span></li>
 <?php
 }
 if (!empty($options['theme_option_email_txt_input'])) {
 ?>
-                            <li><span itemprop="email"> <i class="fa fa-envelope"></i> <a href="mailto:<?php echo $options['theme_option_email_txt_input']; ?>">Email</a></span></li>
+                            <li><span itemprop="email"> <i class="fas fa-envelope"></i> <a href="mailto:<?php echo $options['theme_option_email_txt_input']; ?>">Email</a></span></li>
 <?php
 }
 ?>
@@ -76,7 +76,7 @@ if (!empty($options['theme_option_email_txt_input'])) {
 if (isset($directions)) {
 ?>
                         <div class="directions">
-                            <a href="<?php echo $directions ?>"><i class="fa fa-map-marker"></i> View on a map</a>
+                            <a href="<?php echo $directions ?>"><i class="fas fa-map-marker"></i> View on a map</a>
                         </div>
 <?php
 }
@@ -87,7 +87,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_facebook_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-facebook"></i><span class="sr-only">Facebook</span>
+                                    <i class="fab fa-facebook"></i><span class="sr-only">Facebook</span>
                                 </a>
                             </li>
 <?php
@@ -95,7 +95,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_twitter_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-twitter"></i><span class="sr-only">Twitter</span>
+                                    <i class="fab fa-twitter"></i><span class="sr-only">Twitter</span>
                                 </a>
                             </li>
 <?php
@@ -103,7 +103,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_youtube_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-youtube-play"></i><span class="sr-only">YouTube</span>
+                                    <i class="fab fa-youtube"></i><span class="sr-only">YouTube</span>
                                 </a>
                             </li>
 <?php
@@ -111,7 +111,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_googleplus_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-google-plus"></i><span class="sr-only">Google+</span>
+                                    <i class="fab fa-google-plus"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
 <?php
@@ -119,7 +119,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_instagram_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-instagram"></i><span class="sr-only">Google+</span>
+                                    <i class="fab fa-instagram"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
 <?php
@@ -127,7 +127,7 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                             <li>
                                 <a href="<?php echo $options['theme_option_linkedin_txt_input']; ?>" target="_blank">
-                                    <i class="fa fa-linkedin"></i><span class="sr-only">Google+</span>
+                                    <i class="fab fa-linkedin"></i><span class="sr-only">Google+</span>
                                 </a>
                             </li>
 <?php
