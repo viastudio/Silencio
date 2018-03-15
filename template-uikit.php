@@ -136,22 +136,22 @@ if (function_exists('yoast_breadcrumb')) {
                 <ul class="social-media">
                     <li>
                         <a href="#" target="_blank">
-                            <i class="fa fa-facebook"></i><span class="sr-only">Facebook</span>
+                            <i class="fab fa-facebook"></i><span class="sr-only">Facebook</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <i class="fa fa-twitter"></i><span class="sr-only">Twitter</span>
+                            <i class="fab fa-twitter"></i><span class="sr-only">Twitter</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <i class="fa fa-youtube"></i><span class="sr-only">YouTube</span>
+                            <i class="fab fa-youtube"></i><span class="sr-only">YouTube</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" target="_blank">
-                            <i class="fa fa-google"></i><span class="sr-only">Google</span>
+                            <i class="fab fa-google"></i><span class="sr-only">Google</span>
                         </a>
                     </li>
                 </ul>

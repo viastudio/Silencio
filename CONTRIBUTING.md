@@ -34,5 +34,4 @@ These libraries need replacements that aren't dependent upon jQuery
 
 * FitVids - https://dollarshaveclub.github.io/reframe.js/
 * GravityForms
-* FontAwesome - too large! lets get a replacement
 
