@@ -92,8 +92,18 @@ function silencio_defer_scripts($tag, $handle, $src) {
         'bundle'
     ];
 
+    $defer_scripts = [
+        'jquery-core',
+        'jquery-migrate',
+        'gform_json',
+        'gform_gravityforms',
+        'gform_conditional_logic'
+    ];
+
     if (in_array($handle, $async_scripts)) {
         return str_replace('<script ', '<script async ', $tag);
+    } elseif (in_array($handle, $defer_scripts)) {
+        return str_replace('<script ', '<script defer ', $tag);
     }
 
     return $tag;
@@ -257,3 +267,13 @@ function silencio_partial($path, $args = [], $echo = true) {
     include(locate_template($path . '.php'));
     return ob_get_clean();
 }
+
+add_filter('gform_cdata_open', function($content = '') {
+  $content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+  return $content;
+});
+
+add_filter('gform_cdata_close', function($content = '') {
+  $content = ' }, false );';
+  return $content;
+});
