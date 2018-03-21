@@ -1,11 +1,11 @@
-import '../../node_modules/fitvids/dist/fitvids.min.js';
+import fitvids from 'fitvids';
 
 document.addEventListener('DOMContentLoaded', function () {
-     prepare_menu();
-     prepare_notifications();
-     prepare_smoothscroll();
-     responsive_tables('.table-responsive');
-     prepare_fitvids();
+    prepare_menu();
+    prepare_notifications();
+    prepare_smoothscroll();
+    responsive_tables('.table-responsive');
+    prepare_fitvids();
 });
 
 function prepare_menu() {

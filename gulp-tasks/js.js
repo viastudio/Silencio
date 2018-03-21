@@ -7,13 +7,6 @@ const uglify = require('gulp-uglify');
 const webpack = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 
-gulp.task('vendor-scripts', () => {
-    return gulp.src(paths.vendorScripts)
-        .pipe(concat('vendor.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.out));
-});
-
 gulp.task('webpack-watch', function (done) {
     webpackConfig.watch = true;
 

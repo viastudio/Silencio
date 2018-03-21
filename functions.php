@@ -70,31 +70,34 @@ add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
-    $vendor = 'build/vendor.min.js';
-
-    wp_enqueue_script(
-        'vendor',
-        get_template_directory_uri() . '/res/' . $vendor,
-        array('jquery'),
-        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $vendor),
-        true
-    );
-
     $bundle = 'build/bundle.js';
     wp_enqueue_script(
         'bundle',
         get_template_directory_uri() . '/res/' . $bundle,
         array(),
         defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $bundle),
-        true
+        false
     );
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
 }
-
 add_action('wp_enqueue_scripts', 'silencio_scripts');
+
+add_filter('script_loader_tag', 'silencio_defer_scripts', 10, 3);
+function silencio_defer_scripts($tag, $handle, $src) {
+
+    $async_scripts = [
+        'bundle'
+    ];
+
+    if (in_array($handle, $async_scripts)) {
+        return str_replace('<script ', '<script async ', $tag);
+    }
+
+    return $tag;
+}
 
 /**
  * Add oEmbed support for widgets
