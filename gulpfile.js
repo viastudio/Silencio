@@ -27,12 +27,12 @@ gulp.task('help', () => {
     gulp images (Uses Imagemin to compress images)`);
 });
 
-gulp.task('default', ['clean', 'prod-styles', 'vendor-scripts', 'webpack', 'images'], () => {
+gulp.task('default', ['clean', 'prod-styles',  'webpack', 'images'], () => {
     logInfo("Running default does a production build.\nNo sourcemaps, all JS bundled");
     logWarn("This task will not work with VIA_ENVIRONMENT = 'dev'. Use 'gulp dev' or 'gulp watch' instead");
 });
 
-gulp.task('dev', ['clean', 'dev-styles', 'vendor-scripts', 'webpack', 'images'], () => {
+gulp.task('dev', ['clean', 'dev-styles', 'webpack', 'images'], () => {
     logInfo("Dev build.\nSourcemaps, vendor JS in a separate file.");
 });
 

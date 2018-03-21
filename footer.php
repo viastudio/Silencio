@@ -12,16 +12,16 @@ if (isset($options['theme_option_street_txt_input'], $options['theme_option_city
 
 ?>
             </div><!-- .container -->
-        </section>
+        </section><!-- #content -->
 
-            <footer id="colophon" class="footer" role="contentinfo">
-                <div class="container">
-                    <div class="columns">
-<!--                         <nav id="footer-nav" role="navigation" class="column">
+        <footer id="colophon" class="footer" role="contentinfo">
+            <div class="container">
+                <div class="columns">
+                     <!-- <nav id="footer-nav" role="navigation" class="column">
 <?php
 wp_nav_menu(array('theme_location' => 'footer-menu'));
 ?>
-                        </nav> -->
+                    </nav> -->
 
                     <aside class="footer-widget" role="complementary" class="column">
 <?php
@@ -135,14 +135,15 @@ if (!empty($options['theme_option_facebook_txt_input'])) {
 ?>
                         </ul><!-- .social-media -->
                     </aside><!-- .site-info -->
+                </div><!-- .columns -->
 
-                    <!-- <aside class="via_tag">
-                        <p><a href="http://viastudio.com" rel="external" target="_blank" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/build/img/via-mark.svg");?>Built by VIA Studio</a></p>
-                    </aside> -->
-                </div><!-- .container -->
-            </footer><!-- #colophon .site-footer -->
-        </div><!-- #page -->
-    </div> <!-- .body-wrap -->
+               <!--  <aside class="via_tag">
+                    <p><a href="http://viastudio.com" rel="external" target="_blank" title="Built by VIA Studio"><?php echo file_get_contents(get_template_directory() . "/res/build/img/via-mark.svg");?>Built by VIA Studio</a></p>
+                </aside> -->
+            </div><!-- .container -->
+        </footer><!-- #colophon .site-footer -->
+    </div><!-- #page -->
+</div> <!-- .body-wrap -->
 
 <?php wp_footer(); ?>
 

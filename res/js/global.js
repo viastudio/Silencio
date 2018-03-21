@@ -1,8 +1,11 @@
+import fitvids from 'fitvids';
+
 document.addEventListener('DOMContentLoaded', function () {
-     prepare_menu();
-     prepare_notifications();
-     prepare_smoothscroll();
-     responsive_tables('.table-responsive');
+    prepare_menu();
+    prepare_notifications();
+    prepare_smoothscroll();
+    responsive_tables('.table-responsive');
+    prepare_fitvids();
 });
 
 function prepare_menu() {
@@ -128,4 +131,8 @@ function prepare_smoothscroll() {
     };
 
     scroll_to_links.forEach(scroll_to_link => scroll_to_link.addEventListener('click', handleClick));
+}
+
+function prepare_fitvids() {
+    fitvids('#page');
 }

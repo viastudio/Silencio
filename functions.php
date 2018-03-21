@@ -70,31 +70,44 @@ add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
-    $vendor = 'build/vendor.min.js';
-
-    wp_enqueue_script(
-        'vendor',
-        get_template_directory_uri() . '/res/' . $vendor,
-        array('jquery'),
-        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $vendor),
-        true
-    );
-
     $bundle = 'build/bundle.js';
     wp_enqueue_script(
         'bundle',
         get_template_directory_uri() . '/res/' . $bundle,
         array(),
         defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/' . $bundle),
-        true
+        false
     );
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
 }
-
 add_action('wp_enqueue_scripts', 'silencio_scripts');
+
+add_filter('script_loader_tag', 'silencio_defer_scripts', 10, 3);
+function silencio_defer_scripts($tag, $handle, $src) {
+
+    $async_scripts = [
+        'bundle'
+    ];
+
+    $defer_scripts = [
+        'jquery-core',
+        'jquery-migrate',
+        'gform_json',
+        'gform_gravityforms',
+        'gform_conditional_logic'
+    ];
+
+    if (in_array($handle, $async_scripts)) {
+        return str_replace('<script ', '<script async ', $tag);
+    } elseif (in_array($handle, $defer_scripts)) {
+        return str_replace('<script ', '<script defer ', $tag);
+    }
+
+    return $tag;
+}
 
 /**
  * Add oEmbed support for widgets
@@ -254,3 +267,13 @@ function silencio_partial($path, $args = [], $echo = true) {
     include(locate_template($path . '.php'));
     return ob_get_clean();
 }
+
+add_filter('gform_cdata_open', function($content = '') {
+  $content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+  return $content;
+});
+
+add_filter('gform_cdata_close', function($content = '') {
+  $content = ' }, false );';
+  return $content;
+});

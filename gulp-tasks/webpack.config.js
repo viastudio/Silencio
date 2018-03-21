@@ -5,7 +5,7 @@ var BUILD_DIR = path.resolve(__dirname, '../res/build');
 var APP_DIR = path.resolve(__dirname, '../res/js');
 
 var config = {
-    entry: APP_DIR + '/global.js',
+    entry: ['babel-polyfill', 'nodelist-foreach-polyfill', 'whatwg-fetch', 'picturefill', APP_DIR + '/global.js'],
     output: {
         path: BUILD_DIR,
         filename: 'bundle.js'
