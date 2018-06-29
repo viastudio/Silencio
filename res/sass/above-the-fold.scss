@@ -26,6 +26,20 @@ body {
     }
 }
 
+/* Header
+----------------------------------------------- */
+.fixed-header {
+    .site-header {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 99999;
+    }
+    .site-content {
+        margin-top: 88px;
+    }
+}
+
 /* Page
 ----------------------------------------------- */
 .entry-content {
