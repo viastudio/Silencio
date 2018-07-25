@@ -1,7 +1,6 @@
 return paths = {
     sass: [
-        'res/sass/deferred.scss',
-        'res/sass/above-the-fold.scss'
+        'res/sass/layout.scss'
     ],
     out: 'res/build/'
 };

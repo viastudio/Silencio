@@ -6,6 +6,7 @@ const gulpif = require('gulp-if');
 const nano = require('gulp-cssnano');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
 
 let emitOurStyles = (buildSourceMaps) => {
     return gulp.src(paths.sass)
@@ -15,6 +16,7 @@ let emitOurStyles = (buildSourceMaps) => {
             browsers: ['last 2 versions']
         }))
         .pipe(nano())
+        .pipe(rename('global.min.css'))
         .pipe(gulpif(buildSourceMaps, sourcemaps.write('.')))
         .pipe(gulp.dest(paths.out));
 };

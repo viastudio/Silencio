@@ -17,9 +17,6 @@
 <script type="text/javascript" src="//use.typekit.net/########.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 <?php
-echo '<style>';
-echo file_get_contents(get_template_directory_uri() . '/res/build/above-the-fold.css');
-echo '</style>';
 wp_head();
 ?>
 </head>
@@ -30,22 +27,6 @@ if (function_exists('gtm4wp_the_gtm_tag')) {
     gtm4wp_the_gtm_tag();
 }
 ?>
-<noscript id="deferred-styles">
-    <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() . '/res/build/deferred.css'; ?>"/>
-</noscript>
-<script>
-      var loadDeferredStyles = function() {
-        var addStylesNode = document.getElementById("deferred-styles");
-        var replacement = document.createElement("div");
-        replacement.innerHTML = addStylesNode.textContent;
-        document.body.appendChild(replacement);
-        addStylesNode.parentElement.removeChild(addStylesNode);
-      };
-      var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
-      else window.addEventListener('load', loadDeferredStyles);
-</script>
     <div class="body-wrap">
         <div id="page" class="hfeed site">
             <header id="masthead" class="site-header" role="banner">

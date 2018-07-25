@@ -82,6 +82,14 @@ function silencio_scripts() {
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
+    wp_register_style(
+        'global',
+        get_template_directory_uri() . '/res/build/global.min.css',
+        array(),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(get_stylesheet_directory() . '/res/build/global.min.css'),
+        'all'
+    );
+    wp_enqueue_style('global');
 }
 add_action('wp_enqueue_scripts', 'silencio_scripts');
 
