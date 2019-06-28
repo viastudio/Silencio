@@ -112,9 +112,4 @@ if (is_admin()) { // why execute all the code below at all if we're not in admin
 
     }
 
-    function silencio_add_editor_styles() {
-        add_editor_style('res/css/mce-editor-style.css');
-    }
-
-    add_action('init', 'silencio_add_editor_styles');
 } //wrapper for admin functions
