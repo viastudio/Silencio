@@ -115,6 +115,12 @@ function silencio_scripts() {
 
 add_action('wp_enqueue_scripts', 'silencio_scripts');
 
+
+function jr3_enqueue_gutenberg() {
+    wp_register_style('jr3-gutenberg', get_stylesheet_directory_uri() . '/res/build/editor.min.css');
+    wp_enqueue_style('jr3-gutenberg');
+}
+
 /**
  * Add oEmbed support for widgets
  */

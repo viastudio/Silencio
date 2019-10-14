@@ -41,6 +41,9 @@ const paths = {
         'res/less/typography.less',
         'res/less/layout.less'
     ],
+    editor: [
+        'res/less/editor.less'
+    ],
     out: 'res/build/'
 };
 
@@ -91,6 +94,19 @@ let emitOurStyles = () => {
         .pipe(gulp.dest(paths.out));
 };
 
+let emitEditorStyles = () => {
+    return gulp.src(paths.editor)
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.init()))
+        .pipe(less())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
+        .pipe(nano())
+        .pipe(concat('editor.min.css'))
+        .pipe(gulpif(config.buildSourcemaps, sourcemaps.write('.')))
+        .pipe(gulp.dest(paths.out));
+}
+
 let emitRespondJs = () => {
     //Emit respond.js as a separate file since it's included separately
     var respond = gulp.src('node_modules/respond.js/dest/respond.src.js')
@@ -125,9 +141,14 @@ gulp.task('our-styles', () => {
     emitOurStyles();
 });
 
+gulp.task('editor-styles', () => {
+    emitEditorStyles();
+});
+
 gulp.task('styles', () => {
     emitVendorStyles();
     emitOurStyles();
+    emitEditorStyles();
 });
 
 gulp.task('watch', ['clean', 'vendor-styles', 'vendor-scripts', 'dev'], () => {
@@ -144,7 +165,7 @@ gulp.task('dev', () => {
     config.buildSourcemaps = true;
     logInfo("Dev build.\nSourcemaps, vendor JS in a separate file.");
 
-    run('vendor-styles', 'our-styles', 'vendor-scripts', 'webpack');
+    run('vendor-styles', 'our-styles', 'editor-styles', 'vendor-scripts', 'webpack');
 });
 
 gulp.task('webpack-watch', function (done) {
