@@ -69,6 +69,25 @@ add_filter('wp_get_attachment_image_attributes', 'silencio_post_thumbnail_sizes_
  * Enqueue scripts and styles
  */
 function silencio_scripts() {
+    $bundle = 'dist/js/global.js';
+    $bundlePath = get_template_directory_uri() . "/$bundle";
+    wp_enqueue_script(
+        'bundle',
+        $bundlePath,
+        array('jquery'),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(__DIR__ . "/$bundle"),
+        true
+    );
+
+    $style = 'dist/scss/style.css';
+    $stylePath = get_template_directory_uri() . "/$style";
+    wp_register_style(
+        'global',
+        $stylePath,
+        array(),
+        defined('VIA_DEPLOYMENT') ? VIA_DEPLOYMENT : filemtime(__DIR__ . "/$style"),
+        'all'
+    );
 }
 add_action('wp_enqueue_scripts', 'silencio_scripts');
 
@@ -191,9 +210,9 @@ function silencio_build_directions_url($street, $city, $state, $zip) {
 }
 
 /*
-* Helper function for debugging variables
-*
-*/
+ * Helper function for debugging variables
+ *
+ */
 if (!function_exists('debug')) {
     function debug($var) {
         $bt = debug_backtrace();
@@ -206,9 +225,9 @@ if (!function_exists('debug')) {
     }
 }
 /*
-* Helper function for getting post thumbnail url
-*
-*/
+ * Helper function for getting post thumbnail url
+ *
+ */
 function get_post_thumbnail_url($size) {
     $thumb_id = get_post_thumbnail_id();
     $thumb_url_array = wp_get_attachment_image_src($thumb_id, $size, true);
@@ -216,12 +235,12 @@ function get_post_thumbnail_url($size) {
     return $thumb_url;
 }
 /**
-* Load a template part & pass in variables declared in caller scope. Optionally return as a string.
-* @param string $path path to template file, minus .php (eg. `content-page`, `partial/folder/template-name`)
-* @param array $args map of variables to load into scope
-* @param bool $echo echo or return rendered template
-* @return null or rendered template string
-*/
+ * Load a template part & pass in variables declared in caller scope. Optionally return as a string.
+ * @param string $path path to template file, minus .php (eg. `content-page`, `partial/folder/template-name`)
+ * @param array $args map of variables to load into scope
+ * @param bool $echo echo or return rendered template
+ * @return null or rendered template string
+ */
 function silencio_partial($path, $args = [], $echo = true) {
     if (!empty($args)) {
         extract($args);

@@ -3,3 +3,6 @@
 /res/components
 /res/css
 /res/build
+.cache/
+dist/
+.eslintrc.json

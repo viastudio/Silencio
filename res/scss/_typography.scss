@@ -1,0 +1,443 @@
+/* Variables
+-------------------------------------------------------------- */
+@import "variables";
+
+/* Typography
+---------------------------------------------------------------- */
+
+html {
+    height: 100%;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: $black;
+    font-family: $copy;
+    line-height: 1.5;
+}
+
+hr {
+    background-color: $grey;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: $semibold;
+    line-height: 1.25;
+
+    @include respond($screen-sm) {
+        font-size: 2.5rem;
+        line-height: 1.125;
+    }
+
+    @include respond($screen-md) {
+        font-size: 3rem;
+        line-height: 1.05;
+    }
+}
+
+h2 {
+    font-size: 1.625rem;
+    font-weight: $bold;
+    line-height: 1.15384615;
+
+    @include respond($screen-sm) {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    @include respond($screen-md) {
+        font-size: 2.25rem;
+        line-height: 1.25;
+    }
+}
+
+h3 {
+    font-size: 1.375rem;
+    font-weight: $semibold;
+    line-height: 1.13636364;
+
+    @include respond($screen-sm) {
+        font-size: 1.5rem;
+        line-height: 1.25;
+    }
+
+    @include respond($screen-md) {
+        font-size: 1.75rem;
+        line-height: 1.25;
+    }
+}
+
+h4 {
+    font-size: 1.125rem;
+    line-height: 1.11111111;
+
+    @include respond($screen-sm) {
+        line-height: 1.22222222;
+    }
+}
+
+h5 {
+}
+
+h6 {
+}
+
+p {
+    margin-bottom: 1em;
+    margin-top: 0;
+}
+
+p.intro {
+    margin-bottom: 0.9375em;
+    line-height: 1.286em;
+    font-size: 1.75rem;
+    font-weight: $light;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    font-size: 1.25rem;
+    line-height: 1.25;
+
+    @include respond($screen-sm) {
+        font-size: 1.5em;
+        line-height: 1.45833333;
+    }
+}
+
+pre {
+    background: #eee;
+    font: 15px $mono;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+}
+
+code,
+kbd,
+tt,
+var {
+    font: 15px $mono;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted $black;
+    cursor: help;
+}
+
+mark,
+ins {
+    text-decoration: none;
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+figure {
+    margin: 0;
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: $primary;
+}
+
+a:visited {
+    color: $primary;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: lighten($primary, 10%);
+    text-decoration: none;
+}
+
+/* Lists */
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ol {
+    list-style: decimal;
+}
+
+/* Buttons & Forms */
+button,
+input,
+select,
+textarea {
+    font-size: 100%; /* Corrects font size not being inherited in all browsers */
+    margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+    vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+    *vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+
+button,
+input {
+    line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+    *overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+
+}
+
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+
+}
+
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+    background: darken($grey, 10%);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+
+}
+
+input[type=text],
+input[type=email] {
+
+}
+
+textarea {
+    overflow: auto;
+}
+
+/* Media
+----------------------------------------------- */
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin: 0 auto 1.5em;
+}
+
+img.wp-smiley {
+    display: none;
+}
+
+.wp-caption {
+    border: 1px solid $grey;
+    max-width: 100%;
+}
+
+.wp-caption img {
+    display: block;
+    margin: 1.2% auto 0;
+    max-width: 98%;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.site-content .gallery {
+    margin-bottom: 1.5em;
+}
+
+.site-content .gallery a img {
+    border: none;
+    height: auto;
+    max-width: 90%;
+}
+
+.site-content .gallery dd {
+    margin: 0;
+}
+
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+}
+
+/* Fluid Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Pretty Ampersands */
+span.amp {
+    font-family:Adobe Caslon Pro,Baskerville,"Goudy Old Style","Palatino","Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;
+    font-style:italic;
+    font-size:110%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline
+}
+
+/* Misc. */
+input::-moz-focus-inner {
+    border: 0;
+}
+
+::selection {
+    background: $black;
+    color: $white;
+}
+
+::-moz-selection {
+    background: $black;
+    color: $white;
+}
+
+#masthead .site-branding .site-title {
+    font-size: 1em;
+
+    @include respond($screen-sm) {
+        font-size: 3em;
+    }
+}
+
